@@ -1,17 +1,26 @@
 #include "World.h"
-
+#include <iostream>
 void World::update() {
     //update all entities
     for (auto& hiker : hikers){
         hiker->update();
 
-        bool in_lane = false;
-        double hiker_x = hiker->getPosition().getX();
-        if (lane_positions.find(hiker_x) != lane_positions.end())
-            in_lane = true;
+        double hiker_y = hiker->getPosition().getY();
+        int target_lane = hiker->getLane();
 
-        if (hiker->getMovement() != Hiker::STANDARD && in_lane)
+
+        if (hiker->getMovement() != Hiker::STANDARD){
+            hiker->setPosition({lane_positions[target_lane],hiker_y});
             hiker->moveStraight();
+        }
     }
-
 }
+
+void World::addHiker(const std::shared_ptr<Hiker>& hiker) {
+    hikers.insert(hiker);
+}
+
+
+
+
+

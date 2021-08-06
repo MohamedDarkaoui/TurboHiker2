@@ -10,10 +10,8 @@ ADD_EXECUTABLE(
         logic-lib/Entity/World.cpp
         logic-lib/Entity/StaticEnemy.cpp
         logic-lib/Entity/StaticEnemy.h
-        logic-lib/Entity/MovingHiker.cpp
-        logic-lib/Entity/MovingHiker.h
         presentation-lib/Transformation/Transformation.cpp
-        presentation-lib/Transformation/Transformation.h logic-lib/Entity/Hiker.cpp)
+        presentation-lib/Transformation/Transformation.h logic-lib/Entity/Hiker.cpp logic-lib/Entity/player.cpp logic-lib/Entity/player.h)
 
 
 TARGET_LINK_LIBRARIES (TurboHiker sfml-graphics sfml-window sfml-system sfml-audio)

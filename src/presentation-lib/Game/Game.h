@@ -2,7 +2,7 @@
 #define TURBOHIKER_SFMLGAME_H
 
 #include "../EventHandler/EventHandler.h"
-#include "../../logic-lib/Entity/MovingHiker.h"
+#include "../../logic-lib/Entity/World.h"
 #include "../Transformation/Transformation.h"
 #include <memory>
 
@@ -18,7 +18,7 @@ public:
 
     void run();
 
-    void handleEvent(sf::Event& event, MovingHiker& e);
+    void handleEvent(sf::Event& event, Hiker& e);
 };
 
 #endif //TURBOHIKER_SFMLGAME_H

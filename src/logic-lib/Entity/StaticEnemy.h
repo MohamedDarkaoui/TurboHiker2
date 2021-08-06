@@ -3,9 +3,8 @@
 
 #include "Hiker.h"
 
-class StaticEnemy : private Hiker {
+class StaticEnemy : public Hiker {
 
-private:
 public:
     void runAway();
 };

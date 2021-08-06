@@ -26,7 +26,11 @@ public:
 
     Movement getMovement() const;
 
-    virtual void update() override;
+    void setPosition(const Position2D &position);
+
+    int getLane() const;
+
+    void update() override;
 
     void sprint();
 

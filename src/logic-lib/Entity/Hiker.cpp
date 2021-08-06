@@ -18,29 +18,45 @@ Hiker::Movement Hiker::getMovement() const {
     return movement;
 }
 
+int Hiker::getLane() const {
+    return lane;
+}
+
+void Hiker::setPosition(const Position2D &position) {
+    Hiker::position = position;
+}
+
 void Hiker::update() {
-    if (movement == Hiker::STANDARD) {
-        if (acceleration == Hiker::NONE)
-            position += {0,speed};
-        else if (acceleration == Hiker::SPEED_UP)
-            position += {0,speed*2};
-        else
-            position += {0,speed/2};
-    } else if (movement == Hiker::MOVING_RIGHT) {
-        if (acceleration == Hiker::NONE)
-            position += {speed/sqrt(2),speed/sqrt(2)};  //pythagoras
-        else if (acceleration == Hiker::SPEED_UP)
-            position += {2*speed/sqrt(2),2*speed/sqrt(2)};
-        else
-            position += {speed/(2*sqrt(2)),speed/(2*sqrt(2))};
-    } else if (movement == Hiker::MOVING_LEFT) {
-        if (acceleration == Hiker::NONE)
-            position += {-speed/sqrt(2),speed/sqrt(2)};
-        else if (acceleration == Hiker::SPEED_UP)
-            position += {-2*speed/sqrt(2),2*speed/sqrt(2)};
-        else
-            position += {-speed/(2*sqrt(2)),speed/(2*sqrt(2))};
-    }
+//    if (movement == Hiker::STANDARD) {
+//        if (acceleration == Hiker::NONE)
+//            position += {0,speed};
+//        else if (acceleration == Hiker::SPEED_UP)
+//            position += {0,speed*2};
+//        else
+//            position += {0,speed/2};
+//    } else if (movement == Hiker::MOVING_RIGHT) {
+//        if (acceleration == Hiker::NONE)
+//            position += {speed/sqrt(2),speed/sqrt(2)};  //pythagoras
+//        else if (acceleration == Hiker::SPEED_UP)
+//            position += {2*speed/sqrt(2),2*speed/sqrt(2)};
+//        else
+//            position += {speed/(2*sqrt(2)),speed/(2*sqrt(2))};
+//    } else if (movement == Hiker::MOVING_LEFT) {
+//        if (acceleration == Hiker::NONE)
+//            position += {-speed/sqrt(2),speed/sqrt(2)};
+//        else if (acceleration == Hiker::SPEED_UP)
+//            position += {-2*speed/sqrt(2),2*speed/sqrt(2)};
+//        else
+//            position += {-speed/(2*sqrt(2)),speed/(2*sqrt(2))};
+//    }
+
+    if (acceleration == Hiker::NONE)
+        position += {0,speed};
+    else if (acceleration == Hiker::SPEED_UP)
+        position += {0,1.5*speed};
+    else
+        position += {0,0.75*speed};
+
 }
 
 void Hiker::sprint() {
@@ -52,11 +68,17 @@ void Hiker::stopSprinting() {
 }
 
 void Hiker::speedUp() {
-    acceleration = Hiker::SPEED_UP;
+    if (acceleration == Hiker::NONE)
+        acceleration = Hiker::SPEED_UP;
+    else if (acceleration == Hiker::SLOW_DOWN)
+        acceleration = Hiker::NONE;
 }
 
 void Hiker::slowDown() {
-    acceleration = Hiker::SLOW_DOWN;
+    if (acceleration == Hiker::NONE)
+        acceleration = Hiker::SLOW_DOWN;
+    else if (acceleration == Hiker::SPEED_UP)
+        acceleration = Hiker::NONE;
 }
 
 void Hiker::normalSpeed() {
@@ -64,13 +86,17 @@ void Hiker::normalSpeed() {
 }
 
 void Hiker::moveLeft() {
-    if (Hiker::movement == STANDARD && lane > 0)
+    if (Hiker::movement == STANDARD && lane > 0){
         movement = Hiker::MOVING_LEFT;
+        lane --;
+    }
 }
 
 void Hiker::moveRight() {
-    if (Hiker::movement == STANDARD && lane < 3)
+    if (Hiker::movement == STANDARD && lane < 3){
         movement = Hiker::MOVING_RIGHT;
+        lane++;
+    }
 }
 
 void Hiker::moveStraight() {
@@ -78,8 +104,11 @@ void Hiker::moveStraight() {
 }
 
 Position2D Hiker::getRelativePosition(const Position2D &reference) const {
-    return {position.getX() - reference.getX(), position.getY()};
+    return {position.getX(), position.getY() - reference.getY() - 2};
 }
+
+
+
 
 
 
