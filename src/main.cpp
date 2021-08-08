@@ -7,6 +7,7 @@
 #include "logic-lib/Random/Random.h"
 #include "logic-lib/Entity/Player.h"
 #include "logic-lib/Entity/Hiker.h"
+#include "logic-lib/Entity/MovingHiker.h"
 
 
 int main(){

@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mohamed/Desktop/TurboHiker2/src/logic-lib/Entity/Enemy.h
+Hiker.h
+/home/mohamed/Desktop/TurboHiker2/src/logic-lib/Entity/Hiker.h
+
+/home/mohamed/Desktop/TurboHiker2/src/logic-lib/Entity/Entity.h
+memory
+-
+../Position/Position2D.h
+/home/mohamed/Desktop/TurboHiker2/src/logic-lib/Position/Position2D.h
+../Random/Random.h
+/home/mohamed/Desktop/TurboHiker2/src/logic-lib/Random/Random.h
+
+/home/mohamed/Desktop/TurboHiker2/src/logic-lib/Entity/Hiker.h
+Entity.h
+/home/mohamed/Desktop/TurboHiker2/src/logic-lib/Entity/Entity.h
+cmath
+-
+vector
+-
+
+/home/mohamed/Desktop/TurboHiker2/src/logic-lib/Entity/MovingEnemy.cpp
+MovingEnemy.h
+/home/mohamed/Desktop/TurboHiker2/src/logic-lib/Entity/MovingEnemy.h
+
+/home/mohamed/Desktop/TurboHiker2/src/logic-lib/Entity/MovingEnemy.h
+Enemy.h
+/home/mohamed/Desktop/TurboHiker2/src/logic-lib/Entity/Enemy.h
+
+/home/mohamed/Desktop/TurboHiker2/src/logic-lib/Position/Position2D.h
+
+/home/mohamed/Desktop/TurboHiker2/src/logic-lib/Random/Random.h
+random
+-
+

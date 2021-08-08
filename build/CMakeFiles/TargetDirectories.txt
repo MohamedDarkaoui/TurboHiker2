@@ -1,0 +1,13 @@
+/home/mohamed/Desktop/TurboHiker/build/CMakeFiles/install/strip.dir
+/home/mohamed/Desktop/TurboHiker/build/CMakeFiles/install/local.dir
+/home/mohamed/Desktop/TurboHiker/build/CMakeFiles/install.dir
+/home/mohamed/Desktop/TurboHiker/build/CMakeFiles/list_install_components.dir
+/home/mohamed/Desktop/TurboHiker/build/CMakeFiles/rebuild_cache.dir
+/home/mohamed/Desktop/TurboHiker/build/CMakeFiles/edit_cache.dir
+/home/mohamed/Desktop/TurboHiker/build/src/CMakeFiles/install/local.dir
+/home/mohamed/Desktop/TurboHiker/build/src/CMakeFiles/install.dir
+/home/mohamed/Desktop/TurboHiker/build/src/CMakeFiles/list_install_components.dir
+/home/mohamed/Desktop/TurboHiker/build/src/CMakeFiles/rebuild_cache.dir
+/home/mohamed/Desktop/TurboHiker/build/src/CMakeFiles/edit_cache.dir
+/home/mohamed/Desktop/TurboHiker/build/src/CMakeFiles/install/strip.dir
+/home/mohamed/Desktop/TurboHiker/build/src/CMakeFiles/TurboHiker.dir

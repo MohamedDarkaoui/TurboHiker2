@@ -3,7 +3,6 @@
 
 
 #include "Enemy.h"
-#include "Hiker.h"
 
 class MovingEnemy : public Enemy {
 
