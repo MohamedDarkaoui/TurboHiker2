@@ -1,5 +1,6 @@
 #include "Transformation.h"
 
+
 Transformation &Transformation::getInstance() {
     static Transformation instance;
     return instance;
@@ -17,3 +18,4 @@ Position2D Transformation::transform(Position2D position) const {
 
     return {x,y};
 }
+

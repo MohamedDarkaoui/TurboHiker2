@@ -1,14 +1,22 @@
+#include <cassert>
 #include "Hiker.h"
 
-Hiker::Hiker(Position2D position, int lane, double speed, bool sprinting, Hiker::Movement movement,
-                         Hiker::Acceleration acceleration) :
-                         position(position),
-                         lane(lane),
-                         speed(speed),
-                         sprinting(sprinting),
-                         movement(movement),
-                         acceleration(acceleration) {}
 
+Hiker::Hiker(Position2D position, double speed, std::vector<double>& lanePositionsX) :
+        position(position), speed(speed), lanePositionsX(lanePositionsX) {
+
+    // find out which lane
+    for (unsigned int i = 0; i < lanePositionsX.size(); i++){
+        if (position.getX() == lanePositionsX[i])
+            this->lane = i;
+    }
+
+    assert (lane < 5 and lane >= 0);
+
+    // default values
+    this->movement = Hiker::STANDARD;
+    this->acceleration = Hiker::NONE;
+}
 
 const Position2D &Hiker::getPosition() const {
     return position;
@@ -18,13 +26,10 @@ Hiker::Movement Hiker::getMovement() const {
     return movement;
 }
 
-int Hiker::getLane() const {
+unsigned int Hiker::getLane() const {
     return lane;
 }
 
-void Hiker::setPosition(const Position2D &position) {
-    Hiker::position = position;
-}
 
 void Hiker::update() {
 //    if (movement == Hiker::STANDARD) {
@@ -50,6 +55,12 @@ void Hiker::update() {
 //            position += {-speed/(2*sqrt(2)),speed/(2*sqrt(2))};
 //    }
 
+    if (movement != Hiker::STANDARD){
+        position.setX(0);
+        position += {lanePositionsX[lane],0};
+        moveStraight();
+    }
+
     if (acceleration == Hiker::NONE)
         position += {0,speed};
     else if (acceleration == Hiker::SPEED_UP)
@@ -59,13 +70,6 @@ void Hiker::update() {
 
 }
 
-void Hiker::sprint() {
-    sprinting = true;
-}
-
-void Hiker::stopSprinting() {
-    sprinting = false;
-}
 
 void Hiker::speedUp() {
     if (acceleration == Hiker::NONE)
@@ -86,7 +90,7 @@ void Hiker::normalSpeed() {
 }
 
 void Hiker::moveLeft() {
-    if (Hiker::movement == STANDARD && lane > 0){
+    if (Hiker::movement == Hiker::STANDARD && lane > 0){
         movement = Hiker::MOVING_LEFT;
         lane --;
     }
@@ -106,6 +110,8 @@ void Hiker::moveStraight() {
 Position2D Hiker::getRelativePosition(const Position2D &reference) const {
     return {position.getX(), position.getY() - reference.getY() - 2};
 }
+
+
 
 
 

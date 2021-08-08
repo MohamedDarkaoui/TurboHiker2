@@ -5,15 +5,15 @@ SFMLGame::SFMLGame() {
 }
 
 void SFMLGame::run() {
-
-    World world({-1.5,-0.5,0.5,1.5});
+    std::vector<double> lanePositionsX = {-1.5,-0.5,0.5,1.5};
+    World world;
     std::shared_ptr<Hiker> h1 =
-            std::make_shared<Hiker>(Hiker({-1.5,-3},0,0.0001,false,Hiker::STANDARD,Hiker::NONE));
+            std::make_shared<Hiker>(Hiker({-1.5, -3}, 0.0001, lanePositionsX));
 
     std::shared_ptr<Hiker> h2 =
-            std::make_shared<Hiker>(Hiker({1.5,2},3,0,false,Hiker::STANDARD,Hiker::NONE));
-    world.addHiker(h1);
-    world.addHiker(h2);
+            std::make_shared<Hiker>(Hiker({1.5, 2},0,lanePositionsX));
+    world.addEntity(h1);
+    world.addEntity(h2);
 
 //    sf::RectangleShape line(sf::Vector2f(5, 900));
 //    line.rotate(90);

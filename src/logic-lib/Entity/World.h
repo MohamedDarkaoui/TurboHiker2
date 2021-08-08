@@ -9,19 +9,22 @@
 #include <utility>
 #include "Entity.h"
 #include "Hiker.h"
+#include "Enemy.h"
 
 class World : public Entity {
 private:
-    std::set<std::shared_ptr<Hiker>> hikers;
-    std::vector<double> lane_positions;
-    //double lane_positions[4];
+    std::set<std::shared_ptr<Entity>> entities;
 
 public:
-    explicit World(std::vector<double> lanePositions) : lane_positions(std::move(lanePositions)) {};
+    explicit World() = default;
+
+    ~World() override = default;
 
     void update() override;
 
-    void addHiker(const std::shared_ptr<Hiker>& hiker);
+    void addEntity(const std::shared_ptr<Entity>& entity);
+
+
 
 };
 

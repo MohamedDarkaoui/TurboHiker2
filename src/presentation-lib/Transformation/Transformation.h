@@ -2,14 +2,13 @@
 #define TURBOHIKER_TRANSFORMATION_H
 
 
+#include <memory>
 #include "../../logic-lib/Position/Position2D.h"
 
 class Transformation {
 private:
     double win_x = 1040;
     double win_y = 780;
-
-    static Transformation instance;
 
     Transformation() = default;
 

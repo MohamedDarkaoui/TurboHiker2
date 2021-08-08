@@ -3,38 +3,37 @@
 
 #include "Entity.h"
 #include <cmath>
+#include <vector>
 
 class Hiker : public Entity {
 public:
-    enum Movement {STANDARD, MOVING_LEFT, MOVING_RIGHT};
     enum Acceleration {NONE, SPEED_UP, SLOW_DOWN};
+    enum Movement {STANDARD, MOVING_LEFT, MOVING_RIGHT};
 
-private:
+protected:
+    double slowDownFactor = 0.75;
+    double speedUpFactor = 1.5;
     Position2D position;
-    int lane;
+    unsigned int lane;
     double speed;
-    bool sprinting; // run faster
     Movement movement;
     Acceleration acceleration;
+    std::vector<double> lanePositionsX;
 
 
 public:
 
-    Hiker(Position2D position,int lane, double speed, bool sprinting, Movement movement, Acceleration acceleration);
+    Hiker(Position2D position, double speed, std::vector<double>& lanePositionsX);
+
+    ~Hiker() override = default;
 
     const Position2D &getPosition() const;
 
-    Movement getMovement() const;
+    Hiker::Movement getMovement() const;
 
-    void setPosition(const Position2D &position);
-
-    int getLane() const;
+    unsigned int getLane() const;
 
     void update() override;
-
-    void sprint();
-
-    void stopSprinting();
 
     void speedUp();
 

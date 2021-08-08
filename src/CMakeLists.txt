@@ -11,7 +11,7 @@ ADD_EXECUTABLE(
         logic-lib/Entity/StaticEnemy.cpp
         logic-lib/Entity/StaticEnemy.h
         presentation-lib/Transformation/Transformation.cpp
-        presentation-lib/Transformation/Transformation.h logic-lib/Entity/Hiker.cpp logic-lib/Entity/player.cpp logic-lib/Entity/player.h)
+        presentation-lib/Transformation/Transformation.h logic-lib/Entity/Hiker.cpp logic-lib/Entity/Player.cpp logic-lib/Entity/Player.h logic-lib/Random/Random.cpp logic-lib/Random/Random.h logic-lib/Entity/Enemy.h logic-lib/Entity/MovingEnemy.cpp logic-lib/Entity/MovingEnemy.h)
 
 
 TARGET_LINK_LIBRARIES (TurboHiker sfml-graphics sfml-window sfml-system sfml-audio)
