@@ -1,6 +1,0 @@
-#include <SFML/Graphics.hpp>
-
-#ifndef TURBOHIKER_EVENTHANDLER_H
-#define TURBOHIKER_EVENTHANDLER_H
-
-#endif //TURBOHIKER_EVENTHANDLER_H

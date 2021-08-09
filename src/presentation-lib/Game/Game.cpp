@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Game.h"
 
 SFMLGame::SFMLGame() {
@@ -5,21 +6,22 @@ SFMLGame::SFMLGame() {
 }
 
 void SFMLGame::run() {
-    std::vector<double> lanePositionsX = {-1.5,-0.5,0.5,1.5};
     World world;
-    std::shared_ptr<Hiker> h1 =
-            std::make_shared<Hiker>(Hiker({-1.5, -3}, 0.0001, lanePositionsX));
+    world.createCompetingHikers();
+    std::shared_ptr<CompetingHiker> h1 = world.getCompeting()[0];
+    std::shared_ptr<CompetingHiker> h2 = world.getCompeting()[1];
 
-    std::shared_ptr<Hiker> h2 =
-            std::make_shared<Hiker>(Hiker({1.5, 2},0,lanePositionsX));
-    world.addEntity(h1);
-    world.addEntity(h2);
+//    world.addEntity(h1);
+//    world.addEntity(h2);
+
 
 //    sf::RectangleShape line(sf::Vector2f(5, 900));
 //    line.rotate(90);
 
 
     while (window->isOpen()){
+        if (!Clock::getInstance().clockTicked())
+            continue;
         // check all the window's events that were triggered since the last iteration of the loop
         sf::Event event;
         sf::CircleShape dot(10.f);
@@ -45,7 +47,7 @@ void SFMLGame::run() {
     }
 }
 
-void SFMLGame::handleEvent(sf::Event& event, Hiker& e) {
+void SFMLGame::handleEvent(sf::Event& event, CompetingHiker& e) {
     while (window->pollEvent(event)){
         if (event.type == sf::Event::KeyPressed){
             if (event.key.code == sf::Keyboard::Up){

@@ -1,11 +1,12 @@
 #ifndef TURBOHIKER_SFMLGAME_H
 #define TURBOHIKER_SFMLGAME_H
 
-#include "../EventHandler/EventHandler.h"
+#include <SFML/Graphics.hpp>
 #include "../../logic-lib/Entity/World.h"
 #include "../Transformation/Transformation.h"
+#include "../../logic-lib/Entity/CompetingHiker.h"
+#include "../../logic-lib/Clock/Clock.h"
 #include <memory>
-
 
 
 
@@ -18,7 +19,7 @@ public:
 
     void run();
 
-    void handleEvent(sf::Event& event, Hiker& e);
+    void handleEvent(sf::Event& event, CompetingHiker& e);
 };
 
 #endif //TURBOHIKER_SFMLGAME_H

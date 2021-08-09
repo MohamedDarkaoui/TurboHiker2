@@ -14,22 +14,20 @@ protected:
     double slowDownFactor = 0.75;
     double speedUpFactor = 1.5;
     Position2D position;
-    unsigned int lane;
     double speed;
-    Movement movement;
     Acceleration acceleration;
+    Movement movement;
+    unsigned int lane;
     std::vector<double> lanePositionsX;
 
 
 public:
 
-    Hiker(Position2D position, double speed, std::vector<double>& lanePositionsX);
+    Hiker(Position2D position, double speed);
 
     ~Hiker() override = default;
 
     const Position2D &getPosition() const;
-
-    Hiker::Movement getMovement() const;
 
     unsigned int getLane() const;
 
@@ -38,14 +36,6 @@ public:
     void speedUp();
 
     void slowDown();
-
-    void normalSpeed();
-
-    void moveLeft();
-
-    void moveRight();
-
-    void moveStraight();
 
     Position2D getRelativePosition(const Position2D& reference) const;
 

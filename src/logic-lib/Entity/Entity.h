@@ -2,6 +2,7 @@
 #define TURBOHIKER_ENTITY_H
 
 #include <memory>
+#include <cassert>
 #include "../Position/Position2D.h"
 #include "../Random/Random.h"
 
@@ -14,6 +15,7 @@ public:
 
     virtual void update() = 0;
 
+    virtual double getSize() {return 0.05;}
 };
 
 #endif //TURBOHIKER_ENTITY_H

@@ -2,13 +2,19 @@
 
 #include <utility>
 
-Player::Player(const Position2D &position, double speed, std::vector<double>& lanePositionsX) :
-                                Hiker(position, speed, lanePositionsX) {}
-
-void Player::yell() {
-    isYelling = true;
+Player::Player(const Position2D &position, double speed) : CompetingHiker(position, speed) {
+    yelling_range = 2;
+    yelling = false;
 }
 
-bool Player::getIsYelling() const {
-    return isYelling;
+void Player::yell() {
+    yelling = true;
+}
+
+bool Player::isYelling() const {
+    return yelling;
+}
+
+double Player::getYellingRange() const {
+    return yelling_range;
 }
