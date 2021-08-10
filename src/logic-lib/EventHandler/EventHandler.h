@@ -29,6 +29,9 @@ public:
 
     std::vector<std::shared_ptr<CompetingHiker>> getCompeting();
 
+    std::shared_ptr<Player> getPlayer();
+
+    std::vector<std::shared_ptr<Enemy>> getEnemyHikers();
 };
 
 

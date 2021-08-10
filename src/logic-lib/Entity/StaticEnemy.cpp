@@ -14,8 +14,15 @@ void StaticEnemy::gotYelledAt() {
 }
 
 void StaticEnemy::update() {
-    if (movement == Hiker::MOVING_RIGHT)
+    if (movement == Hiker::MOVING_RIGHT){
         position += {speed,0};
-    else if (movement == Hiker::MOVING_LEFT)
+        lane = 100;
+    }
+    else if (movement == Hiker::MOVING_LEFT){
         position -= {speed,0};
+        lane = 100;
+    }
 }
+
+
+

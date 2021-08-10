@@ -2,15 +2,13 @@
 #include "Hiker.h"
 
 
-Hiker::Hiker(Position2D position, double speed) : position(position), speed(speed) {
+Hiker::Hiker(double speed, unsigned int lane) : speed(speed), lane(lane) {
 
     lanePositionsX = {-1.5,-0.5,0.5,1.5};
-    // find out which lane
-    for (unsigned int i = 0; i < lanePositionsX.size(); i++){
-        if (position.getX() == lanePositionsX[i])
-            this->lane = i;
-    }
-    assert (lane < 5 and lane >= 0);
+    position = {0,0};
+    position.setY(lanePositionsX[lane]);
+
+    assert (position.getY() != 0);
     this->acceleration = Hiker::NONE;
     this->movement = Hiker::STANDARD;
 }

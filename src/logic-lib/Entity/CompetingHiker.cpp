@@ -1,8 +1,8 @@
 
 #include "CompetingHiker.h"
 
-CompetingHiker::CompetingHiker(Position2D position, double speed) :
-Hiker(position,speed){
+CompetingHiker::CompetingHiker(double speed, unsigned int lane) :
+Hiker(speed, lane){
     collision = false;
 }
 
@@ -48,5 +48,9 @@ void CompetingHiker::collide() {
 
 void CompetingHiker::stopColliding() {
     collision = false;
+}
+
+bool CompetingHiker::isColliding() const {
+    return collision;
 }
 

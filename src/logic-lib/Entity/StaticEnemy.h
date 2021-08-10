@@ -7,10 +7,11 @@
 class StaticEnemy : public Enemy {
 
 public:
+    StaticEnemy(double speed, unsigned int lane) : Enemy(speed, lane) {}
+
     void gotYelledAt() override;
 
     void update() override;
-
 };
 
 #endif //TURBOHIKER_STATICENEMY_H

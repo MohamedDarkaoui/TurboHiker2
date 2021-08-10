@@ -23,8 +23,6 @@ public:
 
     void createCompetingHikers();
 
-
-
 };
 
 #endif //TURBOHIKER_WORLD_H

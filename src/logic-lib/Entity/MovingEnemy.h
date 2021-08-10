@@ -6,6 +6,8 @@
 
 class MovingEnemy : public Enemy {
 
+    MovingEnemy(double speed, unsigned int lane) : Enemy(speed, lane) {}
+
     void gotYelledAt() override;
 
     void update() override;

@@ -4,16 +4,21 @@
 #include "CompetingHiker.h"
 
 class Player : public CompetingHiker{
+private:
     bool yelling;
     double yelling_range;
+    int yell_duration;
+
 public:
-    Player(const Position2D &position, double speed);
+    Player(double speed, unsigned int lane);
 
     void yell();
 
     bool isYelling() const;
 
     double getYellingRange() const;
+
+    void update() override;
 };
 
 

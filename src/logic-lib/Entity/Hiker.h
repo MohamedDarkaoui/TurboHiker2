@@ -23,7 +23,7 @@ protected:
 
 public:
 
-    Hiker(Position2D position, double speed);
+    Hiker(double speed, unsigned int lane);
 
     ~Hiker() override = default;
 

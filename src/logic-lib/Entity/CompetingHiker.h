@@ -10,13 +10,15 @@ private:
 
 
 public:
-    CompetingHiker(Position2D position, double speed);
+    CompetingHiker(double speed, unsigned int lane);
 
     void update() override;
 
     void moveLeft();
 
     void moveRight();
+
+    bool isColliding() const;
 
     void collide();
 

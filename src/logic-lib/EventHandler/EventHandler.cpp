@@ -5,7 +5,7 @@
 
 void EventHandler::handleHikerCollisions() {
     std::vector<std::shared_ptr<CompetingHiker>> hikers = competing_hikers;
-//    hikers.push_back(player);
+    hikers.push_back(player);
 
     for (auto& hiker1 : hikers) {
         for (auto& hiker2 : hikers){
@@ -28,7 +28,7 @@ void EventHandler::handleHikerCollisions() {
 
 void EventHandler::handleHikerEnemyCollisions() {
     std::vector<std::shared_ptr<CompetingHiker>> hikers = competing_hikers;
-//    hikers.push_back(player);
+    hikers.push_back(player);
 
     for (auto& hiker : hikers){
         for (auto& enemy : enemy_hikers){
@@ -61,8 +61,8 @@ void EventHandler::handleYelling() {
 
 void EventHandler::handleEvents() {
     handleHikerCollisions();
-//    handleHikerEnemyCollisions();
-    //handleYelling();
+    handleHikerEnemyCollisions();
+    handleYelling();
 }
 
 void EventHandler::addPlayer(const std::shared_ptr<Player> &pl) {
@@ -85,6 +85,14 @@ void EventHandler::addEnemyHiker(const std::shared_ptr<Enemy> &enemy) {
 
 std::vector<std::shared_ptr<CompetingHiker>> EventHandler::getCompeting() {
     return competing_hikers;
+}
+
+std::shared_ptr<Player> EventHandler::getPlayer() {
+    return player;
+}
+
+std::vector<std::shared_ptr<Enemy>> EventHandler::getEnemyHikers() {
+    return enemy_hikers;
 }
 
 
