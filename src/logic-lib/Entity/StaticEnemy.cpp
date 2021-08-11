@@ -2,7 +2,7 @@
 
 
 void StaticEnemy::gotYelledAt() {
-    int random_chance = Random::getInstance().randomInt(0,1);
+    int random_chance = Random::getInstance().randomInt(0,2);
 
     if (random_chance == 0) {
         if (position.getX() < 0)
@@ -15,11 +15,11 @@ void StaticEnemy::gotYelledAt() {
 
 void StaticEnemy::update() {
     if (movement == Hiker::MOVING_RIGHT){
-        position += {speed,0};
+        position += {0.5,0};
         lane = 100;
     }
     else if (movement == Hiker::MOVING_LEFT){
-        position -= {speed,0};
+        position -= {0.5,0};
         lane = 100;
     }
 }

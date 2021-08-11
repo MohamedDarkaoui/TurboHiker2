@@ -6,9 +6,9 @@ Hiker::Hiker(double speed, unsigned int lane) : speed(speed), lane(lane) {
 
     lanePositionsX = {-1.5,-0.5,0.5,1.5};
     position = {0,0};
-    position.setY(lanePositionsX[lane]);
+    position.setX(lanePositionsX[lane]);
 
-    assert (position.getY() != 0);
+    assert (position.getX() != 0);
     this->acceleration = Hiker::NONE;
     this->movement = Hiker::STANDARD;
 }
@@ -48,6 +48,10 @@ void Hiker::slowDown() {
 
 Position2D Hiker::getRelativePosition(const Position2D &reference) const {
     return {position.getX(), position.getY() - reference.getY() - 2};
+}
+
+void Hiker::setYposition(double y)  {
+    position.setY(y);
 }
 
 

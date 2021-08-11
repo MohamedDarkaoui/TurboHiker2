@@ -4,6 +4,8 @@
 CompetingHiker::CompetingHiker(double speed, unsigned int lane) :
 Hiker(speed, lane){
     collision = false;
+    collision_slow_duration = 40;
+    slowed_for = 0;
 }
 
 void CompetingHiker::update() {
@@ -16,8 +18,13 @@ void CompetingHiker::update() {
 
     double speedTEMP = speed;
 
-    if (collision){
+    if (collision && slowed_for < collision_slow_duration){
         speedTEMP /= 3;
+        slowed_for++;
+    }
+    else if (collision && slowed_for == collision_slow_duration){
+        collision = false;
+        slowed_for = 0;
     }
 
     if (acceleration == Hiker::NONE)
@@ -52,5 +59,17 @@ void CompetingHiker::stopColliding() {
 
 bool CompetingHiker::isColliding() const {
     return collision;
+}
+
+int CompetingHiker::getSlowedFor() const {
+    return slowed_for;
+}
+
+int CompetingHiker::getCollisionSlowDuration() const {
+    return collision_slow_duration;
+}
+
+void CompetingHiker::setSlowedFor(int slowedFor) {
+    slowed_for = slowedFor;
 }
 

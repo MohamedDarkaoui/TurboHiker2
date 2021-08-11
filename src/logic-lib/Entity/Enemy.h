@@ -13,7 +13,7 @@ public:
      */
     virtual void gotYelledAt() = 0;
 
-};
+    };
 
 
 

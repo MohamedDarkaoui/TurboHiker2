@@ -7,6 +7,8 @@ private:
     double y;
 
 public:
+    Position2D() : x(0), y(0){}
+
     Position2D(double x, double y) : x(x), y(y){}
 
     Position2D(const Position2D& rhs) = default;

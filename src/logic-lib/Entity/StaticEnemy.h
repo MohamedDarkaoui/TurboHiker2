@@ -7,7 +7,7 @@
 class StaticEnemy : public Enemy {
 
 public:
-    StaticEnemy(double speed, unsigned int lane) : Enemy(speed, lane) {}
+    explicit StaticEnemy(unsigned int lane) : Enemy(0,lane) {}
 
     void gotYelledAt() override;
 

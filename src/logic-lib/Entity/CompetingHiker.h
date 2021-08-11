@@ -7,6 +7,8 @@
 class CompetingHiker : public Hiker {
 private:
     bool collision;
+    int collision_slow_duration;
+    int slowed_for;
 
 
 public:
@@ -24,6 +26,11 @@ public:
 
     void stopColliding();
 
+    int getSlowedFor() const;
+
+    int getCollisionSlowDuration() const;
+
+    void setSlowedFor(int slowedFor);
 };
 
 

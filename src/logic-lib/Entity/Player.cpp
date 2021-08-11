@@ -9,8 +9,10 @@ Player::Player(double speed, unsigned int lane) : CompetingHiker(speed, lane) {
 }
 
 void Player::yell() {
-    yelling = true;
-    yell_duration = 1;
+    if (yell_duration == 0){
+        yelling = true;
+        yell_duration = 1;
+    }
 }
 
 bool Player::isYelling() const {
@@ -23,10 +25,12 @@ double Player::getYellingRange() const {
 
 void Player::update() {
 
-    if (yell_duration > 0)
-        yell_duration--;
-    else if(isYelling())
-        yelling = false;
+    if (isYelling()){
+        if (yell_duration > 0)
+            yell_duration--;
+        else
+            yelling = false;
+    }
 
     if (movement != Hiker::STANDARD){
         position.setX(0);
@@ -36,8 +40,16 @@ void Player::update() {
 
     double speedTEMP = speed;
 
-    if (isColliding()){
+    if (isColliding())
         speedTEMP /= 3;
+
+    if (isColliding() && getSlowedFor() < getCollisionSlowDuration()){
+        speedTEMP /= 3;
+        setSlowedFor(getSlowedFor() + 1);
+    }
+    else if (isColliding() && getSlowedFor() == getCollisionSlowDuration()){
+        stopColliding();
+        setSlowedFor(0);
     }
 
     if (acceleration == Hiker::NONE)

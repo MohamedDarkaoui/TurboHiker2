@@ -39,6 +39,8 @@ public:
 
     Position2D getRelativePosition(const Position2D& reference) const;
 
+    void setYposition(double y);
+
 };
 
 #endif //TURBOHIKER_HIKER_H

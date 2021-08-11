@@ -21,9 +21,15 @@ ADD_EXECUTABLE(
         logic-lib/Entity/MovingEnemy.h
         logic-lib/Entity/CompetingHiker.cpp
         logic-lib/Entity/CompetingHiker.h
-        logic-lib/EventHandler/EventHandler.cpp
-        logic-lib/EventHandler/EventHandler.h
-        logic-lib/Clock/Clock.cpp logic-lib/Clock/Clock.h logic-lib/Entity/Enemy.cpp logic-lib/AbstractFactory/EntityFactory.cpp logic-lib/AbstractFactory/EntityFactory.h logic-lib/Config/Config.cpp logic-lib/Config/Config.h)
+        logic-lib/Clock/Clock.cpp logic-lib/Clock/Clock.h
+        logic-lib/Entity/Enemy.cpp
+        logic-lib/AbstractFactory/AbstractFactory.h
+        ../ini_config/ini_configuration.cc
+        presentation-lib/SFMLEntities/SFMLPlayer.cpp
+        presentation-lib/SFMLEntities/SFMLPlayer.h
+        presentation-lib/EntityFactory/EntityFactory.cpp
+        presentation-lib/EntityFactory/EntityFactory.h
+        presentation-lib/SFMLEntities/SFMLWorld.cpp presentation-lib/SFMLEntities/SFMLWorld.h)
 
 
 TARGET_LINK_LIBRARIES (TurboHiker sfml-graphics sfml-window sfml-system sfml-audio)
