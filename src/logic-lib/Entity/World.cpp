@@ -14,26 +14,16 @@ void World::update() {
     handleEvents();
 }
 
-
-
-void World::createCompetingHikers() {
-    auto* factory = new EntityFactory ("../../game_configurations.ini");
-
-    addPlayer(factory->createPlayer());
-    addCompetingHikers(factory->createCompetingHikers(player->getLane()));
-    addEnemies(factory->createStaticEnemies());
-}
-
 void World::addPlayer(const std::shared_ptr<Player>& p) {
     player = p;
 }
 
-void World::addCompetingHikers(const std::set<std::shared_ptr<CompetingHiker>>& competing) {
-    competing_hikers.insert(competing.begin(), competing.end());
+void World::addCompetingHiker(const std::shared_ptr<CompetingHiker>& competing) {
+    competing_hikers.insert(competing);
 }
 
-void World::addEnemies(const std::set<std::shared_ptr<Enemy>>& e) {
-    enemies.insert(e.begin(),e.end());
+void World::addEnemy(const std::shared_ptr<Enemy>& e) {
+    enemies.insert(e);
 }
 
 void World::handleHikerCollisions() {
@@ -119,6 +109,8 @@ const std::set<std::shared_ptr<CompetingHiker>> &World::getCompetingHikers() con
 const std::set<std::shared_ptr<Enemy>> &World::getEnemies() const {
     return enemies;
 }
+
+void World::buildWorld(const std::shared_ptr<AbstractFactory>& factory) {}
 
 
 

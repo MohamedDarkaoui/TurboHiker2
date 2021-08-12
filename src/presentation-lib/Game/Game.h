@@ -6,7 +6,9 @@
 #include "../Transformation/Transformation.h"
 #include "../../logic-lib/Entity/CompetingHiker.h"
 #include "../../logic-lib/Clock/Clock.h"
+#include "../EntityFactory/EntityFactory.h"
 #include <memory>
+#include "../SFMLEntities/SFMLPlayer.h"
 
 
 

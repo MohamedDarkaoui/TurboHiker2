@@ -1,14 +1,18 @@
 #ifndef TURBOHIKER_SFMLWORLD_H
 #define TURBOHIKER_SFMLWORLD_H
 
+
 #include "../../logic-lib/Entity/World.h"
+#include "../EntityFactory/EntityFactory.h"
 
-class SFMLWorld : public World {
-private:
+class SFMLWorld : public World, public SFMLEntity {
 public:
-    SFMLWorld() = default;
+    SFMLWorld(double top, double height, double left, double width);
 
-//    void buildWorld() override;
+    ~SFMLWorld() override = default;
+
+    void buildWorld(const std::shared_ptr<AbstractFactory>& factory) override;
+
 };
 
 

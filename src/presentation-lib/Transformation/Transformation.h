@@ -1,9 +1,9 @@
 #ifndef TURBOHIKER_TRANSFORMATION_H
 #define TURBOHIKER_TRANSFORMATION_H
 
-
-#include <memory>
+#include <utility>
 #include "../../logic-lib/Position/Position2D.h"
+
 
 class Transformation {
 private:
@@ -18,6 +18,8 @@ public:
     void operator=(Transformation const&) = delete;
 
     Position2D transform(Position2D) const;
+
+    std::pair<float,float> transformSize(const double &width, const double& height) const;
 
     static Transformation& getInstance();
 };

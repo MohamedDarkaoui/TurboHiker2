@@ -19,3 +19,10 @@ Position2D Transformation::transform(Position2D position) const {
     return {x,y};
 }
 
+std::pair<float,float> Transformation::transformSize(const double &width, const double& height) const {
+    double x_factor = win_x/8;
+    double y_factor = win_y/6;
+
+    return std::make_pair(width*x_factor, height*y_factor);
+}
+

@@ -15,7 +15,7 @@ public:
 
     virtual void update() = 0;
 
-    double getSize() {return 0.1;}
+    double getSize() {return 0.5;}
 };
 
 #endif //TURBOHIKER_ENTITY_H

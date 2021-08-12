@@ -3,20 +3,25 @@
 
 #include <set>
 #include "Player.h"
-#include "Enemy.h"
-#include "../AbstractFactory/AbstractFactory.h"
+#include "StaticEnemy.h"
+#include "MovingEnemy.h"
+
+class AbstractFactory;
 
 class World : public Entity {
 
 private:
-    //std::set<std::shared_ptr<Entity>> entities;
-
     std::shared_ptr<Player> player;
     std::set<std::shared_ptr<CompetingHiker>> competing_hikers;
     std::set<std::shared_ptr<Enemy>> enemies;
 
+    double top;
+    double height;
+    double left;
+    double width;
+
 public:
-    explicit World() = default;
+    World(double top, double height, double left, double width) : top(top), height(height), left(left), width(width) {}
 
     ~World() override = default;
 
@@ -24,9 +29,9 @@ public:
 
     void addPlayer(const std::shared_ptr<Player>& p);
 
-    void addCompetingHikers(const std::set<std::shared_ptr<CompetingHiker>>& competing);
+    void addCompetingHiker(const std::shared_ptr<CompetingHiker>& competing);
 
-    void addEnemies(const std::set<std::shared_ptr<Enemy>>& e);
+    void addEnemy(const std::shared_ptr<Enemy>& e);
 
     std::set<std::shared_ptr<Entity>> getEntities();
 
@@ -44,9 +49,7 @@ public:
 
     void handleEvents();
 
-    void createCompetingHikers();
-
-//    virtual void buildWorld() = 0;
+    virtual void buildWorld(const std::shared_ptr<AbstractFactory>& factory);
 
 };
 

@@ -19,6 +19,7 @@ public:
     double getYellingRange() const;
 
     void update() override;
+
 };
 
 

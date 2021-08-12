@@ -3,19 +3,24 @@
 
 #include "../../../ini_config/ini_configuration.h"
 #include "../../logic-lib/AbstractFactory/AbstractFactory.h"
+#include "../SFMLEntities/SFMLPlayer.h"
+#include "../SFMLEntities/SFMLWorld.h"
+#include "../SFMLEntities/SFMLCompetingHiker.h"
+#include "../SFMLEntities/SFMLStaticEnemy.h"
 
-class EntityFactory : AbstractFactory{
+class EntityFactory : public AbstractFactory {
 private:
     ini::Configuration configuration;
 public:
-    explicit EntityFactory(const std::string& path);
+    explicit EntityFactory(const std::string& path_to_config_file);
 
-    std::shared_ptr<Player> createPlayer() override;
+    std::shared_ptr<SFMLPlayer> createPlayer() override;
 
-    std::set<std::shared_ptr<CompetingHiker>> createCompetingHikers(unsigned int player_lane) override;
+    std::set<std::shared_ptr<SFMLCompetingHiker>> createCompetingHikers(unsigned int player_lane) override;
 
-    std::set<std::shared_ptr<Enemy>> createStaticEnemies() override;
+    std::set<std::shared_ptr<SFMLStaticEnemy>> createStaticEnemies() override;
 
+    std::shared_ptr<SFMLWorld> createWorld() override;
 };
 
 

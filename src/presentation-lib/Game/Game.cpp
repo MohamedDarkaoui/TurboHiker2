@@ -6,38 +6,29 @@ SFMLGame::SFMLGame() {
 }
 
 void SFMLGame::run() {
-    World world;
-    world.createCompetingHikers();
-//    std::shared_ptr<Player> player = world.getPlayer();
-//    std::shared_ptr<CompetingHiker> h1 = world.getCompeting()[0];
-//    std::shared_ptr<CompetingHiker> h2 = world.getCompeting()[1];
-//    std::shared_ptr<Enemy> e = world.getEnemyHikers()[0];
-
+    auto factory = std::make_shared<EntityFactory>("../../game_configurations.ini");
+    std::shared_ptr<SFMLWorld> world = factory->createWorld();
+    world->buildWorld(factory);
 
     std::vector<sf::CircleShape> dots;
 
     std::vector<std::shared_ptr<Hiker>> hikers;
 
-    for (unsigned int i = 0; i < world.getEntities().size(); i++){
+    for (unsigned int i = 0; i < world->getEntities().size(); i++){
         dots.emplace_back(10.f);
     }
-    for(const auto& compe : world.getCompetingHikers()){
+    for(const auto& compe : world->getCompetingHikers()){
         hikers.push_back(compe);
     }
-    for(const auto& en : world.getEnemies()){
+    for(const auto& en : world->getEnemies()){
         hikers.push_back(en);
     }
-    hikers.push_back(world.getPlayer());
+    hikers.push_back(world->getPlayer());
 
-
-
-
-//    world.addEntity(h1);
-//    world.addEntity(h2);
-
-
-//    sf::RectangleShape line(sf::Vector2f(5, 900));
-//    line.rotate(90);
+    sf::RectangleShape r(sf::Vector2f (10,10));
+    sf::Texture t;
+    t.loadFromFile("../../images/player.png");
+    r.setTexture(&t);
 
 
     while (window->isOpen()){
@@ -47,14 +38,14 @@ void SFMLGame::run() {
         sf::Event event;
 
         for (unsigned int i = 0; i < dots.size(); i++) {
-            Position2D pos = Transformation::getInstance().transform(hikers[i]->getRelativePosition(world.getPlayer()->getPosition()));
+            Position2D pos = Transformation::getInstance().transform(hikers[i]->getRelativePosition(world->getPlayer()->getPosition()));
             dots[i].setPosition(pos.getX(),pos.getY());
         }
 
 
-
-        handleEvent(event, *world.getPlayer());
-        world.update();
+        auto player = std::dynamic_pointer_cast<SFMLPlayer>(world->getPlayer());
+        player->handleEvents(event, *window);
+        world->update();
         // clear the window with black color
         window->clear(sf::Color::Black);
 
@@ -62,8 +53,16 @@ void SFMLGame::run() {
         // window.draw(...);
 
         for (const auto& dot : dots){
-            window->draw(dot);
+            //window->draw(dot);
+
         }
+        window->draw(player->getShape());
+        sf::CircleShape t(5.0f);
+        auto p = Transformation::getInstance().transform({1.5,-2});
+        t.setFillColor(sf::Color(255,0,0));
+        t.setPosition(p.getX(),650);
+        window->draw(t);
+        window->draw(r);
 
         // end the current frame
         window->display();
