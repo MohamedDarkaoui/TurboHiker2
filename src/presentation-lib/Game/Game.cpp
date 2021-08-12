@@ -25,11 +25,12 @@ void SFMLGame::run() {
     }
     hikers.push_back(world->getPlayer());
 
-    sf::RectangleShape r(sf::Vector2f (10,10));
+    sf::RectangleShape r(sf::Vector2f (65,65));
     sf::Texture t;
     t.loadFromFile("../../images/player.png");
     r.setTexture(&t);
 
+    auto player = std::dynamic_pointer_cast<SFMLPlayer>(world->getPlayer());
 
     while (window->isOpen()){
         if (!Clock::getInstance().clockTicked())
@@ -43,7 +44,7 @@ void SFMLGame::run() {
         }
 
 
-        auto player = std::dynamic_pointer_cast<SFMLPlayer>(world->getPlayer());
+
         player->handleEvents(event, *window);
         world->update();
         // clear the window with black color
@@ -63,6 +64,7 @@ void SFMLGame::run() {
         t.setPosition(p.getX(),650);
         window->draw(t);
         window->draw(r);
+
 
         // end the current frame
         window->display();

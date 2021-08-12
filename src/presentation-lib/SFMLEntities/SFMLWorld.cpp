@@ -10,5 +10,6 @@ void SFMLWorld::buildWorld(const std::shared_ptr<AbstractFactory>& factory) {
 
     for (const auto& enemy : factory->createStaticEnemies())
         addEnemy(enemy);
+
 }
 

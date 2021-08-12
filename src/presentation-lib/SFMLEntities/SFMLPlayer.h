@@ -10,7 +10,7 @@
 class SFMLPlayer : public Player, public SFMLEntity {
 private:
     sf::RectangleShape shape;
-
+    std::shared_ptr<sf::Texture> texture;
 
 public:
     SFMLPlayer(double speed, unsigned int lane, const std::string& path_to_image);
@@ -22,6 +22,8 @@ public:
     void updateVisuals() override;
 
     void update() override;
+
+    const sf::Texture &getTexture() const;
 
 };
 

@@ -6,10 +6,10 @@ SFMLPlayer::SFMLPlayer(double speed, unsigned int lane, const std::string& path_
     Position2D playerPos = Transformation::getInstance().transform(getRelativePosition(getPosition()));
 
     shape = sf::RectangleShape(sf::Vector2f (size.first, size.second));
-    shape.setPosition(float(playerPos.getX()-size.first),float(playerPos.getY()-size.second/2));
-    sf::Texture player_texture;
-    assert(player_texture.loadFromFile(path_to_image) && "Failed to load player image");
-    shape.setTexture(&player_texture);
+    texture = std::make_shared<sf::Texture>();
+    shape.setPosition(float(playerPos.getX()-size.first/2),float(playerPos.getY()-size.second/2));
+    assert(texture->loadFromFile(path_to_image) && "Failed to load player image");
+    shape.setTexture(&*texture);
 }
 
 const sf::RectangleShape& SFMLPlayer::getShape() const {
@@ -59,5 +59,7 @@ void SFMLPlayer::updateVisuals() {
 
     shape.setPosition(x,y);
 }
+
+
 
 
