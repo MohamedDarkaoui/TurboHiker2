@@ -12,7 +12,8 @@ private:
 
 
 public:
-    CompetingHiker(double speed, unsigned int lane);
+    CompetingHiker(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX, double speed,
+                   double speedUpFactor);
 
     void update() override;
 

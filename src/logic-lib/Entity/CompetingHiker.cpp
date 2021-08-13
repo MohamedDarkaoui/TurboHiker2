@@ -1,8 +1,9 @@
 
 #include "CompetingHiker.h"
 
-CompetingHiker::CompetingHiker(double speed, unsigned int lane) :
-Hiker(speed, lane){
+CompetingHiker::CompetingHiker(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX, double speed,
+                               double speedUpFactor) :
+        Hiker(lane,size,lanePositionsX,speed,speedUpFactor) {
     collision = false;
     collision_slow_duration = 40;
     slowed_for = 0;
@@ -10,13 +11,13 @@ Hiker(speed, lane){
 
 void CompetingHiker::update() {
 
-    if (movement != Hiker::STANDARD){
+    if (getMovement() != Hiker::STANDARD){
         position.setX(0);
-        position += {lanePositionsX[lane],0};
-        movement = Hiker::STANDARD;
+        position += {getLanePositionsX()[getLane()],0};
+        setMovement(Hiker::STANDARD);
     }
 
-    double speedTEMP = speed;
+    double speedTEMP = getSpeed();
 
     if (collision && slowed_for < collision_slow_duration){
         speedTEMP /= 3;
@@ -27,25 +28,25 @@ void CompetingHiker::update() {
         slowed_for = 0;
     }
 
-    if (acceleration == Hiker::NONE)
+    if (getAcceleration() == Hiker::NONE)
         position += {0,speedTEMP};
-    else if (acceleration == Hiker::SPEED_UP)
-        position += {0,1.5*speedTEMP};
+    else if (getAcceleration() == Hiker::SPEED_UP)
+        position += {0,getSpeedUpFactor()*speedTEMP};
     else
-        position += {0,0.75*speedTEMP};
+        position += {0,speedTEMP/getSpeedUpFactor()};
 }
 
 void CompetingHiker::moveLeft() {
-    if (Hiker::movement == Hiker::STANDARD && lane > 0){
-        movement = Hiker::MOVING_LEFT;
-        lane --;
+    if (getMovement() == Hiker::STANDARD && getLane() > 0){
+        setMovement(Hiker::MOVING_LEFT);
+        setLane(getLane() - 1);
     }
 }
 
 void CompetingHiker::moveRight() {
-    if (Hiker::movement == STANDARD && lane < 3){
-        movement = Hiker::MOVING_RIGHT;
-        lane++;
+    if (getMovement() == STANDARD && getLane() < 3){
+        setMovement(Hiker::MOVING_RIGHT);
+        setLane(getLane()+1);
     }
 }
 

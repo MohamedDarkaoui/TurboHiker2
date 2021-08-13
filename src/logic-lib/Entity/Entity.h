@@ -2,20 +2,41 @@
 #define TURBOHIKER_ENTITY_H
 
 #include <memory>
+#include <vector>
 #include <cassert>
 #include "../Position/Position2D.h"
 #include "../Random/Random.h"
 
 class Entity {
+
+private:
+    std::pair<double,double> size;
+    unsigned int lane;
+    std::vector<double> lanePositionsX;
+
 protected:
+    Position2D position;
 
 public:
+    explicit Entity(unsigned int lane, std::pair<double,double>& size, std::vector<double>& lanePositionsX);
 
     virtual ~Entity() = default;
 
+    const Position2D &getPosition() const;
+
     virtual void update() = 0;
 
-    double getSize() {return 0.5;}
+    Position2D getRelativePosition(const Position2D &reference) const;
+
+    const std::pair<double, double> &getSize() const;
+
+    unsigned int getLane() const;
+
+    void setLane(unsigned int lane);
+
+    const std::vector<double> &getLanePositionsX() const;
+
 };
+
 
 #endif //TURBOHIKER_ENTITY_H

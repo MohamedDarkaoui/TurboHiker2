@@ -10,6 +10,7 @@
 class SFMLPlayer;
 class SFMLCompetingHiker;
 class SFMLStaticEnemy;
+class SFMLMovingEnemy;
 class SFMLWorld;
 
 class AbstractFactory  {
@@ -21,6 +22,8 @@ public:
     virtual std::set<std::shared_ptr<SFMLCompetingHiker>> createCompetingHikers(unsigned int player_lane) = 0;
 
     virtual std::set<std::shared_ptr<SFMLStaticEnemy>> createStaticEnemies() = 0;
+
+    virtual std::set<std::shared_ptr<SFMLMovingEnemy>> createMovingEnemies() = 0;
 
     virtual std::shared_ptr<SFMLWorld> createWorld() = 0;
     

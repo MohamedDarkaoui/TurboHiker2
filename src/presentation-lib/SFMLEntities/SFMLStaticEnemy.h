@@ -7,13 +7,11 @@
 
 class SFMLStaticEnemy : public StaticEnemy, public SFMLEntity{
 
-
 public:
-    SFMLStaticEnemy(unsigned int lane);
+    SFMLStaticEnemy(unsigned int lane, std::pair<double, double> &size,std::vector<double> &lanePositionsX, double speed,
+                    const std::string &path_to_image);
 
-    void updateVisuals() override {};
 
-    const sf::RectangleShape&  getShape() const override;
 };
 
 

@@ -2,28 +2,19 @@
 #define TURBOHIKER_SFMLPLAYER_H
 
 #include <SFML/Graphics.hpp>
-#include "../Transformation/Transformation.h"
 #include "../../logic-lib/Entity/Player.h"
 #include "SFMLEntity.h"
 
 
 class SFMLPlayer : public Player, public SFMLEntity {
 private:
-    sf::RectangleShape shape;
-    std::shared_ptr<sf::Texture> texture;
 
 public:
-    SFMLPlayer(double speed, unsigned int lane, const std::string& path_to_image);
-
-    const sf::RectangleShape& getShape() const override;
+    SFMLPlayer(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX, double speed,
+               double speedUpFactor, double yellingRange, const std::string& path_to_image);
 
     void handleEvents(sf::Event& event, sf::RenderWindow& window) override;
 
-    void updateVisuals() override;
-
-    void update() override;
-
-    const sf::Texture &getTexture() const;
 
 };
 

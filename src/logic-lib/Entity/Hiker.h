@@ -10,26 +10,21 @@ public:
     enum Acceleration {NONE, SPEED_UP, SLOW_DOWN};
     enum Movement {STANDARD, MOVING_LEFT, MOVING_RIGHT};
 
-protected:
-    double slowDownFactor = 0.75;
-    double speedUpFactor = 1.5;
-    Position2D position;
+private:
     double speed;
+    double speedUpFactor;
     Acceleration acceleration;
     Movement movement;
-    unsigned int lane;
     std::vector<double> lanePositionsX;
 
 
 public:
 
-    Hiker(double speed, unsigned int lane);
+    Hiker(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX, double speed,
+          double speedUpFactor);
 
     ~Hiker() override = default;
 
-    const Position2D &getPosition() const;
-
-    unsigned int getLane() const;
 
     void update() override;
 
@@ -37,9 +32,21 @@ public:
 
     void slowDown();
 
-    Position2D getRelativePosition(const Position2D& reference) const;
-
     void setYposition(double y);
+
+    Movement getMovement() const;
+
+    void setMovement(Movement movement);
+
+    Acceleration getAcceleration() const;
+
+    void setAcceleration(Acceleration acceleration);
+
+    double getSpeed() const;
+
+    void setSpeed(double speed);
+
+    double getSpeedUpFactor() const;
 
 };
 

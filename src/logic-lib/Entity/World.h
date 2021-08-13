@@ -8,12 +8,13 @@
 
 class AbstractFactory;
 
-class World : public Entity {
+class World  {
 
 private:
     std::shared_ptr<Player> player;
     std::set<std::shared_ptr<CompetingHiker>> competing_hikers;
-    std::set<std::shared_ptr<Enemy>> enemies;
+    std::set<std::shared_ptr<StaticEnemy>> static_enemies;
+    std::set<std::shared_ptr<MovingEnemy>> moving_enemies;
 
     double top;
     double height;
@@ -23,23 +24,28 @@ private:
 public:
     World(double top, double height, double left, double width) : top(top), height(height), left(left), width(width) {}
 
-    ~World() override = default;
 
-    void update() override;
+    virtual void update();
 
     void addPlayer(const std::shared_ptr<Player>& p);
 
     void addCompetingHiker(const std::shared_ptr<CompetingHiker>& competing);
 
-    void addEnemy(const std::shared_ptr<Enemy>& e);
+    void addStaticEnemy(const std::shared_ptr<StaticEnemy>& static_enemy);
 
-    std::set<std::shared_ptr<Entity>> getEntities();
+    void addMovingEnemy(const std::shared_ptr<MovingEnemy>& moving_enemy);
 
-    const std::set<std::shared_ptr<CompetingHiker>> &getCompetingHikers() const;
+    std::set<std::shared_ptr<Entity>> getEntities() const;
+
+    std::set<std::shared_ptr<Enemy>> getEnemies() const;
 
     const std::shared_ptr<Player> &getPlayer() const;
 
-    const std::set<std::shared_ptr<Enemy>> &getEnemies() const;
+    const std::set<std::shared_ptr<CompetingHiker>> &getCompetingHikers() const;
+
+    const std::set<std::shared_ptr<StaticEnemy>> &getStaticEnemies() const;
+
+    const std::set<std::shared_ptr<MovingEnemy>> &getMovingEnemies() const;
 
     void handleHikerCollisions();
 

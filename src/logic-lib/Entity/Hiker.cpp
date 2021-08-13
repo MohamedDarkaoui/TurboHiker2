@@ -2,23 +2,13 @@
 #include "Hiker.h"
 
 
-Hiker::Hiker(double speed, unsigned int lane) : speed(speed), lane(lane) {
-
-    lanePositionsX = {-1.5,-0.5,0.5,1.5};
-    position = {0,0};
-    position.setX(lanePositionsX[lane]);
+Hiker::Hiker(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX, double speed,
+             double speedUpFactor) : Entity(lane,size, lanePositionsX),
+             speed(speed), speedUpFactor(speedUpFactor) {
 
     assert (position.getX() != 0);
     this->acceleration = Hiker::NONE;
     this->movement = Hiker::STANDARD;
-}
-
-const Position2D &Hiker::getPosition() const {
-    return position;
-}
-
-unsigned int Hiker::getLane() const {
-    return lane;
 }
 
 void Hiker::update() {
@@ -46,12 +36,36 @@ void Hiker::slowDown() {
 }
 
 
-Position2D Hiker::getRelativePosition(const Position2D &reference) const {
-    return {position.getX(), position.getY() - reference.getY() - 2};
-}
-
 void Hiker::setYposition(double y)  {
     position.setY(y);
+}
+
+Hiker::Movement Hiker::getMovement() const {
+    return movement;
+}
+
+void Hiker::setMovement(Hiker::Movement movement) {
+    Hiker::movement = movement;
+}
+
+Hiker::Acceleration Hiker::getAcceleration() const {
+    return acceleration;
+}
+
+void Hiker::setAcceleration(Hiker::Acceleration acceleration) {
+    Hiker::acceleration = acceleration;
+}
+
+double Hiker::getSpeed() const {
+    return speed;
+}
+
+void Hiker::setSpeed(double speed) {
+    Hiker::speed = speed;
+}
+
+double Hiker::getSpeedUpFactor() const {
+    return speedUpFactor;
 }
 
 

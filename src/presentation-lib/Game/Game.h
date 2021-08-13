@@ -20,8 +20,6 @@ public:
     SFMLGame();
 
     void run();
-
-    void handleEvent(sf::Event& event, Player& e);
 };
 
 #endif //TURBOHIKER_SFMLGAME_H

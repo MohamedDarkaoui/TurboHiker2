@@ -7,6 +7,7 @@
 #include "../SFMLEntities/SFMLWorld.h"
 #include "../SFMLEntities/SFMLCompetingHiker.h"
 #include "../SFMLEntities/SFMLStaticEnemy.h"
+#include "../SFMLEntities/SFMLMovingEnemy.h"
 
 class EntityFactory : public AbstractFactory {
 private:
@@ -19,6 +20,8 @@ public:
     std::set<std::shared_ptr<SFMLCompetingHiker>> createCompetingHikers(unsigned int player_lane) override;
 
     std::set<std::shared_ptr<SFMLStaticEnemy>> createStaticEnemies() override;
+
+    std::set<std::shared_ptr<SFMLMovingEnemy>> createMovingEnemies() override;
 
     std::shared_ptr<SFMLWorld> createWorld() override;
 };

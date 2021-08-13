@@ -3,14 +3,15 @@
 
 #include "CompetingHiker.h"
 
-class Player : public CompetingHiker{
+class Player : public CompetingHiker {
 private:
     bool yelling;
     double yelling_range;
     int yell_duration;
 
 public:
-    Player(double speed, unsigned int lane);
+    Player(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX, double speed,
+           double speedUpFactor, double yellingRange);
 
     void yell();
 

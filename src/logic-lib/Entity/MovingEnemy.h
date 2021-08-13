@@ -5,8 +5,9 @@
 #include "Enemy.h"
 
 class MovingEnemy : public Enemy {
-
-    MovingEnemy(double speed, unsigned int lane) : Enemy(speed, lane) {}
+public:
+    MovingEnemy(unsigned int lane, std::pair<double, double> &size,
+                std::vector<double> &lanePositionsX, double speed, double speedUpFactor);
 
     void gotYelledAt() override;
 

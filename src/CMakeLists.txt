@@ -32,7 +32,7 @@ ADD_EXECUTABLE(
         presentation-lib/SFMLEntities/SFMLWorld.cpp
         presentation-lib/SFMLEntities/SFMLWorld.h
         presentation-lib/SFMLEntities/SFMLEntity.cpp
-        presentation-lib/SFMLEntities/SFMLEntity.h presentation-lib/SFMLEntities/SFMLCompetingHiker.cpp presentation-lib/SFMLEntities/SFMLCompetingHiker.h presentation-lib/SFMLEntities/SFMLStaticEnemy.cpp presentation-lib/SFMLEntities/SFMLStaticEnemy.h)
+        presentation-lib/SFMLEntities/SFMLEntity.h presentation-lib/SFMLEntities/SFMLCompetingHiker.cpp presentation-lib/SFMLEntities/SFMLCompetingHiker.h presentation-lib/SFMLEntities/SFMLStaticEnemy.cpp presentation-lib/SFMLEntities/SFMLStaticEnemy.h presentation-lib/SFMLEntities/SFMLMovingEnemy.cpp presentation-lib/SFMLEntities/SFMLMovingEnemy.h)
 
 
 TARGET_LINK_LIBRARIES (TurboHiker sfml-graphics sfml-window sfml-system sfml-audio)

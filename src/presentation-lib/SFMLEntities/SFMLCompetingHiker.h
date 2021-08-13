@@ -8,11 +8,9 @@
 
 class SFMLCompetingHiker : public CompetingHiker, public SFMLEntity{
 public:
-    SFMLCompetingHiker(double speed, unsigned int lane);
+    SFMLCompetingHiker(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX,
+                       double speed, double speedUpFactor, const std::string &path_to_image);
 
-    void updateVisuals() override {};
-
-    const sf::RectangleShape&  getShape() const override;
 };
 
 

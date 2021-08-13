@@ -6,7 +6,8 @@
 class Enemy : public Hiker {
 
 public:
-    Enemy(double speed, unsigned int lane);
+    Enemy(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX, double speed,
+          double speedUpFactor);
 
     /*
      * @brief:
