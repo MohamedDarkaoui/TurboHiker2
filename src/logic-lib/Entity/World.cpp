@@ -30,6 +30,10 @@ void World::addMovingEnemy(const std::shared_ptr<MovingEnemy> &moving_enemy) {
     moving_enemies.insert(moving_enemy);
 }
 
+void World::addGRoundPlot(const std::shared_ptr<GroundPlot> &groundPlot) {
+    ground.insert(groundPlot);
+}
+
 void World::handleHikerCollisions() {
     std::set<std::shared_ptr<CompetingHiker>> hikers = competing_hikers;
     hikers.insert(player);
@@ -41,9 +45,9 @@ void World::handleHikerCollisions() {
             if (hiker1->getLane() == hiker2->getLane()){
                 double y1 = hiker1->getPosition().getY();
                 double y2 = hiker2->getPosition().getY();
-                double colliding_distance = (hiker1->getSize().second + (hiker2->getSize()).second)/2;
-                if (std::abs(y1-y2) < colliding_distance) {
-                    if (y1 < y2)
+                double colliding_distance = (hiker1->getSize().second + (hiker2->getSize()).second)/4;
+                if (std::abs(y1-y2) < colliding_distance && !hiker2->isColliding()) {
+                    if (y1 <= y2)
                         hiker1->collide();
                     else
                         hiker2->collide();
@@ -62,7 +66,7 @@ void World::handleHikerEnemyCollisions() {
             if (hiker->getLane() == enemy->getLane()){
                 double y1 = hiker->getPosition().getY();
                 double y2 = enemy->getPosition().getY();
-                double collision_distance = (hiker->getSize().second + (enemy->getSize()).second)/2;
+                double collision_distance = (hiker->getSize().second + (enemy->getSize()).second)/4;
                 if (std::abs(y1-y2) < collision_distance)
                     hiker->collide();
             }
@@ -94,6 +98,7 @@ void World::handleEvents() {
 
 std::set<std::shared_ptr<Entity>> World::getEntities() const{
     std::set<std::shared_ptr<Entity>> entities;
+    entities.insert(ground.begin(), ground.end());
     entities.insert(competing_hikers.begin(), competing_hikers.end());
     entities.insert(static_enemies.begin(), static_enemies.end());
     entities.insert(moving_enemies.begin(), moving_enemies.end());
@@ -109,8 +114,6 @@ std::set<std::shared_ptr<Enemy>> World::getEnemies() const {
 
     return enemies;
 }
-
-
 
 const std::shared_ptr<Player> &World::getPlayer() const {
     return player;
@@ -129,6 +132,12 @@ const std::set<std::shared_ptr<MovingEnemy>> &World::getMovingEnemies() const {
 }
 
 void World::buildWorld(const std::shared_ptr<AbstractFactory>& factory) {}
+
+const std::set<std::shared_ptr<GroundPlot>> &World::getGround() const {
+    return ground;
+}
+
+
 
 
 

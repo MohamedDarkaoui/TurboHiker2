@@ -13,6 +13,9 @@ void SFMLWorld::buildWorld(const std::shared_ptr<AbstractFactory>& factory) {
 
     for (const auto& enemy : factory->createMovingEnemies())
         addMovingEnemy(enemy);
+
+    for (const auto& gp : factory->createGroundPlots())
+        addGRoundPlot(gp);
 }
 
 const std::set<std::shared_ptr<SFMLCompetingHiker>> &SFMLWorld::getSFMLCompetingHikers() const {
@@ -27,6 +30,20 @@ const std::set<std::shared_ptr<SFMLMovingEnemy>> &SFMLWorld::getSFMLMovingEnemie
     return (const std::set<std::shared_ptr<SFMLMovingEnemy>> &) World::getMovingEnemies();
 }
 
+const std::set<std::shared_ptr<SFMLGroundPlot>> &SFMLWorld::getSFMLGroundPlot() const {
+    return (const std::set<std::shared_ptr<SFMLGroundPlot>> &) World::getGround();
+}
+
+
+std::set<std::shared_ptr<SFMLEntity>> SFMLWorld::getSFMLEntities() const {
+    std::set<std::shared_ptr<SFMLEntity>> entities;
+    entities.insert(getSFMLCompetingHikers().begin(), getSFMLCompetingHikers().end());
+    entities.insert(getSFMLMovingEnemies().begin(), getSFMLMovingEnemies().end());
+    entities.insert(getSFMLStaticEnemies().begin(), getSFMLStaticEnemies().end());
+    entities.insert(getSFMLPlayer());
+    return entities;
+}
+
 
 const std::shared_ptr<SFMLPlayer> &SFMLWorld::getSFMLPlayer() const {
     return (const std::shared_ptr<SFMLPlayer> &)World::getPlayer();
@@ -34,26 +51,13 @@ const std::shared_ptr<SFMLPlayer> &SFMLWorld::getSFMLPlayer() const {
 
 void SFMLWorld::update() {
     World::update();
-    Position2D relativePlayerPos = getSFMLPlayer()->getRelativePosition(getSFMLPlayer()->getPosition());
-    std::pair<double,double> playerSize = getSFMLPlayer()->getSize();
-    getSFMLPlayer()->updateVisuals(relativePlayerPos,playerSize);
 
-    for(const auto& competing : getSFMLCompetingHikers()) {
-        Position2D relativePOS = competing->getRelativePosition(getPlayer()->getPosition());
-        std::pair<double,double> size = competing->getSize();
-        competing->updateVisuals(relativePOS, size);
-    }
-    for(const auto& enemy : getSFMLStaticEnemies()) {
-        Position2D relativePOS = enemy->getRelativePosition(getPlayer()->getPosition());
-        std::pair<double,double> size = enemy->getSize();
-        enemy->updateVisuals(relativePOS, size);
-    }
-    for(const auto& enemy : getSFMLMovingEnemies()) {
-        Position2D relativePOS = enemy->getRelativePosition(getPlayer()->getPosition());
-        std::pair<double,double> size = enemy->getSize();
-        enemy->updateVisuals(relativePOS, size);
+    for(const auto& entity : getEntities()) {
+        entity->updateVisuals(getPlayer()->getPosition());
     }
 }
+
+
 
 
 

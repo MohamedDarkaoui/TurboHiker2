@@ -18,7 +18,9 @@ protected:
     Position2D position;
 
 public:
-    explicit Entity(unsigned int lane, std::pair<double,double>& size, std::vector<double>& lanePositionsX);
+    Entity(unsigned int lane, std::pair<double,double>& size, std::vector<double>& lanePositionsX);
+
+    Entity(Position2D position, std::pair<double,double>& size);
 
     virtual ~Entity() = default;
 
@@ -35,6 +37,8 @@ public:
     void setLane(unsigned int lane);
 
     const std::vector<double> &getLanePositionsX() const;
+
+    virtual void updateVisuals(const Position2D& reference);
 
 };
 

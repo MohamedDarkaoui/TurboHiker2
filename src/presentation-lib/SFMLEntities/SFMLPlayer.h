@@ -15,7 +15,9 @@ public:
 
     void handleEvents(sf::Event& event, sf::RenderWindow& window) override;
 
+    void updateVisuals(const Position2D& reference) override;
 
+    void updateAnimation() override;
 };
 
 

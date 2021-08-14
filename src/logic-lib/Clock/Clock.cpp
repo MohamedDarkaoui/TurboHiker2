@@ -1,16 +1,16 @@
 
 #include "Clock.h"
 
-Clock::Clock() {
+Clock::Clock(unsigned int tickTime) {
     start = std::chrono::steady_clock::now();
     elapsed = start;
-    tickTime = 50;
+    this->tickTime = tickTime;
 }
 
-Clock &Clock::getInstance() {
-    static Clock instance;
-    return instance;
-}
+//Clock &Clock::getInstance() {
+//    static Clock instance;
+//    return instance;
+//}
 
 bool Clock::clockTicked() {
     std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
@@ -19,6 +19,15 @@ bool Clock::clockTicked() {
         return true;
     }
     return false;
+}
+
+unsigned int Clock::getElapsedTime() {
+    std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
+    return std::chrono::duration_cast<std::chrono::milliseconds>(now - start).count();
+}
+
+void Clock::setTickTime(unsigned int tickTime) {
+    Clock::tickTime = tickTime;
 }
 
 

@@ -6,6 +6,8 @@
 #include <SFML/Graphics.hpp>
 #include "../Transformation/Transformation.h"
 #include "../../logic-lib/Entity/Entity.h"
+#include "../Animation/Animation.h"
+#include "../../logic-lib/Clock/Clock.h"
 
 class AbstractFactory;
 
@@ -15,18 +17,21 @@ private:
 
 protected:
     sf::RectangleShape shape;
+    std::unique_ptr<Animation> animation;
+    std::unique_ptr<Clock> clock;
 
 public:
     explicit SFMLEntity(const std::string &path_to_image);
-
-    void updateVisuals(Position2D& relativePosition, std::pair<double,double>& size);
 
     const sf::RectangleShape& getShape() const;
 
     virtual void handleEvents(sf::Event &event, sf::RenderWindow& window) {}
 
+    virtual void updateAnimation();
+
     void initialize(const std::pair<double,double> &size, const Position2D& relativePos);
-    //virtual void buildWorld (const std::shared_ptr<AbstractFactory>& factory){};
+
+    void setClockTickTime(const unsigned int& tickTime);
 
 };
 

@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "StaticEnemy.h"
 #include "MovingEnemy.h"
+#include "GroundPlot.h"
 
 class AbstractFactory;
 
@@ -15,6 +16,7 @@ private:
     std::set<std::shared_ptr<CompetingHiker>> competing_hikers;
     std::set<std::shared_ptr<StaticEnemy>> static_enemies;
     std::set<std::shared_ptr<MovingEnemy>> moving_enemies;
+    std::set<std::shared_ptr<GroundPlot>> ground;
 
     double top;
     double height;
@@ -35,17 +37,21 @@ public:
 
     void addMovingEnemy(const std::shared_ptr<MovingEnemy>& moving_enemy);
 
+    void addGRoundPlot(const std::shared_ptr<GroundPlot>& groundPlot);
+
     std::set<std::shared_ptr<Entity>> getEntities() const;
 
     std::set<std::shared_ptr<Enemy>> getEnemies() const;
 
-    const std::shared_ptr<Player> &getPlayer() const;
+    const std::shared_ptr<Player>& getPlayer() const;
 
-    const std::set<std::shared_ptr<CompetingHiker>> &getCompetingHikers() const;
+    const std::set<std::shared_ptr<CompetingHiker>>& getCompetingHikers() const;
 
-    const std::set<std::shared_ptr<StaticEnemy>> &getStaticEnemies() const;
+    const std::set<std::shared_ptr<StaticEnemy>>& getStaticEnemies() const;
 
-    const std::set<std::shared_ptr<MovingEnemy>> &getMovingEnemies() const;
+    const std::set<std::shared_ptr<MovingEnemy>>& getMovingEnemies() const;
+
+    const std::set<std::shared_ptr<GroundPlot>>& getGround() const;
 
     void handleHikerCollisions();
 

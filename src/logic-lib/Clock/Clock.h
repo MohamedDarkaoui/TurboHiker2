@@ -5,19 +5,22 @@
 
 class Clock {
 private:
-    Clock();
-
     std::chrono::steady_clock::time_point start;
     std::chrono::steady_clock::time_point elapsed;
-    int tickTime;
+    unsigned int tickTime;
 
 public:
-    Clock(Clock const&) = delete;
-    void operator=(Clock const&) = delete;
+    Clock(unsigned int tickTime);
+//    Clock(Clock const&) = delete;
+//    void operator=(Clock const&) = delete;
 
-    static Clock& getInstance();
+//    static Clock& getInstance();
 
     bool clockTicked();
+
+    void setTickTime(unsigned int tickTime);
+
+    unsigned int getElapsedTime();
 };
 
 

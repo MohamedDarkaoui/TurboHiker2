@@ -8,12 +8,17 @@ Entity::Entity(unsigned int lane, std::pair<double, double> &size, std::vector<d
     this->lanePositionsX = lanePositionsX;
 }
 
+Entity::Entity(Position2D position, std::pair<double, double> &size) : size(size), position(position){
+    lane = 100;
+    lanePositionsX = {};
+}
+
 const Position2D &Entity::getPosition() const {
     return position;
 }
 
 Position2D Entity::getRelativePosition(const Position2D &reference) const {
-    return {position.getX(), position.getY() - reference.getY() - 2};
+    return {position.getX(), position.getY() - reference.getY() -2};
 }
 
 const std::pair<double, double> &Entity::getSize() const {
@@ -31,6 +36,10 @@ const std::vector<double> &Entity::getLanePositionsX() const {
 void Entity::setLane(unsigned int lane) {
     Entity::lane = lane;
 }
+
+void Entity::updateVisuals(const Position2D& reference) {}
+
+
 
 
 
