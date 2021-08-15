@@ -12,29 +12,32 @@ Hiker::Hiker(unsigned int lane, std::pair<double, double> &size, std::vector<dou
 }
 
 void Hiker::update() {
-    if (acceleration == Hiker::NONE)
-        position += {0,speed};
-    else if (acceleration == Hiker::SPEED_UP)
-        position += {0,1.5*speed};
-    else
-        position += {0,0.75*speed};
+    position += {0,speed};
 }
 
-
 void Hiker::speedUp() {
-    if (acceleration == Hiker::NONE)
+    assert(speedUpFactor > 1);
+    if (acceleration == Hiker::NONE){
         acceleration = Hiker::SPEED_UP;
-    else if (acceleration == Hiker::SLOW_DOWN)
+        speed = speed*speedUpFactor;
+    }
+    else if (acceleration == Hiker::SLOW_DOWN){
         acceleration = Hiker::NONE;
+        speed = speed*2*speedUpFactor;
+    }
 }
 
 void Hiker::slowDown() {
-    if (acceleration == Hiker::NONE)
+    assert(speedUpFactor > 1);
+    if (acceleration == Hiker::NONE){
         acceleration = Hiker::SLOW_DOWN;
-    else if (acceleration == Hiker::SPEED_UP)
+        speed /= (2*speedUpFactor);
+    }
+    else if (acceleration == Hiker::SPEED_UP){
         acceleration = Hiker::NONE;
+        speed /= speedUpFactor;
+    }
 }
-
 
 void Hiker::setYposition(double y)  {
     position.setY(y);

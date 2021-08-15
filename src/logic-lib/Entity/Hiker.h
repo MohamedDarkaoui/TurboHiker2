@@ -28,9 +28,9 @@ public:
 
     void update() override;
 
-    void speedUp();
+    virtual void speedUp();
 
-    void slowDown();
+    virtual void slowDown();
 
     void setYposition(double y);
 

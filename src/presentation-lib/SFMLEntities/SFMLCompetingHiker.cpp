@@ -20,22 +20,8 @@ void SFMLCompetingHiker::updateVisuals(const Position2D& reference) {
 }
 
 void SFMLCompetingHiker::updateAnimation() {
-    double factor = 1;
-    switch (getAcceleration()) {
 
-        case NONE:
-            factor = 1;
-            break;
-        case SPEED_UP:
-            factor = 0.5;
-            break;
-        case SLOW_DOWN:
-            factor = 2;
-            break;
-    }
-    factor = 100 * factor;
-    setClockTickTime(floor(factor));
-
+    setClockTickTime(floor(200/(100*getSpeed())));
     if (clock->clockTicked()){
         animation->update(3);
         shape.setTextureRect(animation->getCurrentFrame());

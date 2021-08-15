@@ -9,6 +9,7 @@ private:
     bool collision;
     int collision_slow_duration;
     int slowed_for;
+    bool turbo_fast;
 
 
 public:
@@ -16,6 +17,14 @@ public:
                    double speedUpFactor);
 
     void update() override;
+
+    void speedUp() final;
+
+    void slowDown() final;
+
+    void runAtTurboSpeed();
+
+    void stopRunningAtTurboSpeed();
 
     void moveLeft();
 

@@ -12,26 +12,30 @@ Player(lane,size,lanePositionsX,speed,speedUpFactor,yellingRange), SFMLEntity(pa
 
 void SFMLPlayer::handleEvents(sf::Event &event, sf::RenderWindow& window) {
     while (window.pollEvent(event)){
-        if (event.type == sf::Event::KeyPressed){
-            switch(event.key.code){
-                case sf::Keyboard::Up:
-                    speedUp();
-                    break;
-                case sf::Keyboard::Left:
-                    moveLeft();
-                    break;
-                case  sf::Keyboard::Right:
-                    moveRight();
-                    break;
-                case sf::Keyboard::Down:
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+            speedUp();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+            moveLeft();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+            moveRight();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+            slowDown();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+            yell();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+            runAtTurboSpeed();
+
+        if (event.type == sf::Event::KeyReleased){
+            if (event.key.code == sf::Keyboard::Up){
+                if (getAcceleration() == Hiker::SPEED_UP)
                     slowDown();
-                    break;
-                case sf::Keyboard::Space:
-                     yell();
-                     break;
-                default:
-                     break;
             }
+            if (event.key.code == sf::Keyboard::Down)
+                if (getAcceleration() == Hiker::SLOW_DOWN)
+                    speedUp();
+            if (event.key.code == sf::Keyboard::Q)
+                stopRunningAtTurboSpeed();
+
         }
         // "close requested" event: we close the window
         else if (event.type == sf::Event::Closed)
@@ -50,21 +54,7 @@ void SFMLPlayer::updateVisuals(const Position2D& reference) {
 }
 
 void SFMLPlayer::updateAnimation() {
-    double factor = 1;
-    switch (getAcceleration()) {
-
-        case NONE:
-            factor = 1;
-            break;
-        case SPEED_UP:
-            factor = 0.5;
-            break;
-        case SLOW_DOWN:
-            factor = 2;
-            break;
-    }
-    factor = 100 * factor;
-    setClockTickTime(floor(factor));
+    setClockTickTime(floor(200/(100*getSpeed())));
     if (clock->clockTicked()){
         animation->update(3);
         shape.setTextureRect(animation->getCurrentFrame());

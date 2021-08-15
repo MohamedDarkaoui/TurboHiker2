@@ -8,7 +8,7 @@ class SFMLWorld : public World {
 private:
 
 public:
-    SFMLWorld(double top, double height, double left, double width);
+    SFMLWorld(Position2D position, std::pair<double, double> &size);
 
     void buildWorld(const std::shared_ptr<AbstractFactory>& factory) override;
 

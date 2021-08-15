@@ -5,8 +5,9 @@ CompetingHiker::CompetingHiker(unsigned int lane, std::pair<double, double> &siz
                                double speedUpFactor) :
         Hiker(lane,size,lanePositionsX,speed,speedUpFactor) {
     collision = false;
-    collision_slow_duration = 40;
+    collision_slow_duration = 60;
     slowed_for = 0;
+    turbo_fast = false;
 }
 
 void CompetingHiker::update() {
@@ -17,23 +18,22 @@ void CompetingHiker::update() {
         setMovement(Hiker::STANDARD);
     }
 
-    double speedTEMP = getSpeed();
-
-    if (collision && slowed_for < collision_slow_duration){
-        speedTEMP /= 3;
-        slowed_for++;
-    }
-    else if (collision && slowed_for == collision_slow_duration){
-        collision = false;
-        slowed_for = 0;
+    if (collision){
+        if (slowed_for < collision_slow_duration){
+            slowed_for++;
+        }
+        else if (slowed_for == collision_slow_duration){
+            stopColliding();
+            slowed_for = 0;
+        }
     }
 
     if (getAcceleration() == Hiker::NONE)
-        position += {0,speedTEMP};
+        position += {0,getSpeed()};
     else if (getAcceleration() == Hiker::SPEED_UP)
-        position += {0,getSpeedUpFactor()*speedTEMP};
+        position += {0,getSpeedUpFactor()*getSpeed()};
     else
-        position += {0,speedTEMP/getSpeedUpFactor()};
+        position += {0,getSpeed()/getSpeedUpFactor()};
 }
 
 void CompetingHiker::moveLeft() {
@@ -51,10 +51,18 @@ void CompetingHiker::moveRight() {
 }
 
 void CompetingHiker::collide() {
-    collision = true;
+    if (!collision){
+        if (getAcceleration() == Hiker::SPEED_UP)
+            slowDown();
+        else if (getAcceleration() == Hiker::SLOW_DOWN)
+            speedUp();
+        setSpeed(getSpeed()/(getSpeedUpFactor()*2));
+        collision = true;
+    }
 }
 
 void CompetingHiker::stopColliding() {
+    setSpeed(getSpeed()*getSpeedUpFactor()*2);
     collision = false;
 }
 
@@ -74,3 +82,30 @@ void CompetingHiker::setSlowedFor(int slowedFor) {
     slowed_for = slowedFor;
 }
 
+void CompetingHiker::speedUp() {
+    if (!isColliding() && !turbo_fast)
+        Hiker::speedUp();
+}
+
+void CompetingHiker::slowDown() {
+    if (!isColliding() && !turbo_fast)
+        Hiker::slowDown();
+}
+
+void CompetingHiker::runAtTurboSpeed() {
+    if (turbo_fast || getAcceleration() != Hiker::NONE)
+        return;
+    turbo_fast = true;
+    if (getAcceleration() == Hiker::SPEED_UP)
+        slowDown();
+    else if (getAcceleration() == Hiker::SLOW_DOWN)
+        speedUp();
+    setSpeed(getSpeed()*getSpeedUpFactor()*1.5);
+}
+
+void CompetingHiker::stopRunningAtTurboSpeed() {
+    if (!turbo_fast)
+        return;
+    turbo_fast = false;
+    setSpeed(getSpeed()/(getSpeedUpFactor()*1.5));
+}

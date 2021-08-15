@@ -1,9 +1,10 @@
 #include "World.h"
 #include <iostream>
 
-#include "../../presentation-lib/EntityFactory/EntityFactory.h"
-void World::update() {
+World::World(Position2D position, std::pair<double, double> &size) : Entity(position, size) {}
 
+void World::update() {
+    trackPlayer();
     // make one big set with all entities
     auto entities = getEntities();
 
@@ -96,6 +97,21 @@ void World::handleEvents() {
     handleYelling();
 }
 
+void World::trackPlayer() {
+    if (player->getAcceleration() == Hiker::SLOW_DOWN){
+        position += {0, player->getSpeed()*player->getSpeedUpFactor()*2};
+        if (position.getY() - player->getPosition().getY() >= 0.5)
+            player->speedUp();
+    }
+    else if (player->getAcceleration() == Hiker::SPEED_UP){
+        position += {0, player->getSpeed()/player->getSpeedUpFactor()};
+        if (player->getPosition().getY() - position.getY()  >= 4.5)
+            player->slowDown();
+    }
+    else
+        position += {0, player->getSpeed()};
+}
+
 std::set<std::shared_ptr<Entity>> World::getEntities() const{
     std::set<std::shared_ptr<Entity>> entities;
     entities.insert(ground.begin(), ground.end());
@@ -136,9 +152,3 @@ void World::buildWorld(const std::shared_ptr<AbstractFactory>& factory) {}
 const std::set<std::shared_ptr<GroundPlot>> &World::getGround() const {
     return ground;
 }
-
-
-
-
-
-

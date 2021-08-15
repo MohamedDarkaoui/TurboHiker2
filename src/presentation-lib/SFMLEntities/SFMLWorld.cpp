@@ -1,6 +1,7 @@
 #include "SFMLWorld.h"
 
-SFMLWorld::SFMLWorld(double top, double height, double left, double width) : World(top, height, left, width) {}
+SFMLWorld::SFMLWorld(Position2D position, std::pair<double, double> &size) : World(position, size){}
+
 
 void SFMLWorld::buildWorld(const std::shared_ptr<AbstractFactory>& factory) {
     addPlayer(factory->createPlayer());
@@ -53,7 +54,7 @@ void SFMLWorld::update() {
     World::update();
 
     for(const auto& entity : getEntities()) {
-        entity->updateVisuals(getPlayer()->getPosition());
+        entity->updateVisuals(getPosition());
     }
 }
 

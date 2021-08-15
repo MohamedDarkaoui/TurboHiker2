@@ -108,8 +108,9 @@ std::shared_ptr<SFMLWorld> EntityFactory::createWorld() {
     double height = configuration["world"]["height"].as_double_or_die();
     double left = configuration["world"]["left"].as_double_or_die();
     double width = configuration["world"]["width"].as_double_or_die();
+    std::pair<double,double> size = std::make_pair(width,height);
 
-    return std::make_shared<SFMLWorld>(SFMLWorld(top,height,left,width));
+    return std::make_shared<SFMLWorld>(Position2D{0,0},size);
 }
 
 std::set<std::shared_ptr<SFMLGroundPlot>> EntityFactory::createGroundPlots() {
@@ -129,34 +130,19 @@ std::set<std::shared_ptr<SFMLGroundPlot>> EntityFactory::createGroundPlots() {
     std::string sprite_path = "../../";
     sprite_path += configuration["groundPlot"]["sprite"].as_string_or_die();
 
-    std::pair<int,int> sideImage1, sideImage2, roadImage1, roadImage2, sideImage;
-    sideImage1.first = configuration["groundPlot"]["sideImageCoordinate1X"].as_int_or_die();
-    sideImage1.second = configuration["groundPlot"]["sideImageCoordinate1Y"].as_int_or_die();
-    sideImage2.first = configuration["groundPlot"]["sideImageCoordinate2X"].as_int_or_die();
-    sideImage2.second = configuration["groundPlot"]["sideImageCoordinate2Y"].as_int_or_die();
-    roadImage1.first = configuration["groundPlot"]["roadCoordinate1X"].as_int_or_die();
-    roadImage1.second = configuration["groundPlot"]["roadCoordinate1Y"].as_int_or_die();
-    roadImage2.first = configuration["groundPlot"]["roadCoordinate2X"].as_int_or_die();
-    roadImage2.second = configuration["groundPlot"]["roadCoordinate2Y"].as_int_or_die();
+    std::pair<int,int> imageCoordinate;
+    imageCoordinate.first = configuration["groundPlot"]["imageCoordinateX"].as_int_or_die();
+    imageCoordinate.second = configuration["groundPlot"]["imageCoordinateY"].as_int_or_die();
 
     std::set<std::shared_ptr<SFMLGroundPlot>> plots;
     double current_top = origin;
 
-    std::vector<double> sideX {-3.5,-2.5,2.5,3.5};
-    std::vector<double> roadX {-1.5,-0.5,0.5,1.5};
     while(current_top <= top){
-        for (auto i : sideX){
-            std::shared_ptr<SFMLGroundPlot> gp = std::make_shared<SFMLGroundPlot>
-                    (SFMLGroundPlot({i,current_top},size,sprite_path,dimensions,sideImage1));
-            plots.insert(gp);
-        }
-        for (auto i : roadX){
-            std::shared_ptr<SFMLGroundPlot> gp = std::make_shared<SFMLGroundPlot>
-                    (SFMLGroundPlot({i,current_top},size,sprite_path,dimensions,roadImage1));
-            plots.insert(gp);
-        }
+        std::shared_ptr<SFMLGroundPlot> gp = std::make_shared<SFMLGroundPlot>
+                (SFMLGroundPlot({0,current_top},size,sprite_path,dimensions,imageCoordinate));
+        plots.insert(gp);
+
         current_top += size.second;
-        std::cout<<current_top<<"\n";
     }
     return plots;
 }

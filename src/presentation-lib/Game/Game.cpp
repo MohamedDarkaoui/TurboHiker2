@@ -9,7 +9,6 @@ void SFMLGame::run() {
     auto factory = std::make_shared<EntityFactory>("../../game_configurations.ini");
     std::shared_ptr<SFMLWorld> world = factory->createWorld();
     world->buildWorld(factory);
-    std::cout<<"ok\n";
     auto player = world->getSFMLPlayer();
 
     Clock loopClock(20);

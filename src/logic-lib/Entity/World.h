@@ -9,7 +9,7 @@
 
 class AbstractFactory;
 
-class World  {
+class World : public Entity {
 
 private:
     std::shared_ptr<Player> player;
@@ -18,16 +18,23 @@ private:
     std::set<std::shared_ptr<MovingEnemy>> moving_enemies;
     std::set<std::shared_ptr<GroundPlot>> ground;
 
-    double top;
-    double height;
-    double left;
-    double width;
 
 public:
-    World(double top, double height, double left, double width) : top(top), height(height), left(left), width(width) {}
+    World(Position2D position, std::pair<double, double> &size);
 
+    void update() override;
 
-    virtual void update();
+    void handleHikerCollisions();
+
+    void handleHikerEnemyCollisions();
+
+    void handleYelling();
+
+    void handleEvents();
+
+    void trackPlayer();
+
+    virtual void buildWorld(const std::shared_ptr<AbstractFactory>& factory);
 
     void addPlayer(const std::shared_ptr<Player>& p);
 
@@ -52,16 +59,6 @@ public:
     const std::set<std::shared_ptr<MovingEnemy>>& getMovingEnemies() const;
 
     const std::set<std::shared_ptr<GroundPlot>>& getGround() const;
-
-    void handleHikerCollisions();
-
-    void handleHikerEnemyCollisions();
-
-    void handleYelling();
-
-    void handleEvents();
-
-    virtual void buildWorld(const std::shared_ptr<AbstractFactory>& factory);
 
 };
 
