@@ -2,8 +2,15 @@
 #define TURBOHIKER_OBSERVER_H
 
 
-class Observer {
+enum class ObserverEvent{
+    COMPETING_HIKER_COLLISION,
+    ENEMY_COLLISION,
+    YELLING,
+};
 
+class Observer {
+public:
+    virtual void handleNotification(ObserverEvent event) = 0;
 };
 
 

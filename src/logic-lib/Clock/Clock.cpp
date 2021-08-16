@@ -7,10 +7,6 @@ Clock::Clock(unsigned int tickTime) {
     this->tickTime = tickTime;
 }
 
-//Clock &Clock::getInstance() {
-//    static Clock instance;
-//    return instance;
-//}
 
 bool Clock::clockTicked() {
     std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
@@ -26,9 +22,15 @@ unsigned int Clock::getElapsedTime() {
     return std::chrono::duration_cast<std::chrono::milliseconds>(now - start).count();
 }
 
-void Clock::setTickTime(unsigned int tickTime) {
-    Clock::tickTime = tickTime;
+void Clock::setTickTime(unsigned int time) {
+    Clock::tickTime = time;
 }
+
+void Clock::reset() {
+    start = std::chrono::steady_clock::now();
+    elapsed = start;
+}
+
 
 
 

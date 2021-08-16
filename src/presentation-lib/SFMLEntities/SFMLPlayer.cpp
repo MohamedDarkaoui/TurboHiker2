@@ -14,17 +14,18 @@ void SFMLPlayer::handleEvents(sf::Event &event, sf::RenderWindow& window) {
     while (window.pollEvent(event)){
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
             speedUp();
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-            moveLeft();
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-            moveRight();
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
             slowDown();
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
             yell();
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
             runAtTurboSpeed();
-
+        if (event.type == sf::Event::KeyPressed){
+            if (event.key.code == sf::Keyboard::Left)
+                moveLeft();
+            else if (event.key.code == sf::Keyboard::Right)
+                moveRight();
+        }
         if (event.type == sf::Event::KeyReleased){
             if (event.key.code == sf::Keyboard::Up){
                 if (getAcceleration() == Hiker::SPEED_UP)
@@ -54,6 +55,8 @@ void SFMLPlayer::updateVisuals(const Position2D& reference) {
 }
 
 void SFMLPlayer::updateAnimation() {
+    if (getSpeed() == 0)
+        return;
     setClockTickTime(floor(200/(100*getSpeed())));
     if (clock->clockTicked()){
         animation->update(3);

@@ -13,6 +13,7 @@ class SFMLStaticEnemy;
 class SFMLMovingEnemy;
 class SFMLWorld;
 class SFMLGroundPlot;
+class SFMLFinishLine;
 
 class AbstractFactory  {
 
@@ -28,10 +29,10 @@ public:
 
     virtual std::set<std::shared_ptr<SFMLGroundPlot>> createGroundPlots() = 0;
 
+    virtual std::shared_ptr<SFMLFinishLine> createFinishLine() = 0;
+
     virtual std::shared_ptr<SFMLWorld> createWorld() = 0;
 
-
-    
 };
 
 

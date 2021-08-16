@@ -13,9 +13,13 @@ void SFMLGame::run() {
 
     Clock loopClock(20);
     Clock animationClock (100);
-    std::string path = "../../images/ground.png";
-    std::pair<double,double> size =std::make_pair(1.0,1.0);
-//    SFMLGroundPlot plot({0,0}, size,path,std::make_pair(8,8),std::make_pair(0,4));
+
+    sf::Font font;
+    assert(font.loadFromFile("../../res/Blazed.ttf") && "Error loading font file.");
+    sf::Text text;
+    text.setFont(font);
+    text.setFillColor(sf::Color(139,0,0));
+
     while (window->isOpen()){
         if (!loopClock.clockTicked())
             continue;
@@ -24,25 +28,33 @@ void SFMLGame::run() {
 
         player->handleEvents(event, *window);
         world->update();
+
         // clear the window with black color
         window->clear(sf::Color::Black);
 
         window->draw(player->getShape());
 
-
         for (const auto& entity : world->getSFMLEntities()){
             entity->updateAnimation();
         }
+
+        int score = player->getScore()->getPoints(player->getPosition().getY());
+        std::string score_string = std::to_string(score);
+        text.setString(score_string);
+
+//        std::cout<<std::to_string(player->getScore()->getPoints(player->getPosition().getY())) <<"\n";
         for(const auto& gp : world->getSFMLGroundPlot())
             window->draw(gp->getShape());
+
         for(const auto& enemy : world->getSFMLStaticEnemies())
             window->draw(enemy->getShape());
         for(const auto& enemy : world->getSFMLMovingEnemies())
             window->draw(enemy->getShape());
         for(const auto& comp : world->getSFMLCompetingHikers())
             window->draw(comp->getShape());
+        window->draw(world->getSFMLFinishLine()->getShape());
         window->draw(world->getSFMLPlayer()->getShape());
-
+        window->draw(text);
         window->display();
     }
 }

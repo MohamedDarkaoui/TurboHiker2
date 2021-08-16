@@ -7,20 +7,20 @@ class Clock {
 private:
     std::chrono::steady_clock::time_point start;
     std::chrono::steady_clock::time_point elapsed;
-    unsigned int tickTime;
+    unsigned int tickTime = 0;
 
 public:
-    Clock(unsigned int tickTime);
-//    Clock(Clock const&) = delete;
-//    void operator=(Clock const&) = delete;
+    Clock() = default;
 
-//    static Clock& getInstance();
+    explicit Clock(unsigned int tickTime);
 
     bool clockTicked();
 
-    void setTickTime(unsigned int tickTime);
+    void setTickTime(unsigned int time);
 
     unsigned int getElapsedTime();
+
+    void reset();
 };
 
 

@@ -9,6 +9,7 @@
 #include "../SFMLEntities/SFMLStaticEnemy.h"
 #include "../SFMLEntities/SFMLMovingEnemy.h"
 #include "../SFMLEntities/SFMLGroundPlot.h"
+#include "../SFMLEntities/SFMLFinishLine.h"
 
 class EntityFactory : public AbstractFactory {
 private:
@@ -25,6 +26,8 @@ public:
     std::set<std::shared_ptr<SFMLMovingEnemy>> createMovingEnemies() override;
 
     std::set<std::shared_ptr<SFMLGroundPlot>> createGroundPlots() override;
+
+    std::shared_ptr<SFMLFinishLine> createFinishLine() override;
 
     std::shared_ptr<SFMLWorld> createWorld() override;
 };

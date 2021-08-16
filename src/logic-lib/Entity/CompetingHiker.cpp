@@ -1,4 +1,3 @@
-
 #include "CompetingHiker.h"
 
 CompetingHiker::CompetingHiker(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX, double speed,
@@ -8,6 +7,8 @@ CompetingHiker::CompetingHiker(unsigned int lane, std::pair<double, double> &siz
     collision_slow_duration = 60;
     slowed_for = 0;
     turbo_fast = false;
+    score = std::make_shared<Score>();
+    addObserver(score);
 }
 
 void CompetingHiker::update() {
@@ -19,9 +20,8 @@ void CompetingHiker::update() {
     }
 
     if (collision){
-        if (slowed_for < collision_slow_duration){
+        if (slowed_for < collision_slow_duration)
             slowed_for++;
-        }
         else if (slowed_for == collision_slow_duration){
             stopColliding();
             slowed_for = 0;
@@ -52,6 +52,8 @@ void CompetingHiker::moveRight() {
 
 void CompetingHiker::collide() {
     if (!collision){
+        if (turbo_fast)
+            stopRunningAtTurboSpeed();
         if (getAcceleration() == Hiker::SPEED_UP)
             slowDown();
         else if (getAcceleration() == Hiker::SLOW_DOWN)
@@ -93,7 +95,7 @@ void CompetingHiker::slowDown() {
 }
 
 void CompetingHiker::runAtTurboSpeed() {
-    if (turbo_fast || getAcceleration() != Hiker::NONE)
+    if (turbo_fast || getAcceleration() != Hiker::NONE || isColliding())
         return;
     turbo_fast = true;
     if (getAcceleration() == Hiker::SPEED_UP)
@@ -108,4 +110,8 @@ void CompetingHiker::stopRunningAtTurboSpeed() {
         return;
     turbo_fast = false;
     setSpeed(getSpeed()/(getSpeedUpFactor()*1.5));
+}
+
+const std::shared_ptr<Score> &CompetingHiker::getScore() const {
+    return score;
 }

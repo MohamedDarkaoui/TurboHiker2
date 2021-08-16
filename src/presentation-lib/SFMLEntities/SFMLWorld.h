@@ -22,9 +22,11 @@ public:
 
     std::set<std::shared_ptr<SFMLEntity>> getSFMLEntities() const;
 
-    void update() override;
-
     const std::set<std::shared_ptr<SFMLGroundPlot>>& getSFMLGroundPlot() const;
+
+    const std::shared_ptr<SFMLFinishLine> &getSFMLFinishLine() const;
+
+    void update() override;
 
 };
 

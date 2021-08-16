@@ -3,14 +3,16 @@
 
 
 #include "Hiker.h"
+#include "../Observer/Observable.h"
+#include "../Score/Score.h"
 
-class CompetingHiker : public Hiker {
+class CompetingHiker : public Hiker, public Observable{
 private:
     bool collision;
     int collision_slow_duration;
     int slowed_for;
     bool turbo_fast;
-
+    std::shared_ptr<Score> score;
 
 public:
     CompetingHiker(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX, double speed,
@@ -35,6 +37,8 @@ public:
     void collide();
 
     void stopColliding();
+
+    const std::shared_ptr<Score> &getScore() const;
 
     int getSlowedFor() const;
 

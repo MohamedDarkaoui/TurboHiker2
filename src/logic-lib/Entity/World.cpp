@@ -4,6 +4,7 @@
 World::World(Position2D position, std::pair<double, double> &size) : Entity(position, size) {}
 
 void World::update() {
+
     trackPlayer();
     // make one big set with all entities
     auto entities = getEntities();
@@ -13,6 +14,7 @@ void World::update() {
         entity->update();
     }
     handleEvents();
+    checkToDestroyEntities();
 }
 
 void World::addPlayer(const std::shared_ptr<Player>& p) {
@@ -35,6 +37,10 @@ void World::addGRoundPlot(const std::shared_ptr<GroundPlot> &groundPlot) {
     ground.insert(groundPlot);
 }
 
+void World::addFinishLine(const std::shared_ptr<FinishLine>& finishLine){
+    finish_line = finishLine;
+}
+
 void World::handleHikerCollisions() {
     std::set<std::shared_ptr<CompetingHiker>> hikers = competing_hikers;
     hikers.insert(player);
@@ -48,10 +54,14 @@ void World::handleHikerCollisions() {
                 double y2 = hiker2->getPosition().getY();
                 double colliding_distance = (hiker1->getSize().second + (hiker2->getSize()).second)/4;
                 if (std::abs(y1-y2) < colliding_distance && !hiker2->isColliding()) {
-                    if (y1 <= y2)
+                    if (y1 <= y2){
                         hiker1->collide();
-                    else
+                        hiker1->notifyObservers(ObserverEvent::COMPETING_HIKER_COLLISION);
+                    }
+                    else{
                         hiker2->collide();
+                        hiker2->notifyObservers(ObserverEvent::COMPETING_HIKER_COLLISION);
+                    }
                 }
             }
         }
@@ -68,8 +78,10 @@ void World::handleHikerEnemyCollisions() {
                 double y1 = hiker->getPosition().getY();
                 double y2 = enemy->getPosition().getY();
                 double collision_distance = (hiker->getSize().second + (enemy->getSize()).second)/4;
-                if (std::abs(y1-y2) < collision_distance)
+                if (std::abs(y1-y2) < collision_distance){
                     hiker->collide();
+                    hiker->notifyObservers(ObserverEvent::ENEMY_COLLISION);
+                }
             }
         }
     }
@@ -118,6 +130,7 @@ std::set<std::shared_ptr<Entity>> World::getEntities() const{
     entities.insert(competing_hikers.begin(), competing_hikers.end());
     entities.insert(static_enemies.begin(), static_enemies.end());
     entities.insert(moving_enemies.begin(), moving_enemies.end());
+    entities.insert(finish_line);
     entities.insert(player);
 
     return entities;
@@ -147,8 +160,32 @@ const std::set<std::shared_ptr<MovingEnemy>> &World::getMovingEnemies() const {
     return moving_enemies;
 }
 
+const std::shared_ptr<FinishLine> &World::getFinishLine() const {
+    return finish_line;
+}
+
 void World::buildWorld(const std::shared_ptr<AbstractFactory>& factory) {}
 
 const std::set<std::shared_ptr<GroundPlot>> &World::getGround() const {
     return ground;
 }
+
+void World::checkToDestroyEntities() {
+    if (player->getPosition().getY() > getSize().second)
+        player->setSpeed(0);
+
+    for (const auto& hiker : competing_hikers){
+        if (hiker->getPosition().getY() > getSize().second)
+            competing_hikers.erase(hiker);
+    }
+    for (const auto& enemy : static_enemies){
+        if (enemy->getPosition().getX() > 4 || enemy->getPosition().getX() < -4)
+            static_enemies.erase(enemy);
+    }
+    for (const auto& enemy : moving_enemies){
+        if (enemy->getPosition().getY() < 0)
+            moving_enemies.erase(enemy);
+    }
+}
+
+

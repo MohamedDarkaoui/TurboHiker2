@@ -6,6 +6,8 @@
 #include "StaticEnemy.h"
 #include "MovingEnemy.h"
 #include "GroundPlot.h"
+#include "../Score/Score.h"
+#include "FinishLine.h"
 
 class AbstractFactory;
 
@@ -17,6 +19,7 @@ private:
     std::set<std::shared_ptr<StaticEnemy>> static_enemies;
     std::set<std::shared_ptr<MovingEnemy>> moving_enemies;
     std::set<std::shared_ptr<GroundPlot>> ground;
+    std::shared_ptr<FinishLine> finish_line;
 
 
 public:
@@ -34,6 +37,8 @@ public:
 
     void trackPlayer();
 
+    void checkToDestroyEntities();
+
     virtual void buildWorld(const std::shared_ptr<AbstractFactory>& factory);
 
     void addPlayer(const std::shared_ptr<Player>& p);
@@ -45,6 +50,8 @@ public:
     void addMovingEnemy(const std::shared_ptr<MovingEnemy>& moving_enemy);
 
     void addGRoundPlot(const std::shared_ptr<GroundPlot>& groundPlot);
+
+    void addFinishLine(const std::shared_ptr<FinishLine>& finishLine);
 
     std::set<std::shared_ptr<Entity>> getEntities() const;
 
@@ -60,6 +67,7 @@ public:
 
     const std::set<std::shared_ptr<GroundPlot>>& getGround() const;
 
+    const std::shared_ptr<FinishLine>& getFinishLine() const;
 };
 
 #endif //TURBOHIKER_WORLD_H

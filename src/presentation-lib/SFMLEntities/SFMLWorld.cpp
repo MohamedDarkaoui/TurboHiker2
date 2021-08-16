@@ -5,7 +5,7 @@ SFMLWorld::SFMLWorld(Position2D position, std::pair<double, double> &size) : Wor
 
 void SFMLWorld::buildWorld(const std::shared_ptr<AbstractFactory>& factory) {
     addPlayer(factory->createPlayer());
-
+    addFinishLine(factory->createFinishLine());
     for (const auto& hiker : factory->createCompetingHikers(getPlayer()->getLane()))
         addCompetingHiker(hiker);
 
@@ -34,7 +34,9 @@ const std::set<std::shared_ptr<SFMLMovingEnemy>> &SFMLWorld::getSFMLMovingEnemie
 const std::set<std::shared_ptr<SFMLGroundPlot>> &SFMLWorld::getSFMLGroundPlot() const {
     return (const std::set<std::shared_ptr<SFMLGroundPlot>> &) World::getGround();
 }
-
+const std::shared_ptr<SFMLFinishLine> &SFMLWorld::getSFMLFinishLine() const {
+    return (const std::shared_ptr<SFMLFinishLine> &) getFinishLine();
+}
 
 std::set<std::shared_ptr<SFMLEntity>> SFMLWorld::getSFMLEntities() const {
     std::set<std::shared_ptr<SFMLEntity>> entities;
@@ -57,6 +59,8 @@ void SFMLWorld::update() {
         entity->updateVisuals(getPosition());
     }
 }
+
+
 
 
 

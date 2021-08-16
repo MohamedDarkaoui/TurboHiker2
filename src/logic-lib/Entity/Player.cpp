@@ -11,6 +11,7 @@ Player::Player(unsigned int lane, std::pair<double, double> &size, std::vector<d
 
 void Player::yell() {
     if (yell_duration == 0){
+        notifyObservers(ObserverEvent::YELLING);
         yelling = true;
         yell_duration = 1;
     }

@@ -43,7 +43,7 @@ ADD_EXECUTABLE(
         presentation-lib/Animation/Animation.h
         presentation-lib/SFMLEntities/SFMLGroundPlot.cpp
         presentation-lib/SFMLEntities/SFMLGroundPlot.h
-        logic-lib/Entity/GroundPlot.cpp logic-lib/Entity/GroundPlot.h logic-lib/Observer/Observer.cpp logic-lib/Observer/Observer.h)
+        logic-lib/Entity/GroundPlot.cpp logic-lib/Entity/GroundPlot.h logic-lib/Observer/Observer.cpp logic-lib/Observer/Observer.h logic-lib/Observer/Observable.cpp logic-lib/Observer/Observable.h logic-lib/Score/Score.cpp logic-lib/Score/Score.h logic-lib/Entity/FinishLine.cpp logic-lib/Entity/FinishLine.h presentation-lib/SFMLEntities/SFMLFinishLine.cpp presentation-lib/SFMLEntities/SFMLFinishLine.h)
 
 
 TARGET_LINK_LIBRARIES (TurboHiker sfml-graphics sfml-window sfml-system sfml-audio)

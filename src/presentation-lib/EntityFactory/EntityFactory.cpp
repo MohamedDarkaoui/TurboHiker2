@@ -54,7 +54,7 @@ std::set<std::shared_ptr<SFMLStaticEnemy>> EntityFactory::createStaticEnemies() 
     double world_height = configuration["world"]["height"].as_double_or_die();
     double world_top = configuration["world"]["top"].as_double_or_die();
     double min = configuration["staticEnemy"]["minSpawnYposition"].as_double_or_die();
-    double max = configuration["staticEnemy"]["maxSpawnYposition"].as_double_or_die();
+    double max = configuration["world"]["height"].as_double_or_die() -1;
     double world_bottom = world_top - world_height + min;
     std::pair<double,double> size;
     size.first = configuration["staticEnemy"]["sizeX"].as_double_or_die();
@@ -80,7 +80,7 @@ std::set<std::shared_ptr<SFMLMovingEnemy>> EntityFactory::createMovingEnemies() 
     double world_height = configuration["world"]["height"].as_double_or_die();
     double world_top = configuration["world"]["top"].as_double_or_die();
     double min = configuration["movingEnemy"]["minSpawnYposition"].as_double_or_die();
-    double max = configuration["movingEnemy"]["maxSpawnYposition"].as_double_or_die();
+    double max = configuration["world"]["height"].as_double_or_die() * 2;
     double world_bottom = world_top - world_height + min;
     std::pair<double,double> size;
     size.first = configuration["movingEnemy"]["sizeX"].as_double_or_die();
@@ -104,9 +104,7 @@ std::set<std::shared_ptr<SFMLMovingEnemy>> EntityFactory::createMovingEnemies() 
 
 
 std::shared_ptr<SFMLWorld> EntityFactory::createWorld() {
-    double top = configuration["world"]["top"].as_double_or_die();
     double height = configuration["world"]["height"].as_double_or_die();
-    double left = configuration["world"]["left"].as_double_or_die();
     double width = configuration["world"]["width"].as_double_or_die();
     std::pair<double,double> size = std::make_pair(width,height);
 
@@ -114,10 +112,9 @@ std::shared_ptr<SFMLWorld> EntityFactory::createWorld() {
 }
 
 std::set<std::shared_ptr<SFMLGroundPlot>> EntityFactory::createGroundPlots() {
-    double top = configuration["world"]["top"].as_double_or_die();
     double height = configuration["world"]["height"].as_double_or_die();
 
-    double origin = top - height - 3;
+    double origin = 0;
     std::pair<int,int> dimensions;
     std::pair<double,double> size;
 
@@ -137,7 +134,7 @@ std::set<std::shared_ptr<SFMLGroundPlot>> EntityFactory::createGroundPlots() {
     std::set<std::shared_ptr<SFMLGroundPlot>> plots;
     double current_top = origin;
 
-    while(current_top <= top){
+    while(current_top <= height){
         std::shared_ptr<SFMLGroundPlot> gp = std::make_shared<SFMLGroundPlot>
                 (SFMLGroundPlot({0,current_top},size,sprite_path,dimensions,imageCoordinate));
         plots.insert(gp);
@@ -145,6 +142,22 @@ std::set<std::shared_ptr<SFMLGroundPlot>> EntityFactory::createGroundPlots() {
         current_top += size.second;
     }
     return plots;
+}
+
+std::shared_ptr<SFMLFinishLine> EntityFactory::createFinishLine() {
+    std::string sprite_path = "../../";
+    sprite_path += configuration["finishLine"]["sprite"].as_string_or_die();
+    Position2D position(0,0);
+    position.setX(0);
+    position.setY(configuration["world"]["height"].as_double_or_die()+0.8);
+    std::pair<double,double> size = std::make_pair(6,2);
+    std::pair<int,int> imageCoordinate;
+    imageCoordinate.first = configuration["finishLine"]["imageCoordinateX"].as_int_or_die();
+    imageCoordinate.second = configuration["finishLine"]["imageCoordinateY"].as_int_or_die();
+    std::shared_ptr<SFMLFinishLine> finishLine = std::make_shared<SFMLFinishLine>(SFMLFinishLine(sprite_path,position,
+                                                                                                 size,imageCoordinate));
+
+    return finishLine;
 }
 
 
