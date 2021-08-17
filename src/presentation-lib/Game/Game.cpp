@@ -6,7 +6,7 @@ SFMLGame::SFMLGame() {
 }
 
 void SFMLGame::run() {
-    auto factory = std::make_shared<EntityFactory>("../../game_configurations.ini");
+    auto factory = std::make_shared<EntityFactory>("game_configurations.ini");
     std::shared_ptr<SFMLWorld> world = factory->createWorld();
     world->buildWorld();
     auto player = world->getSFMLPlayer();
@@ -15,7 +15,7 @@ void SFMLGame::run() {
     Clock animationClock (100);
 
     sf::Font font;
-    assert(font.loadFromFile("../../res/Blazed.ttf") && "Error loading font file.");
+    assert(font.loadFromFile("res/Blazed.ttf") && "Error loading font file.");
     sf::Text text;
     text.setFont(font);
     text.setFillColor(sf::Color(139,0,0));

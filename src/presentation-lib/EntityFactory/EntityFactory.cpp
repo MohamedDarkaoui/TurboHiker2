@@ -16,8 +16,7 @@ EntityFactory::EntityFactory(const std::string &path_to_config_file)  {
 }
 
 std::shared_ptr<SFMLPlayer> EntityFactory::createPlayer() {
-    std::string sprite_path = "../../";
-    sprite_path += configuration["player"]["sprite"].as_string_or_die();
+    std::string sprite_path = configuration["player"]["sprite"].as_string_or_die();
     double speed = configuration["hiker"]["speed"].as_double_or_die();
     unsigned int lane = Random::getInstance().randomInt(0,4);
     std::pair<double,double> size;
@@ -37,8 +36,7 @@ std::set<std::shared_ptr<SFMLCompetingHiker>> EntityFactory::createCompetingHike
     size.second = configuration["CompetingHiker"]["sizeY"].as_double_or_die();
     std::vector<double> lanePositions = configuration["world"]["laneXcoordinates"].as_double_tuple_or_die();
     double speedUpFactor = configuration["CompetingHiker"]["speedUpFactor"].as_double_or_die();
-    std::string sprite_path = "../../";
-    sprite_path += configuration["CompetingHiker"]["sprite"].as_string_or_die();
+    std::string sprite_path = configuration["CompetingHiker"]["sprite"].as_string_or_die();
     std::set<std::shared_ptr<SFMLCompetingHiker>> competingHikers;
     for (unsigned int i = 0; i < 4; i++){
         if (i != player_lane)
@@ -56,8 +54,7 @@ std::shared_ptr<SFMLStaticEnemy> EntityFactory::createStaticEnemy(unsigned int l
     size.first = configuration["staticEnemy"]["sizeX"].as_double_or_die();
     size.second = configuration["staticEnemy"]["sizeY"].as_double_or_die();
     std::vector<double> lanePositions = configuration["world"]["laneXcoordinates"].as_double_tuple_or_die();
-    std::string sprite_path = "../../";
-    sprite_path += configuration["staticEnemy"]["sprite"].as_string_or_die();
+    std::string sprite_path = configuration["staticEnemy"]["sprite"].as_string_or_die();
     auto enemy = std::make_shared<SFMLStaticEnemy>(lane,size,lanePositions,speed,sprite_path);
     enemy->setYposition(y_pos);
     return enemy;
@@ -82,8 +79,7 @@ std::shared_ptr<SFMLMovingEnemy> EntityFactory::createMovingEnemy(unsigned int l
     size.first = configuration["movingEnemy"]["sizeX"].as_double_or_die();
     size.second = configuration["movingEnemy"]["sizeY"].as_double_or_die();
     std::vector<double> lanePositions = configuration["world"]["laneXcoordinates"].as_double_tuple_or_die();
-    std::string sprite_path = "../../";
-    sprite_path += configuration["movingEnemy"]["sprite"].as_string_or_die();
+    std::string sprite_path = configuration["movingEnemy"]["sprite"].as_string_or_die();
     double speedUpFactor = configuration["movingEnemy"]["speedUpFactor"].as_double_or_die();
     auto enemy = std::make_shared<SFMLMovingEnemy>(lane,size,lanePositions,speed,speedUpFactor,sprite_path);
     enemy->setYposition(y_pos);
@@ -129,8 +125,7 @@ std::set<std::shared_ptr<SFMLGroundPlot>> EntityFactory::createGroundPlots() {
     size.first = configuration["groundPlot"]["sizeX"].as_int_or_die();
     size.second = configuration["groundPlot"]["sizeY"].as_int_or_die();
 
-    std::string sprite_path = "../../";
-    sprite_path += configuration["groundPlot"]["sprite"].as_string_or_die();
+    std::string sprite_path = configuration["groundPlot"]["sprite"].as_string_or_die();
 
     std::pair<int,int> imageCoordinate;
     imageCoordinate.first = configuration["groundPlot"]["imageCoordinateX"].as_int_or_die();
@@ -150,8 +145,7 @@ std::set<std::shared_ptr<SFMLGroundPlot>> EntityFactory::createGroundPlots() {
 }
 
 std::shared_ptr<SFMLFinishLine> EntityFactory::createFinishLine() {
-    std::string sprite_path = "../../";
-    sprite_path += configuration["finishLine"]["sprite"].as_string_or_die();
+    std::string sprite_path = configuration["finishLine"]["sprite"].as_string_or_die();
     Position2D position(0,0);
     position.setX(0);
     position.setY(configuration["world"]["height"].as_double_or_die()+0.8);
@@ -166,8 +160,7 @@ std::shared_ptr<SFMLFinishLine> EntityFactory::createFinishLine() {
 }
 
 std::set<std::shared_ptr<SFMLPassiveItem>> EntityFactory::createPassiveItem() {
-    std::string sprite_path = "../../";
-    sprite_path += configuration["passiveItem"]["sprite"].as_string_or_die();
+    std::string sprite_path = configuration["passiveItem"]["sprite"].as_string_or_die();
     unsigned int amount = configuration["passiveItem"]["amount"].as_int_or_die();
     std::pair<double,double> size;
     size.first = configuration["passiveItem"]["sizeX"].as_double_or_die();
@@ -193,8 +186,7 @@ std::set<std::shared_ptr<SFMLPassiveItem>> EntityFactory::createPassiveItem() {
 }
 
 std::set<std::shared_ptr<SFMLActiveItem>> EntityFactory::createActiveItems() {
-    std::string sprite_path = "../../";
-    sprite_path += configuration["activeItem"]["sprite"].as_string_or_die();
+    std::string sprite_path = configuration["activeItem"]["sprite"].as_string_or_die();
     unsigned int amount = configuration["activeItem"]["amount"].as_int_or_die();
     std::pair<double,double> size;
     size.first = configuration["activeItem"]["sizeX"].as_double_or_die();
