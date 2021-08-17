@@ -6,6 +6,7 @@ enum class ObserverEvent{
     COMPETING_HIKER_COLLISION,
     ENEMY_COLLISION,
     YELLING,
+    BONUS
 };
 
 class Observer {

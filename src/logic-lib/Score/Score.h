@@ -9,6 +9,7 @@ private:
     int nr_competing_hiker_collisions = 0;
     int nr_enemy_collisions = 0;
     int nr_yelled_times = 0;
+    int nr_bonuses = 0;
 public:
 
     void handleNotification(ObserverEvent event) override;

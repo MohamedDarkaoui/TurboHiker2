@@ -13,6 +13,9 @@ void Score::handleNotification(ObserverEvent event) {
         case ObserverEvent::YELLING:
             nr_yelled_times++;
             break;
+        case ObserverEvent::BONUS:
+            nr_bonuses++;
+            break;
     }
 }
 
@@ -22,9 +25,7 @@ int Score::getPoints(double player_y_position) const {
     score -= nr_competing_hiker_collisions * 2;
     score -= nr_yelled_times * 10;
     score -= nr_enemy_collisions * 2;
-
-    if (score < 0)
-        score = 0;
+    score -= nr_bonuses * 50;
 
     return floor(score);
 }

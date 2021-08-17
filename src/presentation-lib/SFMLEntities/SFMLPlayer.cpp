@@ -38,7 +38,6 @@ void SFMLPlayer::handleEvents(sf::Event &event, sf::RenderWindow& window) {
                     speedUp();
             if (event.key.code == sf::Keyboard::Q)
                 stopRunningAtTurboSpeed();
-
         }
         // "close requested" event: we close the window
         else if (event.type == sf::Event::Closed)

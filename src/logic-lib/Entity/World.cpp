@@ -106,8 +106,10 @@ void World::handleCollectingItem() {
                 double y1 = hiker->getPosition().getY();
                 double y2 = item->getPosition().getY();
                 double collision_distance = (hiker->getSize().second + (item->getSize()).second)/4;
-                if (std::abs(y2-y1) < collision_distance)
+                if (std::abs(y2-y1) < collision_distance){
                     item->giveReward(hiker,hikers);
+                    hiker->notifyObservers(ObserverEvent::BONUS);
+                }
             }
         }
     }

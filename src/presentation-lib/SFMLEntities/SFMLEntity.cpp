@@ -13,7 +13,6 @@ const sf::RectangleShape &SFMLEntity::getShape() const {
     return shape;
 }
 
-
 void SFMLEntity::initialize(const std::pair<double,double> &size, const Position2D& relativePos) {
     auto playerSize = Transformation::getInstance().transformSize(size.first,size.second);
     Position2D playerPos = Transformation::getInstance().transform(relativePos);
