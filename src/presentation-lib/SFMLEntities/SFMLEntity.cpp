@@ -28,3 +28,11 @@ void SFMLEntity::setClockTickTime(const unsigned int& tickTime) {
     clock->setTickTime(tickTime);
 }
 
+void SFMLEntity::updateVisuals(const Position2D& relativePos, std::pair<double,double> size) {
+    Position2D transformed = Transformation::getInstance().transform(relativePos);
+    std::pair<float,float> SFMLSize = Transformation::getInstance().transformSize(size.first,size.second);
+    auto x = float(transformed.getX() - SFMLSize.first * 0.5);
+    auto y = float(transformed.getY() - SFMLSize.second * 0.5);
+    shape.setPosition(x,y);
+}
+

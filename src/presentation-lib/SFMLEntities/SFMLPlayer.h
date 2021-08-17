@@ -15,7 +15,7 @@ public:
 
     void handleEvents(sf::Event& event, sf::RenderWindow& window) override;
 
-    void updateVisuals(const Position2D& reference) override;
+    void updateVisuals(const Position2D &relativePos, std::pair<double, double> size) override;
 
     void updateAnimation() override;
 };

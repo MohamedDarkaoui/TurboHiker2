@@ -11,24 +11,22 @@ SFMLMovingEnemy::SFMLMovingEnemy(unsigned int lane, std::pair<double, double> &s
     shape.setTextureRect(animation->getCurrentFrame());
 }
 
-void SFMLMovingEnemy::updateVisuals(const Position2D& reference) {
-    Position2D relativePos = getRelativePosition(reference);
-    std::pair<double,double> size = getSize();
-    Position2D transformed = Transformation::getInstance().transform(relativePos);
-    std::pair<float,float> SFMLSize = Transformation::getInstance().transformSize(size.first,size.second);
-    auto x = float(transformed.getX() - SFMLSize.first * 0.5);
-    auto y = float(transformed.getY() - SFMLSize.second * 0.5);
-    shape.setPosition(x,y);
-}
-
 void SFMLMovingEnemy::updateAnimation() {
     int factor = 1;
     if (getAcceleration() == Hiker::SLOW_DOWN)
         factor = 2;
-
+    int row;
+    if (getSpeed() > 0)
+        row = 3;
+    else
+        row = 0;
     setClockTickTime(100*factor);
     if (clock->clockTicked()){
-        animation->update(0);
+        animation->update(row);
         shape.setTextureRect(animation->getCurrentFrame());
     }
+}
+
+void SFMLMovingEnemy::updateVisuals(const Position2D &relativePos, std::pair<double, double> size) {
+    SFMLEntity::updateVisuals(relativePos, size);
 }

@@ -11,7 +11,7 @@ public:
                     std::vector<double> &lanePositionsX, double speed, double speedUpFactor,
                     const std::string &path_to_image);
 
-    void updateVisuals(const Position2D& reference) final;
+    void updateVisuals(const Position2D &relativePos, std::pair<double, double> size) final;
 
     void updateAnimation() final;
 };

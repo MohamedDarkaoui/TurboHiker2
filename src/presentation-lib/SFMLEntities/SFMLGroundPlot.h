@@ -14,7 +14,7 @@ public:
 
     void update() final;
 
-    void updateVisuals(const Position2D& reference) final;
+    void updateVisuals(const Position2D& relativePos, std::pair<double,double> size) final;
 };
 
 

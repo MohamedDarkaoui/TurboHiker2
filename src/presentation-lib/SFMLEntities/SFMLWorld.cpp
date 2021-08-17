@@ -1,22 +1,29 @@
 #include "SFMLWorld.h"
 
-SFMLWorld::SFMLWorld(Position2D position, std::pair<double, double> &size) : World(position, size){}
+SFMLWorld::SFMLWorld(Position2D position, std::pair<double, double> &size, std::shared_ptr<AbstractFactory>& factory) :
+World(position, size, factory){}
 
 
-void SFMLWorld::buildWorld(const std::shared_ptr<AbstractFactory>& factory) {
-    addPlayer(factory->createPlayer());
-    addFinishLine(factory->createFinishLine());
-    for (const auto& hiker : factory->createCompetingHikers(getPlayer()->getLane()))
+void SFMLWorld::buildWorld() {
+    addPlayer(getFactory()->createPlayer());
+    addFinishLine(getFactory()->createFinishLine());
+    for (const auto& hiker : getFactory()->createCompetingHikers(getPlayer()->getLane()))
         addCompetingHiker(hiker);
 
-    for (const auto& enemy : factory->createStaticEnemies())
+    for (const auto& enemy : getFactory()->createStaticEnemies())
         addStaticEnemy(enemy);
 
-    for (const auto& enemy : factory->createMovingEnemies())
+    for (const auto& enemy : getFactory()->createMovingEnemies())
         addMovingEnemy(enemy);
 
-    for (const auto& gp : factory->createGroundPlots())
+    for (const auto& gp : getFactory()->createGroundPlots())
         addGRoundPlot(gp);
+
+    for (const auto& item : getFactory()->createPassiveItem())
+        addPassiveItem(item);
+
+    for (const auto& item : getFactory()->createActiveItems())
+        addActiveItem(item);
 }
 
 const std::set<std::shared_ptr<SFMLCompetingHiker>> &SFMLWorld::getSFMLCompetingHikers() const {
@@ -31,9 +38,19 @@ const std::set<std::shared_ptr<SFMLMovingEnemy>> &SFMLWorld::getSFMLMovingEnemie
     return (const std::set<std::shared_ptr<SFMLMovingEnemy>> &) World::getMovingEnemies();
 }
 
+const std::set<std::shared_ptr<SFMLPassiveItem>> &SFMLWorld::getSFMLPassiveItems() const {
+    return (const std::set<std::shared_ptr<SFMLPassiveItem>> &) getPassiveItems();
+}
+
+const std::set<std::shared_ptr<SFMLActiveItem>> &SFMLWorld::getSFMLActiveItems() const {
+    return (const std::set<std::shared_ptr<SFMLActiveItem>> &) getActiveItems();
+}
+
+
 const std::set<std::shared_ptr<SFMLGroundPlot>> &SFMLWorld::getSFMLGroundPlot() const {
     return (const std::set<std::shared_ptr<SFMLGroundPlot>> &) World::getGround();
 }
+
 const std::shared_ptr<SFMLFinishLine> &SFMLWorld::getSFMLFinishLine() const {
     return (const std::shared_ptr<SFMLFinishLine> &) getFinishLine();
 }
@@ -43,6 +60,8 @@ std::set<std::shared_ptr<SFMLEntity>> SFMLWorld::getSFMLEntities() const {
     entities.insert(getSFMLCompetingHikers().begin(), getSFMLCompetingHikers().end());
     entities.insert(getSFMLMovingEnemies().begin(), getSFMLMovingEnemies().end());
     entities.insert(getSFMLStaticEnemies().begin(), getSFMLStaticEnemies().end());
+    entities.insert(getSFMLPassiveItems().begin(), getSFMLPassiveItems().end());
+    entities.insert(getSFMLActiveItems().begin(), getSFMLActiveItems().end());
     entities.insert(getSFMLPlayer());
     return entities;
 }
@@ -56,9 +75,23 @@ void SFMLWorld::update() {
     World::update();
 
     for(const auto& entity : getEntities()) {
-        entity->updateVisuals(getPosition());
+        entity->updateVisuals(entity->getRelativePosition(getPosition()),entity->getSize());
     }
 }
+
+void SFMLWorld::spawnMovingEnemy(unsigned int lane, double y_pos, double speedFactor) {
+    if (speedFactor > 0)
+        y_pos += getPlayer()->getSize().second;
+    else
+        y_pos -= getPlayer()->getSize().second;
+    addMovingEnemy(getFactory()->createMovingEnemy(lane,y_pos,speedFactor));
+}
+
+void SFMLWorld::spawnStaticEnemy(unsigned int lane, double y_pos) {
+    addStaticEnemy(getFactory()->createStaticEnemy(lane,y_pos-getPlayer()->getSize().second));
+}
+
+
 
 
 

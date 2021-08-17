@@ -33,6 +33,8 @@ public:
 
     void setClockTickTime(const unsigned int& tickTime);
 
+    virtual void updateVisuals(const Position2D& relativePos, std::pair<double,double> size);
+
 };
 
 

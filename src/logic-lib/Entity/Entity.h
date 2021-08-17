@@ -34,11 +34,13 @@ public:
 
     unsigned int getLane() const;
 
-    void setLane(unsigned int lane);
+    void setLane(unsigned int _lane);
+
+    void setPosition(const Position2D &pos);
 
     const std::vector<double> &getLanePositionsX() const;
 
-    virtual void updateVisuals(const Position2D& reference);
+    virtual void updateVisuals(const Position2D& relativePos, std::pair<double,double> size);
 
 };
 

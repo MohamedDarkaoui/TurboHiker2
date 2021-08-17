@@ -9,7 +9,7 @@ public:
     SFMLFinishLine(const std::string &pathToImage, Position2D position,
                    std::pair<double, double> &size, std::pair<int,int> imageCoordinates);
 
-    void updateVisuals(const Position2D& reference) override;
+    void updateVisuals(const Position2D& relativePos, std::pair<double,double> size) override;
 };
 
 

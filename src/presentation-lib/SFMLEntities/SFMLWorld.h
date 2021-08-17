@@ -8,9 +8,9 @@ class SFMLWorld : public World {
 private:
 
 public:
-    SFMLWorld(Position2D position, std::pair<double, double> &size);
+    SFMLWorld(Position2D position, std::pair<double, double> &size, std::shared_ptr<AbstractFactory>& factory);
 
-    void buildWorld(const std::shared_ptr<AbstractFactory>& factory) override;
+    void buildWorld() override;
 
     const std::set<std::shared_ptr<SFMLCompetingHiker>>& getSFMLCompetingHikers() const;
 
@@ -24,7 +24,15 @@ public:
 
     const std::set<std::shared_ptr<SFMLGroundPlot>>& getSFMLGroundPlot() const;
 
+    const std::set<std::shared_ptr<SFMLPassiveItem>>& getSFMLPassiveItems() const;
+
+    const std::set<std::shared_ptr<SFMLActiveItem>>& getSFMLActiveItems() const;
+
     const std::shared_ptr<SFMLFinishLine> &getSFMLFinishLine() const;
+
+    void spawnMovingEnemy(unsigned int lane, double y_pos, double speedFactor) override;
+
+    void spawnStaticEnemy(unsigned int lane, double y_pos) override;
 
     void update() override;
 

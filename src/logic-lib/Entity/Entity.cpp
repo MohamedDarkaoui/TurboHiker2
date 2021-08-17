@@ -33,11 +33,18 @@ const std::vector<double> &Entity::getLanePositionsX() const {
     return lanePositionsX;
 }
 
-void Entity::setLane(unsigned int lane) {
-    Entity::lane = lane;
+void Entity::setLane(unsigned int _lane) {
+    Entity::lane = _lane;
 }
 
-void Entity::updateVisuals(const Position2D& reference) {}
+
+void Entity::setPosition(const Position2D &pos) {
+    Entity::position = pos;
+}
+
+void Entity::updateVisuals(const Position2D &relativePos, std::pair<double, double> _size) {
+
+}
 
 
 

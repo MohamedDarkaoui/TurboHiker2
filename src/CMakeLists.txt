@@ -43,7 +43,7 @@ ADD_EXECUTABLE(
         presentation-lib/Animation/Animation.h
         presentation-lib/SFMLEntities/SFMLGroundPlot.cpp
         presentation-lib/SFMLEntities/SFMLGroundPlot.h
-        logic-lib/Entity/GroundPlot.cpp logic-lib/Entity/GroundPlot.h logic-lib/Observer/Observer.cpp logic-lib/Observer/Observer.h logic-lib/Observer/Observable.cpp logic-lib/Observer/Observable.h logic-lib/Score/Score.cpp logic-lib/Score/Score.h logic-lib/Entity/FinishLine.cpp logic-lib/Entity/FinishLine.h presentation-lib/SFMLEntities/SFMLFinishLine.cpp presentation-lib/SFMLEntities/SFMLFinishLine.h)
+        logic-lib/Entity/GroundPlot.cpp logic-lib/Entity/GroundPlot.h logic-lib/Observer/Observer.cpp logic-lib/Observer/Observer.h logic-lib/Observer/Observable.cpp logic-lib/Observer/Observable.h logic-lib/Score/Score.cpp logic-lib/Score/Score.h logic-lib/Entity/FinishLine.cpp logic-lib/Entity/FinishLine.h presentation-lib/SFMLEntities/SFMLFinishLine.cpp presentation-lib/SFMLEntities/SFMLFinishLine.h logic-lib/Entity/CollectableItem.cpp logic-lib/Entity/CollectableItem.h logic-lib/Entity/PassiveItem.cpp logic-lib/Entity/PassiveItem.h presentation-lib/SFMLEntities/SFMLPassiveItem.cpp presentation-lib/SFMLEntities/SFMLPassiveItem.h logic-lib/Entity/ActiveItem.cpp logic-lib/Entity/ActiveItem.h presentation-lib/SFMLEntities/SFMLActiveItem.cpp presentation-lib/SFMLEntities/SFMLActiveItem.h)
 
 
 TARGET_LINK_LIBRARIES (TurboHiker sfml-graphics sfml-window sfml-system sfml-audio)

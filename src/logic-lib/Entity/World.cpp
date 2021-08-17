@@ -1,10 +1,11 @@
 #include "World.h"
 #include <iostream>
 
-World::World(Position2D position, std::pair<double, double> &size) : Entity(position, size) {}
+World::World(Position2D position, std::pair<double, double> &size, std::shared_ptr<AbstractFactory>& factory) :
+Entity(position, size), factory(factory){}
 
 void World::update() {
-
+    handleRewardUsage();
     trackPlayer();
     // make one big set with all entities
     auto entities = getEntities();
@@ -36,6 +37,15 @@ void World::addMovingEnemy(const std::shared_ptr<MovingEnemy> &moving_enemy) {
 void World::addGRoundPlot(const std::shared_ptr<GroundPlot> &groundPlot) {
     ground.insert(groundPlot);
 }
+
+void World::addPassiveItem(const std::shared_ptr<PassiveItem> &passiveItem) {
+    passive_items.insert(passiveItem);
+}
+
+void World::addActiveItem(const std::shared_ptr<ActiveItem> &activeItem) {
+    active_items.insert(activeItem);
+}
+
 
 void World::addFinishLine(const std::shared_ptr<FinishLine>& finishLine){
     finish_line = finishLine;
@@ -87,6 +97,22 @@ void World::handleHikerEnemyCollisions() {
     }
 }
 
+void World::handleCollectingItem() {
+    std::set<std::shared_ptr<CompetingHiker>> hikers = competing_hikers;
+    hikers.insert(player);
+    for (auto hiker : hikers){
+        for (const auto& item : getItems()){
+            if (hiker->getLane() == item->getLane()){
+                double y1 = hiker->getPosition().getY();
+                double y2 = item->getPosition().getY();
+                double collision_distance = (hiker->getSize().second + (item->getSize()).second)/4;
+                if (std::abs(y2-y1) < collision_distance)
+                    item->giveReward(hiker,hikers);
+            }
+        }
+    }
+}
+
 void World::handleYelling() {
     if (player->isYelling()){
         for (auto& enemy : getEnemies()){
@@ -103,10 +129,26 @@ void World::handleYelling() {
     }
 }
 
+void World::handleRewardUsage() {
+    std::set<std::shared_ptr<CompetingHiker>> hikers = competing_hikers;
+    hikers.insert(player);
+
+    for(const auto& hiker : hikers){
+        if (hiker->isUsingActiveReward() and !hiker->rewardsEmpty()){
+           std::pair<bool,double> reward = hiker->getFirstReward();
+           if (reward.first)
+               spawnMovingEnemy(hiker->getLane(), hiker->getPosition().getY(), reward.second);
+           else
+               spawnStaticEnemy(hiker->getLane(),hiker->getPosition().getY());
+        }
+    }
+}
+
 void World::handleEvents() {
     handleHikerCollisions();
     handleHikerEnemyCollisions();
     handleYelling();
+    handleCollectingItem();
 }
 
 void World::trackPlayer() {
@@ -120,8 +162,9 @@ void World::trackPlayer() {
         if (player->getPosition().getY() - position.getY()  >= 4.5)
             player->slowDown();
     }
-    else
+    else{
         position += {0, player->getSpeed()};
+    }
 }
 
 std::set<std::shared_ptr<Entity>> World::getEntities() const{
@@ -130,6 +173,8 @@ std::set<std::shared_ptr<Entity>> World::getEntities() const{
     entities.insert(competing_hikers.begin(), competing_hikers.end());
     entities.insert(static_enemies.begin(), static_enemies.end());
     entities.insert(moving_enemies.begin(), moving_enemies.end());
+    entities.insert(passive_items.begin(), passive_items.end());
+    entities.insert(active_items.begin(), active_items.end());
     entities.insert(finish_line);
     entities.insert(player);
 
@@ -142,6 +187,14 @@ std::set<std::shared_ptr<Enemy>> World::getEnemies() const {
     enemies.insert(moving_enemies.begin(), moving_enemies.end());
 
     return enemies;
+}
+
+std::set<std::shared_ptr<CollectableItem>> World::getItems() const {
+    std::set<std::shared_ptr<CollectableItem>> items;
+    items.insert(passive_items.begin(), passive_items.end());
+    items.insert(active_items.begin(),active_items.end());
+
+    return items;
 }
 
 const std::shared_ptr<Player> &World::getPlayer() const {
@@ -160,11 +213,19 @@ const std::set<std::shared_ptr<MovingEnemy>> &World::getMovingEnemies() const {
     return moving_enemies;
 }
 
+const std::set<std::shared_ptr<PassiveItem>> &World::getPassiveItems() const {
+    return passive_items;
+}
+
+const std::set<std::shared_ptr<ActiveItem>> &World::getActiveItems() const {
+    return active_items;
+}
+
 const std::shared_ptr<FinishLine> &World::getFinishLine() const {
     return finish_line;
 }
 
-void World::buildWorld(const std::shared_ptr<AbstractFactory>& factory) {}
+void World::buildWorld() {}
 
 const std::set<std::shared_ptr<GroundPlot>> &World::getGround() const {
     return ground;
@@ -186,6 +247,27 @@ void World::checkToDestroyEntities() {
         if (enemy->getPosition().getY() < 0)
             moving_enemies.erase(enemy);
     }
+
+    for (const auto& item : passive_items){
+        if (item->isRewardGiven())
+            passive_items.erase(item);
+    }
+
+    for (const auto& item : active_items){
+        if (item->isRewardGiven())
+            active_items.erase(item);
+    }
 }
+
+void World::spawnMovingEnemy(unsigned int lane, double y_pos, double speedFactor) {}
+
+void World::spawnStaticEnemy(unsigned int lane, double y_pos) {}
+
+const std::shared_ptr<AbstractFactory> &World::getFactory() const {
+    return factory;
+}
+
+
+
 
 

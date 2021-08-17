@@ -9,16 +9,6 @@ CompetingHiker(lane,size,lanePositionsX,speed,speedUpFactor) , SFMLEntity(path_t
     shape.setTextureRect(animation->getCurrentFrame());
 }
 
-void SFMLCompetingHiker::updateVisuals(const Position2D& reference) {
-    Position2D relativePos = getRelativePosition(reference);
-    std::pair<double,double> size = getSize();
-    Position2D transformed = Transformation::getInstance().transform(relativePos);
-    std::pair<float,float> SFMLSize = Transformation::getInstance().transformSize(size.first,size.second);
-    auto x = float(transformed.getX() - SFMLSize.first * 0.5);
-    auto y = float(transformed.getY() - SFMLSize.second * 0.5);
-    shape.setPosition(x,y);
-}
-
 void SFMLCompetingHiker::updateAnimation() {
 
     setClockTickTime(floor(200/(100*getSpeed())));
@@ -26,6 +16,10 @@ void SFMLCompetingHiker::updateAnimation() {
         animation->update(3);
         shape.setTextureRect(animation->getCurrentFrame());
     }
+}
+
+void SFMLCompetingHiker::updateVisuals(const Position2D &relativePos, std::pair<double, double> size) {
+    SFMLEntity::updateVisuals(relativePos, size);
 }
 
 

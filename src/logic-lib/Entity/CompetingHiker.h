@@ -1,10 +1,14 @@
 #ifndef TURBOHIKER_COMPETINGHIKER_H
 #define TURBOHIKER_COMPETINGHIKER_H
 
-
+#include <queue>
 #include "Hiker.h"
 #include "../Observer/Observable.h"
 #include "../Score/Score.h"
+#include "MovingEnemy.h"
+#include "StaticEnemy.h"
+
+class ActiveItem;
 
 class CompetingHiker : public Hiker, public Observable{
 private:
@@ -13,6 +17,11 @@ private:
     int slowed_for;
     bool turbo_fast;
     std::shared_ptr<Score> score;
+    std::queue <std::pair<bool,double>> rewards; // queue(<isMovingEnemy, speed>)
+    bool bonus_speed = false;
+    unsigned int bonus_speed_duration = 0;
+    bool using_active_reward = false;
+
 
 public:
     CompetingHiker(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX, double speed,
@@ -38,7 +47,21 @@ public:
 
     void stopColliding();
 
+    void speedBoost(unsigned int duration);
+
+    void stopSpeedBoost();
+
     const std::shared_ptr<Score> &getScore() const;
+
+    void pushActiveReward(std::pair<bool,double> reward);
+
+    void useActiveReward();
+
+    bool isUsingActiveReward() const;
+
+    std::pair<bool,double> getFirstReward();
+
+    bool rewardsEmpty();
 
     int getSlowedFor() const;
 

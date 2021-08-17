@@ -25,6 +25,8 @@ void SFMLPlayer::handleEvents(sf::Event &event, sf::RenderWindow& window) {
                 moveLeft();
             else if (event.key.code == sf::Keyboard::Right)
                 moveRight();
+            else if (event.key.code == sf::Keyboard::W)
+                useActiveReward();
         }
         if (event.type == sf::Event::KeyReleased){
             if (event.key.code == sf::Keyboard::Up){
@@ -44,15 +46,6 @@ void SFMLPlayer::handleEvents(sf::Event &event, sf::RenderWindow& window) {
     }
 }
 
-void SFMLPlayer::updateVisuals(const Position2D& reference) {
-    Position2D relativePos = getRelativePosition(reference);
-    std::pair<double,double> size = getSize();
-    Position2D transformed = Transformation::getInstance().transform(relativePos);
-    std::pair<float,float> SFMLSize = Transformation::getInstance().transformSize(size.first,size.second);
-    auto x = float(transformed.getX() - SFMLSize.first * 0.5);
-    auto y = float(transformed.getY() - SFMLSize.second * 0.5);
-    shape.setPosition(x,y);
-}
 
 void SFMLPlayer::updateAnimation() {
     if (getSpeed() == 0)
@@ -62,6 +55,10 @@ void SFMLPlayer::updateAnimation() {
         animation->update(3);
         shape.setTextureRect(animation->getCurrentFrame());
     }
+}
+
+void SFMLPlayer::updateVisuals(const Position2D &relativePos, std::pair<double, double> size) {
+    SFMLEntity::updateVisuals(relativePos, size);
 }
 
 
