@@ -299,7 +299,6 @@ void TurboHiker::World::controlCompetingHikers() {
             competingHiker->stopRunningAtTurboSpeed();
         if (!competingHiker->rewardsEmpty()){
             competingHiker->useActiveReward();
-            std::cout<<competingHiker->isUsingActiveReward() << "\n";
         }
     }
 }

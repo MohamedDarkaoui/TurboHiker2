@@ -35,8 +35,6 @@ void SFML::SFMLGame::run(const std::string& config_path) {
         sf::Event event;
 
 
-
-
         player->handleEvents(event, *window);
         world->update();
 
