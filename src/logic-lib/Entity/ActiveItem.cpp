@@ -1,11 +1,11 @@
 #include "ActiveItem.h"
 
-ActiveItem::ActiveItem(unsigned int lane, std::pair<double, double> &size, std::vector<double> &lanePositionsX)
+TurboHiker::ActiveItem::ActiveItem(unsigned int lane, std::pair<double, double> &size, std::vector<double> &lanePositionsX)
         : CollectableItem(lane, size, lanePositionsX) {
 
 }
 
-void ActiveItem::giveReward(std::shared_ptr<CompetingHiker>& competitor, std::set<std::shared_ptr<CompetingHiker>>& others) {
+void TurboHiker::ActiveItem::giveReward(std::shared_ptr<CompetingHiker>& competitor, std::set<std::shared_ptr<CompetingHiker>>& others) {
     unsigned int position = 0;
     for (const auto& hiker : others){
         if (hiker->getPosition().getY() > competitor->getPosition().getY())
@@ -25,5 +25,5 @@ void ActiveItem::giveReward(std::shared_ptr<CompetingHiker>& competitor, std::se
     setRewardGiven(true);
 }
 
-void ActiveItem::update() {
+void TurboHiker::ActiveItem::update() {
 }

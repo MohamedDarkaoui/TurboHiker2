@@ -4,6 +4,8 @@
 #include <SFML/Graphics.hpp>
 #include <memory>
 
+namespace SFML {
+
 class Animation {
 private:
     sf::IntRect currentFrame;
@@ -18,7 +20,7 @@ public:
     void update(unsigned int row);
 
 };
-
+}
 
 
 #endif //TURBOHIKER_ANIMATION_H

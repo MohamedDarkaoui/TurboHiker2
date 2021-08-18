@@ -1,6 +1,6 @@
 #include "SFMLMovingEnemy.h"
 
-SFMLMovingEnemy::SFMLMovingEnemy(unsigned int lane, std::pair<double, double> &size,
+SFML::SFMLMovingEnemy::SFMLMovingEnemy(unsigned int lane, std::pair<double, double> &size,
                                  std::vector<double> &lanePositionsX, double speed, double speedUpFactor,
                                  const std::string &path_to_image) :
                                  MovingEnemy(lane, size, lanePositionsX, speed, speedUpFactor),
@@ -11,7 +11,7 @@ SFMLMovingEnemy::SFMLMovingEnemy(unsigned int lane, std::pair<double, double> &s
     shape.setTextureRect(animation->getCurrentFrame());
 }
 
-void SFMLMovingEnemy::updateAnimation() {
+void SFML::SFMLMovingEnemy::updateAnimation() {
     int factor = 1;
     if (getAcceleration() == Hiker::SLOW_DOWN)
         factor = 2;
@@ -27,6 +27,6 @@ void SFMLMovingEnemy::updateAnimation() {
     }
 }
 
-void SFMLMovingEnemy::updateVisuals(const Position2D &relativePos, std::pair<double, double> size) {
+void SFML::SFMLMovingEnemy::updateVisuals(const TurboHiker::Position2D &relativePos, std::pair<double, double> size) {
     SFMLEntity::updateVisuals(relativePos, size);
 }

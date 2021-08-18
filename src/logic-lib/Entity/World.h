@@ -11,6 +11,8 @@
 #include "PassiveItem.h"
 #include "ActiveItem.h"
 
+namespace TurboHiker{
+
 class AbstractFactory;
 
 class World : public Entity {
@@ -93,6 +95,10 @@ public:
 
     const std::shared_ptr<AbstractFactory>& getFactory() const;
 
-};
+    void controlCompetingHikers();
 
+    void controlHikerAtCollision(const std::shared_ptr<CompetingHiker>& competingHiker);
+
+};
+}
 #endif //TURBOHIKER_WORLD_H

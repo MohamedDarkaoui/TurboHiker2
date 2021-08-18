@@ -1,6 +1,6 @@
 #include "CompetingHiker.h"
 
-CompetingHiker::CompetingHiker(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX, double speed,
+TurboHiker::CompetingHiker::CompetingHiker(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX, double speed,
                                double speedUpFactor) :
         Hiker(lane,size,lanePositionsX,speed,speedUpFactor) {
     collision = false;
@@ -11,10 +11,7 @@ CompetingHiker::CompetingHiker(unsigned int lane, std::pair<double, double> &siz
     addObserver(score);
 }
 
-void CompetingHiker::update() {
-    if (using_active_reward)
-        using_active_reward = false;
-
+void TurboHiker::CompetingHiker::update() {
     if (getMovement() != Hiker::STANDARD){
         position.setX(0);
         position += {getLanePositionsX()[getLane()],0};
@@ -40,21 +37,21 @@ void CompetingHiker::update() {
 
 }
 
-void CompetingHiker::moveLeft() {
+void TurboHiker::CompetingHiker::moveLeft() {
     if (getMovement() == Hiker::STANDARD && getLane() > 0){
         setMovement(Hiker::MOVING_LEFT);
         setLane(getLane() - 1);
     }
 }
 
-void CompetingHiker::moveRight() {
+void TurboHiker::CompetingHiker::moveRight() {
     if (getMovement() == STANDARD && getLane() < 3){
         setMovement(Hiker::MOVING_RIGHT);
         setLane(getLane()+1);
     }
 }
 
-void CompetingHiker::collide() {
+void TurboHiker::CompetingHiker::collide() {
     if (!collision and !bonus_speed){
         if (turbo_fast)
             stopRunningAtTurboSpeed();
@@ -67,38 +64,38 @@ void CompetingHiker::collide() {
     }
 }
 
-void CompetingHiker::stopColliding() {
+void TurboHiker::CompetingHiker::stopColliding() {
     setSpeed(getSpeed()*getSpeedUpFactor()*2);
     collision = false;
 }
 
-bool CompetingHiker::isColliding() const {
+bool TurboHiker::CompetingHiker::isColliding() const {
     return collision;
 }
 
-int CompetingHiker::getSlowedFor() const {
+int TurboHiker::CompetingHiker::getSlowedFor() const {
     return slowed_for;
 }
 
-int CompetingHiker::getCollisionSlowDuration() const {
+int TurboHiker::CompetingHiker::getCollisionSlowDuration() const {
     return collision_slow_duration;
 }
 
-void CompetingHiker::setSlowedFor(int slowedFor) {
+void TurboHiker::CompetingHiker::setSlowedFor(int slowedFor) {
     slowed_for = slowedFor;
 }
 
-void CompetingHiker::speedUp() {
+void TurboHiker::CompetingHiker::speedUp() {
     if (!isColliding() && !turbo_fast && !bonus_speed)
         Hiker::speedUp();
 }
 
-void CompetingHiker::slowDown() {
+void TurboHiker::CompetingHiker::slowDown() {
     if (!isColliding() && !turbo_fast && !bonus_speed)
         Hiker::slowDown();
 }
 
-void CompetingHiker::runAtTurboSpeed() {
+void TurboHiker::CompetingHiker::runAtTurboSpeed() {
     if (turbo_fast || getAcceleration() != Hiker::NONE || isColliding() || bonus_speed)
         return;
     turbo_fast = true;
@@ -109,18 +106,18 @@ void CompetingHiker::runAtTurboSpeed() {
     setSpeed(getSpeed()*getSpeedUpFactor()*1.5);
 }
 
-void CompetingHiker::stopRunningAtTurboSpeed() {
+void TurboHiker::CompetingHiker::stopRunningAtTurboSpeed() {
     if (!turbo_fast)
         return;
     turbo_fast = false;
     setSpeed(getSpeed()/(getSpeedUpFactor()*1.5));
 }
 
-const std::shared_ptr<Score> &CompetingHiker::getScore() const {
+const std::shared_ptr<TurboHiker::Score> &TurboHiker::CompetingHiker::getScore() const {
     return score;
 }
 
-void CompetingHiker::speedBoost(unsigned int duration) {
+void TurboHiker::CompetingHiker::speedBoost(unsigned int duration) {
     if (bonus_speed)
         return;
     if (getAcceleration() == Hiker::SPEED_UP)
@@ -135,7 +132,7 @@ void CompetingHiker::speedBoost(unsigned int duration) {
     setSpeed(getSpeed()*(getSpeedUpFactor()*4));
 }
 
-void CompetingHiker::stopSpeedBoost() {
+void TurboHiker::CompetingHiker::stopSpeedBoost() {
     if (!bonus_speed || bonus_speed_duration > 0)
         return;
     bonus_speed = false;
@@ -143,25 +140,37 @@ void CompetingHiker::stopSpeedBoost() {
     setSpeed(getSpeed()/((getSpeedUpFactor()*4)));
 }
 
-void CompetingHiker::pushActiveReward(std::pair<bool,double> reward) {
-    rewards.push(reward);
+void TurboHiker::CompetingHiker::pushActiveReward(std::pair<bool,double> reward) {
+    rewards.push_back(reward);
 }
 
-std::pair<bool,double> CompetingHiker::getFirstReward() {
+std::pair<bool,double> TurboHiker::CompetingHiker::getFirstReward() {
     std::pair<bool,double> reward = rewards.front();
-    rewards.pop();
+    rewards.pop_front();
     return reward;
 }
 
-void CompetingHiker::useActiveReward() {
+void TurboHiker::CompetingHiker::useActiveReward() {
     using_active_reward = true;
 }
 
-bool CompetingHiker::isUsingActiveReward() const {
+bool TurboHiker::CompetingHiker::isUsingActiveReward() const {
     return using_active_reward;
 }
 
-bool CompetingHiker::rewardsEmpty() {
+bool TurboHiker::CompetingHiker::rewardsEmpty() {
     return rewards.empty();
+}
+
+bool TurboHiker::CompetingHiker::isBonusSpeed() const {
+    return bonus_speed;
+}
+
+const std::deque<std::pair<bool, double>> &TurboHiker::CompetingHiker::getRewards() const {
+    return rewards;
+}
+
+void TurboHiker::CompetingHiker::setUsingActiveReward(bool usingActiveReward) {
+    using_active_reward = usingActiveReward;
 }
 

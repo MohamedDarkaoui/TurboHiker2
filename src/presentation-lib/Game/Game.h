@@ -11,7 +11,7 @@
 #include <memory>
 #include "../SFMLEntities/SFMLPlayer.h"
 
-
+namespace SFML{
 
 class SFMLGame {
 private:
@@ -20,7 +20,7 @@ private:
 public:
     SFMLGame();
 
-    void run();
+    void run(const std::string& config_path);
 };
-
+}
 #endif //TURBOHIKER_SFMLGAME_H

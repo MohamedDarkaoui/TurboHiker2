@@ -4,6 +4,8 @@
 #include "../Observer/Observer.h"
 #include "../Clock/Clock.h"
 
+namespace TurboHiker{
+
 class Score : public Observer {
 private:
     int nr_competing_hiker_collisions = 0;
@@ -17,6 +19,6 @@ public:
     int getPoints(double player_y_position) const;
 
 };
-
+}
 
 #endif //TURBOHIKER_SCORE_H

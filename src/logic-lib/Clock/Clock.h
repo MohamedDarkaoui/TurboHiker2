@@ -2,7 +2,7 @@
 #define TURBOHIKER_CLOCK_H
 
 #include <chrono>
-
+namespace TurboHiker{
 class Clock {
 private:
     std::chrono::steady_clock::time_point start;
@@ -22,6 +22,6 @@ public:
 
     void reset();
 };
-
+}
 
 #endif //TURBOHIKER_CLOCK_H

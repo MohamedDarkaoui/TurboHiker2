@@ -13,7 +13,9 @@
 #include "../SFMLEntities/SFMLPassiveItem.h"
 #include "../SFMLEntities/SFMLActiveItem.h"
 
-class EntityFactory : public AbstractFactory {
+namespace SFML {
+
+class EntityFactory : public TurboHiker::AbstractFactory {
 private:
     ini::Configuration configuration;
     std::string path;
@@ -42,6 +44,6 @@ public:
 
     std::shared_ptr<SFMLWorld> createWorld() override;
 };
-
+}
 
 #endif //TURBOHIKER_ENTITYFACTORY_H

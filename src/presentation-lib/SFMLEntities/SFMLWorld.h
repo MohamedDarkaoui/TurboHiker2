@@ -4,11 +4,14 @@
 #include "../../logic-lib/Entity/World.h"
 #include "../EntityFactory/EntityFactory.h"
 
-class SFMLWorld : public World {
+namespace SFML{
+
+class SFMLWorld : public TurboHiker::World {
 private:
 
 public:
-    SFMLWorld(Position2D position, std::pair<double, double> &size, std::shared_ptr<AbstractFactory>& factory);
+    SFMLWorld(TurboHiker::Position2D position, std::pair<double, double> &size,
+              std::shared_ptr<TurboHiker::AbstractFactory>& factory);
 
     void buildWorld() override;
 
@@ -37,6 +40,6 @@ public:
     void update() override;
 
 };
-
+}
 
 #endif //TURBOHIKER_SFMLWORLD_H

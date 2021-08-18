@@ -1,7 +1,7 @@
 #include "SFMLStaticEnemy.h"
 
 
-SFMLStaticEnemy::SFMLStaticEnemy(unsigned int lane, std::pair<double, double> &size,std::vector<double> &lanePositionsX,
+SFML::SFMLStaticEnemy::SFMLStaticEnemy(unsigned int lane, std::pair<double, double> &size,std::vector<double> &lanePositionsX,
                                  double speed,const std::string &path_to_image) : StaticEnemy(lane, size,
                                  lanePositionsX, speed),SFMLEntity(path_to_image) {
     auto relative_position = getRelativePosition(getPosition());
@@ -9,7 +9,7 @@ SFMLStaticEnemy::SFMLStaticEnemy(unsigned int lane, std::pair<double, double> &s
     shape.setTextureRect(animation->getCurrentFrame());
 }
 
-void SFMLStaticEnemy::updateAnimation() {
+void SFML::SFMLStaticEnemy::updateAnimation() {
     if (clock->clockTicked()){
         if (getMovement() == Hiker::MOVING_LEFT){
             animation->update(1);
@@ -24,6 +24,6 @@ void SFMLStaticEnemy::updateAnimation() {
     }
 }
 
-void SFMLStaticEnemy::updateVisuals(const Position2D &relativePos, std::pair<double, double> size) {
+void SFML::SFMLStaticEnemy::updateVisuals(const TurboHiker::Position2D &relativePos, std::pair<double, double> size) {
     SFMLEntity::updateVisuals(relativePos, size);
 }

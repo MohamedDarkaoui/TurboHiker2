@@ -1,6 +1,6 @@
 #include "SFMLGroundPlot.h"
 
-SFMLGroundPlot::SFMLGroundPlot(Position2D position, std::pair<double, double> &size, const std::string& path_to_image,
+SFML::SFMLGroundPlot::SFMLGroundPlot(TurboHiker::Position2D position, std::pair<double, double> &size, const std::string& path_to_image,
 std::pair<int,int> dimensions, std::pair<int,int> imageCoordinates) : GroundPlot(position, size), SFMLEntity(path_to_image) {
     auto relativePos = getRelativePosition(getPosition());
     initialize(size,relativePos);
@@ -15,8 +15,8 @@ std::pair<int,int> dimensions, std::pair<int,int> imageCoordinates) : GroundPlot
     shape.setTextureRect(piece);
 }
 
-void SFMLGroundPlot::update() {}
+void SFML::SFMLGroundPlot::update() {}
 
-void SFMLGroundPlot::updateVisuals(const Position2D &relativePos, std::pair<double, double> size) {
+void SFML::SFMLGroundPlot::updateVisuals(const TurboHiker::Position2D &relativePos, std::pair<double, double> size) {
     SFMLEntity::updateVisuals(relativePos, size);
 }

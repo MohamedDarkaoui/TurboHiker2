@@ -1,5 +1,5 @@
 #include "FinishLine.h"
 
-FinishLine::FinishLine(Position2D position, std::pair<double, double> &size) : Entity(position, size) {}
+TurboHiker::FinishLine::FinishLine(Position2D position, std::pair<double, double> &size) : Entity(position, size) {}
 
-void FinishLine::update() {}
+void TurboHiker::FinishLine::update() {}

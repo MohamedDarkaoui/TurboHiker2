@@ -4,6 +4,8 @@
 #include "Enemy.h"
 #include "Hiker.h"
 
+namespace TurboHiker{
+
 class StaticEnemy : public Enemy {
 
 public:
@@ -14,5 +16,6 @@ public:
 
     void update() override;
 };
+}
 
 #endif //TURBOHIKER_STATICENEMY_H

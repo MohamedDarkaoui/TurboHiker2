@@ -1,5 +1,8 @@
 #include "SFMLWorld.h"
 
+using namespace SFML;
+using namespace TurboHiker;
+
 SFMLWorld::SFMLWorld(Position2D position, std::pair<double, double> &size, std::shared_ptr<AbstractFactory>& factory) :
 World(position, size, factory){}
 

@@ -1,12 +1,13 @@
 #include "World.h"
 #include <iostream>
+TurboHiker::World::World(Position2D position, std::pair<double, double> &size, std::shared_ptr<AbstractFactory>& factory) :
+TurboHiker::Entity(position, size), factory(factory){}
 
-World::World(Position2D position, std::pair<double, double> &size, std::shared_ptr<AbstractFactory>& factory) :
-Entity(position, size), factory(factory){}
-
-void World::update() {
+void TurboHiker::World::update() {
     handleRewardUsage();
     trackPlayer();
+
+    controlCompetingHikers();
     // make one big set with all entities
     auto entities = getEntities();
 
@@ -18,40 +19,40 @@ void World::update() {
     checkToDestroyEntities();
 }
 
-void World::addPlayer(const std::shared_ptr<Player>& p) {
+void TurboHiker::World::addPlayer(const std::shared_ptr<Player>& p) {
     player = p;
 }
 
-void World::addCompetingHiker(const std::shared_ptr<CompetingHiker>& competing) {
+void TurboHiker::World::addCompetingHiker(const std::shared_ptr<CompetingHiker>& competing) {
     competing_hikers.insert(competing);
 }
 
-void World::addStaticEnemy(const std::shared_ptr<StaticEnemy>& static_enemy) {
+void TurboHiker::World::addStaticEnemy(const std::shared_ptr<StaticEnemy>& static_enemy) {
     static_enemies.insert(static_enemy);
 }
 
-void World::addMovingEnemy(const std::shared_ptr<MovingEnemy> &moving_enemy) {
+void TurboHiker::World::addMovingEnemy(const std::shared_ptr<MovingEnemy> &moving_enemy) {
     moving_enemies.insert(moving_enemy);
 }
 
-void World::addGRoundPlot(const std::shared_ptr<GroundPlot> &groundPlot) {
+void TurboHiker::World::addGRoundPlot(const std::shared_ptr<GroundPlot> &groundPlot) {
     ground.insert(groundPlot);
 }
 
-void World::addPassiveItem(const std::shared_ptr<PassiveItem> &passiveItem) {
+void TurboHiker::World::addPassiveItem(const std::shared_ptr<PassiveItem> &passiveItem) {
     passive_items.insert(passiveItem);
 }
 
-void World::addActiveItem(const std::shared_ptr<ActiveItem> &activeItem) {
+void TurboHiker::World::addActiveItem(const std::shared_ptr<ActiveItem> &activeItem) {
     active_items.insert(activeItem);
 }
 
 
-void World::addFinishLine(const std::shared_ptr<FinishLine>& finishLine){
+void TurboHiker::World::addFinishLine(const std::shared_ptr<FinishLine>& finishLine){
     finish_line = finishLine;
 }
 
-void World::handleHikerCollisions() {
+void TurboHiker::World::handleHikerCollisions() {
     std::set<std::shared_ptr<CompetingHiker>> hikers = competing_hikers;
     hikers.insert(player);
 
@@ -63,6 +64,12 @@ void World::handleHikerCollisions() {
                 double y1 = hiker1->getPosition().getY();
                 double y2 = hiker2->getPosition().getY();
                 double colliding_distance = (hiker1->getSize().second + (hiker2->getSize()).second)/4;
+                if (std::abs(y1-y2) < colliding_distance + 0.05){
+                    if (y1 <= y2)
+                        controlHikerAtCollision(hiker1);
+                    else
+                        controlHikerAtCollision(hiker2);
+                }
                 if (std::abs(y1-y2) < colliding_distance && !hiker2->isColliding()) {
                     if (y1 <= y2){
                         hiker1->collide();
@@ -78,7 +85,7 @@ void World::handleHikerCollisions() {
     }
 }
 
-void World::handleHikerEnemyCollisions() {
+void TurboHiker::World::handleHikerEnemyCollisions() {
     std::set<std::shared_ptr<CompetingHiker>> hikers = competing_hikers;
     hikers.insert(player);
 
@@ -88,6 +95,8 @@ void World::handleHikerEnemyCollisions() {
                 double y1 = hiker->getPosition().getY();
                 double y2 = enemy->getPosition().getY();
                 double collision_distance = (hiker->getSize().second + (enemy->getSize()).second)/4;
+                if (std::abs(y1-y2) < collision_distance + 0.05)
+                    controlHikerAtCollision(hiker);
                 if (std::abs(y1-y2) < collision_distance){
                     hiker->collide();
                     hiker->notifyObservers(ObserverEvent::ENEMY_COLLISION);
@@ -97,7 +106,7 @@ void World::handleHikerEnemyCollisions() {
     }
 }
 
-void World::handleCollectingItem() {
+void TurboHiker::World::handleCollectingItem() {
     std::set<std::shared_ptr<CompetingHiker>> hikers = competing_hikers;
     hikers.insert(player);
     for (auto hiker : hikers){
@@ -115,7 +124,7 @@ void World::handleCollectingItem() {
     }
 }
 
-void World::handleYelling() {
+void TurboHiker::World::handleYelling() {
     if (player->isYelling()){
         for (auto& enemy : getEnemies()){
             if (enemy->getLane() == player->getLane()){
@@ -131,7 +140,7 @@ void World::handleYelling() {
     }
 }
 
-void World::handleRewardUsage() {
+void TurboHiker::World::handleRewardUsage() {
     std::set<std::shared_ptr<CompetingHiker>> hikers = competing_hikers;
     hikers.insert(player);
 
@@ -146,14 +155,14 @@ void World::handleRewardUsage() {
     }
 }
 
-void World::handleEvents() {
+void TurboHiker::World::handleEvents() {
     handleHikerCollisions();
     handleHikerEnemyCollisions();
     handleYelling();
     handleCollectingItem();
 }
 
-void World::trackPlayer() {
+void TurboHiker::World::trackPlayer() {
     if (player->getAcceleration() == Hiker::SLOW_DOWN){
         position += {0, player->getSpeed()*player->getSpeedUpFactor()*2};
         if (position.getY() - player->getPosition().getY() >= 0.5)
@@ -169,8 +178,8 @@ void World::trackPlayer() {
     }
 }
 
-std::set<std::shared_ptr<Entity>> World::getEntities() const{
-    std::set<std::shared_ptr<Entity>> entities;
+std::set<std::shared_ptr<TurboHiker::Entity>> TurboHiker::World::getEntities() const{
+    std::set<std::shared_ptr<TurboHiker::Entity>> entities;
     entities.insert(ground.begin(), ground.end());
     entities.insert(competing_hikers.begin(), competing_hikers.end());
     entities.insert(static_enemies.begin(), static_enemies.end());
@@ -183,7 +192,7 @@ std::set<std::shared_ptr<Entity>> World::getEntities() const{
     return entities;
 }
 
-std::set<std::shared_ptr<Enemy>> World::getEnemies() const {
+std::set<std::shared_ptr<TurboHiker::Enemy>> TurboHiker::World::getEnemies() const {
     std::set<std::shared_ptr<Enemy>> enemies;
     enemies.insert(static_enemies.begin(), static_enemies.end());
     enemies.insert(moving_enemies.begin(), moving_enemies.end());
@@ -191,7 +200,7 @@ std::set<std::shared_ptr<Enemy>> World::getEnemies() const {
     return enemies;
 }
 
-std::set<std::shared_ptr<CollectableItem>> World::getItems() const {
+std::set<std::shared_ptr<TurboHiker::CollectableItem>> TurboHiker::World::getItems() const {
     std::set<std::shared_ptr<CollectableItem>> items;
     items.insert(passive_items.begin(), passive_items.end());
     items.insert(active_items.begin(),active_items.end());
@@ -199,41 +208,41 @@ std::set<std::shared_ptr<CollectableItem>> World::getItems() const {
     return items;
 }
 
-const std::shared_ptr<Player> &World::getPlayer() const {
+const std::shared_ptr<TurboHiker::Player> &TurboHiker::World::getPlayer() const {
     return player;
 }
 
-const std::set<std::shared_ptr<CompetingHiker>> &World::getCompetingHikers() const {
+const std::set<std::shared_ptr<TurboHiker::CompetingHiker>> &TurboHiker::World::getCompetingHikers() const {
     return competing_hikers;
 }
 
-const std::set<std::shared_ptr<StaticEnemy>> &World::getStaticEnemies() const {
+const std::set<std::shared_ptr<TurboHiker::StaticEnemy>> &TurboHiker::World::getStaticEnemies() const {
     return static_enemies;
 }
 
-const std::set<std::shared_ptr<MovingEnemy>> &World::getMovingEnemies() const {
+const std::set<std::shared_ptr<TurboHiker::MovingEnemy>> &TurboHiker::World::getMovingEnemies() const {
     return moving_enemies;
 }
 
-const std::set<std::shared_ptr<PassiveItem>> &World::getPassiveItems() const {
+const std::set<std::shared_ptr<TurboHiker::PassiveItem>> &TurboHiker::World::getPassiveItems() const {
     return passive_items;
 }
 
-const std::set<std::shared_ptr<ActiveItem>> &World::getActiveItems() const {
+const std::set<std::shared_ptr<TurboHiker::ActiveItem>> &TurboHiker::World::getActiveItems() const {
     return active_items;
 }
 
-const std::shared_ptr<FinishLine> &World::getFinishLine() const {
+const std::shared_ptr<TurboHiker::FinishLine> &TurboHiker::World::getFinishLine() const {
     return finish_line;
 }
 
-void World::buildWorld() {}
+void TurboHiker::World::buildWorld() {}
 
-const std::set<std::shared_ptr<GroundPlot>> &World::getGround() const {
+const std::set<std::shared_ptr<TurboHiker::GroundPlot>> &TurboHiker::World::getGround() const {
     return ground;
 }
 
-void World::checkToDestroyEntities() {
+void TurboHiker::World::checkToDestroyEntities() {
     if (player->getPosition().getY() > getSize().second)
         player->setSpeed(0);
 
@@ -261,12 +270,59 @@ void World::checkToDestroyEntities() {
     }
 }
 
-void World::spawnMovingEnemy(unsigned int lane, double y_pos, double speedFactor) {}
+void TurboHiker::World::spawnMovingEnemy(unsigned int lane, double y_pos, double speedFactor) {}
 
-void World::spawnStaticEnemy(unsigned int lane, double y_pos) {}
+void TurboHiker::World::spawnStaticEnemy(unsigned int lane, double y_pos) {}
 
-const std::shared_ptr<AbstractFactory> &World::getFactory() const {
+const std::shared_ptr<TurboHiker::AbstractFactory> &TurboHiker::World::getFactory() const {
     return factory;
+}
+
+void TurboHiker::World::controlCompetingHikers() {
+    for(auto& competingHiker : competing_hikers){
+        bool is_on_side_lane = competingHiker->getLane() == 0 || competingHiker->getLane() == 3;
+        int random1 = Random::getInstance().randomInt(0,2);
+        int randomLaneChange = Random::getInstance().randomInt(0,1001);
+        if (is_on_side_lane)
+            randomLaneChange = Random::getInstance().randomInt(0,1002);
+        int randomSpeedUp = Random::getInstance().randomInt(0,101);
+
+        if (randomLaneChange >= 999){
+            if(random1 == 0)
+                competingHiker->moveRight();
+            else
+                competingHiker->moveLeft();
+        }
+        if(randomSpeedUp >= 99)
+            competingHiker->runAtTurboSpeed();
+        else if (randomSpeedUp == 0)
+            competingHiker->stopRunningAtTurboSpeed();
+        if (!competingHiker->rewardsEmpty()){
+            competingHiker->useActiveReward();
+            std::cout<<competingHiker->isUsingActiveReward() << "\n";
+        }
+    }
+}
+
+void TurboHiker::World::controlHikerAtCollision(const std::shared_ptr<CompetingHiker>& competingHiker) {
+    if (competingHiker == player)
+        return;
+    int dodge = Random::getInstance().randomInt(0,101);
+    if (dodge > 90)
+        return;
+
+    bool is_on_side_lane = competingHiker->getLane() == 0 || competingHiker->getLane() == 3;
+    if (!is_on_side_lane){
+        int random = Random::getInstance().randomInt(0,2);
+        if(random == 0)
+            competingHiker->moveRight();
+        else
+            competingHiker->moveLeft();
+    }
+    else if (competingHiker->getLane() == 0)
+        competingHiker->moveRight();
+    else
+        competingHiker->moveLeft();
 }
 
 

@@ -3,6 +3,8 @@
 
 #include "CollectableItem.h"
 
+namespace TurboHiker{
+
 class PassiveItem : public CollectableItem {
 private:
     std::vector<std::vector<int>> possible_rewards;
@@ -12,6 +14,6 @@ public:
 
     void giveReward(std::shared_ptr<CompetingHiker>& competitor, std::set<std::shared_ptr<CompetingHiker>>& others) final;
 };
-
+}
 
 #endif //TURBOHIKER_PASSIVEITEM_H

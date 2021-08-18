@@ -1,6 +1,6 @@
 #include "SFMLPassiveItem.h"
 
-SFMLPassiveItem::SFMLPassiveItem(const std::string &pathToImage, unsigned int lane, std::pair<double, double> &size,
+SFML::SFMLPassiveItem::SFMLPassiveItem(const std::string &pathToImage, unsigned int lane, std::pair<double, double> &size,
                                  std::vector<double> &lanePositionsX,  std::vector<std::vector<int>>& possible_rewards)
                                  : PassiveItem(lane, size, lanePositionsX, possible_rewards),SFMLEntity(pathToImage)
                                  {
@@ -9,8 +9,8 @@ SFMLPassiveItem::SFMLPassiveItem(const std::string &pathToImage, unsigned int la
 }
 
 
-void SFMLPassiveItem::update() {}
+void SFML::SFMLPassiveItem::update() {}
 
-void SFMLPassiveItem::updateVisuals(const Position2D &relativePos, std::pair<double, double> size) {
+void SFML::SFMLPassiveItem::updateVisuals(const TurboHiker::Position2D &relativePos, std::pair<double, double> size) {
     SFMLEntity::updateVisuals(relativePos, size);
 }

@@ -1,8 +1,9 @@
 #ifndef TURBOHIKER_MOVINGENEMY_H
 #define TURBOHIKER_MOVINGENEMY_H
 
-
 #include "Enemy.h"
+
+namespace TurboHiker{
 
 class MovingEnemy : public Enemy {
 public:
@@ -13,6 +14,6 @@ public:
 
     void update() override;
 };
-
+}
 
 #endif //TURBOHIKER_MOVINGENEMY_H

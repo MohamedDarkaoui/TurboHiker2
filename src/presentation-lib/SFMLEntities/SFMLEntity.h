@@ -9,7 +9,11 @@
 #include "../Animation/Animation.h"
 #include "../../logic-lib/Clock/Clock.h"
 
-class AbstractFactory;
+namespace TurboHiker{
+    class AbstractFactory;
+}
+
+namespace SFML{
 
 class SFMLEntity {
 private:
@@ -18,7 +22,7 @@ private:
 protected:
     sf::RectangleShape shape;
     std::unique_ptr<Animation> animation;
-    std::unique_ptr<Clock> clock;
+    std::unique_ptr<TurboHiker::Clock> clock;
 
 public:
     explicit SFMLEntity(const std::string &path_to_image);
@@ -29,13 +33,13 @@ public:
 
     virtual void updateAnimation();
 
-    void initialize(const std::pair<double,double> &size, const Position2D& relativePos);
+    void initialize(const std::pair<double,double> &size, const TurboHiker::Position2D& relativePos);
 
     void setClockTickTime(const unsigned int& tickTime);
 
-    virtual void updateVisuals(const Position2D& relativePos, std::pair<double,double> size);
+    virtual void updateVisuals(const TurboHiker::Position2D& relativePos, std::pair<double,double> size);
 
 };
-
+}
 
 #endif //TURBOHIKER_SFMLENTITY_H

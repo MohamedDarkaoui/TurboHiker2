@@ -7,6 +7,8 @@
 #include "../Position/Position2D.h"
 #include "../Random/Random.h"
 
+namespace TurboHiker{
+
 class Entity {
 
 private:
@@ -44,5 +46,5 @@ public:
 
 };
 
-
+}
 #endif //TURBOHIKER_ENTITY_H

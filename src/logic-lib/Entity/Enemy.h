@@ -3,6 +3,7 @@
 
 #include "Hiker.h"
 
+namespace TurboHiker{
 class Enemy : public Hiker {
 
 public:
@@ -14,8 +15,7 @@ public:
      */
     virtual void gotYelledAt() = 0;
 
-    };
-
-
+};
+}
 
 #endif //TURBOHIKER_ENEMY_H

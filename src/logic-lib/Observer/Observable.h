@@ -5,7 +5,7 @@
 #include <set>
 #include "Observer.h"
 
-
+namespace TurboHiker{
 class Observable {
 private:
     std::set<std::shared_ptr<Observer>> observers;
@@ -18,6 +18,6 @@ public:
 
     void notifyObservers(ObserverEvent event);
 };
-
+}
 
 #endif //TURBOHIKER_OBSERVABLE_H

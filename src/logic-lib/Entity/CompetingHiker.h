@@ -8,6 +8,8 @@
 #include "MovingEnemy.h"
 #include "StaticEnemy.h"
 
+namespace TurboHiker{
+
 class ActiveItem;
 
 class CompetingHiker : public Hiker, public Observable{
@@ -17,7 +19,7 @@ private:
     int slowed_for;
     bool turbo_fast;
     std::shared_ptr<Score> score;
-    std::queue <std::pair<bool,double>> rewards; // queue(<isMovingEnemy, speed>)
+    std::deque<std::pair<bool,double>> rewards; // queue(<isMovingEnemy, speed>)
     bool bonus_speed = false;
     unsigned int bonus_speed_duration = 0;
     bool using_active_reward = false;
@@ -51,15 +53,21 @@ public:
 
     void stopSpeedBoost();
 
+    bool isBonusSpeed() const;
+
     const std::shared_ptr<Score> &getScore() const;
 
     void pushActiveReward(std::pair<bool,double> reward);
+
+    const std::deque<std::pair<bool, double>> &getRewards() const;
 
     void useActiveReward();
 
     bool isUsingActiveReward() const;
 
     std::pair<bool,double> getFirstReward();
+
+    void setUsingActiveReward(bool usingActiveReward);
 
     bool rewardsEmpty();
 
@@ -69,6 +77,6 @@ public:
 
     void setSlowedFor(int slowedFor);
 };
-
+}
 
 #endif //TURBOHIKER_COMPETINGHIKER_H

@@ -1,6 +1,8 @@
 #ifndef TURBOHIKER_POSITION2D_H
 #define TURBOHIKER_POSITION2D_H
 
+namespace TurboHiker{
+
 class Position2D {
 private:
     double x;
@@ -32,5 +34,5 @@ public:
     void setX(double x);
 
 };
-
+}
 #endif //TURBOHIKER_POSITION2D_H

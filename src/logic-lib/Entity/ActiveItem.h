@@ -1,11 +1,11 @@
 #ifndef TURBOHIKER_ACTIVEITEM_H
 #define TURBOHIKER_ACTIVEITEM_H
 
-
 #include "CollectableItem.h"
 #include "MovingEnemy.h"
 #include "StaticEnemy.h"
 
+namespace TurboHiker{
 enum class ActiveItemType {STATIC, MOVING};
 
 class ActiveItem : public CollectableItem {
@@ -16,6 +16,6 @@ public:
 
     void update() override;
 };
-
+}
 
 #endif //TURBOHIKER_ACTIVEITEM_H

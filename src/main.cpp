@@ -1,12 +1,11 @@
 
-#include <iostream>
 #include "presentation-lib/Game/Game.h"
 
 
 int main(){
 
-    SFMLGame game;
+    SFML::SFMLGame game;
 
-    game.run();
+    game.run("game_configurations.ini");
     return 0;
 }

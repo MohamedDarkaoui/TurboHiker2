@@ -1,7 +1,7 @@
 #ifndef TURBOHIKER_OBSERVER_H
 #define TURBOHIKER_OBSERVER_H
 
-
+namespace TurboHiker{
 enum class ObserverEvent{
     COMPETING_HIKER_COLLISION,
     ENEMY_COLLISION,
@@ -14,5 +14,5 @@ public:
     virtual void handleNotification(ObserverEvent event) = 0;
 };
 
-
+}
 #endif //TURBOHIKER_OBSERVER_H

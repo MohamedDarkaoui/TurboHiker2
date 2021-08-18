@@ -2,72 +2,72 @@
 #include "Hiker.h"
 
 
-Hiker::Hiker(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX, double speed,
+TurboHiker::Hiker::Hiker(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX, double speed,
              double speedUpFactor) : Entity(lane,size, lanePositionsX),
              speed(speed), speedUpFactor(speedUpFactor) {
 
     assert (position.getX() != 0);
-    this->acceleration = Hiker::NONE;
-    this->movement = Hiker::STANDARD;
+    this->acceleration = TurboHiker::Hiker::NONE;
+    this->movement = TurboHiker::Hiker::STANDARD;
 }
 
-void Hiker::update() {
+void TurboHiker::Hiker::update() {
     position += {0,speed};
 }
 
-void Hiker::speedUp() {
+void TurboHiker::Hiker::speedUp() {
     assert(speedUpFactor > 1);
-    if (acceleration == Hiker::NONE){
-        acceleration = Hiker::SPEED_UP;
+    if (acceleration == TurboHiker::Hiker::NONE){
+        acceleration = TurboHiker::Hiker::SPEED_UP;
         speed = speed*speedUpFactor;
     }
-    else if (acceleration == Hiker::SLOW_DOWN){
-        acceleration = Hiker::NONE;
+    else if (acceleration == TurboHiker::Hiker::SLOW_DOWN){
+        acceleration = TurboHiker::Hiker::NONE;
         speed = speed*2*speedUpFactor;
     }
 }
 
-void Hiker::slowDown() {
+void TurboHiker::Hiker::slowDown() {
     assert(speedUpFactor > 1);
-    if (acceleration == Hiker::NONE){
-        acceleration = Hiker::SLOW_DOWN;
+    if (acceleration == TurboHiker::Hiker::NONE){
+        acceleration = TurboHiker::Hiker::SLOW_DOWN;
         speed /= (2*speedUpFactor);
     }
-    else if (acceleration == Hiker::SPEED_UP){
-        acceleration = Hiker::NONE;
+    else if (acceleration == TurboHiker::Hiker::SPEED_UP){
+        acceleration = TurboHiker::Hiker::NONE;
         speed /= speedUpFactor;
     }
 }
 
-void Hiker::setYposition(double y)  {
+void TurboHiker::Hiker::setYposition(double y)  {
     position.setY(y);
 }
 
-Hiker::Movement Hiker::getMovement() const {
+TurboHiker::Hiker::Movement TurboHiker::Hiker::getMovement() const {
     return movement;
 }
 
-void Hiker::setMovement(Hiker::Movement movement) {
-    Hiker::movement = movement;
+void TurboHiker::Hiker::setMovement(TurboHiker::Hiker::Movement _movement) {
+    TurboHiker::Hiker::movement = _movement;
 }
 
-Hiker::Acceleration Hiker::getAcceleration() const {
+TurboHiker::Hiker::Acceleration TurboHiker::Hiker::getAcceleration() const {
     return acceleration;
 }
 
-void Hiker::setAcceleration(Hiker::Acceleration acceleration) {
-    Hiker::acceleration = acceleration;
+void TurboHiker::Hiker::setAcceleration(TurboHiker::Hiker::Acceleration _acceleration) {
+    TurboHiker::Hiker::acceleration = _acceleration;
 }
 
-double Hiker::getSpeed() const {
+double TurboHiker::Hiker::getSpeed() const {
     return speed;
 }
 
-void Hiker::setSpeed(double speed) {
-    Hiker::speed = speed;
+void TurboHiker::Hiker::setSpeed(double _speed) {
+    TurboHiker::Hiker::speed = _speed;
 }
 
-double Hiker::getSpeedUpFactor() const {
+double TurboHiker::Hiker::getSpeedUpFactor() const {
     return speedUpFactor;
 }
 

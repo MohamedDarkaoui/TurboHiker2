@@ -1,12 +1,12 @@
 #include "PassiveItem.h"
 
-PassiveItem::PassiveItem(unsigned int lane, std::pair<double, double> &size, std::vector<double> &lanePositionsX,
+TurboHiker::PassiveItem::PassiveItem(unsigned int lane, std::pair<double, double> &size, std::vector<double> &lanePositionsX,
                          std::vector<std::vector<int>>& possible_rewards)
         : CollectableItem(lane, size, lanePositionsX), possible_rewards(possible_rewards) {
 
 }
 
-void PassiveItem::giveReward(std::shared_ptr<CompetingHiker>& competitor, std::set<std::shared_ptr<CompetingHiker>>& others) {
+void TurboHiker::PassiveItem::giveReward(std::shared_ptr<CompetingHiker>& competitor, std::set<std::shared_ptr<CompetingHiker>>& others) {
     unsigned int position = 0;
     for (const auto& hiker : others){
         if (hiker->getPosition().getY() > competitor->getPosition().getY())

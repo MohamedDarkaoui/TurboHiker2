@@ -3,6 +3,8 @@
 
 #include <random>
 
+namespace TurboHiker{
+
 class Random {
 private:
     //initializing the engine with a random device
@@ -21,6 +23,6 @@ public:
 
     int randomInt(int min, int max);
 };
-
+}
 
 #endif //TURBOHIKER_RANDOM_H

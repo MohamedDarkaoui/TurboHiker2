@@ -3,6 +3,8 @@
 
 #include "CompetingHiker.h"
 
+namespace TurboHiker{
+
 class Player : public CompetingHiker {
 private:
     bool yelling;
@@ -13,7 +15,7 @@ public:
     Player(unsigned int lane, std::pair<double, double> &size, std::vector<double>& lanePositionsX, double speed,
            double speedUpFactor, double yellingRange);
 
-    void yell();
+    virtual void yell();
 
     bool isYelling() const;
 
@@ -22,6 +24,6 @@ public:
     void update() override;
 
 };
-
+}
 
 #endif //TURBOHIKER_PLAYER_H

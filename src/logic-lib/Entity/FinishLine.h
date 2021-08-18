@@ -3,14 +3,16 @@
 
 #include "Entity.h"
 
+namespace TurboHiker{
+
 class FinishLine : public Entity{
 private:
 
 public:
     FinishLine(Position2D position, std::pair<double, double> &size);
 
-    void update() override;
+void update() override;
 };
-
+}
 
 #endif //TURBOHIKER_FINISHLINE_H

@@ -5,6 +5,8 @@
 #include <cmath>
 #include <vector>
 
+namespace TurboHiker{
+
 class Hiker : public Entity {
 public:
     enum Acceleration {NONE, SPEED_UP, SLOW_DOWN};
@@ -36,18 +38,18 @@ public:
 
     Movement getMovement() const;
 
-    void setMovement(Movement movement);
+    void setMovement(Movement _movement);
 
     Acceleration getAcceleration() const;
 
-    void setAcceleration(Acceleration acceleration);
+    void setAcceleration(Acceleration _acceleration);
 
     double getSpeed() const;
 
-    void setSpeed(double speed);
+    void setSpeed(double _speed);
 
     double getSpeedUpFactor() const;
 
 };
-
+}
 #endif //TURBOHIKER_HIKER_H

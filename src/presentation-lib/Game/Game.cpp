@@ -1,30 +1,40 @@
 #include <iostream>
 #include "Game.h"
 
-SFMLGame::SFMLGame() {
+SFML::SFMLGame::SFMLGame() {
     window  = std::make_unique<sf::RenderWindow>(sf::VideoMode(1040, 780), "TurboHiker");
 }
 
-void SFMLGame::run() {
-    auto factory = std::make_shared<EntityFactory>("game_configurations.ini");
+void SFML::SFMLGame::run(const std::string& config_path) {
+    auto factory = std::make_shared<EntityFactory>(config_path);
     std::shared_ptr<SFMLWorld> world = factory->createWorld();
     world->buildWorld();
     auto player = world->getSFMLPlayer();
 
-    Clock loopClock(20);
-    Clock animationClock (100);
+    TurboHiker::Clock loopClock(20);
+    TurboHiker::Clock animationClock (100);
+
+    sf::Sound yelling_sound;
+    sf::SoundBuffer yelling_sound_buffer;
+    assert(yelling_sound_buffer.loadFromFile("sounds/yell.wav") && "Error loading yelling sound");
+
+
+    yelling_sound.setBuffer(yelling_sound_buffer);
+
 
     sf::Font font;
     assert(font.loadFromFile("res/Blazed.ttf") && "Error loading font file.");
-    sf::Text text;
-    text.setFont(font);
-    text.setFillColor(sf::Color(139,0,0));
 
     while (window->isOpen()){
         if (!loopClock.clockTicked())
             continue;
         // check all the window's events that were triggered since the last iteration of the loop
         sf::Event event;
+
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
+            yelling_sound.play();
+        }
 
         player->handleEvents(event, *window);
         world->update();
@@ -34,14 +44,8 @@ void SFMLGame::run() {
 
         window->draw(player->getShape());
 
-        for (const auto& entity : world->getSFMLEntities()){
+        for (const auto& entity : world->getSFMLEntities())
             entity->updateAnimation();
-        }
-
-        int score = player->getScore()->getPoints(player->getPosition().getY());
-        std::string score_string = std::to_string(score);
-        text.setString(score_string);
-
         for(const auto& gp : world->getSFMLGroundPlot())
             window->draw(gp->getShape());
         for(const auto& item : world->getSFMLPassiveItems())
@@ -57,7 +61,9 @@ void SFMLGame::run() {
 
         window->draw(world->getSFMLFinishLine()->getShape());
         window->draw(world->getSFMLPlayer()->getShape());
-        window->draw(text);
+        window->draw(player->visualizeScore(font));
+        window->draw(player->visualizeActiveRewards(font));
+        window->draw(player->visualizePassiveRewards(font));
         window->display();
     }
 }

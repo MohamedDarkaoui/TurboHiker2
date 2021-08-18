@@ -1,6 +1,6 @@
 #include "SFMLFinishLine.h"
 
-SFMLFinishLine::SFMLFinishLine(const std::string &pathToImage, Position2D position,
+SFML::SFMLFinishLine::SFMLFinishLine(const std::string &pathToImage, TurboHiker::Position2D position,
                                std::pair<double, double> &size, std::pair<int,int> imageCoordinates)
                                : FinishLine(position, size), SFMLEntity(pathToImage) {
     auto relativePos = getRelativePosition(getPosition());
@@ -16,6 +16,6 @@ SFMLFinishLine::SFMLFinishLine(const std::string &pathToImage, Position2D positi
     shape.setTextureRect(finish_line);
 }
 
-void SFMLFinishLine::updateVisuals(const Position2D &relativePos, std::pair<double, double> size) {
+void SFML::SFMLFinishLine::updateVisuals(const TurboHiker::Position2D &relativePos, std::pair<double, double> size) {
     SFMLEntity::updateVisuals(relativePos, size);
 }
