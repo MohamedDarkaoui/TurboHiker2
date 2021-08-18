@@ -39,13 +39,13 @@ public:
 
     void stopRunningAtTurboSpeed();
 
-    void moveLeft();
+    virtual void moveLeft();
 
-    void moveRight();
+    virtual void moveRight();
 
     bool isColliding() const;
 
-    void collide();
+    virtual void collide();
 
     void stopColliding();
 

@@ -120,7 +120,28 @@ sf::Text SFML::SFMLPlayer::visualizePassiveRewards(sf::Font &font) {
 
 void SFML::SFMLPlayer::yell() {
     Player::yell();
-    //yelling_sound.play();
+    yelling_sound.play();
+}
+
+void SFML::SFMLPlayer::collide() {
+    if (!isColliding() && !isBonusSpeed()){
+        TurboHiker::Player::collide();
+        colliding_sound.play();
+    }
+}
+
+void SFML::SFMLPlayer::moveLeft() {
+    if (getMovement() == Hiker::STANDARD && getLane() > 0) {
+        CompetingHiker::moveLeft();
+        dashing_sound.play();
+    }
+}
+
+void SFML::SFMLPlayer::moveRight() {
+    if (getMovement() == STANDARD && getLane() < 3) {
+        dashing_sound.play();
+        CompetingHiker::moveRight();
+    }
 }
 
 

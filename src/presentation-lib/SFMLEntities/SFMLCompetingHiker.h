@@ -17,6 +17,7 @@ public:
     void updateVisuals(const TurboHiker::Position2D &relativePos, std::pair<double, double> size) final;
 
     void updateAnimation() final;
+
 };
 }
 

@@ -36,6 +36,12 @@ public:
     sf::Text visualizePassiveRewards(sf::Font &font);
 
     void yell() override;
+
+    void collide() override;
+
+    void moveLeft() override;
+
+    void moveRight() override;
 };
 }
 

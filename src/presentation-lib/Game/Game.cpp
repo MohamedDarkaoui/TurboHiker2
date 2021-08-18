@@ -16,7 +16,7 @@ void SFML::SFMLGame::run(const std::string& config_path) {
 
     sf::Sound yelling_sound;
     sf::SoundBuffer yelling_sound_buffer;
-    assert(yelling_sound_buffer.loadFromFile("sounds/yell.wav") && "Error loading yelling sound");
+    assert(yelling_sound_buffer.loadFromFile("sounds/whoosh.wav") && "Error loading yelling sound");
 
 
     yelling_sound.setBuffer(yelling_sound_buffer);
@@ -26,15 +26,16 @@ void SFML::SFMLGame::run(const std::string& config_path) {
     assert(font.loadFromFile("res/Blazed.ttf") && "Error loading font file.");
 
     while (window->isOpen()){
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
+            yelling_sound.play();
+        }
         if (!loopClock.clockTicked())
             continue;
         // check all the window's events that were triggered since the last iteration of the loop
         sf::Event event;
 
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
-            yelling_sound.play();
-        }
+
 
         player->handleEvents(event, *window);
         world->update();

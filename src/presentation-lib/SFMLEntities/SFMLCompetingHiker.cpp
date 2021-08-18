@@ -23,3 +23,4 @@ void SFML::SFMLCompetingHiker::updateVisuals(const TurboHiker::Position2D &relat
 }
 
 
+
