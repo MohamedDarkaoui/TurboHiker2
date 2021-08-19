@@ -9,9 +9,22 @@ class FinishLine : public Entity{
 private:
 
 public:
+    /**
+     * simple constructor
+     * @param position: the position of the finish line
+     * @param size: the size of the shape
+     */
     FinishLine(Position2D position, std::pair<double, double> &size);
 
-void update() override;
+    /**
+     * derault destructor
+     */
+    ~FinishLine() override = default;
+
+    /**
+     * does nothing
+     */
+    void update() override;
 };
 }
 

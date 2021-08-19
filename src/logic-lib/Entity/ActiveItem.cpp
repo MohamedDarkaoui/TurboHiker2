@@ -25,5 +25,4 @@ void TurboHiker::ActiveItem::giveReward(std::shared_ptr<CompetingHiker>& competi
     setRewardGiven(true);
 }
 
-void TurboHiker::ActiveItem::update() {
-}
+void TurboHiker::ActiveItem::update() {}

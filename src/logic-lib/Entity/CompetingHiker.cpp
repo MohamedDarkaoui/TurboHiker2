@@ -73,18 +73,6 @@ bool TurboHiker::CompetingHiker::isColliding() const {
     return collision;
 }
 
-int TurboHiker::CompetingHiker::getSlowedFor() const {
-    return slowed_for;
-}
-
-int TurboHiker::CompetingHiker::getCollisionSlowDuration() const {
-    return collision_slow_duration;
-}
-
-void TurboHiker::CompetingHiker::setSlowedFor(int slowedFor) {
-    slowed_for = slowedFor;
-}
-
 void TurboHiker::CompetingHiker::speedUp() {
     if (!isColliding() && !turbo_fast && !bonus_speed)
         Hiker::speedUp();

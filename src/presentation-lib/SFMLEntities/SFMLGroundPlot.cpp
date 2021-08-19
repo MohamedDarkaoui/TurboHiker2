@@ -15,8 +15,6 @@ std::pair<int,int> dimensions, std::pair<int,int> imageCoordinates) : GroundPlot
     shape.setTextureRect(piece);
 }
 
-void SFML::SFMLGroundPlot::update() {}
-
 void SFML::SFMLGroundPlot::updateVisuals(const TurboHiker::Position2D &relativePos, std::pair<double, double> size) {
     SFMLEntity::updateVisuals(relativePos, size);
 }

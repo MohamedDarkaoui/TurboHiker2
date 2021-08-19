@@ -1,12 +1,10 @@
 #include "Clock.h"
 
-
 TurboHiker::Clock::Clock(unsigned int tickTime) {
     start = std::chrono::steady_clock::now();
     elapsed = start;
     this->tickTime = tickTime;
 }
-
 
 bool TurboHiker::Clock::clockTicked() {
     std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
@@ -17,17 +15,6 @@ bool TurboHiker::Clock::clockTicked() {
     return false;
 }
 
-unsigned int TurboHiker::Clock::getElapsedTime() {
-    std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
-    return std::chrono::duration_cast<std::chrono::milliseconds>(now - start).count();
-}
-
 void TurboHiker::Clock::setTickTime(unsigned int time) {
     Clock::tickTime = time;
 }
-
-void TurboHiker::Clock::reset() {
-    start = std::chrono::steady_clock::now();
-    elapsed = start;
-}
-

@@ -14,35 +14,22 @@ void SFML::SFMLGame::run(const std::string& config_path) {
     TurboHiker::Clock loopClock(20);
     TurboHiker::Clock animationClock (100);
 
-    sf::Sound yelling_sound;
-    sf::SoundBuffer yelling_sound_buffer;
-    assert(yelling_sound_buffer.loadFromFile("sounds/whoosh.wav") && "Error loading yelling sound");
-
-
-    yelling_sound.setBuffer(yelling_sound_buffer);
-
-
     sf::Font font;
     assert(font.loadFromFile("res/Blazed.ttf") && "Error loading font file.");
 
     while (window->isOpen()){
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
-            yelling_sound.play();
-        }
         if (!loopClock.clockTicked())
             continue;
         // check all the window's events that were triggered since the last iteration of the loop
         sf::Event event;
-
-
         player->handleEvents(event, *window);
         world->update();
 
         // clear the window with black color
         window->clear(sf::Color::Black);
 
+        // draw everything
         window->draw(player->getShape());
-
         for (const auto& entity : world->getSFMLEntities())
             entity->updateAnimation();
         for(const auto& gp : world->getSFMLGroundPlot())

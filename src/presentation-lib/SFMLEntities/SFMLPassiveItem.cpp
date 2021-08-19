@@ -8,9 +8,6 @@ SFML::SFMLPassiveItem::SFMLPassiveItem(const std::string &pathToImage, unsigned 
     initialize(size,relative_position);
 }
 
-
-void SFML::SFMLPassiveItem::update() {}
-
 void SFML::SFMLPassiveItem::updateVisuals(const TurboHiker::Position2D &relativePos, std::pair<double, double> size) {
     SFMLEntity::updateVisuals(relativePos, size);
 }

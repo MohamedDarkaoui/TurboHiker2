@@ -10,17 +10,29 @@ private:
     unsigned int tickTime = 0;
 
 public:
-    Clock() = default;
-
+    /**
+     * simple constructor
+     * @param tickTime: the time of each tick
+     */
     explicit Clock(unsigned int tickTime);
 
+    /**
+     * default constructor
+     */
+    Clock() = default;
+
+    /**
+     * checks if the clock has ticked
+     * @return true if the clock has ticked, false otherwise
+     */
     bool clockTicked();
 
+    /**
+     * simple setter of tick_time
+     * @param time: the new tick_time
+     */
     void setTickTime(unsigned int time);
 
-    unsigned int getElapsedTime();
-
-    void reset();
 };
 }
 

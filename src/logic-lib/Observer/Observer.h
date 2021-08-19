@@ -11,6 +11,11 @@ enum class ObserverEvent{
 
 class Observer {
 public:
+
+    /**
+     * handles the notifications from the observables
+     * @param event: the event that occurred at the observable
+     */
     virtual void handleNotification(ObserverEvent event) = 0;
 };
 

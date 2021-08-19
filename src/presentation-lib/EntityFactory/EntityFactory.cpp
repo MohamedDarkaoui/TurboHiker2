@@ -196,7 +196,7 @@ std::set<std::shared_ptr<SFML::SFMLActiveItem>> SFML::EntityFactory::createActiv
 
     for(unsigned int i = 0; i < amount; i++){
         unsigned int lane = TurboHiker::Random::getInstance().randomInt(0,4);
-        auto item = std::make_shared<SFML::SFMLActiveItem>(SFML::SFMLActiveItem(sprite_path,lane,size,lanePositions));
+        auto item = std::make_shared<SFML::SFMLActiveItem>(sprite_path,lane,size,lanePositions);
         item->setPosition({item->getPosition().getX(),TurboHiker::Random::getInstance().random(2,max)});
         items.insert(item);
     }

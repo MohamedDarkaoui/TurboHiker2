@@ -1,11 +1,9 @@
 #ifndef TURBOHIKER_ABSTRACTFACTORY_H
 #define TURBOHIKER_ABSTRACTFACTORY_H
 
+#include <memory>
+#include <set>
 
-#include <fstream>
-#include "../../../ini_config/ini_configuration.h"
-
-#include "../Entity/World.h"
 namespace SFML {
     class SFMLPlayer;
     class SFMLCompetingHiker;
@@ -22,6 +20,13 @@ namespace TurboHiker{
 class AbstractFactory  {
 
 public:
+
+    /**
+     * default destructor
+     */
+    virtual ~AbstractFactory() = default;
+
+    /////////// creates the corresponding entity and returns it ///////////
 
     virtual std::shared_ptr<SFML::SFMLPlayer> createPlayer() = 0;
 
@@ -45,6 +50,7 @@ public:
 
     virtual std::shared_ptr<SFML::SFMLWorld> createWorld() = 0;
 
+    ///////////////////////////////////////////////////////////////////////////
 };
 }
 

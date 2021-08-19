@@ -12,6 +12,7 @@
 #include "../SFMLEntities/SFMLFinishLine.h"
 #include "../SFMLEntities/SFMLPassiveItem.h"
 #include "../SFMLEntities/SFMLActiveItem.h"
+#include <fstream>
 
 namespace SFML {
 
@@ -20,7 +21,13 @@ private:
     ini::Configuration configuration;
     std::string path;
 public:
+    /**
+     * simple constructor
+     * @param path_to_config_file: the path to the ini config file
+     */
     explicit EntityFactory(const std::string& path_to_config_file);
+
+    ////////////////    create a shared pointer to a new corresponding entity and return it     ////////////////
 
     std::shared_ptr<SFMLPlayer> createPlayer() override;
 
@@ -43,6 +50,8 @@ public:
     std::shared_ptr<SFMLFinishLine> createFinishLine() override;
 
     std::shared_ptr<SFMLWorld> createWorld() override;
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
 };
 }
 

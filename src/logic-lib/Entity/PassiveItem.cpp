@@ -20,3 +20,5 @@ void TurboHiker::PassiveItem::giveReward(std::shared_ptr<CompetingHiker>& compet
     competitor->speedBoost(random);
     setRewardGiven(true);
 }
+
+void TurboHiker::PassiveItem::update() {}
