@@ -22,7 +22,7 @@ void SFML::SFMLGame::run(const std::string& config_path) {
             continue;
         // check all the window's events that were triggered since the last iteration of the loop
         sf::Event event;
-        player->handleEvents(event, *window);
+        player->handleEvents(event, *window, world->getSize().second);
         world->update();
 
         // clear the window with black color
@@ -45,12 +45,39 @@ void SFML::SFMLGame::run(const std::string& config_path) {
         for(const auto& comp : world->getSFMLCompetingHikers())
             window->draw(comp->getShape());
 
-        window->draw(world->getSFMLFinishLine()->getShape());
         window->draw(world->getSFMLPlayer()->getShape());
+        window->draw(world->getSFMLFinishLine()->getShape());
         window->draw(player->visualizeScore(font));
         window->draw(player->visualizeActiveRewards(font));
         window->draw(player->visualizePassiveRewards(font));
+
+        if (player->isFinished())
+            displayScoreScreen(world->getCompetingHikers(),world->getPlayer(),font);
+
         window->display();
     }
+}
+
+void SFML::SFMLGame::displayScoreScreen(const std::set<std::shared_ptr<TurboHiker::CompetingHiker>>& competingHikers,
+                                        const std::shared_ptr<TurboHiker::Player>& player, const sf::Font& font) {
+    std::string text = "Player:               ";
+    int score = player->getScore()->getPoints(player->getPosition().getY());
+    text += std::to_string(score) + "\n";
+
+    int i = 0;
+    for (const auto& competingHiker : competingHikers){
+        text += "Competing hiker " + std::to_string(i+1) + ": ";
+        int s = competingHiker->getScore()->getPoints(competingHiker->getPosition().getY());
+        text += std::to_string(s) + "\n";
+        i++;
+    }
+
+    TurboHiker::Position2D pos = Transformation::getInstance().transform(TurboHiker::Position2D{-2,3});
+    sf::Text sfmlText;
+    sfmlText.setFont(font);
+    sfmlText.setFillColor(sf::Color(0,0,0));
+    sfmlText.setString(text);
+    sfmlText.setPosition(float(pos.getX()),float(pos.getY()));
+    window->draw(sfmlText);
 }
 

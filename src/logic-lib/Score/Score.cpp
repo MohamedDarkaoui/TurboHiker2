@@ -1,5 +1,4 @@
 #include <cmath>
-#include <iostream>
 #include "Score.h"
 
 void TurboHiker::Score::handleNotification(ObserverEvent event) {
@@ -16,16 +15,22 @@ void TurboHiker::Score::handleNotification(ObserverEvent event) {
         case ObserverEvent::BONUS:
             nr_bonuses++;
             break;
+        case ObserverEvent::FINISHED:
+            finished = true;
+            break;
     }
 }
 
-int TurboHiker::Score::getPoints(double player_y_position) const {
-    double score = player_y_position *10;
+int TurboHiker::Score::getPoints(double player_y_position)  {
+    if (!finished)
+        pos = player_y_position;
 
-    score -= nr_competing_hiker_collisions * 2;
-    score -= nr_yelled_times * 10;
-    score -= nr_enemy_collisions * 2;
-    score -= nr_bonuses * 50;
+    double score = pos *10;
+
+    score -= nr_competing_hiker_collisions * 20;
+    score -= nr_yelled_times * 5;
+    score -= nr_enemy_collisions * 10;
+    score -= nr_bonuses * 100;
 
     return floor(score);
 }

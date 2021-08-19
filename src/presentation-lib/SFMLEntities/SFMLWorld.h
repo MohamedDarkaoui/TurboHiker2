@@ -25,7 +25,7 @@ public:
     ~SFMLWorld() override = default;
 
     /**
-     * creates all the entities in the world
+     * creates all the entities in the worldz
      */
     void buildWorld() override;
 

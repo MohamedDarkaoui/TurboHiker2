@@ -88,7 +88,7 @@ std::shared_ptr<SFML::SFMLMovingEnemy> SFML::EntityFactory::createMovingEnemy(un
 std::set<std::shared_ptr<SFML::SFMLMovingEnemy>> SFML::EntityFactory::createMovingEnemies() {
 
     unsigned int amount = configuration["movingEnemy"]["amount"].as_int_or_die();
-    double max = configuration["world"]["height"].as_double_or_die() * 2;
+    double max = configuration["world"]["height"].as_double_or_die() * 1.5;
     double speed = configuration["movingEnemy"]["speed"].as_double_or_die();
     double world_bottom = 0;
 
@@ -133,7 +133,7 @@ std::set<std::shared_ptr<SFML::SFMLGroundPlot>> SFML::EntityFactory::createGroun
     std::set<std::shared_ptr<SFML::SFMLGroundPlot>> plots;
     double current_top = origin;
 
-    while(current_top <= height){
+    while(current_top <= height*1.5){
         std::shared_ptr<SFML::SFMLGroundPlot> gp = std::make_shared<SFML::SFMLGroundPlot>
                 (TurboHiker::Position2D{0,current_top},size,sprite_path,dimensions,imageCoordinate);
         plots.insert(gp);

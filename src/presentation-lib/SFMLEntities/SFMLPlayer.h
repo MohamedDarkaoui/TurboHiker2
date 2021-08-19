@@ -10,6 +10,8 @@ namespace SFML{
 
 class SFMLPlayer : public TurboHiker::Player, public SFMLEntity {
 private:
+    bool finished = false;
+
     sf::Sound yelling_sound;
     sf::Sound dashing_sound;
     sf::Sound colliding_sound;
@@ -42,7 +44,7 @@ public:
      * @param event: the sfml event
      * @param window: the sfml render window
      */
-    void handleEvents(sf::Event& event, sf::RenderWindow& window) override;
+    void handleEvents(sf::Event& event, sf::RenderWindow& window, double world_height);
 
     /**
      * updates player visuals
@@ -96,6 +98,12 @@ public:
      * player::moveRight and play dashing sound
      */
     void moveRight() override;
+
+    /**
+     * simple getter
+     * @return finished
+     */
+    bool isFinished() const;
 };
 }
 

@@ -47,7 +47,7 @@ public:
      * @param event: the event
      * @param window: the window
      */
-    virtual void handleEvents(sf::Event &event, sf::RenderWindow& window) {}
+
 
     /**
      * helps construct an entity

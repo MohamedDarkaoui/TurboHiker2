@@ -163,6 +163,8 @@ void TurboHiker::World::handleEvents() {
 }
 
 void TurboHiker::World::trackPlayer() {
+    if (position.getY() >= getSize().second)
+        return;
     if (player->getAcceleration() == Hiker::SLOW_DOWN){
         position += {0, player->getSpeed()*player->getSpeedUpFactor()*2};
         if (position.getY() - player->getPosition().getY() >= 0.5)
@@ -243,13 +245,13 @@ const std::set<std::shared_ptr<TurboHiker::GroundPlot>> &TurboHiker::World::getG
 }
 
 void TurboHiker::World::checkToDestroyEntities() {
-    if (player->getPosition().getY() > getSize().second)
-        player->setSpeed(0);
 
-    for (const auto& hiker : competing_hikers){
-        if (hiker->getPosition().getY() > getSize().second)
-            competing_hikers.erase(hiker);
-    }
+    if (player->getPosition().getY() >= getSize().second)
+        player->notifyObservers(ObserverEvent::FINISHED);
+    for (const auto& competitor : competing_hikers)
+        if (competitor->getPosition().getY() >= getSize().second)
+            competitor->notifyObservers(ObserverEvent::FINISHED);
+
     for (const auto& enemy : static_enemies){
         if (enemy->getPosition().getX() > 4 || enemy->getPosition().getX() < -4)
             static_enemies.erase(enemy);
@@ -293,7 +295,7 @@ void TurboHiker::World::controlCompetingHikers() {
             else
                 competingHiker->moveLeft();
         }
-        if(randomSpeedUp >= 99)
+        if(randomSpeedUp >= 50)
             competingHiker->runAtTurboSpeed();
         else if (randomSpeedUp == 0)
             competingHiker->stopRunningAtTurboSpeed();
@@ -307,7 +309,7 @@ void TurboHiker::World::controlHikerAtCollision(const std::shared_ptr<CompetingH
     if (competingHiker == player)
         return;
     int dodge = Random::getInstance().randomInt(0,101);
-    if (dodge > 90)
+    if (dodge > 70)
         return;
 
     bool is_on_side_lane = competingHiker->getLane() == 0 || competingHiker->getLane() == 3;

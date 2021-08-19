@@ -12,7 +12,8 @@ private:
     int nr_enemy_collisions = 0;
     int nr_yelled_times = 0;
     int nr_bonuses = 0;
-
+    double pos = 0;
+    bool finished = false;
 public:
     /**
      * handles notifications from the observables
@@ -25,7 +26,7 @@ public:
      * @param player_y_position: the position of the competitor
      * @return the score of the competitor
      */
-    int getPoints(double player_y_position) const;
+    int getPoints(double player_y_position);
 
 };
 }

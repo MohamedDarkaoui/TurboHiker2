@@ -21,6 +21,9 @@ public:
     SFMLGame();
 
     void run(const std::string& config_path);
+
+    void displayScoreScreen(const std::set<std::shared_ptr<TurboHiker::CompetingHiker>>& competingHikers,
+                            const std::shared_ptr<TurboHiker::Player>& player, const sf::Font& font);
 };
 }
 #endif //TURBOHIKER_SFMLGAME_H

@@ -19,38 +19,47 @@ Player(lane,size,lanePositionsX,speed,speedUpFactor,yellingRange), SFMLEntity(pa
     colliding_sound.setBuffer(colliding_sound_buffer);
 }
 
-void SFML::SFMLPlayer::handleEvents(sf::Event &event, sf::RenderWindow& window) {
-    while (window.pollEvent(event)){
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-            speedUp();
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-            slowDown();
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-            yell();
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
-            runAtTurboSpeed();
-        if (event.type == sf::Event::KeyPressed){
-            if (event.key.code == sf::Keyboard::Left)
-                moveLeft();
-            else if (event.key.code == sf::Keyboard::Right)
-                moveRight();
-            else if (event.key.code == sf::Keyboard::W)
-                useActiveReward();
-        }
-        if (event.type == sf::Event::KeyReleased){
-            if (event.key.code == sf::Keyboard::Up){
-                if (getAcceleration() == Hiker::SPEED_UP)
-                    slowDown();
+void SFML::SFMLPlayer::handleEvents(sf::Event &event, sf::RenderWindow& window, double world_height) {
+    if (getPosition().getY() >= world_height){
+        finished = true;
+        while (window.pollEvent(event))
+            if (event.type == sf::Event::Closed)
+                window.close();
+    }
+    else {
+        while (window.pollEvent(event)){
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+                speedUp();
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+                slowDown();
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+                runAtTurboSpeed();
+            if (event.type == sf::Event::KeyPressed){
+                if (event.key.code == sf::Keyboard::Left)
+                    moveLeft();
+                else if (event.key.code == sf::Keyboard::Right)
+                    moveRight();
+                else if (event.key.code == sf::Keyboard::W)
+                    useActiveReward();
+                else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+                    yell();
             }
-            if (event.key.code == sf::Keyboard::Down)
-                if (getAcceleration() == Hiker::SLOW_DOWN)
-                    speedUp();
-            if (event.key.code == sf::Keyboard::Q)
-                stopRunningAtTurboSpeed();
+            if (event.type == sf::Event::KeyReleased){
+                if (event.key.code == sf::Keyboard::Up){
+                    if (getAcceleration() == Hiker::SPEED_UP)
+                        slowDown();
+                }
+                if (event.key.code == sf::Keyboard::Down){
+                    if (getAcceleration() == Hiker::SLOW_DOWN)
+                        speedUp();
+                }
+                if (event.key.code == sf::Keyboard::Q)
+                    stopRunningAtTurboSpeed();
+            }
+            // "close requested" event: we close the window
+            else if (event.type == sf::Event::Closed)
+                window.close();
         }
-        // "close requested" event: we close the window
-        else if (event.type == sf::Event::Closed)
-            window.close();
     }
 }
 
@@ -124,6 +133,8 @@ void SFML::SFMLPlayer::yell() {
 }
 
 void SFML::SFMLPlayer::collide() {
+    if (finished)
+        return;
     if (!isColliding() && !isBonusSpeed()){
         TurboHiker::Player::collide();
         colliding_sound.play();
@@ -144,11 +155,6 @@ void SFML::SFMLPlayer::moveRight() {
     }
 }
 
-
-
-
-
-
-
-
-
+bool SFML::SFMLPlayer::isFinished() const {
+    return finished;
+}
