@@ -30,7 +30,8 @@
 - ↓: move down
 - ←: move left
 - SPACE: yell
-- W: move at turbo speed
+- Q: move at turbo speed
+- W: use active item
 
 ## Report
 I have separated my design in two parts, one is for the game logic and the other is for the game presentation.
