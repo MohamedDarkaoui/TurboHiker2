@@ -1,0 +1,126 @@
+\hypertarget{classini_1_1DuplicateEntry}{}\doxysection{ini\+::Duplicate\+Entry Class Reference}
+\label{classini_1_1DuplicateEntry}\index{ini::DuplicateEntry@{ini::DuplicateEntry}}
+
+
+The exception that is thrown when the parser encounters an entry that has the same key as a previously parsed key in the same section.  
+
+
+
+
+{\ttfamily \#include $<$ini\+\_\+configuration.\+h$>$}
+
+
+
+Inheritance diagram for ini\+::Duplicate\+Entry\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classini_1_1DuplicateEntry__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ini\+::Duplicate\+Entry\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classini_1_1DuplicateEntry__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classini_1_1DuplicateEntry_abb91aaa7b67b3332b469d6fb071245fc}{Duplicate\+Entry}} (const std\+::string \&section\+\_\+init, const std\+::string \&key\+\_\+init)  throw ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classini_1_1DuplicateEntry}{Duplicate\+Entry}} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1DuplicateEntry_afa3339a510eae14a637ab478adcf6219}{Duplicate\+Entry}} (const \mbox{\hyperlink{classini_1_1DuplicateEntry}{Duplicate\+Entry}} \&original)  throw ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classini_1_1DuplicateEntry}{Duplicate\+Entry}} instance by copying another one. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classini_1_1DuplicateEntry_a2d48dc2d115869e51c1f3cbafedcd7fd}\label{classini_1_1DuplicateEntry_a2d48dc2d115869e51c1f3cbafedcd7fd}} 
+virtual \mbox{\hyperlink{classini_1_1DuplicateEntry_a2d48dc2d115869e51c1f3cbafedcd7fd}{$\sim$\+Duplicate\+Entry}} ()  throw ()
+\begin{DoxyCompactList}\small\item\em Destructs a \mbox{\hyperlink{classini_1_1DuplicateEntry}{Duplicate\+Entry}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1DuplicateEntry}{Duplicate\+Entry}} \& \mbox{\hyperlink{classini_1_1DuplicateEntry_a1a950871451fba10c73c281b8e9e8fc3}{operator=}} (const \mbox{\hyperlink{classini_1_1DuplicateEntry}{Duplicate\+Entry}} \&original)  throw ()
+\begin{DoxyCompactList}\small\item\em Copies a \mbox{\hyperlink{classini_1_1DuplicateEntry}{Duplicate\+Entry}} exception. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \mbox{\hyperlink{classini_1_1DuplicateEntry_a8d403fe04924b409fe5f2768262fb460}{what}} () const  throw ()
+\begin{DoxyCompactList}\small\item\em Returns a description of the error hat occurred. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The exception that is thrown when the parser encounters an entry that has the same key as a previously parsed key in the same section. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classini_1_1DuplicateEntry_abb91aaa7b67b3332b469d6fb071245fc}\label{classini_1_1DuplicateEntry_abb91aaa7b67b3332b469d6fb071245fc}} 
+\index{ini::DuplicateEntry@{ini::DuplicateEntry}!DuplicateEntry@{DuplicateEntry}}
+\index{DuplicateEntry@{DuplicateEntry}!ini::DuplicateEntry@{ini::DuplicateEntry}}
+\doxysubsubsection{\texorpdfstring{DuplicateEntry()}{DuplicateEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ini\+::\+Duplicate\+Entry\+::\+Duplicate\+Entry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{section\+\_\+init,  }\item[{const std\+::string \&}]{key\+\_\+init }\end{DoxyParamCaption}) throw ( ) }
+
+
+
+Constructs a new \mbox{\hyperlink{classini_1_1DuplicateEntry}{Duplicate\+Entry}} instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section\+\_\+init} & The name of the section that contains the duplicate entry. \\
+\hline
+{\em key\+\_\+init} & The name of the duplicate entry. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classini_1_1DuplicateEntry_afa3339a510eae14a637ab478adcf6219}\label{classini_1_1DuplicateEntry_afa3339a510eae14a637ab478adcf6219}} 
+\index{ini::DuplicateEntry@{ini::DuplicateEntry}!DuplicateEntry@{DuplicateEntry}}
+\index{DuplicateEntry@{DuplicateEntry}!ini::DuplicateEntry@{ini::DuplicateEntry}}
+\doxysubsubsection{\texorpdfstring{DuplicateEntry()}{DuplicateEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ini\+::\+Duplicate\+Entry\+::\+Duplicate\+Entry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classini_1_1DuplicateEntry}{Duplicate\+Entry}} \&}]{original }\end{DoxyParamCaption}) throw ( ) }
+
+
+
+Constructs a new \mbox{\hyperlink{classini_1_1DuplicateEntry}{Duplicate\+Entry}} instance by copying another one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The instance that is copied. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classini_1_1DuplicateEntry_a1a950871451fba10c73c281b8e9e8fc3}\label{classini_1_1DuplicateEntry_a1a950871451fba10c73c281b8e9e8fc3}} 
+\index{ini::DuplicateEntry@{ini::DuplicateEntry}!operator=@{operator=}}
+\index{operator=@{operator=}!ini::DuplicateEntry@{ini::DuplicateEntry}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classini_1_1DuplicateEntry}{Duplicate\+Entry}} \& ini\+::\+Duplicate\+Entry\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classini_1_1DuplicateEntry}{Duplicate\+Entry}} \&}]{original }\end{DoxyParamCaption}) throw ( ) }
+
+
+
+Copies a \mbox{\hyperlink{classini_1_1DuplicateEntry}{Duplicate\+Entry}} exception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The instance that is copied.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1DuplicateEntry_a8d403fe04924b409fe5f2768262fb460}\label{classini_1_1DuplicateEntry_a8d403fe04924b409fe5f2768262fb460}} 
+\index{ini::DuplicateEntry@{ini::DuplicateEntry}!what@{what}}
+\index{what@{what}!ini::DuplicateEntry@{ini::DuplicateEntry}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily const char $\ast$ ini\+::\+Duplicate\+Entry\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const throw ( ) \hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a description of the error hat occurred. 
+
+\begin{DoxyReturn}{Returns}
+A description of the error hat occurred. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classini_1_1ParseException_a16748af5ae0c46233911e3235c453c94}{ini\+::\+Parse\+Exception}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/ini\+\_\+config/ini\+\_\+configuration.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/ini\+\_\+config/ini\+\_\+configuration.\+cc\end{DoxyCompactItemize}

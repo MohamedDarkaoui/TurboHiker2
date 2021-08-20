@@ -1,0 +1,224 @@
+\hypertarget{classTurboHiker_1_1Hiker}{}\doxysection{Turbo\+Hiker\+::Hiker Class Reference}
+\label{classTurboHiker_1_1Hiker}\index{TurboHiker::Hiker@{TurboHiker::Hiker}}
+
+
+Inheritance diagram for Turbo\+Hiker\+::Hiker\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTurboHiker_1_1Hiker__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Turbo\+Hiker\+::Hiker\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{classTurboHiker_1_1Hiker__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1Hiker_a4960d27b4f547ac5407c0cdc8b4ca2e9}\label{classTurboHiker_1_1Hiker_a4960d27b4f547ac5407c0cdc8b4ca2e9}} 
+enum {\bfseries Acceleration} \{ {\bfseries N\+O\+NE}, 
+{\bfseries S\+P\+E\+E\+D\+\_\+\+UP}, 
+{\bfseries S\+L\+O\+W\+\_\+\+D\+O\+WN}
+ \}
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1Hiker_ae025637f3f98d43ff08f8824987c1d5b}\label{classTurboHiker_1_1Hiker_ae025637f3f98d43ff08f8824987c1d5b}} 
+enum {\bfseries Movement} \{ {\bfseries S\+T\+A\+N\+D\+A\+RD}, 
+{\bfseries M\+O\+V\+I\+N\+G\+\_\+\+L\+E\+FT}, 
+{\bfseries M\+O\+V\+I\+N\+G\+\_\+\+R\+I\+G\+HT}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1Hiker_ab4eb5066067abae742267f84366624b6}{Hiker}} (unsigned int lane, std\+::pair$<$ double, double $>$ \&size, std\+::vector$<$ double $>$ \&lane\+PositionsX, double speed, double speed\+Up\+Factor)
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1Hiker_a99a1ea539176f306e4fc371ce49bf23d}{Hiker}} (const \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} \&)=default
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1Hiker_af06b06f98a49a7fea4207255553c54eb}{$\sim$\+Hiker}} () override=default
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1Hiker_a5e128b93abba4b18a6a587b0c04bc65d}{update}} () override
+\item 
+virtual void \mbox{\hyperlink{classTurboHiker_1_1Hiker_a1aad6442cd372d85f1204ed543505111}{speed\+Up}} ()
+\item 
+virtual void \mbox{\hyperlink{classTurboHiker_1_1Hiker_a4fc81df14c55f145c2012243974ce627}{slow\+Down}} ()
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1Hiker_a08885d700be6e5b2bac76f562452af54}{set\+Yposition}} (double y)
+\item 
+Movement \mbox{\hyperlink{classTurboHiker_1_1Hiker_a28d433d5eb509bbc0b562c22239a9a06}{get\+Movement}} () const
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1Hiker_ad019ba551f9df20a9789e1ae1f49ab54}{set\+Movement}} (Movement \+\_\+movement)
+\item 
+Acceleration \mbox{\hyperlink{classTurboHiker_1_1Hiker_a07e50b9e8737790008f47bd2655a588c}{get\+Acceleration}} () const
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1Hiker_ae549f8854f0f3982885ed9f1cb992f2d}{set\+Acceleration}} (Acceleration \+\_\+acceleration)
+\item 
+double \mbox{\hyperlink{classTurboHiker_1_1Hiker_a28a35ff42adceb2bf35543ff3a4d11ad}{get\+Speed}} () const
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1Hiker_abdf9d28ba76ded99c0d7453f2252200b}{set\+Speed}} (double \+\_\+speed)
+\item 
+double \mbox{\hyperlink{classTurboHiker_1_1Hiker_aac397a3067166e6a6738c44d8a64182f}{get\+Speed\+Up\+Factor}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1Hiker_ab4eb5066067abae742267f84366624b6}\label{classTurboHiker_1_1Hiker_ab4eb5066067abae742267f84366624b6}} 
+\index{TurboHiker::Hiker@{TurboHiker::Hiker}!Hiker@{Hiker}}
+\index{Hiker@{Hiker}!TurboHiker::Hiker@{TurboHiker::Hiker}}
+\doxysubsubsection{\texorpdfstring{Hiker()}{Hiker()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Hiker\+::\+Hiker (\begin{DoxyParamCaption}\item[{unsigned int}]{lane,  }\item[{std\+::pair$<$ double, double $>$ \&}]{size,  }\item[{std\+::vector$<$ double $>$ \&}]{lane\+PositionsX,  }\item[{double}]{speed,  }\item[{double}]{speed\+Up\+Factor }\end{DoxyParamCaption})}
+
+Simple constructor 
+\begin{DoxyParams}{Parameters}
+{\em lane} & the initial lane where the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} is located \\
+\hline
+{\em size} & the size of the hiker \\
+\hline
+{\em lane\+PositionsX} & all possible lane x-\/coordinates \\
+\hline
+{\em speed} & the initial speed of the hiker \\
+\hline
+{\em speed\+Up\+Factor} & the factor by which the speed can change \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1Hiker_a99a1ea539176f306e4fc371ce49bf23d}\label{classTurboHiker_1_1Hiker_a99a1ea539176f306e4fc371ce49bf23d}} 
+\index{TurboHiker::Hiker@{TurboHiker::Hiker}!Hiker@{Hiker}}
+\index{Hiker@{Hiker}!TurboHiker::Hiker@{TurboHiker::Hiker}}
+\doxysubsubsection{\texorpdfstring{Hiker()}{Hiker()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Hiker\+::\+Hiker (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+default copy constructor \mbox{\Hypertarget{classTurboHiker_1_1Hiker_af06b06f98a49a7fea4207255553c54eb}\label{classTurboHiker_1_1Hiker_af06b06f98a49a7fea4207255553c54eb}} 
+\index{TurboHiker::Hiker@{TurboHiker::Hiker}!````~Hiker@{$\sim$Hiker}}
+\index{````~Hiker@{$\sim$Hiker}!TurboHiker::Hiker@{TurboHiker::Hiker}}
+\doxysubsubsection{\texorpdfstring{$\sim$Hiker()}{~Hiker()}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Hiker\+::$\sim$\+Hiker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+default destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1Hiker_a07e50b9e8737790008f47bd2655a588c}\label{classTurboHiker_1_1Hiker_a07e50b9e8737790008f47bd2655a588c}} 
+\index{TurboHiker::Hiker@{TurboHiker::Hiker}!getAcceleration@{getAcceleration}}
+\index{getAcceleration@{getAcceleration}!TurboHiker::Hiker@{TurboHiker::Hiker}}
+\doxysubsubsection{\texorpdfstring{getAcceleration()}{getAcceleration()}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Hiker\+::\+Acceleration Turbo\+Hiker\+::\+Hiker\+::get\+Acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Simple getter of the acceleration \begin{DoxyReturn}{Returns}
+\+: the current state of the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} acceleration 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1Hiker_a28d433d5eb509bbc0b562c22239a9a06}\label{classTurboHiker_1_1Hiker_a28d433d5eb509bbc0b562c22239a9a06}} 
+\index{TurboHiker::Hiker@{TurboHiker::Hiker}!getMovement@{getMovement}}
+\index{getMovement@{getMovement}!TurboHiker::Hiker@{TurboHiker::Hiker}}
+\doxysubsubsection{\texorpdfstring{getMovement()}{getMovement()}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Hiker\+::\+Movement Turbo\+Hiker\+::\+Hiker\+::get\+Movement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Simple getter of the movement \begin{DoxyReturn}{Returns}
+the movement of the hiker 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1Hiker_a28a35ff42adceb2bf35543ff3a4d11ad}\label{classTurboHiker_1_1Hiker_a28a35ff42adceb2bf35543ff3a4d11ad}} 
+\index{TurboHiker::Hiker@{TurboHiker::Hiker}!getSpeed@{getSpeed}}
+\index{getSpeed@{getSpeed}!TurboHiker::Hiker@{TurboHiker::Hiker}}
+\doxysubsubsection{\texorpdfstring{getSpeed()}{getSpeed()}}
+{\footnotesize\ttfamily double Turbo\+Hiker\+::\+Hiker\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Simple getter of the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} speed \begin{DoxyReturn}{Returns}
+\+: the current speed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1Hiker_aac397a3067166e6a6738c44d8a64182f}\label{classTurboHiker_1_1Hiker_aac397a3067166e6a6738c44d8a64182f}} 
+\index{TurboHiker::Hiker@{TurboHiker::Hiker}!getSpeedUpFactor@{getSpeedUpFactor}}
+\index{getSpeedUpFactor@{getSpeedUpFactor}!TurboHiker::Hiker@{TurboHiker::Hiker}}
+\doxysubsubsection{\texorpdfstring{getSpeedUpFactor()}{getSpeedUpFactor()}}
+{\footnotesize\ttfamily double Turbo\+Hiker\+::\+Hiker\+::get\+Speed\+Up\+Factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+simple getter of the speed\+\_\+up\+\_\+factor \begin{DoxyReturn}{Returns}
+the speed\+\_\+up\+\_\+factor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1Hiker_ae549f8854f0f3982885ed9f1cb992f2d}\label{classTurboHiker_1_1Hiker_ae549f8854f0f3982885ed9f1cb992f2d}} 
+\index{TurboHiker::Hiker@{TurboHiker::Hiker}!setAcceleration@{setAcceleration}}
+\index{setAcceleration@{setAcceleration}!TurboHiker::Hiker@{TurboHiker::Hiker}}
+\doxysubsubsection{\texorpdfstring{setAcceleration()}{setAcceleration()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Hiker\+::set\+Acceleration (\begin{DoxyParamCaption}\item[{Acceleration}]{\+\_\+acceleration }\end{DoxyParamCaption})}
+
+Simple setter of the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} acceleration state 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+acceleration} & the new acceleration state \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1Hiker_ad019ba551f9df20a9789e1ae1f49ab54}\label{classTurboHiker_1_1Hiker_ad019ba551f9df20a9789e1ae1f49ab54}} 
+\index{TurboHiker::Hiker@{TurboHiker::Hiker}!setMovement@{setMovement}}
+\index{setMovement@{setMovement}!TurboHiker::Hiker@{TurboHiker::Hiker}}
+\doxysubsubsection{\texorpdfstring{setMovement()}{setMovement()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Hiker\+::set\+Movement (\begin{DoxyParamCaption}\item[{Movement}]{\+\_\+movement }\end{DoxyParamCaption})}
+
+Simple setter of the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} movement 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+movement} & the new movement \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1Hiker_abdf9d28ba76ded99c0d7453f2252200b}\label{classTurboHiker_1_1Hiker_abdf9d28ba76ded99c0d7453f2252200b}} 
+\index{TurboHiker::Hiker@{TurboHiker::Hiker}!setSpeed@{setSpeed}}
+\index{setSpeed@{setSpeed}!TurboHiker::Hiker@{TurboHiker::Hiker}}
+\doxysubsubsection{\texorpdfstring{setSpeed()}{setSpeed()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Hiker\+::set\+Speed (\begin{DoxyParamCaption}\item[{double}]{\+\_\+speed }\end{DoxyParamCaption})}
+
+Simple setter of the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} speed 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+speed} & the new speed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1Hiker_a08885d700be6e5b2bac76f562452af54}\label{classTurboHiker_1_1Hiker_a08885d700be6e5b2bac76f562452af54}} 
+\index{TurboHiker::Hiker@{TurboHiker::Hiker}!setYposition@{setYposition}}
+\index{setYposition@{setYposition}!TurboHiker::Hiker@{TurboHiker::Hiker}}
+\doxysubsubsection{\texorpdfstring{setYposition()}{setYposition()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Hiker\+::set\+Yposition (\begin{DoxyParamCaption}\item[{double}]{y }\end{DoxyParamCaption})}
+
+Sets the y-\/coordinate of the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} position to a new y-\/coordinate 
+\begin{DoxyParams}{Parameters}
+{\em y} & the new y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1Hiker_a4fc81df14c55f145c2012243974ce627}\label{classTurboHiker_1_1Hiker_a4fc81df14c55f145c2012243974ce627}} 
+\index{TurboHiker::Hiker@{TurboHiker::Hiker}!slowDown@{slowDown}}
+\index{slowDown@{slowDown}!TurboHiker::Hiker@{TurboHiker::Hiker}}
+\doxysubsubsection{\texorpdfstring{slowDown()}{slowDown()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Hiker\+::slow\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+decreases the speed of the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} 
+
+Reimplemented in \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a1889100628e9c3e5260dba0ef0c6d872}{Turbo\+Hiker\+::\+Competing\+Hiker}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1Hiker_a1aad6442cd372d85f1204ed543505111}\label{classTurboHiker_1_1Hiker_a1aad6442cd372d85f1204ed543505111}} 
+\index{TurboHiker::Hiker@{TurboHiker::Hiker}!speedUp@{speedUp}}
+\index{speedUp@{speedUp}!TurboHiker::Hiker@{TurboHiker::Hiker}}
+\doxysubsubsection{\texorpdfstring{speedUp()}{speedUp()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Hiker\+::speed\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+increases the speed of the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} 
+
+Reimplemented in \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a50ab00e4fe5aec7b9835bb0d048ee5e3}{Turbo\+Hiker\+::\+Competing\+Hiker}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1Hiker_a5e128b93abba4b18a6a587b0c04bc65d}\label{classTurboHiker_1_1Hiker_a5e128b93abba4b18a6a587b0c04bc65d}} 
+\index{TurboHiker::Hiker@{TurboHiker::Hiker}!update@{update}}
+\index{update@{update}!TurboHiker::Hiker@{TurboHiker::Hiker}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Hiker\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+virtual function that updates all hikers 
+
+Implements \mbox{\hyperlink{classTurboHiker_1_1Entity_aa99d126f1a6edc8aed086613bac747ea}{Turbo\+Hiker\+::\+Entity}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classTurboHiker_1_1Player_ac7eff197d9fbd43aae8cdc86e6a24d4a}{Turbo\+Hiker\+::\+Player}}, \mbox{\hyperlink{classTurboHiker_1_1MovingEnemy_aaa30fdf99d1f67bf9cd4e3ba5d60feac}{Turbo\+Hiker\+::\+Moving\+Enemy}}, and \mbox{\hyperlink{classTurboHiker_1_1StaticEnemy_a22f9ca1f9483c0ee5eb4b3897e6052db}{Turbo\+Hiker\+::\+Static\+Enemy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/Hiker.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/Hiker.\+cpp\end{DoxyCompactItemize}

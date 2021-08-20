@@ -1,0 +1,66 @@
+\hypertarget{classTurboHiker_1_1AbstractFactory}{}\doxysection{Turbo\+Hiker\+::Abstract\+Factory Class Reference}
+\label{classTurboHiker_1_1AbstractFactory}\index{TurboHiker::AbstractFactory@{TurboHiker::AbstractFactory}}
+
+
+Inheritance diagram for Turbo\+Hiker\+::Abstract\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classTurboHiker_1_1AbstractFactory__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classTurboHiker_1_1AbstractFactory_ad8267ad2f90bc8c604b6c921f0e40d15}{$\sim$\+Abstract\+Factory}} ()=default
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1AbstractFactory_abf2176fb865fc67d0796a26ce3d18151}\label{classTurboHiker_1_1AbstractFactory_abf2176fb865fc67d0796a26ce3d18151}} 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLPlayer}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Player}} $>$ {\bfseries create\+Player} ()=0
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1AbstractFactory_a8c45efcf770b0fdc1414f3e051dcb90c}\label{classTurboHiker_1_1AbstractFactory_a8c45efcf770b0fdc1414f3e051dcb90c}} 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLStaticEnemy}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Static\+Enemy}} $>$ {\bfseries create\+Static\+Enemy} (unsigned int lane, double y\+\_\+pos)=0
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1AbstractFactory_ae52f474b0dda254eba31eeacf7483600}\label{classTurboHiker_1_1AbstractFactory_ae52f474b0dda254eba31eeacf7483600}} 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLMovingEnemy}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Moving\+Enemy}} $>$ {\bfseries create\+Moving\+Enemy} (unsigned int lane, double y\+\_\+pos, double speed)=0
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1AbstractFactory_a06b06cd1c2809aaaed796fb93a37d812}\label{classTurboHiker_1_1AbstractFactory_a06b06cd1c2809aaaed796fb93a37d812}} 
+virtual std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLCompetingHiker}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Competing\+Hiker}} $>$ $>$ {\bfseries create\+Competing\+Hikers} (unsigned int player\+\_\+lane)=0
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1AbstractFactory_a77bd7eb6fc3e31f4f10c1dde83e7eca9}\label{classTurboHiker_1_1AbstractFactory_a77bd7eb6fc3e31f4f10c1dde83e7eca9}} 
+virtual std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLStaticEnemy}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Static\+Enemy}} $>$ $>$ {\bfseries create\+Static\+Enemies} ()=0
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1AbstractFactory_aacb80d1e582cbccbd24d616f6eba60b4}\label{classTurboHiker_1_1AbstractFactory_aacb80d1e582cbccbd24d616f6eba60b4}} 
+virtual std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLMovingEnemy}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Moving\+Enemy}} $>$ $>$ {\bfseries create\+Moving\+Enemies} ()=0
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1AbstractFactory_a985a235edcbaa8b4e7e47f24ca4ba413}\label{classTurboHiker_1_1AbstractFactory_a985a235edcbaa8b4e7e47f24ca4ba413}} 
+virtual std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLGroundPlot}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Ground\+Plot}} $>$ $>$ {\bfseries create\+Ground\+Plots} ()=0
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1AbstractFactory_a6046ff5f857989856f2a829307fd7ee2}\label{classTurboHiker_1_1AbstractFactory_a6046ff5f857989856f2a829307fd7ee2}} 
+virtual std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLPassiveItem}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Passive\+Item}} $>$ $>$ {\bfseries create\+Passive\+Item} ()=0
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1AbstractFactory_aafb2675c322f12919162109225f4d927}\label{classTurboHiker_1_1AbstractFactory_aafb2675c322f12919162109225f4d927}} 
+virtual std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLActiveItem}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Active\+Item}} $>$ $>$ {\bfseries create\+Active\+Items} ()=0
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1AbstractFactory_a550a1942f02a986d16d100f555b2fc81}\label{classTurboHiker_1_1AbstractFactory_a550a1942f02a986d16d100f555b2fc81}} 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLFinishLine}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Finish\+Line}} $>$ {\bfseries create\+Finish\+Line} ()=0
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1AbstractFactory_a4cf9ca9dc9d24b30f1fda0c6e6f0c88c}\label{classTurboHiker_1_1AbstractFactory_a4cf9ca9dc9d24b30f1fda0c6e6f0c88c}} 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLBomb}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Bomb}} $>$ {\bfseries create\+Bomb} ()=0
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1AbstractFactory_ad29a29d89f90dda183d64d2079036106}\label{classTurboHiker_1_1AbstractFactory_ad29a29d89f90dda183d64d2079036106}} 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLWorld}{S\+F\+M\+L\+::\+S\+F\+M\+L\+World}} $>$ {\bfseries create\+World} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1AbstractFactory_ad8267ad2f90bc8c604b6c921f0e40d15}\label{classTurboHiker_1_1AbstractFactory_ad8267ad2f90bc8c604b6c921f0e40d15}} 
+\index{TurboHiker::AbstractFactory@{TurboHiker::AbstractFactory}!````~AbstractFactory@{$\sim$AbstractFactory}}
+\index{````~AbstractFactory@{$\sim$AbstractFactory}!TurboHiker::AbstractFactory@{TurboHiker::AbstractFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$AbstractFactory()}{~AbstractFactory()}}
+{\footnotesize\ttfamily virtual Turbo\+Hiker\+::\+Abstract\+Factory\+::$\sim$\+Abstract\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+default destructor 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Abstract\+Factory/Abstract\+Factory.\+h\end{DoxyCompactItemize}

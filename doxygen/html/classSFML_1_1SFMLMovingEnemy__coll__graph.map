@@ -1,0 +1,9 @@
+<map id="SFML::SFMLMovingEnemy" name="SFML::SFMLMovingEnemy">
+<area shape="rect" id="node1" title=" " alt="" coords="146,399,339,425"/>
+<area shape="rect" id="node2" href="$classTurboHiker_1_1MovingEnemy.html" title=" " alt="" coords="5,323,197,349"/>
+<area shape="rect" id="node3" href="$classTurboHiker_1_1Enemy.html" title=" " alt="" coords="29,247,173,273"/>
+<area shape="rect" id="node4" href="$classTurboHiker_1_1Hiker.html" title=" " alt="" coords="35,171,168,197"/>
+<area shape="rect" id="node5" href="$classTurboHiker_1_1Entity.html" title=" " alt="" coords="33,95,170,121"/>
+<area shape="rect" id="node6" href="$classTurboHiker_1_1Position2D.html" title=" " alt="" coords="17,5,186,32"/>
+<area shape="rect" id="node7" href="$classSFML_1_1SFMLEntity.html" title=" " alt="" coords="221,323,360,349"/>
+</map>

@@ -1,0 +1,123 @@
+\hypertarget{classini_1_1NonexistentEntry}{}\doxysection{ini\+::Nonexistent\+Entry Class Reference}
+\label{classini_1_1NonexistentEntry}\index{ini::NonexistentEntry@{ini::NonexistentEntry}}
+
+
+The execption that is thrown when the value of a nonexistent entry is requested.  
+
+
+
+
+{\ttfamily \#include $<$ini\+\_\+configuration.\+h$>$}
+
+
+
+Inheritance diagram for ini\+::Nonexistent\+Entry\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classini_1_1NonexistentEntry__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ini\+::Nonexistent\+Entry\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classini_1_1NonexistentEntry__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classini_1_1NonexistentEntry_a936a5c447833894e25d8147817256372}{Nonexistent\+Entry}} (const std\+::string \&section\+\_\+name\+\_\+init, const std\+::string \&entry\+\_\+name\+\_\+init)  throw ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1NonexistentEntry_adeb9199283a46e42b40d2e55bc0c4280}{Nonexistent\+Entry}} (const \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} \&original)  throw ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} instance by copying another one. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classini_1_1NonexistentEntry_a36d50ddb35b922bdd208cd9dcff56fc5}\label{classini_1_1NonexistentEntry_a36d50ddb35b922bdd208cd9dcff56fc5}} 
+virtual \mbox{\hyperlink{classini_1_1NonexistentEntry_a36d50ddb35b922bdd208cd9dcff56fc5}{$\sim$\+Nonexistent\+Entry}} ()  throw ()
+\begin{DoxyCompactList}\small\item\em Destructs a \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} \& \mbox{\hyperlink{classini_1_1NonexistentEntry_a2442dc9197cc8a8d87c2254e553f8f3b}{operator=}} (const \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} \&original)  throw ()
+\begin{DoxyCompactList}\small\item\em Copies a \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}}. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classini_1_1NonexistentEntry_a72e428e62ae1107762e08648f2388933}{what}} () const  throw ()
+\begin{DoxyCompactList}\small\item\em Returns a description of the error hat occurred. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The execption that is thrown when the value of a nonexistent entry is requested. 
+
+Note that this exception is only thrown when the value of an \mbox{\hyperlink{classini_1_1Entry}{Entry}} is obtained; not when the entry is obtained from a \mbox{\hyperlink{classini_1_1Section}{Section}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classini_1_1NonexistentEntry_a936a5c447833894e25d8147817256372}\label{classini_1_1NonexistentEntry_a936a5c447833894e25d8147817256372}} 
+\index{ini::NonexistentEntry@{ini::NonexistentEntry}!NonexistentEntry@{NonexistentEntry}}
+\index{NonexistentEntry@{NonexistentEntry}!ini::NonexistentEntry@{ini::NonexistentEntry}}
+\doxysubsubsection{\texorpdfstring{NonexistentEntry()}{NonexistentEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ini\+::\+Nonexistent\+Entry\+::\+Nonexistent\+Entry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{section\+\_\+name\+\_\+init,  }\item[{const std\+::string \&}]{entry\+\_\+name\+\_\+init }\end{DoxyParamCaption}) throw ( ) }
+
+
+
+Constructs a new \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section\+\_\+name\+\_\+init} & The name of the section from which the nonexistent entry is obtained. \\
+\hline
+{\em entry\+\_\+name\+\_\+init} & The name of the nonexistent entry. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classini_1_1NonexistentEntry_adeb9199283a46e42b40d2e55bc0c4280}\label{classini_1_1NonexistentEntry_adeb9199283a46e42b40d2e55bc0c4280}} 
+\index{ini::NonexistentEntry@{ini::NonexistentEntry}!NonexistentEntry@{NonexistentEntry}}
+\index{NonexistentEntry@{NonexistentEntry}!ini::NonexistentEntry@{ini::NonexistentEntry}}
+\doxysubsubsection{\texorpdfstring{NonexistentEntry()}{NonexistentEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ini\+::\+Nonexistent\+Entry\+::\+Nonexistent\+Entry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} \&}]{original }\end{DoxyParamCaption}) throw ( ) }
+
+
+
+Constructs a new \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} instance by copying another one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The instance that is copied. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classini_1_1NonexistentEntry_a2442dc9197cc8a8d87c2254e553f8f3b}\label{classini_1_1NonexistentEntry_a2442dc9197cc8a8d87c2254e553f8f3b}} 
+\index{ini::NonexistentEntry@{ini::NonexistentEntry}!operator=@{operator=}}
+\index{operator=@{operator=}!ini::NonexistentEntry@{ini::NonexistentEntry}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} \& ini\+::\+Nonexistent\+Entry\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} \&}]{original }\end{DoxyParamCaption}) throw ( ) }
+
+
+
+Copies a \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The instance that is copied.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1NonexistentEntry_a72e428e62ae1107762e08648f2388933}\label{classini_1_1NonexistentEntry_a72e428e62ae1107762e08648f2388933}} 
+\index{ini::NonexistentEntry@{ini::NonexistentEntry}!what@{what}}
+\index{what@{what}!ini::NonexistentEntry@{ini::NonexistentEntry}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily const char $\ast$ ini\+::\+Nonexistent\+Entry\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const throw ( ) }
+
+
+
+Returns a description of the error hat occurred. 
+
+\begin{DoxyReturn}{Returns}
+A description of the error hat occurred. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/ini\+\_\+config/ini\+\_\+configuration.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/ini\+\_\+config/ini\+\_\+configuration.\+cc\end{DoxyCompactItemize}

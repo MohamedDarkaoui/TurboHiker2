@@ -1,0 +1,5 @@
+<map id="ini::DuplicateSection" name="ini::DuplicateSection">
+<area shape="rect" id="node1" title="The exception that is thrown by the parser when it encounters a section that has the same name as a p..." alt="" coords="5,155,161,181"/>
+<area shape="rect" id="node2" href="$classini_1_1ParseException.html" title="The base class for all exceptions that are thrown by the INI&#45;parser." alt="" coords="11,80,156,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="40,5,127,32"/>
+</map>

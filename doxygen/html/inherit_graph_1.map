@@ -1,0 +1,28 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classTurboHiker_1_1Entity.html" title=" " alt="" coords="5,284,143,311"/>
+<area shape="rect" id="node2" href="$classTurboHiker_1_1Bomb.html" title=" " alt="" coords="223,183,361,209"/>
+<area shape="rect" id="node4" href="$classTurboHiker_1_1CollectableItem.html" title=" " alt="" coords="191,259,393,285"/>
+<area shape="rect" id="node9" href="$classTurboHiker_1_1FinishLine.html" title=" " alt="" coords="210,309,374,336"/>
+<area shape="rect" id="node11" href="$classTurboHiker_1_1GroundPlot.html" title=" " alt="" coords="207,360,377,387"/>
+<area shape="rect" id="node13" href="$classTurboHiker_1_1Hiker.html" title=" " alt="" coords="225,487,359,513"/>
+<area shape="rect" id="node23" href="$classTurboHiker_1_1World.html" title=" " alt="" coords="224,81,360,108"/>
+<area shape="rect" id="node3" href="$classSFML_1_1SFMLBomb.html" title=" " alt="" coords="727,5,865,32"/>
+<area shape="rect" id="node5" href="$classTurboHiker_1_1ActiveItem.html" title=" " alt="" coords="458,157,629,184"/>
+<area shape="rect" id="node7" href="$classTurboHiker_1_1PassiveItem.html" title=" " alt="" coords="454,259,633,285"/>
+<area shape="rect" id="node6" href="$classSFML_1_1SFMLActiveItem.html" title=" " alt="" coords="710,56,882,83"/>
+<area shape="rect" id="node8" href="$classSFML_1_1SFMLPassiveItem.html" title=" " alt="" coords="707,259,885,285"/>
+<area shape="rect" id="node10" href="$classSFML_1_1SFMLFinishLine.html" title=" " alt="" coords="713,309,879,336"/>
+<area shape="rect" id="node12" href="$classSFML_1_1SFMLGroundPlot.html" title=" " alt="" coords="710,360,882,387"/>
+<area shape="rect" id="node14" href="$classTurboHiker_1_1CompetingHiker.html" title=" " alt="" coords="441,449,645,476"/>
+<area shape="rect" id="node18" href="$classTurboHiker_1_1Enemy.html" title=" " alt="" coords="471,512,615,539"/>
+<area shape="rect" id="node15" href="$classSFML_1_1SFMLCompetingHiker.html" title=" " alt="" coords="693,411,899,437"/>
+<area shape="rect" id="node16" href="$classTurboHiker_1_1Player.html" title=" " alt="" coords="726,461,866,488"/>
+<area shape="rect" id="node17" href="$classSFML_1_1SFMLPlayer.html" title=" " alt="" coords="973,284,1114,311"/>
+<area shape="rect" id="node19" href="$classTurboHiker_1_1MovingEnemy.html" title=" " alt="" coords="700,563,892,589"/>
+<area shape="rect" id="node21" href="$classTurboHiker_1_1StaticEnemy.html" title=" " alt="" coords="705,512,887,539"/>
+<area shape="rect" id="node20" href="$classSFML_1_1SFMLMovingEnemy.html" title=" " alt="" coords="947,563,1140,589"/>
+<area shape="rect" id="node22" href="$classSFML_1_1SFMLStaticEnemy.html" title=" " alt="" coords="952,512,1135,539"/>
+<area shape="rect" id="node24" href="$classSFML_1_1SFMLWorld.html" title=" " alt="" coords="475,56,611,83"/>
+<area shape="rect" id="node25" href="$classTurboHiker_1_1Observable.html" title=" " alt="" coords="205,436,379,463"/>
+<area shape="rect" id="node26" href="$classSFML_1_1SFMLEntity.html" title=" " alt="" coords="474,208,613,235"/>
+</map>

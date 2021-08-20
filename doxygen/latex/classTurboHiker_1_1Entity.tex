@@ -1,0 +1,211 @@
+\hypertarget{classTurboHiker_1_1Entity}{}\doxysection{Turbo\+Hiker\+::Entity Class Reference}
+\label{classTurboHiker_1_1Entity}\index{TurboHiker::Entity@{TurboHiker::Entity}}
+
+
+Inheritance diagram for Turbo\+Hiker\+::Entity\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTurboHiker_1_1Entity__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Turbo\+Hiker\+::Entity\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{classTurboHiker_1_1Entity__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1Entity_aae91f279b1cb9282471d332686e1c516}{Entity}} (unsigned int lane, std\+::pair$<$ double, double $>$ \&size, std\+::vector$<$ double $>$ \&lane\+PositionsX)
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1Entity_aea553c21e32f22b6c91129339b3360ce}{Entity}} (\mbox{\hyperlink{classTurboHiker_1_1Position2D}{Position2D}} position, std\+::pair$<$ double, double $>$ \&size)
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1Entity_abf204b36e857066bb830ed59f3433c30}{Entity}} (const \mbox{\hyperlink{classTurboHiker_1_1Entity}{Entity}} \&other)=default
+\item 
+virtual \mbox{\hyperlink{classTurboHiker_1_1Entity_a09781ddd5c5be9d293617789cc1d6ac7}{$\sim$\+Entity}} ()=default
+\item 
+const \mbox{\hyperlink{classTurboHiker_1_1Position2D}{Position2D}} \& \mbox{\hyperlink{classTurboHiker_1_1Entity_a4c25ed3e1af7217f3cb56cc28434a6d9}{get\+Position}} () const
+\item 
+const std\+::pair$<$ double, double $>$ \& \mbox{\hyperlink{classTurboHiker_1_1Entity_ab5ab3b11fdf37aafa019b7fb0f5aa24b}{get\+Size}} () const
+\item 
+unsigned int \mbox{\hyperlink{classTurboHiker_1_1Entity_a4af689453d9da0c0c42130043be49222}{get\+Lane}} () const
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1Entity_a030d6976b5d87bf40c4dce6a353bcb0a}{set\+Lane}} (unsigned int \+\_\+lane)
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1Entity_a666a12242dc2326495547acf93ca235e}{set\+Position}} (const \mbox{\hyperlink{classTurboHiker_1_1Position2D}{Position2D}} \&pos)
+\item 
+const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{classTurboHiker_1_1Entity_acafec112119acc4a2c33c3a2b78bb1bd}{get\+Lane\+PositionsX}} () const
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1Position2D}{Position2D}} \mbox{\hyperlink{classTurboHiker_1_1Entity_ad9c4493f1c3d7af10eba0a44ab39dcd7}{get\+Relative\+Position}} (const \mbox{\hyperlink{classTurboHiker_1_1Position2D}{Position2D}} \&reference) const
+\item 
+virtual void \mbox{\hyperlink{classTurboHiker_1_1Entity_aa99d126f1a6edc8aed086613bac747ea}{update}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classTurboHiker_1_1Entity_aad5ade2df5e5c4f572207c58033f2e3e}{update\+Visuals}} (const \mbox{\hyperlink{classTurboHiker_1_1Position2D}{Position2D}} \&relative\+Pos, std\+::pair$<$ double, double $>$ size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1Entity_a79ebfad6f731070b4581ace2f8e4d669}\label{classTurboHiker_1_1Entity_a79ebfad6f731070b4581ace2f8e4d669}} 
+\mbox{\hyperlink{classTurboHiker_1_1Position2D}{Position2D}} {\bfseries position}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1Entity_aae91f279b1cb9282471d332686e1c516}\label{classTurboHiker_1_1Entity_aae91f279b1cb9282471d332686e1c516}} 
+\index{TurboHiker::Entity@{TurboHiker::Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!TurboHiker::Entity@{TurboHiker::Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{unsigned int}]{lane,  }\item[{std\+::pair$<$ double, double $>$ \&}]{size,  }\item[{std\+::vector$<$ double $>$ \&}]{lane\+PositionsX }\end{DoxyParamCaption})}
+
+Simple constructor 
+\begin{DoxyParams}{Parameters}
+{\em lane} & the lane number of the entity \\
+\hline
+{\em size} & the size of the entity \\
+\hline
+{\em lane\+PositionsX} & all the possible lane x-\/coordinates where the entity can be located \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1Entity_aea553c21e32f22b6c91129339b3360ce}\label{classTurboHiker_1_1Entity_aea553c21e32f22b6c91129339b3360ce}} 
+\index{TurboHiker::Entity@{TurboHiker::Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!TurboHiker::Entity@{TurboHiker::Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTurboHiker_1_1Position2D}{Position2D}}}]{position,  }\item[{std\+::pair$<$ double, double $>$ \&}]{size }\end{DoxyParamCaption})}
+
+S\+I\+M\+P\+LE constructor 
+\begin{DoxyParams}{Parameters}
+{\em position} & the position where the entity spawns \\
+\hline
+{\em size} & the size of the entity \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1Entity_abf204b36e857066bb830ed59f3433c30}\label{classTurboHiker_1_1Entity_abf204b36e857066bb830ed59f3433c30}} 
+\index{TurboHiker::Entity@{TurboHiker::Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!TurboHiker::Entity@{TurboHiker::Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTurboHiker_1_1Entity}{Entity}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Default copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & the to-\/be-\/copied entity \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1Entity_a09781ddd5c5be9d293617789cc1d6ac7}\label{classTurboHiker_1_1Entity_a09781ddd5c5be9d293617789cc1d6ac7}} 
+\index{TurboHiker::Entity@{TurboHiker::Entity}!````~Entity@{$\sim$Entity}}
+\index{````~Entity@{$\sim$Entity}!TurboHiker::Entity@{TurboHiker::Entity}}
+\doxysubsubsection{\texorpdfstring{$\sim$Entity()}{~Entity()}}
+{\footnotesize\ttfamily virtual Turbo\+Hiker\+::\+Entity\+::$\sim$\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+Default virtual destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1Entity_a4af689453d9da0c0c42130043be49222}\label{classTurboHiker_1_1Entity_a4af689453d9da0c0c42130043be49222}} 
+\index{TurboHiker::Entity@{TurboHiker::Entity}!getLane@{getLane}}
+\index{getLane@{getLane}!TurboHiker::Entity@{TurboHiker::Entity}}
+\doxysubsubsection{\texorpdfstring{getLane()}{getLane()}}
+{\footnotesize\ttfamily unsigned int Turbo\+Hiker\+::\+Entity\+::get\+Lane (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Simple getter of the entity lane \begin{DoxyReturn}{Returns}
+the lane of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1Entity_acafec112119acc4a2c33c3a2b78bb1bd}\label{classTurboHiker_1_1Entity_acafec112119acc4a2c33c3a2b78bb1bd}} 
+\index{TurboHiker::Entity@{TurboHiker::Entity}!getLanePositionsX@{getLanePositionsX}}
+\index{getLanePositionsX@{getLanePositionsX}!TurboHiker::Entity@{TurboHiker::Entity}}
+\doxysubsubsection{\texorpdfstring{getLanePositionsX()}{getLanePositionsX()}}
+{\footnotesize\ttfamily const std\+::vector$<$ double $>$ \& Turbo\+Hiker\+::\+Entity\+::get\+Lane\+PositionsX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+simple getter of the Lane\+PositionsX \begin{DoxyReturn}{Returns}
+Lane\+PositionsX 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1Entity_a4c25ed3e1af7217f3cb56cc28434a6d9}\label{classTurboHiker_1_1Entity_a4c25ed3e1af7217f3cb56cc28434a6d9}} 
+\index{TurboHiker::Entity@{TurboHiker::Entity}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!TurboHiker::Entity@{TurboHiker::Entity}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classTurboHiker_1_1Position2D}{Turbo\+Hiker\+::\+Position2D}} \& Turbo\+Hiker\+::\+Entity\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Simple getter of the position \begin{DoxyReturn}{Returns}
+\+: the current position of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1Entity_ad9c4493f1c3d7af10eba0a44ab39dcd7}\label{classTurboHiker_1_1Entity_ad9c4493f1c3d7af10eba0a44ab39dcd7}} 
+\index{TurboHiker::Entity@{TurboHiker::Entity}!getRelativePosition@{getRelativePosition}}
+\index{getRelativePosition@{getRelativePosition}!TurboHiker::Entity@{TurboHiker::Entity}}
+\doxysubsubsection{\texorpdfstring{getRelativePosition()}{getRelativePosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTurboHiker_1_1Position2D}{Turbo\+Hiker\+::\+Position2D}} Turbo\+Hiker\+::\+Entity\+::get\+Relative\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTurboHiker_1_1Position2D}{Position2D}} \&}]{reference }\end{DoxyParamCaption}) const}
+
+Calculates the relative position with respect to a reference position 
+\begin{DoxyParams}{Parameters}
+{\em reference} & the reference position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the relative position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1Entity_ab5ab3b11fdf37aafa019b7fb0f5aa24b}\label{classTurboHiker_1_1Entity_ab5ab3b11fdf37aafa019b7fb0f5aa24b}} 
+\index{TurboHiker::Entity@{TurboHiker::Entity}!getSize@{getSize}}
+\index{getSize@{getSize}!TurboHiker::Entity@{TurboHiker::Entity}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily const std\+::pair$<$ double, double $>$ \& Turbo\+Hiker\+::\+Entity\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Simple getter of the entity size \begin{DoxyReturn}{Returns}
+the size of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1Entity_a030d6976b5d87bf40c4dce6a353bcb0a}\label{classTurboHiker_1_1Entity_a030d6976b5d87bf40c4dce6a353bcb0a}} 
+\index{TurboHiker::Entity@{TurboHiker::Entity}!setLane@{setLane}}
+\index{setLane@{setLane}!TurboHiker::Entity@{TurboHiker::Entity}}
+\doxysubsubsection{\texorpdfstring{setLane()}{setLane()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Entity\+::set\+Lane (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+lane }\end{DoxyParamCaption})}
+
+Simple setter of the lane 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+lane} & the new lane \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1Entity_a666a12242dc2326495547acf93ca235e}\label{classTurboHiker_1_1Entity_a666a12242dc2326495547acf93ca235e}} 
+\index{TurboHiker::Entity@{TurboHiker::Entity}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!TurboHiker::Entity@{TurboHiker::Entity}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Entity\+::set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTurboHiker_1_1Position2D}{Position2D}} \&}]{pos }\end{DoxyParamCaption})}
+
+Simple setter of the position 
+\begin{DoxyParams}{Parameters}
+{\em pos} & the new position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1Entity_aa99d126f1a6edc8aed086613bac747ea}\label{classTurboHiker_1_1Entity_aa99d126f1a6edc8aed086613bac747ea}} 
+\index{TurboHiker::Entity@{TurboHiker::Entity}!update@{update}}
+\index{update@{update}!TurboHiker::Entity@{TurboHiker::Entity}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Turbo\+Hiker\+::\+Entity\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Updates the entity 
+
+Implemented in \mbox{\hyperlink{classSFML_1_1SFMLWorld_a8bf6e96f997ccc366434e7aba41e84b7}{S\+F\+M\+L\+::\+S\+F\+M\+L\+World}}, \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a828bbea23f96cd1c96acb686a1ba7700}{Turbo\+Hiker\+::\+Competing\+Hiker}}, \mbox{\hyperlink{classTurboHiker_1_1Player_ac7eff197d9fbd43aae8cdc86e6a24d4a}{Turbo\+Hiker\+::\+Player}}, \mbox{\hyperlink{classTurboHiker_1_1World_a29ef26f7d6868b4f8ce866a57a0490f2}{Turbo\+Hiker\+::\+World}}, \mbox{\hyperlink{classTurboHiker_1_1Hiker_a5e128b93abba4b18a6a587b0c04bc65d}{Turbo\+Hiker\+::\+Hiker}}, \mbox{\hyperlink{classTurboHiker_1_1PassiveItem_a8c4fc26efbc2e51f0d2f5d22f77142fd}{Turbo\+Hiker\+::\+Passive\+Item}}, \mbox{\hyperlink{classTurboHiker_1_1MovingEnemy_aaa30fdf99d1f67bf9cd4e3ba5d60feac}{Turbo\+Hiker\+::\+Moving\+Enemy}}, \mbox{\hyperlink{classTurboHiker_1_1ActiveItem_acad5b6a0f44e2c481c0f2f992188008a}{Turbo\+Hiker\+::\+Active\+Item}}, \mbox{\hyperlink{classTurboHiker_1_1StaticEnemy_a22f9ca1f9483c0ee5eb4b3897e6052db}{Turbo\+Hiker\+::\+Static\+Enemy}}, \mbox{\hyperlink{classTurboHiker_1_1FinishLine_ac33de5ecdba3690e9907062040f6021c}{Turbo\+Hiker\+::\+Finish\+Line}}, \mbox{\hyperlink{classTurboHiker_1_1Bomb_a8cfe753c19d6eeccfc1989bd8aa26dbd}{Turbo\+Hiker\+::\+Bomb}}, and \mbox{\hyperlink{classTurboHiker_1_1GroundPlot_a01bae310ed66c2feaf4e31c8c263082f}{Turbo\+Hiker\+::\+Ground\+Plot}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1Entity_aad5ade2df5e5c4f572207c58033f2e3e}\label{classTurboHiker_1_1Entity_aad5ade2df5e5c4f572207c58033f2e3e}} 
+\index{TurboHiker::Entity@{TurboHiker::Entity}!updateVisuals@{updateVisuals}}
+\index{updateVisuals@{updateVisuals}!TurboHiker::Entity@{TurboHiker::Entity}}
+\doxysubsubsection{\texorpdfstring{updateVisuals()}{updateVisuals()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Entity\+::update\+Visuals (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTurboHiker_1_1Position2D}{Position2D}} \&}]{relative\+Pos,  }\item[{std\+::pair$<$ double, double $>$}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+virtual function that is implemented in subclasses to update visuals 
+\begin{DoxyParams}{Parameters}
+{\em relative\+Pos} & the relative position of the entity with respect to another position \\
+\hline
+{\em size} & the size of the entity \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classSFML_1_1SFMLPlayer_a5161f7f9aadd7aa09c60d87f1d8b77c0}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Player}}, \mbox{\hyperlink{classSFML_1_1SFMLActiveItem_a71ddbcd367c192ce5a71081f709a474c}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Active\+Item}}, \mbox{\hyperlink{classSFML_1_1SFMLPassiveItem_ade13d7a3b38c66b69afbcd227e39cee5}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Passive\+Item}}, \mbox{\hyperlink{classSFML_1_1SFMLFinishLine_a468d86c4c7be3730e21b0b758f33d5cb}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Finish\+Line}}, \mbox{\hyperlink{classSFML_1_1SFMLBomb_a5ebf3878d0fab81da33329620f142176}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Bomb}}, \mbox{\hyperlink{classSFML_1_1SFMLGroundPlot_aab0d8484f52efef30e80fe7aa92ce603}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Ground\+Plot}}, \mbox{\hyperlink{classSFML_1_1SFMLMovingEnemy_ad90085e3e44898d48c4e661795868a03}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Moving\+Enemy}}, \mbox{\hyperlink{classSFML_1_1SFMLStaticEnemy_a475ae6dbbc8d5a9081086d4b277234a7}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Static\+Enemy}}, and \mbox{\hyperlink{classSFML_1_1SFMLCompetingHiker_a2a764e1f4d609e930741bb8a6f966494}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Competing\+Hiker}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/Entity.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/Entity.\+cpp\end{DoxyCompactItemize}

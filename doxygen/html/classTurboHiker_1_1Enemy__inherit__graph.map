@@ -1,0 +1,9 @@
+<map id="TurboHiker::Enemy" name="TurboHiker::Enemy">
+<area shape="rect" id="node1" title=" " alt="" coords="135,155,279,181"/>
+<area shape="rect" id="node4" href="$classTurboHiker_1_1MovingEnemy.html" title=" " alt="" coords="6,229,198,256"/>
+<area shape="rect" id="node6" href="$classTurboHiker_1_1StaticEnemy.html" title=" " alt="" coords="222,229,403,256"/>
+<area shape="rect" id="node2" href="$classTurboHiker_1_1Hiker.html" title=" " alt="" coords="141,80,274,107"/>
+<area shape="rect" id="node3" href="$classTurboHiker_1_1Entity.html" title=" " alt="" coords="139,5,276,32"/>
+<area shape="rect" id="node5" href="$classSFML_1_1SFMLMovingEnemy.html" title=" " alt="" coords="5,304,199,331"/>
+<area shape="rect" id="node7" href="$classSFML_1_1SFMLStaticEnemy.html" title=" " alt="" coords="223,304,405,331"/>
+</map>

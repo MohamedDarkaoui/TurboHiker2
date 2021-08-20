@@ -1,0 +1,89 @@
+\hypertarget{classTurboHiker_1_1MovingEnemy}{}\doxysection{Turbo\+Hiker\+::Moving\+Enemy Class Reference}
+\label{classTurboHiker_1_1MovingEnemy}\index{TurboHiker::MovingEnemy@{TurboHiker::MovingEnemy}}
+
+
+Inheritance diagram for Turbo\+Hiker\+::Moving\+Enemy\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classTurboHiker_1_1MovingEnemy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Turbo\+Hiker\+::Moving\+Enemy\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classTurboHiker_1_1MovingEnemy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1MovingEnemy_aff0b759e1e5587ac9d7e2160ebf77924}{Moving\+Enemy}} (unsigned int lane, std\+::pair$<$ double, double $>$ \&size, std\+::vector$<$ double $>$ \&lane\+PositionsX, double speed, double speed\+Up\+Factor)
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1MovingEnemy_a88331491331e5cf450512567843774be}{$\sim$\+Moving\+Enemy}} () override=default
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1MovingEnemy_aa2b7ee85d82660a64bd9e44e8e67dd39}{got\+Yelled\+At}} () override
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1MovingEnemy_aaa30fdf99d1f67bf9cd4e3ba5d60feac}{update}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1MovingEnemy_aff0b759e1e5587ac9d7e2160ebf77924}\label{classTurboHiker_1_1MovingEnemy_aff0b759e1e5587ac9d7e2160ebf77924}} 
+\index{TurboHiker::MovingEnemy@{TurboHiker::MovingEnemy}!MovingEnemy@{MovingEnemy}}
+\index{MovingEnemy@{MovingEnemy}!TurboHiker::MovingEnemy@{TurboHiker::MovingEnemy}}
+\doxysubsubsection{\texorpdfstring{MovingEnemy()}{MovingEnemy()}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Moving\+Enemy\+::\+Moving\+Enemy (\begin{DoxyParamCaption}\item[{unsigned int}]{lane,  }\item[{std\+::pair$<$ double, double $>$ \&}]{size,  }\item[{std\+::vector$<$ double $>$ \&}]{lane\+PositionsX,  }\item[{double}]{speed,  }\item[{double}]{speed\+Up\+Factor }\end{DoxyParamCaption})}
+
+Simple constructor 
+\begin{DoxyParams}{Parameters}
+{\em lane} & the initial lane where the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} is located \\
+\hline
+{\em size} & the size of the hiker \\
+\hline
+{\em lane\+PositionsX} & all possible lane x-\/coordinates \\
+\hline
+{\em speed} & the initial speed of the hiker \\
+\hline
+{\em speed\+Up\+Factor} & the factor by which the speed can change \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1MovingEnemy_a88331491331e5cf450512567843774be}\label{classTurboHiker_1_1MovingEnemy_a88331491331e5cf450512567843774be}} 
+\index{TurboHiker::MovingEnemy@{TurboHiker::MovingEnemy}!````~MovingEnemy@{$\sim$MovingEnemy}}
+\index{````~MovingEnemy@{$\sim$MovingEnemy}!TurboHiker::MovingEnemy@{TurboHiker::MovingEnemy}}
+\doxysubsubsection{\texorpdfstring{$\sim$MovingEnemy()}{~MovingEnemy()}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Moving\+Enemy\+::$\sim$\+Moving\+Enemy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+default destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1MovingEnemy_aa2b7ee85d82660a64bd9e44e8e67dd39}\label{classTurboHiker_1_1MovingEnemy_aa2b7ee85d82660a64bd9e44e8e67dd39}} 
+\index{TurboHiker::MovingEnemy@{TurboHiker::MovingEnemy}!gotYelledAt@{gotYelledAt}}
+\index{gotYelledAt@{gotYelledAt}!TurboHiker::MovingEnemy@{TurboHiker::MovingEnemy}}
+\doxysubsubsection{\texorpdfstring{gotYelledAt()}{gotYelledAt()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Moving\+Enemy\+::got\+Yelled\+At (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+reacts to yelling 
+
+Implements \mbox{\hyperlink{classTurboHiker_1_1Enemy_a6d1e36dd5ff7e723ed773ba2a6592175}{Turbo\+Hiker\+::\+Enemy}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1MovingEnemy_aaa30fdf99d1f67bf9cd4e3ba5d60feac}\label{classTurboHiker_1_1MovingEnemy_aaa30fdf99d1f67bf9cd4e3ba5d60feac}} 
+\index{TurboHiker::MovingEnemy@{TurboHiker::MovingEnemy}!update@{update}}
+\index{update@{update}!TurboHiker::MovingEnemy@{TurboHiker::MovingEnemy}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Moving\+Enemy\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+updates the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} 
+
+Reimplemented from \mbox{\hyperlink{classTurboHiker_1_1Hiker_a5e128b93abba4b18a6a587b0c04bc65d}{Turbo\+Hiker\+::\+Hiker}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/Moving\+Enemy.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/Moving\+Enemy.\+cpp\end{DoxyCompactItemize}

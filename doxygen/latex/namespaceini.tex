@@ -1,0 +1,105 @@
+\hypertarget{namespaceini}{}\doxysection{ini Namespace Reference}
+\label{namespaceini}\index{ini@{ini}}
+
+
+The namespace of the I\+NI configuration file parser.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classini_1_1Configuration}{Configuration}}
+\begin{DoxyCompactList}\small\item\em The type in which a configuration file is stored. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classini_1_1DuplicateEntry}{Duplicate\+Entry}}
+\begin{DoxyCompactList}\small\item\em The exception that is thrown when the parser encounters an entry that has the same key as a previously parsed key in the same section. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classini_1_1DuplicateSection}{Duplicate\+Section}}
+\begin{DoxyCompactList}\small\item\em The exception that is thrown by the parser when it encounters a section that has the same name as a previously parsed section. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classini_1_1Entry}{Entry}}
+\begin{DoxyCompactList}\small\item\em The class that represents an entry in the section of an I\+NI configuration. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}}
+\begin{DoxyCompactList}\small\item\em The execption that is thrown when the value of an entry in an ini-\/configuration cannot be converted to the requested value. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}}
+\begin{DoxyCompactList}\small\item\em The execption that is thrown when the value of a nonexistent entry is requested. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classini_1_1ParseException}{Parse\+Exception}}
+\begin{DoxyCompactList}\small\item\em The base class for all exceptions that are thrown by the I\+N\+I-\/parser. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classini_1_1Section}{Section}}
+\begin{DoxyCompactList}\small\item\em The type that is used to represent sections that are stored in the configuration file. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classini_1_1UnexpectedCharacter}{Unexpected\+Character}}
+\begin{DoxyCompactList}\small\item\em The exception that is thrown when the parser encounters an unexpected character. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classini_1_1Value}{Value}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceini_a09d9ba9b869456496796813fb215dbcb}\label{namespaceini_a09d9ba9b869456496796813fb215dbcb}} 
+typedef std\+::vector$<$ int $>$ \mbox{\hyperlink{namespaceini_a09d9ba9b869456496796813fb215dbcb}{Int\+Tuple}}
+\begin{DoxyCompactList}\small\item\em The type that is used to store int tuples (list of ints). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceini_a97991bfcd91e844890e326e86cc446a4}\label{namespaceini_a97991bfcd91e844890e326e86cc446a4}} 
+typedef std\+::vector$<$ double $>$ \mbox{\hyperlink{namespaceini_a97991bfcd91e844890e326e86cc446a4}{Double\+Tuple}}
+\begin{DoxyCompactList}\small\item\em The type that is used to store double tuples (list of doubles). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceini_a33c55c3c86579b41a4c49663f67ca755}\label{namespaceini_a33c55c3c86579b41a4c49663f67ca755}} 
+typedef std\+::map$<$ std\+::string, \mbox{\hyperlink{classini_1_1Value}{Value}} $\ast$ $>$ \mbox{\hyperlink{namespaceini_a33c55c3c86579b41a4c49663f67ca755}{Value\+Map}}
+\begin{DoxyCompactList}\small\item\em The type of the map in which the values are stored. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceini_a2f406a522aa741c04f3bd1aece13cafd}\label{namespaceini_a2f406a522aa741c04f3bd1aece13cafd}} 
+typedef Value\+Map\+::iterator \mbox{\hyperlink{namespaceini_a2f406a522aa741c04f3bd1aece13cafd}{Value\+Iter}}
+\begin{DoxyCompactList}\small\item\em The type of the iterator for iterating over a Value\+Map. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceini_ad4b2c634649923dd5e019ba6f623a00a}\label{namespaceini_ad4b2c634649923dd5e019ba6f623a00a}} 
+typedef Value\+Map\+::const\+\_\+iterator \mbox{\hyperlink{namespaceini_ad4b2c634649923dd5e019ba6f623a00a}{Const\+Value\+Iter}}
+\begin{DoxyCompactList}\small\item\em The type of the iterator for iterating over a constant Value\+Map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{namespaceini_a18c00af146510f9165c90b0e0265c0d8}{operator$>$$>$}} (std\+::istream \&input\+\_\+stream, \mbox{\hyperlink{classini_1_1Configuration}{Configuration}} \&configuration)
+\begin{DoxyCompactList}\small\item\em Convenience operator for reading configurations from an input stream. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{namespaceini_a4503919de51e1cb3a4720bfbd6473953}{operator$<$$<$}} (std\+::ostream \&output\+\_\+stream, const \mbox{\hyperlink{classini_1_1Configuration}{Configuration}} \&configuration)
+\begin{DoxyCompactList}\small\item\em Convenience operator for writing configurations to an output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The namespace of the I\+NI configuration file parser. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceini_a4503919de51e1cb3a4720bfbd6473953}\label{namespaceini_a4503919de51e1cb3a4720bfbd6473953}} 
+\index{ini@{ini}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ini@{ini}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& ini\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{output\+\_\+stream,  }\item[{const \mbox{\hyperlink{classini_1_1Configuration}{Configuration}} \&}]{configuration }\end{DoxyParamCaption})}
+
+
+
+Convenience operator for writing configurations to an output stream. 
+
+This operator prints the configuration to the output stream using the \mbox{\hyperlink{classini_1_1Configuration_a5fe538667d32e576e0a3469a81419b51}{Configuration\+::print}} method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+\_\+stream} & The output stream to which the configuration is written. \\
+\hline
+{\em configuration} & The \mbox{\hyperlink{classini_1_1Configuration}{Configuration}} object in which the parsed configuration is stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the output stream. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceini_a18c00af146510f9165c90b0e0265c0d8}\label{namespaceini_a18c00af146510f9165c90b0e0265c0d8}} 
+\index{ini@{ini}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ini@{ini}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::istream \& ini\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input\+\_\+stream,  }\item[{\mbox{\hyperlink{classini_1_1Configuration}{Configuration}} \&}]{configuration }\end{DoxyParamCaption})}
+
+
+
+Convenience operator for reading configurations from an input stream. 
+
+This operator reads the configuration from the input stream using the \mbox{\hyperlink{classini_1_1Configuration_ab8bd50f145d90ec2bf4c45f7b7d4fe2d}{Configuration\+::parse}} method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+stream} & The input stream from which the configuration is read. \\
+\hline
+{\em configuration} & The \mbox{\hyperlink{classini_1_1Configuration}{Configuration}} object in which the parsed configuration is stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the input stream. 
+\end{DoxyReturn}

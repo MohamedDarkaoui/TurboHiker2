@@ -1,0 +1,84 @@
+\hypertarget{classTurboHiker_1_1ActiveItem}{}\doxysection{Turbo\+Hiker\+::Active\+Item Class Reference}
+\label{classTurboHiker_1_1ActiveItem}\index{TurboHiker::ActiveItem@{TurboHiker::ActiveItem}}
+
+
+Inheritance diagram for Turbo\+Hiker\+::Active\+Item\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classTurboHiker_1_1ActiveItem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Turbo\+Hiker\+::Active\+Item\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classTurboHiker_1_1ActiveItem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1ActiveItem_adedb029dfedba1f717dc131540a3fa8a}{Active\+Item}} (unsigned int lane, std\+::pair$<$ double, double $>$ \&size, std\+::vector$<$ double $>$ \&lane\+PositionsX)
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1ActiveItem_a3f8aae30d067799bc1dca20ed75cdee2}{give\+Reward}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker}{Competing\+Hiker}} $>$ \&competitor, std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker}{Competing\+Hiker}} $>$$>$ \&others) final
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1ActiveItem_acad5b6a0f44e2c481c0f2f992188008a}{update}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1ActiveItem_adedb029dfedba1f717dc131540a3fa8a}\label{classTurboHiker_1_1ActiveItem_adedb029dfedba1f717dc131540a3fa8a}} 
+\index{TurboHiker::ActiveItem@{TurboHiker::ActiveItem}!ActiveItem@{ActiveItem}}
+\index{ActiveItem@{ActiveItem}!TurboHiker::ActiveItem@{TurboHiker::ActiveItem}}
+\doxysubsubsection{\texorpdfstring{ActiveItem()}{ActiveItem()}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Active\+Item\+::\+Active\+Item (\begin{DoxyParamCaption}\item[{unsigned int}]{lane,  }\item[{std\+::pair$<$ double, double $>$ \&}]{size,  }\item[{std\+::vector$<$ double $>$ \&}]{lane\+PositionsX }\end{DoxyParamCaption})}
+
+simple constructor 
+\begin{DoxyParams}{Parameters}
+{\em lane} & the initial lane where the Item is located \\
+\hline
+{\em size} & the size of the Item \\
+\hline
+{\em lane\+PositionsX} & all possible lane x-\/coordinates \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1ActiveItem_a3f8aae30d067799bc1dca20ed75cdee2}\label{classTurboHiker_1_1ActiveItem_a3f8aae30d067799bc1dca20ed75cdee2}} 
+\index{TurboHiker::ActiveItem@{TurboHiker::ActiveItem}!giveReward@{giveReward}}
+\index{giveReward@{giveReward}!TurboHiker::ActiveItem@{TurboHiker::ActiveItem}}
+\doxysubsubsection{\texorpdfstring{giveReward()}{giveReward()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Active\+Item\+::give\+Reward (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker}{Competing\+Hiker}} $>$ \&}]{competitor,  }\item[{std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker}{Competing\+Hiker}} $>$$>$ \&}]{others }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+gives the reward to a given competing\+\_\+hiker, depending on it\textquotesingle{}s position in the race 
+\begin{DoxyParams}{Parameters}
+{\em competitor} & the competing\+\_\+hiker who is receiving the reward \\
+\hline
+{\em others} & the other hikers on the trail \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTurboHiker_1_1CollectableItem_a769157ba8e37d8e3960a933effaa8968}{Turbo\+Hiker\+::\+Collectable\+Item}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1ActiveItem_acad5b6a0f44e2c481c0f2f992188008a}\label{classTurboHiker_1_1ActiveItem_acad5b6a0f44e2c481c0f2f992188008a}} 
+\index{TurboHiker::ActiveItem@{TurboHiker::ActiveItem}!update@{update}}
+\index{update@{update}!TurboHiker::ActiveItem@{TurboHiker::ActiveItem}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Active\+Item\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+does nothing 
+
+Implements \mbox{\hyperlink{classTurboHiker_1_1Entity_aa99d126f1a6edc8aed086613bac747ea}{Turbo\+Hiker\+::\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/Active\+Item.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/Active\+Item.\+cpp\end{DoxyCompactItemize}

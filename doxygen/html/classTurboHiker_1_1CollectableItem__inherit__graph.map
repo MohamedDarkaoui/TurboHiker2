@@ -1,0 +1,8 @@
+<map id="TurboHiker::CollectableItem" name="TurboHiker::CollectableItem">
+<area shape="rect" id="node1" title=" " alt="" coords="89,80,291,107"/>
+<area shape="rect" id="node3" href="$classTurboHiker_1_1ActiveItem.html" title=" " alt="" coords="6,155,177,181"/>
+<area shape="rect" id="node5" href="$classTurboHiker_1_1PassiveItem.html" title=" " alt="" coords="201,155,379,181"/>
+<area shape="rect" id="node2" href="$classTurboHiker_1_1Entity.html" title=" " alt="" coords="121,5,259,32"/>
+<area shape="rect" id="node4" href="$classSFML_1_1SFMLActiveItem.html" title=" " alt="" coords="5,229,177,256"/>
+<area shape="rect" id="node6" href="$classSFML_1_1SFMLPassiveItem.html" title=" " alt="" coords="202,229,381,256"/>
+</map>

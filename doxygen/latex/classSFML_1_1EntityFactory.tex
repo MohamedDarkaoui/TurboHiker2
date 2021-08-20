@@ -1,0 +1,103 @@
+\hypertarget{classSFML_1_1EntityFactory}{}\doxysection{S\+F\+ML\+::Entity\+Factory Class Reference}
+\label{classSFML_1_1EntityFactory}\index{SFML::EntityFactory@{SFML::EntityFactory}}
+
+
+Inheritance diagram for S\+F\+ML\+::Entity\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classSFML_1_1EntityFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for S\+F\+ML\+::Entity\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classSFML_1_1EntityFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSFML_1_1EntityFactory_a1d6bed731caae9cfebb6c2abc139e47f}{Entity\+Factory}} (const std\+::string \&path\+\_\+to\+\_\+config\+\_\+file)
+\item 
+\mbox{\hyperlink{classSFML_1_1EntityFactory_a9106971789091eca300a10a67937af50}{$\sim$\+Entity\+Factory}} () override=default
+\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{classSFML_1_1EntityFactory_ab129bb728169a5a1a7a040aeed7a571a}{read\+Size}} (const std\+::string \&entity\+Name)
+\item 
+\mbox{\Hypertarget{classSFML_1_1EntityFactory_a9aed3182f9315b932a87d288a3b2b382}\label{classSFML_1_1EntityFactory_a9aed3182f9315b932a87d288a3b2b382}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLPlayer}{S\+F\+M\+L\+Player}} $>$ {\bfseries create\+Player} () override
+\item 
+\mbox{\Hypertarget{classSFML_1_1EntityFactory_ad8e385fcf733220cf0b4897ce43236f4}\label{classSFML_1_1EntityFactory_ad8e385fcf733220cf0b4897ce43236f4}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLStaticEnemy}{S\+F\+M\+L\+Static\+Enemy}} $>$ {\bfseries create\+Static\+Enemy} (unsigned int lane, double y\+\_\+pos) override
+\item 
+\mbox{\Hypertarget{classSFML_1_1EntityFactory_a32842ad04fec36e133cb2820866cd25b}\label{classSFML_1_1EntityFactory_a32842ad04fec36e133cb2820866cd25b}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLMovingEnemy}{S\+F\+M\+L\+Moving\+Enemy}} $>$ {\bfseries create\+Moving\+Enemy} (unsigned int lane, double y\+\_\+pos, double speed) override
+\item 
+\mbox{\Hypertarget{classSFML_1_1EntityFactory_ae5f2f5ea2bc4560bcf29a7c4e79a64a4}\label{classSFML_1_1EntityFactory_ae5f2f5ea2bc4560bcf29a7c4e79a64a4}} 
+std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLCompetingHiker}{S\+F\+M\+L\+Competing\+Hiker}} $>$ $>$ {\bfseries create\+Competing\+Hikers} (unsigned int player\+\_\+lane) override
+\item 
+\mbox{\Hypertarget{classSFML_1_1EntityFactory_a794a775f2999ddc8883d28b805402ae3}\label{classSFML_1_1EntityFactory_a794a775f2999ddc8883d28b805402ae3}} 
+std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLStaticEnemy}{S\+F\+M\+L\+Static\+Enemy}} $>$ $>$ {\bfseries create\+Static\+Enemies} () override
+\item 
+\mbox{\Hypertarget{classSFML_1_1EntityFactory_a3389887650ba29a68afe46c8abb25dc2}\label{classSFML_1_1EntityFactory_a3389887650ba29a68afe46c8abb25dc2}} 
+std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLMovingEnemy}{S\+F\+M\+L\+Moving\+Enemy}} $>$ $>$ {\bfseries create\+Moving\+Enemies} () override
+\item 
+\mbox{\Hypertarget{classSFML_1_1EntityFactory_a039993e406fce026117edb3024847145}\label{classSFML_1_1EntityFactory_a039993e406fce026117edb3024847145}} 
+std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLGroundPlot}{S\+F\+M\+L\+Ground\+Plot}} $>$ $>$ {\bfseries create\+Ground\+Plots} () override
+\item 
+\mbox{\Hypertarget{classSFML_1_1EntityFactory_a06607da78b30598a29d687d68c0778c8}\label{classSFML_1_1EntityFactory_a06607da78b30598a29d687d68c0778c8}} 
+std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLPassiveItem}{S\+F\+M\+L\+Passive\+Item}} $>$ $>$ {\bfseries create\+Passive\+Item} () override
+\item 
+\mbox{\Hypertarget{classSFML_1_1EntityFactory_a7619f9a2b9ae0c29d4e58a70f3c54179}\label{classSFML_1_1EntityFactory_a7619f9a2b9ae0c29d4e58a70f3c54179}} 
+std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLActiveItem}{S\+F\+M\+L\+Active\+Item}} $>$ $>$ {\bfseries create\+Active\+Items} () override
+\item 
+\mbox{\Hypertarget{classSFML_1_1EntityFactory_a8f48708c7be683aa2127af4d5c9d7b43}\label{classSFML_1_1EntityFactory_a8f48708c7be683aa2127af4d5c9d7b43}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLFinishLine}{S\+F\+M\+L\+Finish\+Line}} $>$ {\bfseries create\+Finish\+Line} () override
+\item 
+\mbox{\Hypertarget{classSFML_1_1EntityFactory_aca92d35fc2d9702eb898f7533d485faa}\label{classSFML_1_1EntityFactory_aca92d35fc2d9702eb898f7533d485faa}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLBomb}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Bomb}} $>$ {\bfseries create\+Bomb} () override
+\item 
+\mbox{\Hypertarget{classSFML_1_1EntityFactory_a07130c246d3898c78a803f7dab255cfc}\label{classSFML_1_1EntityFactory_a07130c246d3898c78a803f7dab255cfc}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSFML_1_1SFMLWorld}{S\+F\+M\+L\+World}} $>$ {\bfseries create\+World} () override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSFML_1_1EntityFactory_a1d6bed731caae9cfebb6c2abc139e47f}\label{classSFML_1_1EntityFactory_a1d6bed731caae9cfebb6c2abc139e47f}} 
+\index{SFML::EntityFactory@{SFML::EntityFactory}!EntityFactory@{EntityFactory}}
+\index{EntityFactory@{EntityFactory}!SFML::EntityFactory@{SFML::EntityFactory}}
+\doxysubsubsection{\texorpdfstring{EntityFactory()}{EntityFactory()}}
+{\footnotesize\ttfamily S\+F\+M\+L\+::\+Entity\+Factory\+::\+Entity\+Factory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path\+\_\+to\+\_\+config\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+simple constructor 
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+to\+\_\+config\+\_\+file} & the path to the ini config file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSFML_1_1EntityFactory_a9106971789091eca300a10a67937af50}\label{classSFML_1_1EntityFactory_a9106971789091eca300a10a67937af50}} 
+\index{SFML::EntityFactory@{SFML::EntityFactory}!````~EntityFactory@{$\sim$EntityFactory}}
+\index{````~EntityFactory@{$\sim$EntityFactory}!SFML::EntityFactory@{SFML::EntityFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$EntityFactory()}{~EntityFactory()}}
+{\footnotesize\ttfamily S\+F\+M\+L\+::\+Entity\+Factory\+::$\sim$\+Entity\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+default destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSFML_1_1EntityFactory_ab129bb728169a5a1a7a040aeed7a571a}\label{classSFML_1_1EntityFactory_ab129bb728169a5a1a7a040aeed7a571a}} 
+\index{SFML::EntityFactory@{SFML::EntityFactory}!readSize@{readSize}}
+\index{readSize@{readSize}!SFML::EntityFactory@{SFML::EntityFactory}}
+\doxysubsubsection{\texorpdfstring{readSize()}{readSize()}}
+{\footnotesize\ttfamily std\+::pair$<$ double, double $>$ S\+F\+M\+L\+::\+Entity\+Factory\+::read\+Size (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{entity\+Name }\end{DoxyParamCaption})}
+
+reads the size of an entity from a config file \begin{DoxyReturn}{Returns}
+the size of an entity 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/presentation-\/lib/\+Entity\+Factory/Entity\+Factory.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/presentation-\/lib/\+Entity\+Factory/Entity\+Factory.\+cpp\end{DoxyCompactItemize}

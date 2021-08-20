@@ -1,0 +1,108 @@
+\hypertarget{classini_1_1Configuration}{}\doxysection{ini\+::Configuration Class Reference}
+\label{classini_1_1Configuration}\index{ini::Configuration@{ini::Configuration}}
+
+
+The type in which a configuration file is stored.  
+
+
+
+
+{\ttfamily \#include $<$ini\+\_\+configuration.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classini_1_1Configuration_a4ec838e67348f36ff3ef725ee8c3b161}\label{classini_1_1Configuration_a4ec838e67348f36ff3ef725ee8c3b161}} 
+\mbox{\hyperlink{classini_1_1Configuration_a4ec838e67348f36ff3ef725ee8c3b161}{Configuration}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new (empty) configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1Configuration_ab6a1a204879e472b20261099fb2770fc}{Configuration}} (std\+::istream \&input\+\_\+stream)
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classini_1_1Configuration}{Configuration}} by parsing the content from a stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classini_1_1Configuration_a77793e71ff4ec7e2ecddc32ad9053016}\label{classini_1_1Configuration_a77793e71ff4ec7e2ecddc32ad9053016}} 
+\mbox{\hyperlink{classini_1_1Configuration_a77793e71ff4ec7e2ecddc32ad9053016}{$\sim$\+Configuration}} ()
+\begin{DoxyCompactList}\small\item\em Destructs a \mbox{\hyperlink{classini_1_1Configuration}{Configuration}} and frees all entries stored in it. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1Section}{Section}} \mbox{\hyperlink{classini_1_1Configuration_a7ae08ff204db4d8d99225e76ce81466d}{operator\mbox{[}$\,$\mbox{]}}} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em Retrieves a section from the configuration file given its key. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classini_1_1Configuration_ab8bd50f145d90ec2bf4c45f7b7d4fe2d}{parse}} (std\+::istream \&input\+\_\+stream)
+\begin{DoxyCompactList}\small\item\em Reads a configuration file from a stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classini_1_1Configuration_a5fe538667d32e576e0a3469a81419b51}{print}} (std\+::ostream \&output\+\_\+stream) const
+\begin{DoxyCompactList}\small\item\em Formats the contents of the \mbox{\hyperlink{classini_1_1Configuration}{Configuration}} to text and prints it to an output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The type in which a configuration file is stored. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classini_1_1Configuration_ab6a1a204879e472b20261099fb2770fc}\label{classini_1_1Configuration_ab6a1a204879e472b20261099fb2770fc}} 
+\index{ini::Configuration@{ini::Configuration}!Configuration@{Configuration}}
+\index{Configuration@{Configuration}!ini::Configuration@{ini::Configuration}}
+\doxysubsubsection{\texorpdfstring{Configuration()}{Configuration()}}
+{\footnotesize\ttfamily ini\+::\+Configuration\+::\+Configuration (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input\+\_\+stream }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \mbox{\hyperlink{classini_1_1Configuration}{Configuration}} by parsing the content from a stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+stream} & The stream from which the content is parsed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classini_1_1Configuration_a7ae08ff204db4d8d99225e76ce81466d}\label{classini_1_1Configuration_a7ae08ff204db4d8d99225e76ce81466d}} 
+\index{ini::Configuration@{ini::Configuration}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ini::Configuration@{ini::Configuration}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classini_1_1Section}{Section}} ini\+::\+Configuration\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves a section from the configuration file given its key. 
+
+If the requested section does not exist, a section containing no values is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The name of the requested section.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the requested section. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Configuration_ab8bd50f145d90ec2bf4c45f7b7d4fe2d}\label{classini_1_1Configuration_ab8bd50f145d90ec2bf4c45f7b7d4fe2d}} 
+\index{ini::Configuration@{ini::Configuration}!parse@{parse}}
+\index{parse@{parse}!ini::Configuration@{ini::Configuration}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily void ini\+::\+Configuration\+::parse (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input\+\_\+stream }\end{DoxyParamCaption})}
+
+
+
+Reads a configuration file from a stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+stream} & The input stream from which the configuration is read. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classini_1_1Configuration_a5fe538667d32e576e0a3469a81419b51}\label{classini_1_1Configuration_a5fe538667d32e576e0a3469a81419b51}} 
+\index{ini::Configuration@{ini::Configuration}!print@{print}}
+\index{print@{print}!ini::Configuration@{ini::Configuration}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void ini\+::\+Configuration\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{output\+\_\+stream }\end{DoxyParamCaption}) const}
+
+
+
+Formats the contents of the \mbox{\hyperlink{classini_1_1Configuration}{Configuration}} to text and prints it to an output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+\_\+stream} & The output stream to which the output is written. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/ini\+\_\+config/ini\+\_\+configuration.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/ini\+\_\+config/ini\+\_\+configuration.\+cc\end{DoxyCompactItemize}

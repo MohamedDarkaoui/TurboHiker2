@@ -1,0 +1,123 @@
+\hypertarget{classini_1_1IncompatibleConversion}{}\doxysection{ini\+::Incompatible\+Conversion Class Reference}
+\label{classini_1_1IncompatibleConversion}\index{ini::IncompatibleConversion@{ini::IncompatibleConversion}}
+
+
+The execption that is thrown when the value of an entry in an ini-\/configuration cannot be converted to the requested value.  
+
+
+
+
+{\ttfamily \#include $<$ini\+\_\+configuration.\+h$>$}
+
+
+
+Inheritance diagram for ini\+::Incompatible\+Conversion\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classini_1_1IncompatibleConversion__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ini\+::Incompatible\+Conversion\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classini_1_1IncompatibleConversion__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classini_1_1IncompatibleConversion_ad24a5e74b957b52e04e557a114f64e60}{Incompatible\+Conversion}} (const std\+::string \&section\+\_\+name\+\_\+init, const std\+::string \&entry\+\_\+name\+\_\+init, const std\+::string \&type\+\_\+name\+\_\+init)  throw ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1IncompatibleConversion_a1dd7c1b013f2d8e5278c1eda65eb499e}{Incompatible\+Conversion}} (const \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} \&original)  throw ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception by copying another one. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classini_1_1IncompatibleConversion_ab4989ccd7008e78e3212db77d9d5262c}\label{classini_1_1IncompatibleConversion_ab4989ccd7008e78e3212db77d9d5262c}} 
+virtual \mbox{\hyperlink{classini_1_1IncompatibleConversion_ab4989ccd7008e78e3212db77d9d5262c}{$\sim$\+Incompatible\+Conversion}} ()  throw ()
+\begin{DoxyCompactList}\small\item\em Destructs a . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} \& \mbox{\hyperlink{classini_1_1IncompatibleConversion_ae0b3d0ed782c1eb11e364f9608e28c21}{operator=}} (const \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} \&original)  throw ()
+\begin{DoxyCompactList}\small\item\em Copies an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}}. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \mbox{\hyperlink{classini_1_1IncompatibleConversion_a53b8b1dbb79760e38e00a5a1557f02d9}{what}} () const  throw ()
+\begin{DoxyCompactList}\small\item\em Returns a description of the error hat occurred. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The execption that is thrown when the value of an entry in an ini-\/configuration cannot be converted to the requested value. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classini_1_1IncompatibleConversion_ad24a5e74b957b52e04e557a114f64e60}\label{classini_1_1IncompatibleConversion_ad24a5e74b957b52e04e557a114f64e60}} 
+\index{ini::IncompatibleConversion@{ini::IncompatibleConversion}!IncompatibleConversion@{IncompatibleConversion}}
+\index{IncompatibleConversion@{IncompatibleConversion}!ini::IncompatibleConversion@{ini::IncompatibleConversion}}
+\doxysubsubsection{\texorpdfstring{IncompatibleConversion()}{IncompatibleConversion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ini\+::\+Incompatible\+Conversion\+::\+Incompatible\+Conversion (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{section\+\_\+name\+\_\+init,  }\item[{const std\+::string \&}]{entry\+\_\+name\+\_\+init,  }\item[{const std\+::string \&}]{type\+\_\+name\+\_\+init }\end{DoxyParamCaption}) throw ( ) }
+
+
+
+Constructs a new \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section\+\_\+name\+\_\+init} & The name of the section of the entry. \\
+\hline
+{\em entry\+\_\+name\+\_\+init} & The name of the entry. \\
+\hline
+{\em type\+\_\+name\+\_\+init} & The name of the requested type, e.\+g. \char`\"{}int\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classini_1_1IncompatibleConversion_a1dd7c1b013f2d8e5278c1eda65eb499e}\label{classini_1_1IncompatibleConversion_a1dd7c1b013f2d8e5278c1eda65eb499e}} 
+\index{ini::IncompatibleConversion@{ini::IncompatibleConversion}!IncompatibleConversion@{IncompatibleConversion}}
+\index{IncompatibleConversion@{IncompatibleConversion}!ini::IncompatibleConversion@{ini::IncompatibleConversion}}
+\doxysubsubsection{\texorpdfstring{IncompatibleConversion()}{IncompatibleConversion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ini\+::\+Incompatible\+Conversion\+::\+Incompatible\+Conversion (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} \&}]{original }\end{DoxyParamCaption}) throw ( ) }
+
+
+
+Constructs a \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception by copying another one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The instance that is copied. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classini_1_1IncompatibleConversion_ae0b3d0ed782c1eb11e364f9608e28c21}\label{classini_1_1IncompatibleConversion_ae0b3d0ed782c1eb11e364f9608e28c21}} 
+\index{ini::IncompatibleConversion@{ini::IncompatibleConversion}!operator=@{operator=}}
+\index{operator=@{operator=}!ini::IncompatibleConversion@{ini::IncompatibleConversion}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} \& ini\+::\+Incompatible\+Conversion\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} \&}]{original }\end{DoxyParamCaption}) throw ( ) }
+
+
+
+Copies an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The instance that is copied.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1IncompatibleConversion_a53b8b1dbb79760e38e00a5a1557f02d9}\label{classini_1_1IncompatibleConversion_a53b8b1dbb79760e38e00a5a1557f02d9}} 
+\index{ini::IncompatibleConversion@{ini::IncompatibleConversion}!what@{what}}
+\index{what@{what}!ini::IncompatibleConversion@{ini::IncompatibleConversion}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily const char $\ast$ ini\+::\+Incompatible\+Conversion\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const throw ( ) \hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a description of the error hat occurred. 
+
+\begin{DoxyReturn}{Returns}
+A description of the error hat occurred. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/ini\+\_\+config/ini\+\_\+configuration.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/ini\+\_\+config/ini\+\_\+configuration.\+cc\end{DoxyCompactItemize}

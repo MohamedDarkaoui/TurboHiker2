@@ -1,0 +1,12 @@
+<map id="SFML::SFMLEntity" name="SFML::SFMLEntity">
+<area shape="rect" id="node1" title=" " alt="" coords="5,208,144,235"/>
+<area shape="rect" id="node2" href="$classSFML_1_1SFMLActiveItem.html" title=" " alt="" coords="209,5,381,32"/>
+<area shape="rect" id="node3" href="$classSFML_1_1SFMLBomb.html" title=" " alt="" coords="225,56,364,83"/>
+<area shape="rect" id="node4" href="$classSFML_1_1SFMLCompetingHiker.html" title=" " alt="" coords="192,107,397,133"/>
+<area shape="rect" id="node5" href="$classSFML_1_1SFMLFinishLine.html" title=" " alt="" coords="212,157,377,184"/>
+<area shape="rect" id="node6" href="$classSFML_1_1SFMLGroundPlot.html" title=" " alt="" coords="209,208,381,235"/>
+<area shape="rect" id="node7" href="$classSFML_1_1SFMLMovingEnemy.html" title=" " alt="" coords="198,259,391,285"/>
+<area shape="rect" id="node8" href="$classSFML_1_1SFMLPassiveItem.html" title=" " alt="" coords="205,309,384,336"/>
+<area shape="rect" id="node9" href="$classSFML_1_1SFMLPlayer.html" title=" " alt="" coords="224,360,365,387"/>
+<area shape="rect" id="node10" href="$classSFML_1_1SFMLStaticEnemy.html" title=" " alt="" coords="203,411,386,437"/>
+</map>

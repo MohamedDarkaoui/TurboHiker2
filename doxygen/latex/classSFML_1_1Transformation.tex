@@ -1,0 +1,63 @@
+\hypertarget{classSFML_1_1Transformation}{}\doxysection{S\+F\+ML\+::Transformation Class Reference}
+\label{classSFML_1_1Transformation}\index{SFML::Transformation@{SFML::Transformation}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSFML_1_1Transformation_abe4dd544719ffbcfc6bf5908e8e09d93}\label{classSFML_1_1Transformation_abe4dd544719ffbcfc6bf5908e8e09d93}} 
+{\bfseries Transformation} (\mbox{\hyperlink{classSFML_1_1Transformation}{Transformation}} const \&)=delete
+\item 
+\mbox{\Hypertarget{classSFML_1_1Transformation_a2c4f3476510964fb0f7994ddfcbbd373}\label{classSFML_1_1Transformation_a2c4f3476510964fb0f7994ddfcbbd373}} 
+void {\bfseries operator=} (\mbox{\hyperlink{classSFML_1_1Transformation}{Transformation}} const \&)=delete
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1Position2D}{Turbo\+Hiker\+::\+Position2D}} \mbox{\hyperlink{classSFML_1_1Transformation_a2da6e1e8af4737b5c71133e1cb99927a}{transform}} (\mbox{\hyperlink{classTurboHiker_1_1Position2D}{Turbo\+Hiker\+::\+Position2D}}) const
+\item 
+std\+::pair$<$ float, float $>$ \mbox{\hyperlink{classSFML_1_1Transformation_ac84d91f51900b0c3abb8d1f1b88337ea}{transform\+Size}} (const double \&width, const double \&height) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classSFML_1_1Transformation}{Transformation}} \& \mbox{\hyperlink{classSFML_1_1Transformation_a1a972ca7af96ad09ff6377ebdf42f99f}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSFML_1_1Transformation_a1a972ca7af96ad09ff6377ebdf42f99f}\label{classSFML_1_1Transformation_a1a972ca7af96ad09ff6377ebdf42f99f}} 
+\index{SFML::Transformation@{SFML::Transformation}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!SFML::Transformation@{SFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSFML_1_1Transformation}{S\+F\+M\+L\+::\+Transformation}} \& S\+F\+M\+L\+::\+Transformation\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+typical singleton get\+Instance function \begin{DoxyReturn}{Returns}
+an instance of the singleton 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSFML_1_1Transformation_a2da6e1e8af4737b5c71133e1cb99927a}\label{classSFML_1_1Transformation_a2da6e1e8af4737b5c71133e1cb99927a}} 
+\index{SFML::Transformation@{SFML::Transformation}!transform@{transform}}
+\index{transform@{transform}!SFML::Transformation@{SFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{transform()}{transform()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTurboHiker_1_1Position2D}{Turbo\+Hiker\+::\+Position2D}} S\+F\+M\+L\+::\+Transformation\+::transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTurboHiker_1_1Position2D}{Turbo\+Hiker\+::\+Position2D}}}]{position }\end{DoxyParamCaption}) const}
+
+transforms logical coordinates into pixel values \begin{DoxyReturn}{Returns}
+the transformed pixel values 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSFML_1_1Transformation_ac84d91f51900b0c3abb8d1f1b88337ea}\label{classSFML_1_1Transformation_ac84d91f51900b0c3abb8d1f1b88337ea}} 
+\index{SFML::Transformation@{SFML::Transformation}!transformSize@{transformSize}}
+\index{transformSize@{transformSize}!SFML::Transformation@{SFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{transformSize()}{transformSize()}}
+{\footnotesize\ttfamily std\+::pair$<$ float, float $>$ S\+F\+M\+L\+::\+Transformation\+::transform\+Size (\begin{DoxyParamCaption}\item[{const double \&}]{width,  }\item[{const double \&}]{height }\end{DoxyParamCaption}) const}
+
+transforms the size from logical size to window size 
+\begin{DoxyParams}{Parameters}
+{\em width} & logical width \\
+\hline
+{\em height} & logical height \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+window size 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/presentation-\/lib/\+Transformation/Transformation.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/presentation-\/lib/\+Transformation/Transformation.\+cpp\end{DoxyCompactItemize}

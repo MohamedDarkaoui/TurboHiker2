@@ -1,0 +1,77 @@
+\hypertarget{classTurboHiker_1_1Enemy}{}\doxysection{Turbo\+Hiker\+::Enemy Class Reference}
+\label{classTurboHiker_1_1Enemy}\index{TurboHiker::Enemy@{TurboHiker::Enemy}}
+
+
+Inheritance diagram for Turbo\+Hiker\+::Enemy\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTurboHiker_1_1Enemy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Turbo\+Hiker\+::Enemy\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{classTurboHiker_1_1Enemy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1Enemy_afc3544d86a80b1ce13e0504a4f8a75f1}{Enemy}} (unsigned int lane, std\+::pair$<$ double, double $>$ \&size, std\+::vector$<$ double $>$ \&lane\+PositionsX, double speed, double speed\+Up\+Factor)
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1Enemy_ab11f31eda6cb6b8ffb709f08c2bc2b0e}{$\sim$\+Enemy}} () override=default
+\item 
+virtual void \mbox{\hyperlink{classTurboHiker_1_1Enemy_a6d1e36dd5ff7e723ed773ba2a6592175}{got\+Yelled\+At}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1Enemy_afc3544d86a80b1ce13e0504a4f8a75f1}\label{classTurboHiker_1_1Enemy_afc3544d86a80b1ce13e0504a4f8a75f1}} 
+\index{TurboHiker::Enemy@{TurboHiker::Enemy}!Enemy@{Enemy}}
+\index{Enemy@{Enemy}!TurboHiker::Enemy@{TurboHiker::Enemy}}
+\doxysubsubsection{\texorpdfstring{Enemy()}{Enemy()}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Enemy\+::\+Enemy (\begin{DoxyParamCaption}\item[{unsigned int}]{lane,  }\item[{std\+::pair$<$ double, double $>$ \&}]{size,  }\item[{std\+::vector$<$ double $>$ \&}]{lane\+PositionsX,  }\item[{double}]{speed,  }\item[{double}]{speed\+Up\+Factor }\end{DoxyParamCaption})}
+
+simple constructor 
+\begin{DoxyParams}{Parameters}
+{\em lane} & the initial lane where the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} is located \\
+\hline
+{\em size} & the size of the hiker \\
+\hline
+{\em lane\+PositionsX} & all possible lane x-\/coordinates \\
+\hline
+{\em speed} & the initial speed of the hiker \\
+\hline
+{\em speed\+Up\+Factor} & the factor by which the speed can change \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1Enemy_ab11f31eda6cb6b8ffb709f08c2bc2b0e}\label{classTurboHiker_1_1Enemy_ab11f31eda6cb6b8ffb709f08c2bc2b0e}} 
+\index{TurboHiker::Enemy@{TurboHiker::Enemy}!````~Enemy@{$\sim$Enemy}}
+\index{````~Enemy@{$\sim$Enemy}!TurboHiker::Enemy@{TurboHiker::Enemy}}
+\doxysubsubsection{\texorpdfstring{$\sim$Enemy()}{~Enemy()}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Enemy\+::$\sim$\+Enemy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+default destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1Enemy_a6d1e36dd5ff7e723ed773ba2a6592175}\label{classTurboHiker_1_1Enemy_a6d1e36dd5ff7e723ed773ba2a6592175}} 
+\index{TurboHiker::Enemy@{TurboHiker::Enemy}!gotYelledAt@{gotYelledAt}}
+\index{gotYelledAt@{gotYelledAt}!TurboHiker::Enemy@{TurboHiker::Enemy}}
+\doxysubsubsection{\texorpdfstring{gotYelledAt()}{gotYelledAt()}}
+{\footnotesize\ttfamily virtual void Turbo\+Hiker\+::\+Enemy\+::got\+Yelled\+At (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+reacts to yelling 
+
+Implemented in \mbox{\hyperlink{classTurboHiker_1_1MovingEnemy_aa2b7ee85d82660a64bd9e44e8e67dd39}{Turbo\+Hiker\+::\+Moving\+Enemy}}, and \mbox{\hyperlink{classTurboHiker_1_1StaticEnemy_a64077635c2ea6f6672f9ff3988a09908}{Turbo\+Hiker\+::\+Static\+Enemy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/Enemy.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/Enemy.\+cpp\end{DoxyCompactItemize}

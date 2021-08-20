@@ -1,0 +1,723 @@
+\hypertarget{classini_1_1Entry}{}\doxysection{ini\+::Entry Class Reference}
+\label{classini_1_1Entry}\index{ini::Entry@{ini::Entry}}
+
+
+The class that represents an entry in the section of an I\+NI configuration.  
+
+
+
+
+{\ttfamily \#include $<$ini\+\_\+configuration.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classini_1_1Entry_ae4d4ad451a1e0a0a2e7bf069d7f64163}{Entry}} (const std\+::string \&section\+\_\+name\+\_\+init, const std\+::string \&entry\+\_\+name\+\_\+init, const \mbox{\hyperlink{classini_1_1Value}{Value}} $\ast$const value\+\_\+ptr\+\_\+init)
+\begin{DoxyCompactList}\small\item\em Constructs a new entry given the name of the section it belongs to and its value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1Entry_a57d2a13fef446ad55dc5e77af0e8ff72}{Entry}} (const \mbox{\hyperlink{classini_1_1Entry}{Entry}} \&original)
+\begin{DoxyCompactList}\small\item\em Constructs an entry by copying another one. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classini_1_1Entry_af8e551e1654d5d8b1bccf6ae06674477}\label{classini_1_1Entry_af8e551e1654d5d8b1bccf6ae06674477}} 
+\mbox{\hyperlink{classini_1_1Entry_af8e551e1654d5d8b1bccf6ae06674477}{$\sim$\+Entry}} ()
+\begin{DoxyCompactList}\small\item\em Destructs an entry. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1Entry}{Entry}} \& \mbox{\hyperlink{classini_1_1Entry_af440766376257172e19e5103221690f0}{operator=}} (const \mbox{\hyperlink{classini_1_1Entry}{Entry}} \&original)
+\begin{DoxyCompactList}\small\item\em Copies an entry. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classini_1_1Entry_ae8ac95d1563788ea854a67f157b6a1c1}{get\+\_\+section\+\_\+name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the name of the section to which this entry belongs. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classini_1_1Entry_a048ffe04f78e018d8cac205bb9c2ee63}{get\+\_\+entry\+\_\+name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the name of this entry. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classini_1_1Entry_ad99f7d8c8e8e26342fd0a99b5887ca60}{exists}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether this entry exists in the configuration or not. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classini_1_1Entry_aaf9281543a96c6c0dc5d11fb62794ac2}{as\+\_\+int\+\_\+if\+\_\+exists}} (int \&ret\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em Returns the value as an int. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classini_1_1Entry_a2ce55559635658f0c54058065e5f2d73}{as\+\_\+double\+\_\+if\+\_\+exists}} (double \&ret\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em Returns the value as a double. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classini_1_1Entry_a0359fb745dc6b72eb7438888f3b26dad}{as\+\_\+string\+\_\+if\+\_\+exists}} (std\+::string \&ret\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em Returns the value as a string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classini_1_1Entry_a4b6c8b38cddc26d4d369d7e77d0cb8d2}{as\+\_\+bool\+\_\+if\+\_\+exists}} (bool \&ret\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em Returns the value as a bool. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classini_1_1Entry_a6c9048af8a184ab30671d5192970fedb}{as\+\_\+int\+\_\+tuple\+\_\+if\+\_\+exists}} (\mbox{\hyperlink{namespaceini_a09d9ba9b869456496796813fb215dbcb}{Int\+Tuple}} \&ret\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em Returns the value as an int tuple. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classini_1_1Entry_a71ed65f2ac8d70358e897b78017ef51e}{as\+\_\+double\+\_\+tuple\+\_\+if\+\_\+exists}} (\mbox{\hyperlink{namespaceini_a97991bfcd91e844890e326e86cc446a4}{Double\+Tuple}} \&ret\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em Returns the value as a double tuple. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classini_1_1Entry_a6203a862cb6e86541f91ef20e7eaa1e8}{as\+\_\+int\+\_\+or\+\_\+die}} () const
+\begin{DoxyCompactList}\small\item\em Returns the value as an int. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classini_1_1Entry_a555662d0b9fb2076d8a9b769f3ec597e}{as\+\_\+double\+\_\+or\+\_\+die}} () const
+\begin{DoxyCompactList}\small\item\em Returns the value as a double. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classini_1_1Entry_a864bf376978925d38247aaaaf8426bd0}{as\+\_\+string\+\_\+or\+\_\+die}} () const
+\begin{DoxyCompactList}\small\item\em Returns the value as a string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classini_1_1Entry_abd3e727c1b81717c8f4304ed62983066}{as\+\_\+bool\+\_\+or\+\_\+die}} () const
+\begin{DoxyCompactList}\small\item\em Returns the value as a bool. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceini_a09d9ba9b869456496796813fb215dbcb}{Int\+Tuple}} \mbox{\hyperlink{classini_1_1Entry_aa3fdb9cfaaa973f596a4edba43b541ec}{as\+\_\+int\+\_\+tuple\+\_\+or\+\_\+die}} () const
+\begin{DoxyCompactList}\small\item\em Returns the value as an int tuple. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceini_a97991bfcd91e844890e326e86cc446a4}{Double\+Tuple}} \mbox{\hyperlink{classini_1_1Entry_a3ec5057409b1b6d7ad51cc41688ca1f8}{as\+\_\+double\+\_\+tuple\+\_\+or\+\_\+die}} () const
+\begin{DoxyCompactList}\small\item\em Returns the value as a double tuple. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classini_1_1Entry_a3c0becd1f7bef926b3a2cbbb84cf4471}{as\+\_\+int\+\_\+or\+\_\+default}} (const int def\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em Returns the value as an int. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classini_1_1Entry_adfd51d7ca4eba850d1cf8bc093694629}{as\+\_\+double\+\_\+or\+\_\+default}} (const double def\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em Returns the value as a double. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classini_1_1Entry_a8771224f20d833052a4e8b459ea54bb6}{as\+\_\+string\+\_\+or\+\_\+default}} (const std\+::string \&def\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em Returns the value as a string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classini_1_1Entry_affc4cb172ddb8ea16321edd80aecc147}{as\+\_\+bool\+\_\+or\+\_\+default}} (const bool def\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em Returns the value as a bool. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceini_a09d9ba9b869456496796813fb215dbcb}{Int\+Tuple}} \mbox{\hyperlink{classini_1_1Entry_a593f1df78d9185421b84d9ca68739da4}{as\+\_\+int\+\_\+tuple\+\_\+or\+\_\+default}} (const \mbox{\hyperlink{namespaceini_a09d9ba9b869456496796813fb215dbcb}{Int\+Tuple}} \&def\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em Returns the value as an int tuple. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceini_a97991bfcd91e844890e326e86cc446a4}{Double\+Tuple}} \mbox{\hyperlink{classini_1_1Entry_a06553b357c45a2b597eea55f8fd2fc2b}{as\+\_\+double\+\_\+tuple\+\_\+or\+\_\+default}} (const \mbox{\hyperlink{namespaceini_a97991bfcd91e844890e326e86cc446a4}{Double\+Tuple}} \&def\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em Returns the value as a double tuple. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1Entry_ad95d3dd0b6f6462703dc452abe5ca436}{operator int}} () const
+\begin{DoxyCompactList}\small\item\em An alias for as\+\_\+int\+\_\+or\+\_\+die. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1Entry_a022e3990b5413a70fe4e8b38327c091b}{operator double}} () const
+\begin{DoxyCompactList}\small\item\em An alias for as\+\_\+double\+\_\+or\+\_\+die. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1Entry_a6810d24ed1a768991d5d3afdadacc9cb}{operator std\+::string}} () const
+\begin{DoxyCompactList}\small\item\em An alias for as\+\_\+string\+\_\+or\+\_\+die. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1Entry_a86bc5438e7a3cbf0419cdc8bfb7cc7e2}{operator bool}} () const
+\begin{DoxyCompactList}\small\item\em An alias for as\+\_\+bool\+\_\+or\+\_\+die. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1Entry_a2947337ce2cd05ea7642390334c0358a}{operator Int\+Tuple}} () const
+\begin{DoxyCompactList}\small\item\em An alias for as\+\_\+int\+\_\+tuple\+\_\+or\+\_\+die. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1Entry_a42122265d70b0269cbd852fe0e9e28f7}{operator Double\+Tuple}} () const
+\begin{DoxyCompactList}\small\item\em An alias for as\+\_\+int\+\_\+or\+\_\+die. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classini_1_1Entry_af2ffdb27c2cba7f3903552f4dab8eaac}{operator$\vert$$\vert$}} (const int def\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em An alias for as\+\_\+int\+\_\+or\+\_\+default. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classini_1_1Entry_a390c794ae7e2fe0e3f22be90ba0a93df}{operator$\vert$$\vert$}} (const double def\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em An alias for as\+\_\+double\+\_\+or\+\_\+default. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classini_1_1Entry_ac26d991ad027b8e71e6af79726ca7af2}{operator$\vert$$\vert$}} (const std\+::string \&def\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em An alias for as\+\_\+string\+\_\+or\+\_\+default. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classini_1_1Entry_acb7c3c50e913c8d21d87d7296bfe117c}{operator$\vert$$\vert$}} (const bool def\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em An alias for as\+\_\+bool\+\_\+or\+\_\+default. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceini_a09d9ba9b869456496796813fb215dbcb}{Int\+Tuple}} \mbox{\hyperlink{classini_1_1Entry_a892f10475691f9bbcd10c7888a83b586}{operator$\vert$$\vert$}} (const \mbox{\hyperlink{namespaceini_a09d9ba9b869456496796813fb215dbcb}{Int\+Tuple}} \&def\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em An alias for as\+\_\+int\+\_\+tuple\+\_\+or\+\_\+default. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceini_a97991bfcd91e844890e326e86cc446a4}{Double\+Tuple}} \mbox{\hyperlink{classini_1_1Entry_a1af996d24ed4b3241e265344fe838d5a}{operator$\vert$$\vert$}} (const \mbox{\hyperlink{namespaceini_a97991bfcd91e844890e326e86cc446a4}{Double\+Tuple}} \&def\+\_\+val) const
+\begin{DoxyCompactList}\small\item\em An alias for as\+\_\+double\+\_\+tuple\+\_\+or\+\_\+default. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class that represents an entry in the section of an I\+NI configuration. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classini_1_1Entry_ae4d4ad451a1e0a0a2e7bf069d7f64163}\label{classini_1_1Entry_ae4d4ad451a1e0a0a2e7bf069d7f64163}} 
+\index{ini::Entry@{ini::Entry}!Entry@{Entry}}
+\index{Entry@{Entry}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{Entry()}{Entry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ini\+::\+Entry\+::\+Entry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{section\+\_\+name\+\_\+init,  }\item[{const std\+::string \&}]{entry\+\_\+name\+\_\+init,  }\item[{const \mbox{\hyperlink{classini_1_1Value}{Value}} $\ast$const}]{value\+\_\+ptr\+\_\+init }\end{DoxyParamCaption})}
+
+
+
+Constructs a new entry given the name of the section it belongs to and its value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section\+\_\+name\+\_\+init} & The name of the section to which this entry belongs. \\
+\hline
+{\em entry\+\_\+name\+\_\+init} & The name of this entry. \\
+\hline
+{\em value\+\_\+ptr\+\_\+init} & A pointer to the value of this entry. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classini_1_1Entry_a57d2a13fef446ad55dc5e77af0e8ff72}\label{classini_1_1Entry_a57d2a13fef446ad55dc5e77af0e8ff72}} 
+\index{ini::Entry@{ini::Entry}!Entry@{Entry}}
+\index{Entry@{Entry}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{Entry()}{Entry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ini\+::\+Entry\+::\+Entry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classini_1_1Entry}{Entry}} \&}]{original }\end{DoxyParamCaption})}
+
+
+
+Constructs an entry by copying another one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The section whose values are copied. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classini_1_1Entry_a4b6c8b38cddc26d4d369d7e77d0cb8d2}\label{classini_1_1Entry_a4b6c8b38cddc26d4d369d7e77d0cb8d2}} 
+\index{ini::Entry@{ini::Entry}!as\_bool\_if\_exists@{as\_bool\_if\_exists}}
+\index{as\_bool\_if\_exists@{as\_bool\_if\_exists}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_bool\_if\_exists()}{as\_bool\_if\_exists()}}
+{\footnotesize\ttfamily bool ini\+::\+Entry\+::as\+\_\+bool\+\_\+if\+\_\+exists (\begin{DoxyParamCaption}\item[{bool \&}]{ret\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as a bool. 
+
+If the entry exists and can be represented as a bool, the value is passed to the caller through the parameter and {\ttfamily true} is returned. If the entry exists but is not representable as a bool, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, {\ttfamily false} is returned and the value of the parameter is not changed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ret\+\_\+val} & The parameter through which the value is returned.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the value exists, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_affc4cb172ddb8ea16321edd80aecc147}\label{classini_1_1Entry_affc4cb172ddb8ea16321edd80aecc147}} 
+\index{ini::Entry@{ini::Entry}!as\_bool\_or\_default@{as\_bool\_or\_default}}
+\index{as\_bool\_or\_default@{as\_bool\_or\_default}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_bool\_or\_default()}{as\_bool\_or\_default()}}
+{\footnotesize\ttfamily bool ini\+::\+Entry\+::as\+\_\+bool\+\_\+or\+\_\+default (\begin{DoxyParamCaption}\item[{const bool}]{def\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as a bool. 
+
+If the entry exists and can be represented as a bool, it is returned. If the value is not representable as a bool, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, a default value is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em def\+\_\+val} & The default value that is returned if the value does not exist.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value as a bool or the default value if the value does not exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_abd3e727c1b81717c8f4304ed62983066}\label{classini_1_1Entry_abd3e727c1b81717c8f4304ed62983066}} 
+\index{ini::Entry@{ini::Entry}!as\_bool\_or\_die@{as\_bool\_or\_die}}
+\index{as\_bool\_or\_die@{as\_bool\_or\_die}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_bool\_or\_die()}{as\_bool\_or\_die()}}
+{\footnotesize\ttfamily bool ini\+::\+Entry\+::as\+\_\+bool\+\_\+or\+\_\+die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as a bool. 
+
+If the entry exists and can be represented as a bool, it is returned. If the value is not representable as a bool, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, a \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} exception is thrown.
+
+\begin{DoxyReturn}{Returns}
+The value as a bool. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a2ce55559635658f0c54058065e5f2d73}\label{classini_1_1Entry_a2ce55559635658f0c54058065e5f2d73}} 
+\index{ini::Entry@{ini::Entry}!as\_double\_if\_exists@{as\_double\_if\_exists}}
+\index{as\_double\_if\_exists@{as\_double\_if\_exists}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_double\_if\_exists()}{as\_double\_if\_exists()}}
+{\footnotesize\ttfamily bool ini\+::\+Entry\+::as\+\_\+double\+\_\+if\+\_\+exists (\begin{DoxyParamCaption}\item[{double \&}]{ret\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as a double. 
+
+If the entry exists and can be represented as a double, the value is passed to the caller through the parameter and {\ttfamily true} is returned. If the entry exists but is not representable as a double, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, {\ttfamily false} is returned and the value of the parameter is not changed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ret\+\_\+val} & The parameter through which the value is returned.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the value exists, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_adfd51d7ca4eba850d1cf8bc093694629}\label{classini_1_1Entry_adfd51d7ca4eba850d1cf8bc093694629}} 
+\index{ini::Entry@{ini::Entry}!as\_double\_or\_default@{as\_double\_or\_default}}
+\index{as\_double\_or\_default@{as\_double\_or\_default}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_double\_or\_default()}{as\_double\_or\_default()}}
+{\footnotesize\ttfamily double ini\+::\+Entry\+::as\+\_\+double\+\_\+or\+\_\+default (\begin{DoxyParamCaption}\item[{const double}]{def\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as a double. 
+
+If the entry exists and can be represented as a double, it is returned. If the value is not representable as a double, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, a default value is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em def\+\_\+val} & The default value that is returned if the value does not exist.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value as a double or the default value if the value does not exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a555662d0b9fb2076d8a9b769f3ec597e}\label{classini_1_1Entry_a555662d0b9fb2076d8a9b769f3ec597e}} 
+\index{ini::Entry@{ini::Entry}!as\_double\_or\_die@{as\_double\_or\_die}}
+\index{as\_double\_or\_die@{as\_double\_or\_die}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_double\_or\_die()}{as\_double\_or\_die()}}
+{\footnotesize\ttfamily double ini\+::\+Entry\+::as\+\_\+double\+\_\+or\+\_\+die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as a double. 
+
+If the entry exists and can be represented as a double, it is returned. If the value is not representable as a double, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, a \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} exception is thrown.
+
+\begin{DoxyReturn}{Returns}
+The value as a double. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a71ed65f2ac8d70358e897b78017ef51e}\label{classini_1_1Entry_a71ed65f2ac8d70358e897b78017ef51e}} 
+\index{ini::Entry@{ini::Entry}!as\_double\_tuple\_if\_exists@{as\_double\_tuple\_if\_exists}}
+\index{as\_double\_tuple\_if\_exists@{as\_double\_tuple\_if\_exists}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_double\_tuple\_if\_exists()}{as\_double\_tuple\_if\_exists()}}
+{\footnotesize\ttfamily bool ini\+::\+Entry\+::as\+\_\+double\+\_\+tuple\+\_\+if\+\_\+exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceini_a97991bfcd91e844890e326e86cc446a4}{Double\+Tuple}} \&}]{ret\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as a double tuple. 
+
+If the entry exists and can be represented as a double tuple, the value is passed to the caller through the parameter and {\ttfamily true} is returned. If the value exists but is not representable as a double tuple, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, {\ttfamily false} is returned and the value of the parameter is not changed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ret\+\_\+val} & The parameter through which the value is returned.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the value exists, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a06553b357c45a2b597eea55f8fd2fc2b}\label{classini_1_1Entry_a06553b357c45a2b597eea55f8fd2fc2b}} 
+\index{ini::Entry@{ini::Entry}!as\_double\_tuple\_or\_default@{as\_double\_tuple\_or\_default}}
+\index{as\_double\_tuple\_or\_default@{as\_double\_tuple\_or\_default}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_double\_tuple\_or\_default()}{as\_double\_tuple\_or\_default()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceini_a97991bfcd91e844890e326e86cc446a4}{Double\+Tuple}} ini\+::\+Entry\+::as\+\_\+double\+\_\+tuple\+\_\+or\+\_\+default (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceini_a97991bfcd91e844890e326e86cc446a4}{Double\+Tuple}} \&}]{def\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as a double tuple. 
+
+If the entry exists and can be represented as a double tuple, it is returned. If the value is not representable as a double tuple, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, a default value is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em def\+\_\+val} & The default value that is returned if the value does not exist.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value as a double tuple or the default value if the value does not exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a3ec5057409b1b6d7ad51cc41688ca1f8}\label{classini_1_1Entry_a3ec5057409b1b6d7ad51cc41688ca1f8}} 
+\index{ini::Entry@{ini::Entry}!as\_double\_tuple\_or\_die@{as\_double\_tuple\_or\_die}}
+\index{as\_double\_tuple\_or\_die@{as\_double\_tuple\_or\_die}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_double\_tuple\_or\_die()}{as\_double\_tuple\_or\_die()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceini_a97991bfcd91e844890e326e86cc446a4}{Double\+Tuple}} ini\+::\+Entry\+::as\+\_\+double\+\_\+tuple\+\_\+or\+\_\+die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as a double tuple. 
+
+If the entry exists and can be represented as a double tuple, it is returned. If the value is not representable as a double tuple, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, a \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} exception is thrown.
+
+\begin{DoxyReturn}{Returns}
+The value as a double tuple. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_aaf9281543a96c6c0dc5d11fb62794ac2}\label{classini_1_1Entry_aaf9281543a96c6c0dc5d11fb62794ac2}} 
+\index{ini::Entry@{ini::Entry}!as\_int\_if\_exists@{as\_int\_if\_exists}}
+\index{as\_int\_if\_exists@{as\_int\_if\_exists}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_int\_if\_exists()}{as\_int\_if\_exists()}}
+{\footnotesize\ttfamily bool ini\+::\+Entry\+::as\+\_\+int\+\_\+if\+\_\+exists (\begin{DoxyParamCaption}\item[{int \&}]{ret\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as an int. 
+
+If the entry exists and can be represented as an int, the value is passed to the caller through the parameter and {\ttfamily true} is returned. If the entry exists but is not representable as an int, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, {\ttfamily false} is returned and the value of the parameter is not changed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ret\+\_\+val} & The parameter through which the value is returned.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the value exists, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a3c0becd1f7bef926b3a2cbbb84cf4471}\label{classini_1_1Entry_a3c0becd1f7bef926b3a2cbbb84cf4471}} 
+\index{ini::Entry@{ini::Entry}!as\_int\_or\_default@{as\_int\_or\_default}}
+\index{as\_int\_or\_default@{as\_int\_or\_default}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_int\_or\_default()}{as\_int\_or\_default()}}
+{\footnotesize\ttfamily int ini\+::\+Entry\+::as\+\_\+int\+\_\+or\+\_\+default (\begin{DoxyParamCaption}\item[{const int}]{def\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as an int. 
+
+If the entry exists and can be represented as an int, it is returned. If the value is not representable as an int, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, a default value is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em def\+\_\+val} & The default value that is returned if the value does not exist.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value as an int or the default value if the value does not exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a6203a862cb6e86541f91ef20e7eaa1e8}\label{classini_1_1Entry_a6203a862cb6e86541f91ef20e7eaa1e8}} 
+\index{ini::Entry@{ini::Entry}!as\_int\_or\_die@{as\_int\_or\_die}}
+\index{as\_int\_or\_die@{as\_int\_or\_die}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_int\_or\_die()}{as\_int\_or\_die()}}
+{\footnotesize\ttfamily int ini\+::\+Entry\+::as\+\_\+int\+\_\+or\+\_\+die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as an int. 
+
+If the entry exists and can be represented as an int, it is returned. If the value is not representable as an int, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, a \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} exception is thrown.
+
+\begin{DoxyReturn}{Returns}
+The value as an int. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a6c9048af8a184ab30671d5192970fedb}\label{classini_1_1Entry_a6c9048af8a184ab30671d5192970fedb}} 
+\index{ini::Entry@{ini::Entry}!as\_int\_tuple\_if\_exists@{as\_int\_tuple\_if\_exists}}
+\index{as\_int\_tuple\_if\_exists@{as\_int\_tuple\_if\_exists}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_int\_tuple\_if\_exists()}{as\_int\_tuple\_if\_exists()}}
+{\footnotesize\ttfamily bool ini\+::\+Entry\+::as\+\_\+int\+\_\+tuple\+\_\+if\+\_\+exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceini_a09d9ba9b869456496796813fb215dbcb}{Int\+Tuple}} \&}]{ret\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as an int tuple. 
+
+If the entry exists and can be represented as an int tuple, the value is passed to the caller through the parameter and {\ttfamily true} is returned. If the value exists but is not representable as an int tuple, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, {\ttfamily false} is returned and the value of the parameter is not changed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ret\+\_\+val} & The parameter through which the value is returned.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the value exists, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a593f1df78d9185421b84d9ca68739da4}\label{classini_1_1Entry_a593f1df78d9185421b84d9ca68739da4}} 
+\index{ini::Entry@{ini::Entry}!as\_int\_tuple\_or\_default@{as\_int\_tuple\_or\_default}}
+\index{as\_int\_tuple\_or\_default@{as\_int\_tuple\_or\_default}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_int\_tuple\_or\_default()}{as\_int\_tuple\_or\_default()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceini_a09d9ba9b869456496796813fb215dbcb}{Int\+Tuple}} ini\+::\+Entry\+::as\+\_\+int\+\_\+tuple\+\_\+or\+\_\+default (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceini_a09d9ba9b869456496796813fb215dbcb}{Int\+Tuple}} \&}]{def\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as an int tuple. 
+
+If the entry exists and can be represented as an int tuple, it is returned. If the value is not representable as an int tuple, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, a default value is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em def\+\_\+val} & The default value that is returned if the value does not exist.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value as an int tuple or the default value if the value does not exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_aa3fdb9cfaaa973f596a4edba43b541ec}\label{classini_1_1Entry_aa3fdb9cfaaa973f596a4edba43b541ec}} 
+\index{ini::Entry@{ini::Entry}!as\_int\_tuple\_or\_die@{as\_int\_tuple\_or\_die}}
+\index{as\_int\_tuple\_or\_die@{as\_int\_tuple\_or\_die}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_int\_tuple\_or\_die()}{as\_int\_tuple\_or\_die()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceini_a09d9ba9b869456496796813fb215dbcb}{Int\+Tuple}} ini\+::\+Entry\+::as\+\_\+int\+\_\+tuple\+\_\+or\+\_\+die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as an int tuple. 
+
+If the entry exists and can be represented as an int tuple, it is returned. If the value is not representable as an int tuple, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, a \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} exception is thrown.
+
+\begin{DoxyReturn}{Returns}
+The value as an int tuple. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a0359fb745dc6b72eb7438888f3b26dad}\label{classini_1_1Entry_a0359fb745dc6b72eb7438888f3b26dad}} 
+\index{ini::Entry@{ini::Entry}!as\_string\_if\_exists@{as\_string\_if\_exists}}
+\index{as\_string\_if\_exists@{as\_string\_if\_exists}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_string\_if\_exists()}{as\_string\_if\_exists()}}
+{\footnotesize\ttfamily bool ini\+::\+Entry\+::as\+\_\+string\+\_\+if\+\_\+exists (\begin{DoxyParamCaption}\item[{std\+::string \&}]{ret\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as a string. 
+
+If the entry exists and can be represented as a string, the value is passed to the caller through the parameter and {\ttfamily true} is returned. If the entry exists but is not representable as a string, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, {\ttfamily false} is returned and the value of the parameter is not changed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ret\+\_\+val} & The parameter through which the value is returned.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the value exists, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a8771224f20d833052a4e8b459ea54bb6}\label{classini_1_1Entry_a8771224f20d833052a4e8b459ea54bb6}} 
+\index{ini::Entry@{ini::Entry}!as\_string\_or\_default@{as\_string\_or\_default}}
+\index{as\_string\_or\_default@{as\_string\_or\_default}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_string\_or\_default()}{as\_string\_or\_default()}}
+{\footnotesize\ttfamily std\+::string ini\+::\+Entry\+::as\+\_\+string\+\_\+or\+\_\+default (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{def\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as a string. 
+
+If the entry exists and can be represented as a string, it is returned. If the value is not representable as a string, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, a default value is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em def\+\_\+val} & The default value that is returned if the value does not exist.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value as a string or the default value if the value does not exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a864bf376978925d38247aaaaf8426bd0}\label{classini_1_1Entry_a864bf376978925d38247aaaaf8426bd0}} 
+\index{ini::Entry@{ini::Entry}!as\_string\_or\_die@{as\_string\_or\_die}}
+\index{as\_string\_or\_die@{as\_string\_or\_die}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{as\_string\_or\_die()}{as\_string\_or\_die()}}
+{\footnotesize\ttfamily std\+::string ini\+::\+Entry\+::as\+\_\+string\+\_\+or\+\_\+die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value as a string. 
+
+If the entry exists and can be represented as a string, it is returned. If the value is not representable as a string, an \mbox{\hyperlink{classini_1_1IncompatibleConversion}{Incompatible\+Conversion}} exception is thrown. If the entry does not exist, a \mbox{\hyperlink{classini_1_1NonexistentEntry}{Nonexistent\+Entry}} exception is thrown.
+
+\begin{DoxyReturn}{Returns}
+The value as a string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_ad99f7d8c8e8e26342fd0a99b5887ca60}\label{classini_1_1Entry_ad99f7d8c8e8e26342fd0a99b5887ca60}} 
+\index{ini::Entry@{ini::Entry}!exists@{exists}}
+\index{exists@{exists}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily bool ini\+::\+Entry\+::exists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks whether this entry exists in the configuration or not. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if this entry exits, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a048ffe04f78e018d8cac205bb9c2ee63}\label{classini_1_1Entry_a048ffe04f78e018d8cac205bb9c2ee63}} 
+\index{ini::Entry@{ini::Entry}!get\_entry\_name@{get\_entry\_name}}
+\index{get\_entry\_name@{get\_entry\_name}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{get\_entry\_name()}{get\_entry\_name()}}
+{\footnotesize\ttfamily const std\+::string \& ini\+::\+Entry\+::get\+\_\+entry\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the name of this entry. 
+
+\begin{DoxyReturn}{Returns}
+Returns the name of this entry. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_ae8ac95d1563788ea854a67f157b6a1c1}\label{classini_1_1Entry_ae8ac95d1563788ea854a67f157b6a1c1}} 
+\index{ini::Entry@{ini::Entry}!get\_section\_name@{get\_section\_name}}
+\index{get\_section\_name@{get\_section\_name}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{get\_section\_name()}{get\_section\_name()}}
+{\footnotesize\ttfamily const std\+::string \& ini\+::\+Entry\+::get\+\_\+section\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the name of the section to which this entry belongs. 
+
+\begin{DoxyReturn}{Returns}
+The name of the section to which this entry belongs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a86bc5438e7a3cbf0419cdc8bfb7cc7e2}\label{classini_1_1Entry_a86bc5438e7a3cbf0419cdc8bfb7cc7e2}} 
+\index{ini::Entry@{ini::Entry}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily ini\+::\+Entry\+::operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+An alias for as\+\_\+bool\+\_\+or\+\_\+die. 
+
+This conversion operator allows a \mbox{\hyperlink{classini_1_1Value}{Value}} to be converted to a bool when it is assigned to a bool variable.
+
+\begin{DoxyReturn}{Returns}
+The bool value of the \mbox{\hyperlink{classini_1_1Value}{Value}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a022e3990b5413a70fe4e8b38327c091b}\label{classini_1_1Entry_a022e3990b5413a70fe4e8b38327c091b}} 
+\index{ini::Entry@{ini::Entry}!operator double@{operator double}}
+\index{operator double@{operator double}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{operator double()}{operator double()}}
+{\footnotesize\ttfamily ini\+::\+Entry\+::operator double (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+An alias for as\+\_\+double\+\_\+or\+\_\+die. 
+
+This conversion operator allows a \mbox{\hyperlink{classini_1_1Value}{Value}} to be converted to a double when it is assigned to a double variable.
+
+\begin{DoxyReturn}{Returns}
+The double value of the \mbox{\hyperlink{classini_1_1Value}{Value}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a42122265d70b0269cbd852fe0e9e28f7}\label{classini_1_1Entry_a42122265d70b0269cbd852fe0e9e28f7}} 
+\index{ini::Entry@{ini::Entry}!operator DoubleTuple@{operator DoubleTuple}}
+\index{operator DoubleTuple@{operator DoubleTuple}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{operator DoubleTuple()}{operator DoubleTuple()}}
+{\footnotesize\ttfamily ini\+::\+Entry\+::operator \mbox{\hyperlink{namespaceini_a97991bfcd91e844890e326e86cc446a4}{Double\+Tuple}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+An alias for as\+\_\+int\+\_\+or\+\_\+die. 
+
+This conversion operator allows a \mbox{\hyperlink{classini_1_1Value}{Value}} to be converted to a double tuple when it is assigned to a double tuple variable.
+
+\begin{DoxyReturn}{Returns}
+The double tuple value of the \mbox{\hyperlink{classini_1_1Value}{Value}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_ad95d3dd0b6f6462703dc452abe5ca436}\label{classini_1_1Entry_ad95d3dd0b6f6462703dc452abe5ca436}} 
+\index{ini::Entry@{ini::Entry}!operator int@{operator int}}
+\index{operator int@{operator int}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{operator int()}{operator int()}}
+{\footnotesize\ttfamily ini\+::\+Entry\+::operator int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+An alias for as\+\_\+int\+\_\+or\+\_\+die. 
+
+This conversion operator allows a \mbox{\hyperlink{classini_1_1Value}{Value}} to be converted to an int when it is assigned to an int variable.
+
+\begin{DoxyReturn}{Returns}
+The int value of the \mbox{\hyperlink{classini_1_1Value}{Value}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a2947337ce2cd05ea7642390334c0358a}\label{classini_1_1Entry_a2947337ce2cd05ea7642390334c0358a}} 
+\index{ini::Entry@{ini::Entry}!operator IntTuple@{operator IntTuple}}
+\index{operator IntTuple@{operator IntTuple}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{operator IntTuple()}{operator IntTuple()}}
+{\footnotesize\ttfamily ini\+::\+Entry\+::operator \mbox{\hyperlink{namespaceini_a09d9ba9b869456496796813fb215dbcb}{Int\+Tuple}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+An alias for as\+\_\+int\+\_\+tuple\+\_\+or\+\_\+die. 
+
+This conversion operator allows a \mbox{\hyperlink{classini_1_1Value}{Value}} to be converted to an int tuple when it is assigned to an int tuple variable.
+
+\begin{DoxyReturn}{Returns}
+The int tuple value of the \mbox{\hyperlink{classini_1_1Value}{Value}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a6810d24ed1a768991d5d3afdadacc9cb}\label{classini_1_1Entry_a6810d24ed1a768991d5d3afdadacc9cb}} 
+\index{ini::Entry@{ini::Entry}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
+{\footnotesize\ttfamily ini\+::\+Entry\+::operator std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+An alias for as\+\_\+string\+\_\+or\+\_\+die. 
+
+This conversion operator allows a \mbox{\hyperlink{classini_1_1Value}{Value}} to be converted to a string when it is assigned to a string variable.
+
+\begin{DoxyReturn}{Returns}
+The string value of the \mbox{\hyperlink{classini_1_1Value}{Value}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_af440766376257172e19e5103221690f0}\label{classini_1_1Entry_af440766376257172e19e5103221690f0}} 
+\index{ini::Entry@{ini::Entry}!operator=@{operator=}}
+\index{operator=@{operator=}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classini_1_1Entry}{Entry}} \& ini\+::\+Entry\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classini_1_1Entry}{Entry}} \&}]{original }\end{DoxyParamCaption})}
+
+
+
+Copies an entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The section whose values are copied.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this entry. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_acb7c3c50e913c8d21d87d7296bfe117c}\label{classini_1_1Entry_acb7c3c50e913c8d21d87d7296bfe117c}} 
+\index{ini::Entry@{ini::Entry}!operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}}
+\index{operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}\texttt{"|}()}{operator||()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily bool ini\+::\+Entry\+::operator$\vert$$\vert$ (\begin{DoxyParamCaption}\item[{const bool}]{def\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+An alias for as\+\_\+bool\+\_\+or\+\_\+default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em def\+\_\+val} & The value that is returned if the requested value does not exist.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested value as a bool or def\+\_\+val if the value does not exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a390c794ae7e2fe0e3f22be90ba0a93df}\label{classini_1_1Entry_a390c794ae7e2fe0e3f22be90ba0a93df}} 
+\index{ini::Entry@{ini::Entry}!operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}}
+\index{operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}\texttt{"|}()}{operator||()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily double ini\+::\+Entry\+::operator$\vert$$\vert$ (\begin{DoxyParamCaption}\item[{const double}]{def\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+An alias for as\+\_\+double\+\_\+or\+\_\+default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em def\+\_\+val} & The value that is returned if the requested value does not exist.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested value as a double or def\+\_\+val if the value does not exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a1af996d24ed4b3241e265344fe838d5a}\label{classini_1_1Entry_a1af996d24ed4b3241e265344fe838d5a}} 
+\index{ini::Entry@{ini::Entry}!operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}}
+\index{operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}\texttt{"|}()}{operator||()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceini_a97991bfcd91e844890e326e86cc446a4}{Double\+Tuple}} ini\+::\+Entry\+::operator$\vert$$\vert$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceini_a97991bfcd91e844890e326e86cc446a4}{Double\+Tuple}} \&}]{def\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+An alias for as\+\_\+double\+\_\+tuple\+\_\+or\+\_\+default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em def\+\_\+val} & The value that is returned if the requested value does not exist.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested value as a double tuple or def\+\_\+val if the value does not exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_af2ffdb27c2cba7f3903552f4dab8eaac}\label{classini_1_1Entry_af2ffdb27c2cba7f3903552f4dab8eaac}} 
+\index{ini::Entry@{ini::Entry}!operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}}
+\index{operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}\texttt{"|}()}{operator||()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily int ini\+::\+Entry\+::operator$\vert$$\vert$ (\begin{DoxyParamCaption}\item[{const int}]{def\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+An alias for as\+\_\+int\+\_\+or\+\_\+default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em def\+\_\+val} & The value that is returned if the requested value does not exist.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested value as an int or def\+\_\+val if the value does not exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_a892f10475691f9bbcd10c7888a83b586}\label{classini_1_1Entry_a892f10475691f9bbcd10c7888a83b586}} 
+\index{ini::Entry@{ini::Entry}!operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}}
+\index{operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}\texttt{"|}()}{operator||()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceini_a09d9ba9b869456496796813fb215dbcb}{Int\+Tuple}} ini\+::\+Entry\+::operator$\vert$$\vert$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceini_a09d9ba9b869456496796813fb215dbcb}{Int\+Tuple}} \&}]{def\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+An alias for as\+\_\+int\+\_\+tuple\+\_\+or\+\_\+default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em def\+\_\+val} & The value that is returned if the requested value does not exist.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested value as an int tuple or def\+\_\+val if the value does not exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Entry_ac26d991ad027b8e71e6af79726ca7af2}\label{classini_1_1Entry_ac26d991ad027b8e71e6af79726ca7af2}} 
+\index{ini::Entry@{ini::Entry}!operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}}
+\index{operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}!ini::Entry@{ini::Entry}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}\texttt{"|}()}{operator||()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily std\+::string ini\+::\+Entry\+::operator$\vert$$\vert$ (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{def\+\_\+val }\end{DoxyParamCaption}) const}
+
+
+
+An alias for as\+\_\+string\+\_\+or\+\_\+default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em def\+\_\+val} & The value that is returned if the requested value does not exist.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested value as a string or def\+\_\+val if the value does not exist. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/ini\+\_\+config/ini\+\_\+configuration.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/ini\+\_\+config/ini\+\_\+configuration.\+cc\end{DoxyCompactItemize}

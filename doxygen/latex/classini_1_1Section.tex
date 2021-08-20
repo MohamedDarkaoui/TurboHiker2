@@ -1,0 +1,108 @@
+\hypertarget{classini_1_1Section}{}\doxysection{ini\+::Section Class Reference}
+\label{classini_1_1Section}\index{ini::Section@{ini::Section}}
+
+
+The type that is used to represent sections that are stored in the configuration file.  
+
+
+
+
+{\ttfamily \#include $<$ini\+\_\+configuration.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classini_1_1Section_aaf3b8d7206f21a3e114aaeed685a9b72}{Section}} (const std\+::string \&section\+\_\+name\+\_\+init, const \mbox{\hyperlink{namespaceini_a33c55c3c86579b41a4c49663f67ca755}{Value\+Map}} $\ast$const values\+\_\+init)
+\begin{DoxyCompactList}\small\item\em Creates a new section. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1Section_a90c20ebbae861424a63de113223f582e}{Section}} (const \mbox{\hyperlink{classini_1_1Section}{Section}} \&original)
+\begin{DoxyCompactList}\small\item\em Creates a new section by copying another one. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classini_1_1Section_a0b05a8b2ce8212c6f70fad7475f14edf}\label{classini_1_1Section_a0b05a8b2ce8212c6f70fad7475f14edf}} 
+\mbox{\hyperlink{classini_1_1Section_a0b05a8b2ce8212c6f70fad7475f14edf}{$\sim$\+Section}} ()
+\begin{DoxyCompactList}\small\item\em Destructs a section. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1Section}{Section}} \& \mbox{\hyperlink{classini_1_1Section_a9e2ec40e40dbd9f8b4020269bf354cf0}{operator=}} (const \mbox{\hyperlink{classini_1_1Section}{Section}} \&original)
+\begin{DoxyCompactList}\small\item\em Copies another section. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1Entry}{Entry}} \mbox{\hyperlink{classini_1_1Section_ab06d3149244f149c2bbb1058336a05ce}{operator\mbox{[}$\,$\mbox{]}}} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em Looks up a entry in the section given its key and returns it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The type that is used to represent sections that are stored in the configuration file. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classini_1_1Section_aaf3b8d7206f21a3e114aaeed685a9b72}\label{classini_1_1Section_aaf3b8d7206f21a3e114aaeed685a9b72}} 
+\index{ini::Section@{ini::Section}!Section@{Section}}
+\index{Section@{Section}!ini::Section@{ini::Section}}
+\doxysubsubsection{\texorpdfstring{Section()}{Section()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ini\+::\+Section\+::\+Section (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{section\+\_\+name\+\_\+init,  }\item[{const \mbox{\hyperlink{namespaceini_a33c55c3c86579b41a4c49663f67ca755}{Value\+Map}} $\ast$const}]{values\+\_\+init }\end{DoxyParamCaption})}
+
+
+
+Creates a new section. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section\+\_\+name\+\_\+init} & The name of the section. \\
+\hline
+{\em values\+\_\+init} & An iterator to the map that stores the entries of the section. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classini_1_1Section_a90c20ebbae861424a63de113223f582e}\label{classini_1_1Section_a90c20ebbae861424a63de113223f582e}} 
+\index{ini::Section@{ini::Section}!Section@{Section}}
+\index{Section@{Section}!ini::Section@{ini::Section}}
+\doxysubsubsection{\texorpdfstring{Section()}{Section()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ini\+::\+Section\+::\+Section (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classini_1_1Section}{Section}} \&}]{original }\end{DoxyParamCaption})}
+
+
+
+Creates a new section by copying another one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The section that is copied. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classini_1_1Section_a9e2ec40e40dbd9f8b4020269bf354cf0}\label{classini_1_1Section_a9e2ec40e40dbd9f8b4020269bf354cf0}} 
+\index{ini::Section@{ini::Section}!operator=@{operator=}}
+\index{operator=@{operator=}!ini::Section@{ini::Section}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classini_1_1Section}{Section}}\& ini\+::\+Section\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classini_1_1Section}{Section}} \&}]{original }\end{DoxyParamCaption})}
+
+
+
+Copies another section. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The section that is copied.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this section. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1Section_ab06d3149244f149c2bbb1058336a05ce}\label{classini_1_1Section_ab06d3149244f149c2bbb1058336a05ce}} 
+\index{ini::Section@{ini::Section}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ini::Section@{ini::Section}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classini_1_1Entry}{Entry}} ini\+::\+Section\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+
+
+
+Looks up a entry in the section given its key and returns it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The entry corresponding to the key.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The entry corresponding to the key or an empty entry if the requested entry does not exist. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/ini\+\_\+config/ini\+\_\+configuration.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/ini\+\_\+config/ini\+\_\+configuration.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+<map id="TurboHiker::CompetingHiker" name="TurboHiker::CompetingHiker">
+<area shape="rect" id="node1" title=" " alt="" coords="105,155,309,181"/>
+<area shape="rect" id="node5" href="$classSFML_1_1SFMLCompetingHiker.html" title=" " alt="" coords="5,229,211,256"/>
+<area shape="rect" id="node6" href="$classTurboHiker_1_1Player.html" title=" " alt="" coords="235,229,375,256"/>
+<area shape="rect" id="node2" href="$classTurboHiker_1_1Hiker.html" title=" " alt="" coords="52,80,185,107"/>
+<area shape="rect" id="node3" href="$classTurboHiker_1_1Entity.html" title=" " alt="" coords="50,5,187,32"/>
+<area shape="rect" id="node4" href="$classTurboHiker_1_1Observable.html" title=" " alt="" coords="209,80,383,107"/>
+<area shape="rect" id="node7" href="$classSFML_1_1SFMLPlayer.html" title=" " alt="" coords="235,304,376,331"/>
+</map>

@@ -1,0 +1,305 @@
+\hypertarget{classTurboHiker_1_1CompetingHiker}{}\doxysection{Turbo\+Hiker\+::Competing\+Hiker Class Reference}
+\label{classTurboHiker_1_1CompetingHiker}\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+
+
+Inheritance diagram for Turbo\+Hiker\+::Competing\+Hiker\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTurboHiker_1_1CompetingHiker__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Turbo\+Hiker\+::Competing\+Hiker\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classTurboHiker_1_1CompetingHiker__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_acecb7f1a2c391b341227c3aa2dedd0f4}{Competing\+Hiker}} (unsigned int lane, std\+::pair$<$ double, double $>$ \&size, std\+::vector$<$ double $>$ \&lane\+PositionsX, double speed, double speed\+Up\+Factor)
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_ad3d2b891ce5ce6297c2f218c01b888ac}{Competing\+Hiker}} (const \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker}{Competing\+Hiker}} \&)=default
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_aff45313c4c4432465419d3af08323069}{$\sim$\+Competing\+Hiker}} () override=default
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a828bbea23f96cd1c96acb686a1ba7700}{update}} () override
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a50ab00e4fe5aec7b9835bb0d048ee5e3}{speed\+Up}} () final
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a1889100628e9c3e5260dba0ef0c6d872}{slow\+Down}} () final
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a22d05c0441aa95edee86849755dbe121}{run\+At\+Turbo\+Speed}} ()
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a4087ec59a2393b9e92f3632498257984}{stop\+Running\+At\+Turbo\+Speed}} ()
+\item 
+virtual void \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_ad01c2c9409d63978bc672fef43ece356}{move\+Left}} ()
+\item 
+virtual void \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_aae1acdc90a4f2cc64328441c0710595d}{move\+Right}} ()
+\item 
+bool \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a6ca3ac66a5e86f0388a04b3a40f0f55b}{is\+Colliding}} () const
+\item 
+virtual void \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a43759daad125a4cd53311e5f87e64360}{collide}} ()
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_ad5136d535bfb64deab67ccd66d35c1d1}{stop\+Colliding}} ()
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_ab88ea23d56c3d71cadf3fde36e47fa2c}{speed\+Boost}} (unsigned int duration)
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a9e05968d85477780e40e7c0f0ccf0149}{stop\+Speed\+Boost}} ()
+\item 
+bool \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_aa06f5f95a15194bd54b9e6a6ef0c3806}{is\+Bonus\+Speed}} () const
+\item 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1Score}{Score}} $>$ \& \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a58ebb2c2bd3aae28de7a506bf2b96765}{get\+Score}} () const
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a6585015409ad91d647a2458a676d203e}{push\+Active\+Reward}} (std\+::pair$<$ bool, double $>$ reward)
+\item 
+const std\+::deque$<$ std\+::pair$<$ bool, double $>$ $>$ \& \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a4a46378d80e5b2fe79deb499891c636e}{get\+Rewards}} () const
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_abca6156c22f3d7c162c8172fcb264454}{use\+Active\+Reward}} ()
+\item 
+bool \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a63dc12d6e30b63ebdaaa948be1f71516}{is\+Using\+Active\+Reward}} () const
+\item 
+std\+::pair$<$ bool, double $>$ \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a14b83f68635fe5ee547e408e996d2da4}{get\+First\+Reward}} ()
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_ad3e8ca9f6117d9a39a02068839cc3e18}{set\+Using\+Active\+Reward}} (bool using\+Active\+Reward)
+\item 
+bool \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_af49cdac56817cad636d0ed2d51dc7e92}{rewards\+Empty}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_acecb7f1a2c391b341227c3aa2dedd0f4}\label{classTurboHiker_1_1CompetingHiker_acecb7f1a2c391b341227c3aa2dedd0f4}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!CompetingHiker@{CompetingHiker}}
+\index{CompetingHiker@{CompetingHiker}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{CompetingHiker()}{CompetingHiker()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Competing\+Hiker\+::\+Competing\+Hiker (\begin{DoxyParamCaption}\item[{unsigned int}]{lane,  }\item[{std\+::pair$<$ double, double $>$ \&}]{size,  }\item[{std\+::vector$<$ double $>$ \&}]{lane\+PositionsX,  }\item[{double}]{speed,  }\item[{double}]{speed\+Up\+Factor }\end{DoxyParamCaption})}
+
+Simple constructor 
+\begin{DoxyParams}{Parameters}
+{\em lane} & the initial lane where the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} is located \\
+\hline
+{\em size} & the size of the hiker \\
+\hline
+{\em lane\+PositionsX} & all possible lane x-\/coordinates \\
+\hline
+{\em speed} & the initial speed of the hiker \\
+\hline
+{\em speed\+Up\+Factor} & the factor by which the speed can change \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_ad3d2b891ce5ce6297c2f218c01b888ac}\label{classTurboHiker_1_1CompetingHiker_ad3d2b891ce5ce6297c2f218c01b888ac}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!CompetingHiker@{CompetingHiker}}
+\index{CompetingHiker@{CompetingHiker}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{CompetingHiker()}{CompetingHiker()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Competing\+Hiker\+::\+Competing\+Hiker (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker}{Competing\+Hiker}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+default copy constructor \mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_aff45313c4c4432465419d3af08323069}\label{classTurboHiker_1_1CompetingHiker_aff45313c4c4432465419d3af08323069}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!````~CompetingHiker@{$\sim$CompetingHiker}}
+\index{````~CompetingHiker@{$\sim$CompetingHiker}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{$\sim$CompetingHiker()}{~CompetingHiker()}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Competing\+Hiker\+::$\sim$\+Competing\+Hiker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+default destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_a43759daad125a4cd53311e5f87e64360}\label{classTurboHiker_1_1CompetingHiker_a43759daad125a4cd53311e5f87e64360}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!collide@{collide}}
+\index{collide@{collide}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{collide()}{collide()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Competing\+Hiker\+::collide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+changes the colliding status of the hiker to true 
+
+Reimplemented in \mbox{\hyperlink{classSFML_1_1SFMLPlayer_a5847e39bcf6ad3d157b26872a3ba8b66}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Player}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_a14b83f68635fe5ee547e408e996d2da4}\label{classTurboHiker_1_1CompetingHiker_a14b83f68635fe5ee547e408e996d2da4}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!getFirstReward@{getFirstReward}}
+\index{getFirstReward@{getFirstReward}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{getFirstReward()}{getFirstReward()}}
+{\footnotesize\ttfamily std\+::pair$<$ bool, double $>$ Turbo\+Hiker\+::\+Competing\+Hiker\+::get\+First\+Reward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+pops the first reward from the queue \begin{DoxyReturn}{Returns}
+the first reward 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_a4a46378d80e5b2fe79deb499891c636e}\label{classTurboHiker_1_1CompetingHiker_a4a46378d80e5b2fe79deb499891c636e}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!getRewards@{getRewards}}
+\index{getRewards@{getRewards}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{getRewards()}{getRewards()}}
+{\footnotesize\ttfamily const std\+::deque$<$ std\+::pair$<$ bool, double $>$ $>$ \& Turbo\+Hiker\+::\+Competing\+Hiker\+::get\+Rewards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Simple getter of the rewards queue \begin{DoxyReturn}{Returns}
+the queue of the rewards 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_a58ebb2c2bd3aae28de7a506bf2b96765}\label{classTurboHiker_1_1CompetingHiker_a58ebb2c2bd3aae28de7a506bf2b96765}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!getScore@{getScore}}
+\index{getScore@{getScore}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{getScore()}{getScore()}}
+{\footnotesize\ttfamily const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1Score}{Turbo\+Hiker\+::\+Score}} $>$ \& Turbo\+Hiker\+::\+Competing\+Hiker\+::get\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Simple getter of the score \begin{DoxyReturn}{Returns}
+the score of the hiker 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_aa06f5f95a15194bd54b9e6a6ef0c3806}\label{classTurboHiker_1_1CompetingHiker_aa06f5f95a15194bd54b9e6a6ef0c3806}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!isBonusSpeed@{isBonusSpeed}}
+\index{isBonusSpeed@{isBonusSpeed}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{isBonusSpeed()}{isBonusSpeed()}}
+{\footnotesize\ttfamily bool Turbo\+Hiker\+::\+Competing\+Hiker\+::is\+Bonus\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Checks whether the hiker is receiving bonus speed \begin{DoxyReturn}{Returns}
+true if the hiker has bonus speed, else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_a6ca3ac66a5e86f0388a04b3a40f0f55b}\label{classTurboHiker_1_1CompetingHiker_a6ca3ac66a5e86f0388a04b3a40f0f55b}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!isColliding@{isColliding}}
+\index{isColliding@{isColliding}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{isColliding()}{isColliding()}}
+{\footnotesize\ttfamily bool Turbo\+Hiker\+::\+Competing\+Hiker\+::is\+Colliding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+checks if the hiker is colliding \begin{DoxyReturn}{Returns}
+true if the hiker is colliding, false if not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_a63dc12d6e30b63ebdaaa948be1f71516}\label{classTurboHiker_1_1CompetingHiker_a63dc12d6e30b63ebdaaa948be1f71516}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!isUsingActiveReward@{isUsingActiveReward}}
+\index{isUsingActiveReward@{isUsingActiveReward}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{isUsingActiveReward()}{isUsingActiveReward()}}
+{\footnotesize\ttfamily bool Turbo\+Hiker\+::\+Competing\+Hiker\+::is\+Using\+Active\+Reward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Simple getter of using\+\_\+active\+\_\+reward \begin{DoxyReturn}{Returns}
+using\+\_\+active\+\_\+reward 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_ad01c2c9409d63978bc672fef43ece356}\label{classTurboHiker_1_1CompetingHiker_ad01c2c9409d63978bc672fef43ece356}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!moveLeft@{moveLeft}}
+\index{moveLeft@{moveLeft}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{moveLeft()}{moveLeft()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Competing\+Hiker\+::move\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+moves the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} left 
+
+Reimplemented in \mbox{\hyperlink{classSFML_1_1SFMLPlayer_a05b66d8ff64e690da44c72baa9ca8324}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Player}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_aae1acdc90a4f2cc64328441c0710595d}\label{classTurboHiker_1_1CompetingHiker_aae1acdc90a4f2cc64328441c0710595d}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!moveRight@{moveRight}}
+\index{moveRight@{moveRight}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{moveRight()}{moveRight()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Competing\+Hiker\+::move\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+moves the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} right 
+
+Reimplemented in \mbox{\hyperlink{classSFML_1_1SFMLPlayer_a0207cfc411b12a3cbb6cc82ea449a7a8}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Player}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_a6585015409ad91d647a2458a676d203e}\label{classTurboHiker_1_1CompetingHiker_a6585015409ad91d647a2458a676d203e}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!pushActiveReward@{pushActiveReward}}
+\index{pushActiveReward@{pushActiveReward}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{pushActiveReward()}{pushActiveReward()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Competing\+Hiker\+::push\+Active\+Reward (\begin{DoxyParamCaption}\item[{std\+::pair$<$ bool, double $>$}]{reward }\end{DoxyParamCaption})}
+
+Pushes an active reward into the queue of rewards 
+\begin{DoxyParams}{Parameters}
+{\em reward} & the to-\/be-\/pushed reward \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_af49cdac56817cad636d0ed2d51dc7e92}\label{classTurboHiker_1_1CompetingHiker_af49cdac56817cad636d0ed2d51dc7e92}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!rewardsEmpty@{rewardsEmpty}}
+\index{rewardsEmpty@{rewardsEmpty}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{rewardsEmpty()}{rewardsEmpty()}}
+{\footnotesize\ttfamily bool Turbo\+Hiker\+::\+Competing\+Hiker\+::rewards\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+checks if the rewards queue is empty \begin{DoxyReturn}{Returns}
+true if empty, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_a22d05c0441aa95edee86849755dbe121}\label{classTurboHiker_1_1CompetingHiker_a22d05c0441aa95edee86849755dbe121}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!runAtTurboSpeed@{runAtTurboSpeed}}
+\index{runAtTurboSpeed@{runAtTurboSpeed}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{runAtTurboSpeed()}{runAtTurboSpeed()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Competing\+Hiker\+::run\+At\+Turbo\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+increases the speed of the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}}, this function is used to move the hiker faster \mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_ad3e8ca9f6117d9a39a02068839cc3e18}\label{classTurboHiker_1_1CompetingHiker_ad3e8ca9f6117d9a39a02068839cc3e18}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!setUsingActiveReward@{setUsingActiveReward}}
+\index{setUsingActiveReward@{setUsingActiveReward}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{setUsingActiveReward()}{setUsingActiveReward()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Competing\+Hiker\+::set\+Using\+Active\+Reward (\begin{DoxyParamCaption}\item[{bool}]{using\+Active\+Reward }\end{DoxyParamCaption})}
+
+Simple setter of using\+\_\+active\+\_\+reward 
+\begin{DoxyParams}{Parameters}
+{\em using\+Active\+Reward} & the new state of using\+\_\+active\+\_\+reward \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_a1889100628e9c3e5260dba0ef0c6d872}\label{classTurboHiker_1_1CompetingHiker_a1889100628e9c3e5260dba0ef0c6d872}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!slowDown@{slowDown}}
+\index{slowDown@{slowDown}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{slowDown()}{slowDown()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Competing\+Hiker\+::slow\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+decreases the speed of the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}}, this function is used to move the hiker down 
+
+Reimplemented from \mbox{\hyperlink{classTurboHiker_1_1Hiker_a4fc81df14c55f145c2012243974ce627}{Turbo\+Hiker\+::\+Hiker}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_ab88ea23d56c3d71cadf3fde36e47fa2c}\label{classTurboHiker_1_1CompetingHiker_ab88ea23d56c3d71cadf3fde36e47fa2c}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!speedBoost@{speedBoost}}
+\index{speedBoost@{speedBoost}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{speedBoost()}{speedBoost()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Competing\+Hiker\+::speed\+Boost (\begin{DoxyParamCaption}\item[{unsigned int}]{duration }\end{DoxyParamCaption})}
+
+boost the speed of the hiker for a given duration 
+\begin{DoxyParams}{Parameters}
+{\em duration} & the duration of the speed boost, in frames \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_a50ab00e4fe5aec7b9835bb0d048ee5e3}\label{classTurboHiker_1_1CompetingHiker_a50ab00e4fe5aec7b9835bb0d048ee5e3}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!speedUp@{speedUp}}
+\index{speedUp@{speedUp}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{speedUp()}{speedUp()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Competing\+Hiker\+::speed\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+increases the speed of the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}}, this function is used to move the hiker up 
+
+Reimplemented from \mbox{\hyperlink{classTurboHiker_1_1Hiker_a1aad6442cd372d85f1204ed543505111}{Turbo\+Hiker\+::\+Hiker}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_ad5136d535bfb64deab67ccd66d35c1d1}\label{classTurboHiker_1_1CompetingHiker_ad5136d535bfb64deab67ccd66d35c1d1}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!stopColliding@{stopColliding}}
+\index{stopColliding@{stopColliding}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{stopColliding()}{stopColliding()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Competing\+Hiker\+::stop\+Colliding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+changes the colliding status to false \mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_a4087ec59a2393b9e92f3632498257984}\label{classTurboHiker_1_1CompetingHiker_a4087ec59a2393b9e92f3632498257984}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!stopRunningAtTurboSpeed@{stopRunningAtTurboSpeed}}
+\index{stopRunningAtTurboSpeed@{stopRunningAtTurboSpeed}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{stopRunningAtTurboSpeed()}{stopRunningAtTurboSpeed()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Competing\+Hiker\+::stop\+Running\+At\+Turbo\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+decreases the speed of the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}}, this function is used to stop moving the hiker at fast speed \mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_a9e05968d85477780e40e7c0f0ccf0149}\label{classTurboHiker_1_1CompetingHiker_a9e05968d85477780e40e7c0f0ccf0149}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!stopSpeedBoost@{stopSpeedBoost}}
+\index{stopSpeedBoost@{stopSpeedBoost}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{stopSpeedBoost()}{stopSpeedBoost()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Competing\+Hiker\+::stop\+Speed\+Boost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Stops the speed boost \mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_a828bbea23f96cd1c96acb686a1ba7700}\label{classTurboHiker_1_1CompetingHiker_a828bbea23f96cd1c96acb686a1ba7700}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!update@{update}}
+\index{update@{update}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Competing\+Hiker\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+updates the position, movement, acceleration, speed, etc. of the hiker 
+
+Implements \mbox{\hyperlink{classTurboHiker_1_1Entity_aa99d126f1a6edc8aed086613bac747ea}{Turbo\+Hiker\+::\+Entity}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classTurboHiker_1_1Player_ac7eff197d9fbd43aae8cdc86e6a24d4a}{Turbo\+Hiker\+::\+Player}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1CompetingHiker_abca6156c22f3d7c162c8172fcb264454}\label{classTurboHiker_1_1CompetingHiker_abca6156c22f3d7c162c8172fcb264454}} 
+\index{TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}!useActiveReward@{useActiveReward}}
+\index{useActiveReward@{useActiveReward}!TurboHiker::CompetingHiker@{TurboHiker::CompetingHiker}}
+\doxysubsubsection{\texorpdfstring{useActiveReward()}{useActiveReward()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Competing\+Hiker\+::use\+Active\+Reward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Changes the state of using\+\_\+reward to true 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/Competing\+Hiker.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/Competing\+Hiker.\+cpp\end{DoxyCompactItemize}

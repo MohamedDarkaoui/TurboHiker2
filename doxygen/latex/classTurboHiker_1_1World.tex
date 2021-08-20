@@ -1,0 +1,398 @@
+\hypertarget{classTurboHiker_1_1World}{}\doxysection{Turbo\+Hiker\+::World Class Reference}
+\label{classTurboHiker_1_1World}\index{TurboHiker::World@{TurboHiker::World}}
+
+
+Inheritance diagram for Turbo\+Hiker\+::World\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classTurboHiker_1_1World__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Turbo\+Hiker\+::World\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{classTurboHiker_1_1World__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1World_a86024e68693625a120c8494919d6eb06}{World}} (\mbox{\hyperlink{classTurboHiker_1_1Position2D}{Position2D}} position, std\+::pair$<$ double, double $>$ \&size, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1AbstractFactory}{Abstract\+Factory}} $>$ \&factory)
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1World_a46da98be745588277363ab6a4141920f}{$\sim$\+World}} () override=default
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_a29ef26f7d6868b4f8ce866a57a0490f2}{update}} () override
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_acc50fa7039bde2db05b8c0f8576e5ccf}{handle\+Hiker\+Collisions}} ()
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_ac667d68f1994cecadbd7df45b4ad3130}{handle\+Hiker\+Enemy\+Collisions}} ()
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1World_a69e7a083dcf00f978b175bc823e7da24}\label{classTurboHiker_1_1World_a69e7a083dcf00f978b175bc823e7da24}} 
+void {\bfseries handle\+Hiker\+Bomb\+Collision} ()
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_a151a38c8aaac74be2c7baf9c9d06dd52}{handle\+Collecting\+Item}} () const
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_a0cb0cd537285555a838cd7cbf15eac19}{handle\+Yelling}} ()
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_a5b8ad4a537ef157a6517b3fb89bca754}{handle\+Reward\+Usage}} ()
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_a0614ed23e350d31d37e57d4546435c5b}{handle\+Events}} ()
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_ab050f45a81cff600e5a5ca79b36cdb5f}{track\+Player}} ()
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_a1a879b1f81d47e7514bc1ef5bf8a34d5}{check\+To\+Destroy\+Entities}} ()
+\item 
+virtual void \mbox{\hyperlink{classTurboHiker_1_1World_a4be4aed206c56a3cadbe9b94731af706}{spawn\+Moving\+Enemy}} (unsigned int lane, double y\+\_\+pos, double speed\+Factor)
+\item 
+virtual void \mbox{\hyperlink{classTurboHiker_1_1World_a44e265fae35882b22e0b633a80727846}{spawn\+Static\+Enemy}} (unsigned int lane, double y\+\_\+pos)
+\item 
+virtual void \mbox{\hyperlink{classTurboHiker_1_1World_a0788edc215028ec9071c7436fc73d0cc}{spawn\+Bomb}} ()
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_a02902d8111c5fe8f0f1c8f2f0db630a0}{chance\+To\+Spawn\+Bomb}} ()
+\item 
+virtual void \mbox{\hyperlink{classTurboHiker_1_1World_aae449b9fbede922e7f393ee97cf98f58}{build\+World}} ()
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_aa6306ef873f317f972c3e520fcef40a9}{add\+Player}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1Player}{Player}} $>$ \&p)
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_a120e26d3fc5c8e99418358972299a8ee}{add\+Competing\+Hiker}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker}{Competing\+Hiker}} $>$ \&competing)
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_a6d2de070b1d8247d334838b7dd55c754}{add\+Static\+Enemy}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1StaticEnemy}{Static\+Enemy}} $>$ \&static\+\_\+enemy)
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_a23cbaca25b2cfbf1e56d5a6c5459092a}{add\+Moving\+Enemy}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1MovingEnemy}{Moving\+Enemy}} $>$ \&moving\+\_\+enemy)
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_afcff5209a9fa295a35937e52bfbbf69d}{add\+G\+Round\+Plot}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1GroundPlot}{Ground\+Plot}} $>$ \&ground\+Plot)
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_a2c1cd65cb049574fc2403fc5324e96cc}{add\+Passive\+Item}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1PassiveItem}{Passive\+Item}} $>$ \&passive\+Item)
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_abe1c9fa8035e9beab8be4cd2409362b8}{add\+Active\+Item}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1ActiveItem}{Active\+Item}} $>$ \&active\+Item)
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_a81230c9f8702a3a07e523b80d7ad0c00}{add\+Finish\+Line}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1FinishLine}{Finish\+Line}} $>$ \&finish\+Line)
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_a4714d9fbda98913368f22a2fbbc23aa9}{add\+Bomb}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1Bomb}{Bomb}} $>$ \&bomb)
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_a7c3ef39963b5603d41cbcb033d00c475}{control\+Competing\+Hikers}} ()
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1World_a5783a72faa105dcc43c3561a33cc7606}{control\+Hiker\+At\+Collision}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker}{Competing\+Hiker}} $>$ \&competing\+Hiker)
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1World_a19573f9aee195004c01a020834d0a1b9}\label{classTurboHiker_1_1World_a19573f9aee195004c01a020834d0a1b9}} 
+std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1Entity}{Entity}} $>$ $>$ {\bfseries get\+Entities} () const
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1World_a213c328a762ba2bc87e65bef4b3fe699}\label{classTurboHiker_1_1World_a213c328a762ba2bc87e65bef4b3fe699}} 
+std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1Enemy}{Enemy}} $>$ $>$ {\bfseries get\+Enemies} () const
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1World_aa6813dcc12fad904e3920726b4b767fc}\label{classTurboHiker_1_1World_aa6813dcc12fad904e3920726b4b767fc}} 
+std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1CollectableItem}{Collectable\+Item}} $>$ $>$ {\bfseries get\+Items} () const
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1World_aed60fb308c7634622ca472cfc870be99}\label{classTurboHiker_1_1World_aed60fb308c7634622ca472cfc870be99}} 
+std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker}{Competing\+Hiker}} $>$ $>$ {\bfseries get\+All\+Competing\+Hikers} () const
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1World_a72bcf628e681f2dd797629ccf8cbc626}\label{classTurboHiker_1_1World_a72bcf628e681f2dd797629ccf8cbc626}} 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1Player}{Player}} $>$ \& {\bfseries get\+Player} () const
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1World_a32dfe876b74f584eae7cdcc8b2520a3b}\label{classTurboHiker_1_1World_a32dfe876b74f584eae7cdcc8b2520a3b}} 
+const std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker}{Competing\+Hiker}} $>$ $>$ \& {\bfseries get\+Competing\+Hikers} () const
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1World_a121a2a59c7505925264c30172368088d}\label{classTurboHiker_1_1World_a121a2a59c7505925264c30172368088d}} 
+const std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1StaticEnemy}{Static\+Enemy}} $>$ $>$ \& {\bfseries get\+Static\+Enemies} () const
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1World_a10e14dbf1bba00e627e285b5847b5028}\label{classTurboHiker_1_1World_a10e14dbf1bba00e627e285b5847b5028}} 
+const std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1MovingEnemy}{Moving\+Enemy}} $>$ $>$ \& {\bfseries get\+Moving\+Enemies} () const
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1World_ae6dab53a56c1bbd4adbca2e40bdb8447}\label{classTurboHiker_1_1World_ae6dab53a56c1bbd4adbca2e40bdb8447}} 
+const std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1GroundPlot}{Ground\+Plot}} $>$ $>$ \& {\bfseries get\+Ground} () const
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1World_ac5194d7962c53f2d31b6361378f2c810}\label{classTurboHiker_1_1World_ac5194d7962c53f2d31b6361378f2c810}} 
+const std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1PassiveItem}{Passive\+Item}} $>$ $>$ \& {\bfseries get\+Passive\+Items} () const
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1World_a8ab4065141b442bdbff4ff1d76d95e07}\label{classTurboHiker_1_1World_a8ab4065141b442bdbff4ff1d76d95e07}} 
+const std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1ActiveItem}{Active\+Item}} $>$ $>$ \& {\bfseries get\+Active\+Items} () const
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1World_a4ed0825d342e42d8a791fd2e9e8b580c}\label{classTurboHiker_1_1World_a4ed0825d342e42d8a791fd2e9e8b580c}} 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1FinishLine}{Finish\+Line}} $>$ \& {\bfseries get\+Finish\+Line} () const
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1World_a1100a870532d158fbf14948e7e9a17b6}\label{classTurboHiker_1_1World_a1100a870532d158fbf14948e7e9a17b6}} 
+const std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1Bomb}{Bomb}} $>$ $>$ \& {\bfseries get\+Bombs} () const
+\item 
+\mbox{\Hypertarget{classTurboHiker_1_1World_ad8795a81a73bd79a6a89b1c1a1c75d89}\label{classTurboHiker_1_1World_ad8795a81a73bd79a6a89b1c1a1c75d89}} 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1AbstractFactory}{Abstract\+Factory}} $>$ \& {\bfseries get\+Factory} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1World_a86024e68693625a120c8494919d6eb06}\label{classTurboHiker_1_1World_a86024e68693625a120c8494919d6eb06}} 
+\index{TurboHiker::World@{TurboHiker::World}!World@{World}}
+\index{World@{World}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{World()}{World()}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+World\+::\+World (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTurboHiker_1_1Position2D}{Position2D}}}]{position,  }\item[{std\+::pair$<$ double, double $>$ \&}]{size,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1AbstractFactory}{Abstract\+Factory}} $>$ \&}]{factory }\end{DoxyParamCaption})}
+
+simple constructor 
+\begin{DoxyParams}{Parameters}
+{\em position} & the initial position of the \textquotesingle{}camera\textquotesingle{} \\
+\hline
+{\em size} & the size of the world (width x height) \\
+\hline
+{\em factory} & the abstract factory that creates entities \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1World_a46da98be745588277363ab6a4141920f}\label{classTurboHiker_1_1World_a46da98be745588277363ab6a4141920f}} 
+\index{TurboHiker::World@{TurboHiker::World}!````~World@{$\sim$World}}
+\index{````~World@{$\sim$World}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{$\sim$World()}{~World()}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+World\+::$\sim$\+World (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+default destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1World_abe1c9fa8035e9beab8be4cd2409362b8}\label{classTurboHiker_1_1World_abe1c9fa8035e9beab8be4cd2409362b8}} 
+\index{TurboHiker::World@{TurboHiker::World}!addActiveItem@{addActiveItem}}
+\index{addActiveItem@{addActiveItem}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{addActiveItem()}{addActiveItem()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::add\+Active\+Item (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1ActiveItem}{Active\+Item}} $>$ \&}]{active\+Item }\end{DoxyParamCaption})}
+
+adds an active item to the set of active items 
+\begin{DoxyParams}{Parameters}
+{\em active\+Item} & the active item \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1World_a4714d9fbda98913368f22a2fbbc23aa9}\label{classTurboHiker_1_1World_a4714d9fbda98913368f22a2fbbc23aa9}} 
+\index{TurboHiker::World@{TurboHiker::World}!addBomb@{addBomb}}
+\index{addBomb@{addBomb}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{addBomb()}{addBomb()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::add\+Bomb (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1Bomb}{Bomb}} $>$ \&}]{bomb }\end{DoxyParamCaption})}
+
+adds a bomb to the set of bombs 
+\begin{DoxyParams}{Parameters}
+{\em bomb} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1World_a120e26d3fc5c8e99418358972299a8ee}\label{classTurboHiker_1_1World_a120e26d3fc5c8e99418358972299a8ee}} 
+\index{TurboHiker::World@{TurboHiker::World}!addCompetingHiker@{addCompetingHiker}}
+\index{addCompetingHiker@{addCompetingHiker}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{addCompetingHiker()}{addCompetingHiker()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::add\+Competing\+Hiker (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker}{Competing\+Hiker}} $>$ \&}]{competing }\end{DoxyParamCaption})}
+
+adds a competing hiker to the set of competing hikers 
+\begin{DoxyParams}{Parameters}
+{\em competing} & the competing hiker \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1World_a81230c9f8702a3a07e523b80d7ad0c00}\label{classTurboHiker_1_1World_a81230c9f8702a3a07e523b80d7ad0c00}} 
+\index{TurboHiker::World@{TurboHiker::World}!addFinishLine@{addFinishLine}}
+\index{addFinishLine@{addFinishLine}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{addFinishLine()}{addFinishLine()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::add\+Finish\+Line (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1FinishLine}{Finish\+Line}} $>$ \&}]{finish\+Line }\end{DoxyParamCaption})}
+
+simple setter of the finish line 
+\begin{DoxyParams}{Parameters}
+{\em finish\+Line} & the finish line \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1World_afcff5209a9fa295a35937e52bfbbf69d}\label{classTurboHiker_1_1World_afcff5209a9fa295a35937e52bfbbf69d}} 
+\index{TurboHiker::World@{TurboHiker::World}!addGRoundPlot@{addGRoundPlot}}
+\index{addGRoundPlot@{addGRoundPlot}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{addGRoundPlot()}{addGRoundPlot()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::add\+G\+Round\+Plot (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1GroundPlot}{Ground\+Plot}} $>$ \&}]{ground\+Plot }\end{DoxyParamCaption})}
+
+adds ground to the world 
+\begin{DoxyParams}{Parameters}
+{\em ground\+Plot} & the ground plot \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1World_a23cbaca25b2cfbf1e56d5a6c5459092a}\label{classTurboHiker_1_1World_a23cbaca25b2cfbf1e56d5a6c5459092a}} 
+\index{TurboHiker::World@{TurboHiker::World}!addMovingEnemy@{addMovingEnemy}}
+\index{addMovingEnemy@{addMovingEnemy}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{addMovingEnemy()}{addMovingEnemy()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::add\+Moving\+Enemy (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1MovingEnemy}{Moving\+Enemy}} $>$ \&}]{moving\+\_\+enemy }\end{DoxyParamCaption})}
+
+adds a moving enemy to the set of moving enemies 
+\begin{DoxyParams}{Parameters}
+{\em moving\+\_\+enemy} & the moving enemy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1World_a2c1cd65cb049574fc2403fc5324e96cc}\label{classTurboHiker_1_1World_a2c1cd65cb049574fc2403fc5324e96cc}} 
+\index{TurboHiker::World@{TurboHiker::World}!addPassiveItem@{addPassiveItem}}
+\index{addPassiveItem@{addPassiveItem}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{addPassiveItem()}{addPassiveItem()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::add\+Passive\+Item (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1PassiveItem}{Passive\+Item}} $>$ \&}]{passive\+Item }\end{DoxyParamCaption})}
+
+adds a passive item to the set of passive items 
+\begin{DoxyParams}{Parameters}
+{\em passive\+Item} & the passive item \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1World_aa6306ef873f317f972c3e520fcef40a9}\label{classTurboHiker_1_1World_aa6306ef873f317f972c3e520fcef40a9}} 
+\index{TurboHiker::World@{TurboHiker::World}!addPlayer@{addPlayer}}
+\index{addPlayer@{addPlayer}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{addPlayer()}{addPlayer()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::add\+Player (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1Player}{Player}} $>$ \&}]{p }\end{DoxyParamCaption})}
+
+simple setter of the player 
+\begin{DoxyParams}{Parameters}
+{\em p} & the player \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1World_a6d2de070b1d8247d334838b7dd55c754}\label{classTurboHiker_1_1World_a6d2de070b1d8247d334838b7dd55c754}} 
+\index{TurboHiker::World@{TurboHiker::World}!addStaticEnemy@{addStaticEnemy}}
+\index{addStaticEnemy@{addStaticEnemy}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{addStaticEnemy()}{addStaticEnemy()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::add\+Static\+Enemy (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1StaticEnemy}{Static\+Enemy}} $>$ \&}]{static\+\_\+enemy }\end{DoxyParamCaption})}
+
+adds a static enemy to the set of static enemies 
+\begin{DoxyParams}{Parameters}
+{\em static\+\_\+enemy} & the static enemy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1World_aae449b9fbede922e7f393ee97cf98f58}\label{classTurboHiker_1_1World_aae449b9fbede922e7f393ee97cf98f58}} 
+\index{TurboHiker::World@{TurboHiker::World}!buildWorld@{buildWorld}}
+\index{buildWorld@{buildWorld}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{buildWorld()}{buildWorld()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::build\+World (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+creates all the entities in the world 
+
+Reimplemented in \mbox{\hyperlink{classSFML_1_1SFMLWorld_a59df6f44c2a4b51b9abd96b131d387ae}{S\+F\+M\+L\+::\+S\+F\+M\+L\+World}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1World_a02902d8111c5fe8f0f1c8f2f0db630a0}\label{classTurboHiker_1_1World_a02902d8111c5fe8f0f1c8f2f0db630a0}} 
+\index{TurboHiker::World@{TurboHiker::World}!chanceToSpawnBomb@{chanceToSpawnBomb}}
+\index{chanceToSpawnBomb@{chanceToSpawnBomb}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{chanceToSpawnBomb()}{chanceToSpawnBomb()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::chance\+To\+Spawn\+Bomb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+spawns a bomb with a random chance \mbox{\Hypertarget{classTurboHiker_1_1World_a1a879b1f81d47e7514bc1ef5bf8a34d5}\label{classTurboHiker_1_1World_a1a879b1f81d47e7514bc1ef5bf8a34d5}} 
+\index{TurboHiker::World@{TurboHiker::World}!checkToDestroyEntities@{checkToDestroyEntities}}
+\index{checkToDestroyEntities@{checkToDestroyEntities}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{checkToDestroyEntities()}{checkToDestroyEntities()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::check\+To\+Destroy\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+removes unnecessary entities from the world \mbox{\Hypertarget{classTurboHiker_1_1World_a7c3ef39963b5603d41cbcb033d00c475}\label{classTurboHiker_1_1World_a7c3ef39963b5603d41cbcb033d00c475}} 
+\index{TurboHiker::World@{TurboHiker::World}!controlCompetingHikers@{controlCompetingHikers}}
+\index{controlCompetingHikers@{controlCompetingHikers}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{controlCompetingHikers()}{controlCompetingHikers()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::control\+Competing\+Hikers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+controls the competing hikers, giving them random movements \mbox{\Hypertarget{classTurboHiker_1_1World_a5783a72faa105dcc43c3561a33cc7606}\label{classTurboHiker_1_1World_a5783a72faa105dcc43c3561a33cc7606}} 
+\index{TurboHiker::World@{TurboHiker::World}!controlHikerAtCollision@{controlHikerAtCollision}}
+\index{controlHikerAtCollision@{controlHikerAtCollision}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{controlHikerAtCollision()}{controlHikerAtCollision()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::control\+Hiker\+At\+Collision (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker}{Competing\+Hiker}} $>$ \&}]{competing\+Hiker }\end{DoxyParamCaption})}
+
+controls the competing hikers when they are about to collide with something, giving them a random chance to dodge 
+\begin{DoxyParams}{Parameters}
+{\em competing\+Hiker} & the controlled competing hiker \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1World_a151a38c8aaac74be2c7baf9c9d06dd52}\label{classTurboHiker_1_1World_a151a38c8aaac74be2c7baf9c9d06dd52}} 
+\index{TurboHiker::World@{TurboHiker::World}!handleCollectingItem@{handleCollectingItem}}
+\index{handleCollectingItem@{handleCollectingItem}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{handleCollectingItem()}{handleCollectingItem()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::handle\+Collecting\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+checks for item collecting \mbox{\Hypertarget{classTurboHiker_1_1World_a0614ed23e350d31d37e57d4546435c5b}\label{classTurboHiker_1_1World_a0614ed23e350d31d37e57d4546435c5b}} 
+\index{TurboHiker::World@{TurboHiker::World}!handleEvents@{handleEvents}}
+\index{handleEvents@{handleEvents}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{handleEvents()}{handleEvents()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::handle\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+handles all events \mbox{\Hypertarget{classTurboHiker_1_1World_acc50fa7039bde2db05b8c0f8576e5ccf}\label{classTurboHiker_1_1World_acc50fa7039bde2db05b8c0f8576e5ccf}} 
+\index{TurboHiker::World@{TurboHiker::World}!handleHikerCollisions@{handleHikerCollisions}}
+\index{handleHikerCollisions@{handleHikerCollisions}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{handleHikerCollisions()}{handleHikerCollisions()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::handle\+Hiker\+Collisions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+checks for competing\+Hiker-\/competing\+Hiker collision and handles them \mbox{\Hypertarget{classTurboHiker_1_1World_ac667d68f1994cecadbd7df45b4ad3130}\label{classTurboHiker_1_1World_ac667d68f1994cecadbd7df45b4ad3130}} 
+\index{TurboHiker::World@{TurboHiker::World}!handleHikerEnemyCollisions@{handleHikerEnemyCollisions}}
+\index{handleHikerEnemyCollisions@{handleHikerEnemyCollisions}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{handleHikerEnemyCollisions()}{handleHikerEnemyCollisions()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::handle\+Hiker\+Enemy\+Collisions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+checks for competing\+Hiker-\/enemy collisions and handles them \mbox{\Hypertarget{classTurboHiker_1_1World_a5b8ad4a537ef157a6517b3fb89bca754}\label{classTurboHiker_1_1World_a5b8ad4a537ef157a6517b3fb89bca754}} 
+\index{TurboHiker::World@{TurboHiker::World}!handleRewardUsage@{handleRewardUsage}}
+\index{handleRewardUsage@{handleRewardUsage}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{handleRewardUsage()}{handleRewardUsage()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::handle\+Reward\+Usage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+handles the usage of the active collectable items \mbox{\Hypertarget{classTurboHiker_1_1World_a0cb0cd537285555a838cd7cbf15eac19}\label{classTurboHiker_1_1World_a0cb0cd537285555a838cd7cbf15eac19}} 
+\index{TurboHiker::World@{TurboHiker::World}!handleYelling@{handleYelling}}
+\index{handleYelling@{handleYelling}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{handleYelling()}{handleYelling()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::handle\+Yelling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+handles the yelling of the player \mbox{\Hypertarget{classTurboHiker_1_1World_a0788edc215028ec9071c7436fc73d0cc}\label{classTurboHiker_1_1World_a0788edc215028ec9071c7436fc73d0cc}} 
+\index{TurboHiker::World@{TurboHiker::World}!spawnBomb@{spawnBomb}}
+\index{spawnBomb@{spawnBomb}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{spawnBomb()}{spawnBomb()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::spawn\+Bomb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+spawns a bomb 
+
+Reimplemented in \mbox{\hyperlink{classSFML_1_1SFMLWorld_ae6e9048f2f90f0acb386de15073abf4b}{S\+F\+M\+L\+::\+S\+F\+M\+L\+World}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1World_a4be4aed206c56a3cadbe9b94731af706}\label{classTurboHiker_1_1World_a4be4aed206c56a3cadbe9b94731af706}} 
+\index{TurboHiker::World@{TurboHiker::World}!spawnMovingEnemy@{spawnMovingEnemy}}
+\index{spawnMovingEnemy@{spawnMovingEnemy}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{spawnMovingEnemy()}{spawnMovingEnemy()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::spawn\+Moving\+Enemy (\begin{DoxyParamCaption}\item[{unsigned int}]{lane,  }\item[{double}]{y\+\_\+pos,  }\item[{double}]{speed\+Factor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+spawns a moving enemy in a given position 
+\begin{DoxyParams}{Parameters}
+{\em lane} & the lane where the enemy will spawn \\
+\hline
+{\em y\+\_\+pos} & the y-\/coordinate of the enemy \\
+\hline
+{\em speed\+Factor} & its seed-\/up factor \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classSFML_1_1SFMLWorld_a97be6b28c60cf313db82f51b0d22bc54}{S\+F\+M\+L\+::\+S\+F\+M\+L\+World}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1World_a44e265fae35882b22e0b633a80727846}\label{classTurboHiker_1_1World_a44e265fae35882b22e0b633a80727846}} 
+\index{TurboHiker::World@{TurboHiker::World}!spawnStaticEnemy@{spawnStaticEnemy}}
+\index{spawnStaticEnemy@{spawnStaticEnemy}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{spawnStaticEnemy()}{spawnStaticEnemy()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::spawn\+Static\+Enemy (\begin{DoxyParamCaption}\item[{unsigned int}]{lane,  }\item[{double}]{y\+\_\+pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+spawns a static enemy in a given position 
+\begin{DoxyParams}{Parameters}
+{\em lane} & the lane where the enemy will spawn \\
+\hline
+{\em y\+\_\+pos} & the y-\/coordinate of the enemy \\
+\hline
+{\em speed\+Factor} & its seed-\/up factor \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classSFML_1_1SFMLWorld_a140cd2e86a541205fa51d6e5f52e1bdc}{S\+F\+M\+L\+::\+S\+F\+M\+L\+World}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1World_ab050f45a81cff600e5a5ca79b36cdb5f}\label{classTurboHiker_1_1World_ab050f45a81cff600e5a5ca79b36cdb5f}} 
+\index{TurboHiker::World@{TurboHiker::World}!trackPlayer@{trackPlayer}}
+\index{trackPlayer@{trackPlayer}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{trackPlayer()}{trackPlayer()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::track\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+makes sure the \textquotesingle{}camera\textquotesingle{} follows the player \mbox{\Hypertarget{classTurboHiker_1_1World_a29ef26f7d6868b4f8ce866a57a0490f2}\label{classTurboHiker_1_1World_a29ef26f7d6868b4f8ce866a57a0490f2}} 
+\index{TurboHiker::World@{TurboHiker::World}!update@{update}}
+\index{update@{update}!TurboHiker::World@{TurboHiker::World}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+World\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+updates the world and all its composite entities 
+
+Implements \mbox{\hyperlink{classTurboHiker_1_1Entity_aa99d126f1a6edc8aed086613bac747ea}{Turbo\+Hiker\+::\+Entity}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classSFML_1_1SFMLWorld_a8bf6e96f997ccc366434e7aba41e84b7}{S\+F\+M\+L\+::\+S\+F\+M\+L\+World}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/World.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/World.\+cpp\end{DoxyCompactItemize}

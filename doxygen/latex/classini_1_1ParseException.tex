@@ -1,0 +1,112 @@
+\hypertarget{classini_1_1ParseException}{}\doxysection{ini\+::Parse\+Exception Class Reference}
+\label{classini_1_1ParseException}\index{ini::ParseException@{ini::ParseException}}
+
+
+The base class for all exceptions that are thrown by the I\+N\+I-\/parser.  
+
+
+
+
+{\ttfamily \#include $<$ini\+\_\+configuration.\+h$>$}
+
+
+
+Inheritance diagram for ini\+::Parse\+Exception\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classini_1_1ParseException__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ini\+::Parse\+Exception\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classini_1_1ParseException__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const char $\ast$ \mbox{\hyperlink{classini_1_1ParseException_a16748af5ae0c46233911e3235c453c94}{what}} () const =0  throw ()
+\begin{DoxyCompactList}\small\item\em Returns a description of the error that occurred. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classini_1_1ParseException_ae5689a4fd7233c67a08eaf2e0e727a07}\label{classini_1_1ParseException_ae5689a4fd7233c67a08eaf2e0e727a07}} 
+\mbox{\hyperlink{classini_1_1ParseException_ae5689a4fd7233c67a08eaf2e0e727a07}{Parse\+Exception}} ()  throw ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classini_1_1ParseException}{Parse\+Exception}} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1ParseException_afde6c438dc8880cb278c3c23875ccda3}{Parse\+Exception}} (const \mbox{\hyperlink{classini_1_1ParseException}{Parse\+Exception}} \&original)  throw ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classini_1_1ParseException}{Parse\+Exception}} instance by copying another one. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classini_1_1ParseException_ad2cfdc71adbb1d5daddc1160dfbc51e0}\label{classini_1_1ParseException_ad2cfdc71adbb1d5daddc1160dfbc51e0}} 
+virtual \mbox{\hyperlink{classini_1_1ParseException_ad2cfdc71adbb1d5daddc1160dfbc51e0}{$\sim$\+Parse\+Exception}} ()  throw ()
+\begin{DoxyCompactList}\small\item\em Destructs a \mbox{\hyperlink{classini_1_1ParseException}{Parse\+Exception}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classini_1_1ParseException}{Parse\+Exception}} \& \mbox{\hyperlink{classini_1_1ParseException_a75e5fa9def71e8da8cc4bf1d5c858dda}{operator=}} (const \mbox{\hyperlink{classini_1_1ParseException}{Parse\+Exception}} \&original)  throw ()
+\begin{DoxyCompactList}\small\item\em Copies a parse exception. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The base class for all exceptions that are thrown by the I\+N\+I-\/parser. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classini_1_1ParseException_afde6c438dc8880cb278c3c23875ccda3}\label{classini_1_1ParseException_afde6c438dc8880cb278c3c23875ccda3}} 
+\index{ini::ParseException@{ini::ParseException}!ParseException@{ParseException}}
+\index{ParseException@{ParseException}!ini::ParseException@{ini::ParseException}}
+\doxysubsubsection{\texorpdfstring{ParseException()}{ParseException()}}
+{\footnotesize\ttfamily ini\+::\+Parse\+Exception\+::\+Parse\+Exception (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classini_1_1ParseException}{Parse\+Exception}} \&}]{original }\end{DoxyParamCaption}) throw ( ) \hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Constructs a new \mbox{\hyperlink{classini_1_1ParseException}{Parse\+Exception}} instance by copying another one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The exception that is copied. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classini_1_1ParseException_a75e5fa9def71e8da8cc4bf1d5c858dda}\label{classini_1_1ParseException_a75e5fa9def71e8da8cc4bf1d5c858dda}} 
+\index{ini::ParseException@{ini::ParseException}!operator=@{operator=}}
+\index{operator=@{operator=}!ini::ParseException@{ini::ParseException}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classini_1_1ParseException}{Parse\+Exception}} \& ini\+::\+Parse\+Exception\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classini_1_1ParseException}{Parse\+Exception}} \&}]{original }\end{DoxyParamCaption}) throw ( ) \hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Copies a parse exception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The parse exception that is copied.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classini_1_1ParseException_a16748af5ae0c46233911e3235c453c94}\label{classini_1_1ParseException_a16748af5ae0c46233911e3235c453c94}} 
+\index{ini::ParseException@{ini::ParseException}!what@{what}}
+\index{what@{what}!ini::ParseException@{ini::ParseException}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily virtual const char$\ast$ ini\+::\+Parse\+Exception\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const throw ( ) \hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns a description of the error that occurred. 
+
+\begin{DoxyReturn}{Returns}
+A description of the error that occurred. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classini_1_1DuplicateEntry_a8d403fe04924b409fe5f2768262fb460}{ini\+::\+Duplicate\+Entry}}, \mbox{\hyperlink{classini_1_1DuplicateSection_aa4be06c40591b2c08ecfb2f8470e41f5}{ini\+::\+Duplicate\+Section}}, and \mbox{\hyperlink{classini_1_1UnexpectedCharacter_af9148fcf2b1604560e6215997e66fa00}{ini\+::\+Unexpected\+Character}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/ini\+\_\+config/ini\+\_\+configuration.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/ini\+\_\+config/ini\+\_\+configuration.\+cc\end{DoxyCompactItemize}

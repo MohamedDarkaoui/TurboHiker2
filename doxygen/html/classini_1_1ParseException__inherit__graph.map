@@ -1,0 +1,7 @@
+<map id="ini::ParseException" name="ini::ParseException">
+<area shape="rect" id="node1" title="The base class for all exceptions that are thrown by the INI&#45;parser." alt="" coords="177,80,323,107"/>
+<area shape="rect" id="node3" href="$classini_1_1DuplicateEntry.html" title="The exception that is thrown when the parser encounters an entry that has the same key as a previousl..." alt="" coords="5,155,148,181"/>
+<area shape="rect" id="node4" href="$classini_1_1DuplicateSection.html" title="The exception that is thrown by the parser when it encounters a section that has the same name as a p..." alt="" coords="172,155,328,181"/>
+<area shape="rect" id="node5" href="$classini_1_1UnexpectedCharacter.html" title="The exception that is thrown when the parser encounters an unexpected character." alt="" coords="353,155,539,181"/>
+<area shape="rect" id="node2" title=" " alt="" coords="207,5,293,32"/>
+</map>

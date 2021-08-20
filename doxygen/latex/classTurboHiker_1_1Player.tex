@@ -1,0 +1,113 @@
+\hypertarget{classTurboHiker_1_1Player}{}\doxysection{Turbo\+Hiker\+::Player Class Reference}
+\label{classTurboHiker_1_1Player}\index{TurboHiker::Player@{TurboHiker::Player}}
+
+
+Inheritance diagram for Turbo\+Hiker\+::Player\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classTurboHiker_1_1Player__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Turbo\+Hiker\+::Player\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classTurboHiker_1_1Player__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1Player_aef60e7da9ef72a40aa68e46aed8f7798}{Player}} (unsigned int lane, std\+::pair$<$ double, double $>$ \&size, std\+::vector$<$ double $>$ \&lane\+PositionsX, double speed, double speed\+Up\+Factor, double yelling\+Range)
+\item 
+\mbox{\hyperlink{classTurboHiker_1_1Player_ab2f1e7f0e08b064f67224e569636734c}{$\sim$\+Player}} () override=default
+\item 
+virtual void \mbox{\hyperlink{classTurboHiker_1_1Player_ad8b3811f57ccec4844f475b844774d9b}{yell}} ()
+\item 
+bool \mbox{\hyperlink{classTurboHiker_1_1Player_a41e38da9980a08376f8babd3906ea169}{is\+Yelling}} () const
+\item 
+double \mbox{\hyperlink{classTurboHiker_1_1Player_a27b699bdd4175e8374f14cf746fc96e0}{get\+Yelling\+Range}} () const
+\item 
+void \mbox{\hyperlink{classTurboHiker_1_1Player_ac7eff197d9fbd43aae8cdc86e6a24d4a}{update}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1Player_aef60e7da9ef72a40aa68e46aed8f7798}\label{classTurboHiker_1_1Player_aef60e7da9ef72a40aa68e46aed8f7798}} 
+\index{TurboHiker::Player@{TurboHiker::Player}!Player@{Player}}
+\index{Player@{Player}!TurboHiker::Player@{TurboHiker::Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Player\+::\+Player (\begin{DoxyParamCaption}\item[{unsigned int}]{lane,  }\item[{std\+::pair$<$ double, double $>$ \&}]{size,  }\item[{std\+::vector$<$ double $>$ \&}]{lane\+PositionsX,  }\item[{double}]{speed,  }\item[{double}]{speed\+Up\+Factor,  }\item[{double}]{yelling\+Range }\end{DoxyParamCaption})}
+
+Simple constructor 
+\begin{DoxyParams}{Parameters}
+{\em lane} & the initial lane where the \mbox{\hyperlink{classTurboHiker_1_1Hiker}{Hiker}} is located \\
+\hline
+{\em size} & the size of the hiker \\
+\hline
+{\em lane\+PositionsX} & all possible lane x-\/coordinates \\
+\hline
+{\em speed} & the initial speed of the hiker \\
+\hline
+{\em speed\+Up\+Factor} & the factor by which the speed can change \\
+\hline
+{\em yelling\+Range} & the range in which enemy hikers can react to the yelling \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTurboHiker_1_1Player_ab2f1e7f0e08b064f67224e569636734c}\label{classTurboHiker_1_1Player_ab2f1e7f0e08b064f67224e569636734c}} 
+\index{TurboHiker::Player@{TurboHiker::Player}!````~Player@{$\sim$Player}}
+\index{````~Player@{$\sim$Player}!TurboHiker::Player@{TurboHiker::Player}}
+\doxysubsubsection{\texorpdfstring{$\sim$Player()}{~Player()}}
+{\footnotesize\ttfamily Turbo\+Hiker\+::\+Player\+::$\sim$\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+default destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTurboHiker_1_1Player_a27b699bdd4175e8374f14cf746fc96e0}\label{classTurboHiker_1_1Player_a27b699bdd4175e8374f14cf746fc96e0}} 
+\index{TurboHiker::Player@{TurboHiker::Player}!getYellingRange@{getYellingRange}}
+\index{getYellingRange@{getYellingRange}!TurboHiker::Player@{TurboHiker::Player}}
+\doxysubsubsection{\texorpdfstring{getYellingRange()}{getYellingRange()}}
+{\footnotesize\ttfamily double Turbo\+Hiker\+::\+Player\+::get\+Yelling\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+simple getter of the yelling range \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1Player_a41e38da9980a08376f8babd3906ea169}\label{classTurboHiker_1_1Player_a41e38da9980a08376f8babd3906ea169}} 
+\index{TurboHiker::Player@{TurboHiker::Player}!isYelling@{isYelling}}
+\index{isYelling@{isYelling}!TurboHiker::Player@{TurboHiker::Player}}
+\doxysubsubsection{\texorpdfstring{isYelling()}{isYelling()}}
+{\footnotesize\ttfamily bool Turbo\+Hiker\+::\+Player\+::is\+Yelling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+simple getter of the yelling variable \begin{DoxyReturn}{Returns}
+yelling 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTurboHiker_1_1Player_ac7eff197d9fbd43aae8cdc86e6a24d4a}\label{classTurboHiker_1_1Player_ac7eff197d9fbd43aae8cdc86e6a24d4a}} 
+\index{TurboHiker::Player@{TurboHiker::Player}!update@{update}}
+\index{update@{update}!TurboHiker::Player@{TurboHiker::Player}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Player\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+updates the position, movement, acceleration, speed, etc. of the \mbox{\hyperlink{classTurboHiker_1_1Player}{Player}} 
+
+Reimplemented from \mbox{\hyperlink{classTurboHiker_1_1CompetingHiker_a828bbea23f96cd1c96acb686a1ba7700}{Turbo\+Hiker\+::\+Competing\+Hiker}}.
+
+\mbox{\Hypertarget{classTurboHiker_1_1Player_ad8b3811f57ccec4844f475b844774d9b}\label{classTurboHiker_1_1Player_ad8b3811f57ccec4844f475b844774d9b}} 
+\index{TurboHiker::Player@{TurboHiker::Player}!yell@{yell}}
+\index{yell@{yell}!TurboHiker::Player@{TurboHiker::Player}}
+\doxysubsubsection{\texorpdfstring{yell()}{yell()}}
+{\footnotesize\ttfamily void Turbo\+Hiker\+::\+Player\+::yell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+changes the yelling status to yelling 
+
+Reimplemented in \mbox{\hyperlink{classSFML_1_1SFMLPlayer_ad94cb35f01064354364b590980f89c49}{S\+F\+M\+L\+::\+S\+F\+M\+L\+Player}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/Player.\+h\item 
+/home/mohamed/\+Desktop/\+Turbo\+Hiker2/src/logic-\/lib/\+Entity/Player.\+cpp\end{DoxyCompactItemize}
