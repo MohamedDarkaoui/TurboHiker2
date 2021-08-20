@@ -32,6 +32,7 @@ void SFML::SFMLGame::run(const std::string& config_path) {
         window->draw(player->getShape());
         for (const auto& entity : world->getSFMLEntities())
             entity->updateAnimation();
+
         for(const auto& gp : world->getSFMLGroundPlot())
             window->draw(gp->getShape());
         for(const auto& item : world->getSFMLPassiveItems())
@@ -44,6 +45,8 @@ void SFML::SFMLGame::run(const std::string& config_path) {
             window->draw(enemy->getShape());
         for(const auto& comp : world->getSFMLCompetingHikers())
             window->draw(comp->getShape());
+        for(const auto& bomb : world->getSFMLBombs())
+            window->draw(bomb->getShape());
 
         window->draw(world->getSFMLPlayer()->getShape());
         window->draw(world->getSFMLFinishLine()->getShape());
@@ -64,13 +67,28 @@ void SFML::SFMLGame::displayScoreScreen(const std::set<std::shared_ptr<TurboHike
     int score = player->getScore()->getPoints(player->getPosition().getY());
     text += std::to_string(score) + "\n";
 
+    static bool calculatedPosition = false;
+    static int positionInRace = 1;
     int i = 0;
     for (const auto& competingHiker : competingHikers){
+        if (!calculatedPosition)
+            if(competingHiker->getPosition().getY() > player->getPosition().getY())
+                positionInRace++;
         text += "Competing hiker " + std::to_string(i+1) + ": ";
         int s = competingHiker->getScore()->getPoints(competingHiker->getPosition().getY());
         text += std::to_string(s) + "\n";
         i++;
     }
+    calculatedPosition = true;
+    text += "\n\nyou  finished " + std::to_string(positionInRace) ;
+    if (positionInRace == 1)
+        text += "ST";
+    else if(positionInRace == 2)
+        text += "ND";
+    else if(positionInRace == 3)
+        text += "RD";
+    else
+        text+= "TH";
 
     TurboHiker::Position2D pos = Transformation::getInstance().transform(TurboHiker::Position2D{-2,3});
     sf::Text sfmlText;
@@ -80,4 +98,3 @@ void SFML::SFMLGame::displayScoreScreen(const std::set<std::shared_ptr<TurboHike
     sfmlText.setPosition(float(pos.getX()),float(pos.getY()));
     window->draw(sfmlText);
 }
-

@@ -58,6 +58,10 @@ const std::shared_ptr<SFMLFinishLine> &SFMLWorld::getSFMLFinishLine() const {
     return (const std::shared_ptr<SFMLFinishLine> &) getFinishLine();
 }
 
+const std::set<std::shared_ptr<SFMLBomb>> &SFMLWorld::getSFMLBombs() const {
+    return (const std::set<std::shared_ptr<SFMLBomb>> &) getBombs();
+}
+
 std::set<std::shared_ptr<SFMLEntity>> SFMLWorld::getSFMLEntities() const {
     std::set<std::shared_ptr<SFMLEntity>> entities;
     entities.insert(getSFMLCompetingHikers().begin(), getSFMLCompetingHikers().end());
@@ -94,14 +98,12 @@ void SFMLWorld::spawnStaticEnemy(unsigned int lane, double y_pos) {
     addStaticEnemy(getFactory()->createStaticEnemy(lane,y_pos-getPlayer()->getSize().second));
 }
 
+void SFMLWorld::spawnBomb() {
+    auto playerPos = getPlayer()->getPosition().getY();
+    double yPos = Random::getInstance().random(playerPos,playerPos+10);
 
-
-
-
-
-
-
-
-
-
+    auto bomb = getFactory()->createBomb();
+    bomb->setPosition({-5,yPos});
+    addBomb(bomb);
+}
 

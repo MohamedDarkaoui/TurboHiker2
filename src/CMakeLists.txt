@@ -64,7 +64,7 @@ ADD_EXECUTABLE(
         logic-lib/Entity/ActiveItem.h
         presentation-lib/SFMLEntities/SFMLActiveItem.cpp
         presentation-lib/SFMLEntities/SFMLActiveItem.h
-    )
+        logic-lib/Entity/Bomb.cpp logic-lib/Entity/Bomb.h presentation-lib/SFMLEntities/SFMLBomb.cpp presentation-lib/SFMLEntities/SFMLBomb.h)
 
 
 TARGET_LINK_LIBRARIES (TurboHiker sfml-graphics sfml-window sfml-system sfml-audio)

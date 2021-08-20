@@ -10,6 +10,7 @@
 #include "FinishLine.h"
 #include "PassiveItem.h"
 #include "ActiveItem.h"
+#include "Bomb.h"
 
 namespace TurboHiker{
 
@@ -25,6 +26,7 @@ private:
     std::set<std::shared_ptr<GroundPlot>> ground;
     std::set<std::shared_ptr<PassiveItem>> passive_items;
     std::set<std::shared_ptr<ActiveItem>> active_items;
+    std::set<std::shared_ptr<Bomb>> bombs;
     std::shared_ptr<FinishLine> finish_line;
     std::shared_ptr<AbstractFactory> factory;
 
@@ -57,10 +59,12 @@ public:
      */
     void handleHikerEnemyCollisions();
 
+    void handleHikerBombCollision();
+
     /**
      * checks for item collecting
      */
-    void handleCollectingItem();
+    void handleCollectingItem() const;
 
     /**
      * handles the yelling of the player
@@ -102,6 +106,16 @@ public:
      * @param speedFactor: its seed-up factor
      */
     virtual void spawnStaticEnemy(unsigned int lane, double y_pos);
+
+    /**
+     * spawns a bomb
+     */
+    virtual void spawnBomb();
+
+    /**
+     * spawns a bomb with a random chance
+     */
+    void chanceToSpawnBomb();
 
     /**
      * creates all the entities in the world
@@ -156,20 +170,11 @@ public:
      */
     void addFinishLine(const std::shared_ptr<FinishLine>& finishLine);
 
-    /////////////   Getters  /////////////
-    std::set<std::shared_ptr<Entity>> getEntities() const;
-    std::set<std::shared_ptr<Enemy>> getEnemies() const;
-    std::set<std::shared_ptr<CollectableItem>> getItems() const;
-    const std::shared_ptr<Player>& getPlayer() const;
-    const std::set<std::shared_ptr<CompetingHiker>>& getCompetingHikers() const;
-    const std::set<std::shared_ptr<StaticEnemy>>& getStaticEnemies() const;
-    const std::set<std::shared_ptr<MovingEnemy>>& getMovingEnemies() const;
-    const std::set<std::shared_ptr<GroundPlot>>& getGround() const;
-    const std::set<std::shared_ptr<PassiveItem>>& getPassiveItems() const;
-    const std::set<std::shared_ptr<ActiveItem>>& getActiveItems() const;
-    const std::shared_ptr<FinishLine>& getFinishLine() const;
-    const std::shared_ptr<AbstractFactory>& getFactory() const;
-    ///////////////////////////////////////
+    /**
+     * adds a bomb to the set of bombs
+     * @param bomb
+     */
+    void addBomb(const std::shared_ptr<Bomb>& bomb);
 
     /**
      * controls the competing hikers, giving them random movements
@@ -181,6 +186,25 @@ public:
      * @param competingHiker: the controlled competing hiker
      */
     void controlHikerAtCollision(const std::shared_ptr<CompetingHiker>& competingHiker);
+
+    /////////////   Getters  /////////////
+    std::set<std::shared_ptr<Entity>> getEntities() const;
+    std::set<std::shared_ptr<Enemy>> getEnemies() const;
+    std::set<std::shared_ptr<CollectableItem>> getItems() const;
+    std::set<std::shared_ptr<CompetingHiker>> getAllCompetingHikers() const;
+    const std::shared_ptr<Player>& getPlayer() const;
+    const std::set<std::shared_ptr<CompetingHiker>>& getCompetingHikers() const;
+    const std::set<std::shared_ptr<StaticEnemy>>& getStaticEnemies() const;
+    const std::set<std::shared_ptr<MovingEnemy>>& getMovingEnemies() const;
+    const std::set<std::shared_ptr<GroundPlot>>& getGround() const;
+    const std::set<std::shared_ptr<PassiveItem>>& getPassiveItems() const;
+    const std::set<std::shared_ptr<ActiveItem>>& getActiveItems() const;
+    const std::shared_ptr<FinishLine>& getFinishLine() const;
+
+    const std::set<std::shared_ptr<Bomb>> &getBombs() const;
+
+    const std::shared_ptr<AbstractFactory>& getFactory() const;
+    ///////////////////////////////////////
 
 };
 }

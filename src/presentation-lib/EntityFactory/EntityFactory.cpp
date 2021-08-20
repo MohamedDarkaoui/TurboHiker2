@@ -18,9 +18,7 @@ std::shared_ptr<SFML::SFMLPlayer> SFML::EntityFactory::createPlayer() {
     std::string sprite_path = configuration["player"]["sprite"].as_string_or_die();
     double speed = configuration["hiker"]["speed"].as_double_or_die();
     unsigned int lane = TurboHiker::Random::getInstance().randomInt(0,4);
-    std::pair<double,double> size;
-    size.first = configuration["player"]["sizeX"].as_double_or_die();
-    size.second = configuration["player"]["sizeY"].as_double_or_die();
+    std::pair<double,double> size = readSize("player");
     std::vector<double> lanePositions = configuration["world"]["laneXcoordinates"].as_double_tuple_or_die();
     double speedUpFactor = configuration["player"]["speedUpFactor"].as_double_or_die();
     double yellingRange = configuration["player"]["yellingRange"].as_double_or_die();
@@ -30,9 +28,7 @@ std::shared_ptr<SFML::SFMLPlayer> SFML::EntityFactory::createPlayer() {
 
 std::set<std::shared_ptr<SFML::SFMLCompetingHiker>> SFML::EntityFactory::createCompetingHikers(unsigned int player_lane) {
     double speed = configuration["hiker"]["speed"].as_double_or_die();
-    std::pair<double,double> size;
-    size.first = configuration["CompetingHiker"]["sizeX"].as_double_or_die();
-    size.second = configuration["CompetingHiker"]["sizeY"].as_double_or_die();
+    std::pair<double,double> size = readSize("CompetingHiker");
     std::vector<double> lanePositions = configuration["world"]["laneXcoordinates"].as_double_tuple_or_die();
     double speedUpFactor = configuration["CompetingHiker"]["speedUpFactor"].as_double_or_die();
     std::string sprite_path = configuration["CompetingHiker"]["sprite"].as_string_or_die();
@@ -49,9 +45,7 @@ std::set<std::shared_ptr<SFML::SFMLCompetingHiker>> SFML::EntityFactory::createC
 
 std::shared_ptr<SFML::SFMLStaticEnemy> SFML::EntityFactory::createStaticEnemy(unsigned int lane, double y_pos) {
     double speed = configuration["staticEnemy"]["speed"].as_double_or_die();
-    std::pair<double,double> size;
-    size.first = configuration["staticEnemy"]["sizeX"].as_double_or_die();
-    size.second = configuration["staticEnemy"]["sizeY"].as_double_or_die();
+    std::pair<double,double> size = readSize("staticEnemy");
     std::vector<double> lanePositions = configuration["world"]["laneXcoordinates"].as_double_tuple_or_die();
     std::string sprite_path = configuration["staticEnemy"]["sprite"].as_string_or_die();
     auto enemy = std::make_shared<SFML::SFMLStaticEnemy>(lane,size,lanePositions,speed,sprite_path);
@@ -74,9 +68,7 @@ std::set<std::shared_ptr<SFML::SFMLStaticEnemy>> SFML::EntityFactory::createStat
     return enemies;
 }
 std::shared_ptr<SFML::SFMLMovingEnemy> SFML::EntityFactory::createMovingEnemy(unsigned int lane, double y_pos, double speed) {
-    std::pair<double,double> size;
-    size.first = configuration["movingEnemy"]["sizeX"].as_double_or_die();
-    size.second = configuration["movingEnemy"]["sizeY"].as_double_or_die();
+    std::pair<double,double> size = readSize("movingEnemy");
     std::vector<double> lanePositions = configuration["world"]["laneXcoordinates"].as_double_tuple_or_die();
     std::string sprite_path = configuration["movingEnemy"]["sprite"].as_string_or_die();
     double speedUpFactor = configuration["movingEnemy"]["speedUpFactor"].as_double_or_die();
@@ -116,13 +108,10 @@ std::set<std::shared_ptr<SFML::SFMLGroundPlot>> SFML::EntityFactory::createGroun
 
     double origin = 0;
     std::pair<int,int> dimensions;
-    std::pair<double,double> size;
+    std::pair<double,double> size = readSize("groundPlot");
 
     dimensions.first = configuration["groundPlot"]["columns"].as_int_or_die();
     dimensions.second = configuration["groundPlot"]["rows"].as_int_or_die();
-
-    size.first = configuration["groundPlot"]["sizeX"].as_int_or_die();
-    size.second = configuration["groundPlot"]["sizeY"].as_int_or_die();
 
     std::string sprite_path = configuration["groundPlot"]["sprite"].as_string_or_die();
 
@@ -161,9 +150,7 @@ std::shared_ptr<SFML::SFMLFinishLine> SFML::EntityFactory::createFinishLine() {
 std::set<std::shared_ptr<SFML::SFMLPassiveItem>> SFML::EntityFactory::createPassiveItem() {
     std::string sprite_path = configuration["passiveItem"]["sprite"].as_string_or_die();
     unsigned int amount = configuration["passiveItem"]["amount"].as_int_or_die();
-    std::pair<double,double> size;
-    size.first = configuration["passiveItem"]["sizeX"].as_double_or_die();
-    size.second = configuration["passiveItem"]["sizeY"].as_double_or_die();
+    std::pair<double,double> size = readSize("passiveItem");
     std::vector<double> lanePositions = configuration["world"]["laneXcoordinates"].as_double_tuple_or_die();
     double max = configuration["world"]["height"].as_double_or_die() -4;
     std::set<std::shared_ptr<SFML::SFMLPassiveItem>> items;
@@ -187,9 +174,7 @@ std::set<std::shared_ptr<SFML::SFMLPassiveItem>> SFML::EntityFactory::createPass
 std::set<std::shared_ptr<SFML::SFMLActiveItem>> SFML::EntityFactory::createActiveItems() {
     std::string sprite_path = configuration["activeItem"]["sprite"].as_string_or_die();
     unsigned int amount = configuration["activeItem"]["amount"].as_int_or_die();
-    std::pair<double,double> size;
-    size.first = configuration["activeItem"]["sizeX"].as_double_or_die();
-    size.second = configuration["activeItem"]["sizeY"].as_double_or_die();
+    std::pair<double,double> size = readSize("activeItem");
     std::vector<double> lanePositions = configuration["world"]["laneXcoordinates"].as_double_tuple_or_die();
     double max = configuration["world"]["height"].as_double_or_die() -4;
     std::set<std::shared_ptr<SFML::SFMLActiveItem>> items;
@@ -201,6 +186,23 @@ std::set<std::shared_ptr<SFML::SFMLActiveItem>> SFML::EntityFactory::createActiv
         items.insert(item);
     }
     return items;
+}
+
+std::shared_ptr<SFML::SFMLBomb> SFML::EntityFactory::createBomb() {
+    std::string sprite_path = configuration["bomb"]["sprite"].as_string_or_die();
+    std::pair<double,double> size = readSize("bomb");
+    double speed = configuration["bomb"]["speed"].as_double_or_die();
+
+    return std::make_shared<SFMLBomb>(sprite_path,TurboHiker::Position2D(0,0),size,speed);
+
+}
+
+std::pair<double, double> SFML::EntityFactory::readSize(const std::string& entityName) {
+    std::pair<double,double> size;
+    size.first = configuration[entityName]["sizeX"].as_double_or_die();
+    size.second = configuration[entityName]["sizeY"].as_double_or_die();
+
+    return size;
 }
 
 

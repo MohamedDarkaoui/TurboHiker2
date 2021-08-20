@@ -14,6 +14,7 @@ namespace SFML {
     class SFMLFinishLine;
     class SFMLPassiveItem;
     class SFMLActiveItem;
+    class SFMLBomb;
 }
 
 namespace TurboHiker{
@@ -47,6 +48,8 @@ public:
     virtual std::set<std::shared_ptr<SFML::SFMLActiveItem>> createActiveItems() = 0;
 
     virtual std::shared_ptr<SFML::SFMLFinishLine> createFinishLine() = 0;
+
+    virtual std::shared_ptr<SFML::SFMLBomb> createBomb() = 0;
 
     virtual std::shared_ptr<SFML::SFMLWorld> createWorld() = 0;
 

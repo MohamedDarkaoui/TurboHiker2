@@ -25,7 +25,7 @@ public:
     ~SFMLWorld() override = default;
 
     /**
-     * creates all the entities in the worldz
+     * creates all the entities in the world
      */
     void buildWorld() override;
 
@@ -39,6 +39,7 @@ public:
     const std::set<std::shared_ptr<SFMLPassiveItem>>& getSFMLPassiveItems() const;
     const std::set<std::shared_ptr<SFMLActiveItem>>& getSFMLActiveItems() const;
     const std::shared_ptr<SFMLFinishLine> &getSFMLFinishLine() const;
+    const std::set<std::shared_ptr<SFMLBomb>>& getSFMLBombs() const;
     ////////////////////////////////////////////////
 
     /**
@@ -56,6 +57,11 @@ public:
      * @param speedFactor: its seed-up factor
      */
     void spawnStaticEnemy(unsigned int lane, double y_pos) override;
+
+    /**
+     * spawns a bomb
+     */
+    void spawnBomb() override;
 
     /**
      * updates the world and all its composite entities
