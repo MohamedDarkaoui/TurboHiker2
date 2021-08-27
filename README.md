@@ -1,7 +1,7 @@
 # TurboHiker
 
 
-#### COmpile and run
+#### Compile and run
 
 - ./build.sh
 - ./run.sh
